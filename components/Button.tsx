@@ -8,9 +8,9 @@ import { gsap } from "@/lib/gsap";
 type Variant = "filled" | "tonal" | "outlined" | "text";
 
 const VARIANT_CLASS: Record<Variant, string> = {
-  filled: "bg-primary text-on-primary",
-  tonal: "bg-primary-container text-on-primary-container",
-  outlined: "bg-transparent text-on-surface border border-outline",
+  filled: "border-primary bg-primary text-on-primary shadow-[0_12px_28px_-18px_var(--color-primary)]",
+  tonal: "bg-primary-container/82 text-on-primary-container",
+  outlined: "bg-transparent text-on-surface",
   text: "bg-transparent text-primary",
 };
 
@@ -40,7 +40,7 @@ function useMagnetic(enabled: boolean | undefined) {
 }
 
 const base =
-  "ripple-container state-layer inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-5 py-3 text-label-l cursor-pointer transition-shadow will-change-transform select-none sm:px-6 sm:py-3.5";
+  "hig-control ripple-container state-layer inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-5 py-3 text-label-l cursor-pointer will-change-transform select-none sm:px-6 sm:py-3.5";
 
 export function Button({
   variant = "filled",

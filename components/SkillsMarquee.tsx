@@ -44,7 +44,7 @@ export function SkillsMarquee({ tags, skills }: { tags: string[]; skills: SkillC
         <StaggerGroup className="grid grid-cols-2 gap-3 lg:grid-cols-4 lg:gap-4.5">
           {skills.map((col) => (
             <StaggerItem key={col.title}>
-              <div className="rounded-xl border border-outline bg-surface-container p-4 elevation-2 md:p-6">
+              <div className="hig-card rounded-[22px] p-4 md:p-6">
                 <div className={`mb-4 text-label-m ${SEED_TEXT[col.seed]} md:mb-5`}>{col.title}</div>
                 <div className="flex flex-col gap-2 md:gap-2.5">
                   {col.items.map((item) => (

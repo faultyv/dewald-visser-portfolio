@@ -21,12 +21,15 @@ export function Companies({ companies }: { companies: CompanyEntry[] }) {
               A linked brand map of companies, ventures and organisations connected to the career timeline. Logos are intentionally flattened into the site system so they support the design rather than fight it.
             </p>
           </Reveal>
+          <Reveal delay={0.15}>
+            <div className="snap-hint mt-1 sm:hidden">Swipe brand map</div>
+          </Reveal>
         </div>
 
         <StaggerGroup className="no-scrollbar -mx-5 grid auto-cols-[152px] grid-flow-col grid-rows-2 gap-2.5 overflow-x-auto px-5 pb-3 [scroll-padding-inline:20px] [scroll-snap-type:x_mandatory] sm:mx-0 sm:grid-flow-row sm:grid-rows-none sm:grid-cols-3 sm:overflow-visible sm:px-0 sm:pb-0 sm:[scroll-snap-type:none] lg:grid-cols-5 lg:gap-3">
           {companies.map((company) => {
             const card = (
-              <article className="relative flex min-h-[162px] flex-col gap-3 overflow-hidden rounded-xl border border-outline bg-surface-container p-3.5 text-on-surface elevation-2 md:min-h-[190px] md:gap-4 md:p-4.5">
+              <article className="hig-card flex min-h-[162px] flex-col gap-3 rounded-[22px] p-3.5 text-on-surface md:min-h-[190px] md:gap-4 md:p-4.5">
                 <div className={`absolute -right-9 -top-9 h-28 w-28 rounded-full opacity-15 ${SEED_BG[company.seed]}`} />
                 <div className="relative z-10 flex items-start justify-between gap-3">
                   <span className={`grid h-12 w-12 place-items-center rounded-2xl ${SEED_BG[company.seed]} ${SEED_ON[company.seed]} text-label-l elevation-1 md:h-14 md:w-14`} style={{ fontFamily: "var(--font-display)", fontWeight: 800 }}>

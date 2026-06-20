@@ -26,6 +26,9 @@ export function WorkTeaser({ projects }: { projects: Project[] }) {
             See all work <IconSymbol name="arrow_forward" size={18} />
           </ButtonLink>
         </Reveal>
+        <Reveal delay={0.15}>
+          <div className="snap-hint md:hidden">Swipe work</div>
+        </Reveal>
       </div>
 
       <StaggerGroup className="mobile-strip no-scrollbar -mx-5 flex gap-3.5 px-5 pb-3 md:mx-0 md:grid md:grid-cols-2 md:gap-4.5 md:overflow-visible md:px-0 md:pb-0 xl:grid-cols-3">
@@ -33,7 +36,7 @@ export function WorkTeaser({ projects }: { projects: Project[] }) {
           <StaggerItem key={project.slug} className="min-w-[82vw] max-w-[82vw] md:min-w-0 md:max-w-none">
             <TiltCard>
               <Link href={`/work/${project.slug}`} className="block no-underline group">
-                <div className="relative overflow-hidden rounded-xl border border-outline bg-surface-container elevation-2">
+                <div className="hig-card rounded-[24px]">
                   <div className="relative" style={{ aspectRatio: "4/3" }}>
                     {project.cover ? (
                       <div className={project.coverFit === "contain" ? `absolute inset-0 ${SEED_BG[project.seed]} opacity-10` : "absolute inset-0"}>

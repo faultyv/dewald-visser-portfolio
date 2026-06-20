@@ -78,6 +78,31 @@ html[data-theme="dark"] {
   color-scheme: dark;
 }
 
+:root,
+html[data-theme="light"] {
+  --hig-glass: rgba(255, 255, 255, 0.72);
+  --hig-glass-strong: rgba(255, 255, 255, 0.86);
+  --hig-glass-border: rgba(41, 47, 76, 0.12);
+  --hig-hairline: rgba(41, 47, 76, 0.09);
+  --hig-specular: rgba(255, 255, 255, 0.88);
+  --hig-shadow: 0 20px 60px -32px rgba(41, 47, 76, 0.34), 0 1px 0 rgba(255, 255, 255, 0.7) inset;
+  --hig-shadow-soft: 0 12px 40px -26px rgba(41, 47, 76, 0.28);
+  --hig-band: linear-gradient(180deg, rgba(250, 251, 253, 0.9), rgba(255, 255, 255, 0.68) 58%, rgba(250, 251, 253, 0.92));
+  --hig-control-bg: rgba(255, 255, 255, 0.62);
+}
+
+html[data-theme="dark"] {
+  --hig-glass: rgba(30, 35, 64, 0.62);
+  --hig-glass-strong: rgba(38, 44, 78, 0.78);
+  --hig-glass-border: rgba(255, 255, 255, 0.14);
+  --hig-hairline: rgba(255, 255, 255, 0.09);
+  --hig-specular: rgba(255, 255, 255, 0.16);
+  --hig-shadow: 0 22px 70px -34px rgba(0, 0, 0, 0.72), 0 1px 0 rgba(255, 255, 255, 0.08) inset;
+  --hig-shadow-soft: 0 14px 44px -28px rgba(0, 0, 0, 0.72);
+  --hig-band: linear-gradient(180deg, rgba(20, 24, 43, 0.72), rgba(30, 35, 64, 0.48) 55%, rgba(20, 24, 43, 0.82));
+  --hig-control-bg: rgba(255, 255, 255, 0.08);
+}
+
 * {
   box-sizing: border-box;
 }
@@ -103,6 +128,11 @@ body {
 ::selection {
   background: var(--color-primary);
   color: var(--color-on-primary);
+}
+
+:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--color-primary) 52%, transparent);
+  outline-offset: 4px;
 }
 
 #root-theming,
@@ -189,9 +219,85 @@ body {
 
 .surface-band {
   border-block: 1px solid var(--color-outline-variant);
+  background: var(--hig-band);
+}
+
+.hig-glass {
+  overflow: hidden;
+  border: 1px solid var(--hig-glass-border);
+  background: var(--hig-glass);
+  box-shadow: var(--hig-shadow);
+  backdrop-filter: blur(28px) saturate(1.38);
+  -webkit-backdrop-filter: blur(28px) saturate(1.38);
+}
+
+.hig-glass::before,
+.hig-card::before,
+.hig-control::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, var(--hig-specular), transparent 42%);
+  opacity: 0.48;
+  pointer-events: none;
+}
+
+.hig-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--hig-hairline);
   background:
-    linear-gradient(180deg, color-mix(in srgb, var(--color-surface-container-low) 68%, transparent), transparent 85%),
-    var(--color-surface);
+    linear-gradient(180deg, color-mix(in srgb, var(--color-surface-container) 88%, transparent), color-mix(in srgb, var(--color-surface-container-low) 82%, transparent)),
+    var(--color-surface-container);
+  box-shadow: var(--hig-shadow-soft);
+}
+
+.hig-control {
+  overflow: hidden;
+  border: 1px solid var(--hig-glass-border);
+  background: var(--hig-control-bg);
+  box-shadow: 0 1px 0 var(--hig-specular) inset, 0 10px 24px -20px var(--m3-shadow);
+  backdrop-filter: blur(18px) saturate(1.25);
+  -webkit-backdrop-filter: blur(18px) saturate(1.25);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease, border-color 0.18s ease;
+}
+
+.hig-control:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 1px 0 var(--hig-specular) inset, 0 18px 34px -24px var(--m3-shadow);
+}
+
+.hig-control:active {
+  transform: translateY(0) scale(0.985);
+}
+
+.hig-caption {
+  color: var(--color-on-surface-variant);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.hig-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--hig-hairline), transparent);
+}
+
+.snap-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-on-surface-variant);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.snap-hint::before {
+  content: "";
+  width: 28px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--color-primary), transparent);
 }
 
 .no-scrollbar {
@@ -252,7 +358,13 @@ body {
 }
 
 /* ---------- State layers (M3 hover/focus/press overlays) ---------- */
-.state-layer { position: relative; isolation: isolate; }
+.hig-glass:not(.fixed):not(.absolute):not(.sticky),
+.hig-control:not(.fixed):not(.absolute):not(.sticky),
+.state-layer:not(.fixed):not(.absolute):not(.sticky) {
+  position: relative;
+}
+
+.state-layer { isolation: isolate; }
 .state-layer::after {
   content: "";
   position: absolute;
@@ -273,7 +385,7 @@ body {
   position: absolute;
   border-radius: 50%;
   background: currentColor;
-  opacity: 0.25;
+  opacity: 0.12;
   transform: scale(0);
   animation: ripple-anim 0.6s cubic-bezier(0.2, 0, 0, 1);
   pointer-events: none;

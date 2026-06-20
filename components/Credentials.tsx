@@ -20,13 +20,16 @@ export function Credentials({ certs, site }: { certs: CertsData; site: SiteConfi
         <Reveal delay={0.1}>
           <p className="max-w-[330px] text-body-m text-on-surface-variant">Real, verified credentials — issued and dated by the platforms behind them.</p>
         </Reveal>
+        <Reveal delay={0.15}>
+          <div className="snap-hint md:hidden">Swipe credentials</div>
+        </Reveal>
       </div>
 
       <StaggerGroup className="mobile-strip no-scrollbar -mx-5 flex gap-3.5 px-5 pb-3 md:mx-0 md:grid md:grid-cols-2 md:gap-4.5 md:overflow-visible md:px-0 md:pb-0">
         {certs.featured.map((cert) => (
           <StaggerItem key={cert.id} className="min-w-[82vw] max-w-[82vw] md:min-w-0 md:max-w-none">
             <TiltCard>
-              <div className="relative overflow-hidden rounded-xl border border-outline bg-surface-container elevation-2">
+              <div className="hig-card rounded-[24px]">
                 <div className="relative bg-surface-container-high" style={{ aspectRatio: "1.4/1" }}>
                   <Image src={cert.image} alt={cert.title} fill className="object-cover" sizes="(max-width:768px) 90vw, 360px" />
                 </div>
@@ -45,7 +48,7 @@ export function Credentials({ certs, site }: { certs: CertsData; site: SiteConfi
           <div className="text-label-m text-on-surface-variant mb-3">Additional certifications</div>
           <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
             {certs.additional.map((c) => (
-              <div key={c.title} className="inline-flex items-start gap-1.5 rounded-lg border border-outline-variant bg-surface-container-low px-3 py-2 text-body-s text-on-surface-variant">
+              <div key={c.title} className="hig-control inline-flex items-start gap-1.5 rounded-xl px-3 py-2 text-body-s text-on-surface-variant">
                 <IconSymbol name="verified" size={15} className="text-success" />
                 <span className="text-on-surface font-medium">{c.title}</span> — {c.issuer}
               </div>

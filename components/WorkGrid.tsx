@@ -22,7 +22,7 @@ function ProjectCard({ project, large }: { project: Project; large?: boolean }) 
     <motion.div layout transition={fmTransition.standard}>
       <TiltCard>
         <Link href={`/work/${project.slug}`} className="block no-underline group">
-          <div className="relative overflow-hidden rounded-xl border border-outline bg-surface-container elevation-2">
+          <div className="hig-card rounded-[24px]">
             <div className="relative" style={{ aspectRatio: large ? "16/9" : "4/3" }}>
               {project.cover ? (
                 <div className={project.coverFit === "contain" ? `absolute inset-0 ${SEED_BG[project.seed]} opacity-10` : "absolute inset-0"}>
@@ -79,8 +79,8 @@ export function WorkGrid({ projects }: { projects: Project[] }) {
             <button
               key={f.id}
               onClick={() => setFilter(f.id)}
-              className={`ripple-container state-layer text-label-l px-4.5 py-2.5 rounded-full border transition-colors cursor-pointer ${
-                active ? "bg-primary text-on-primary border-primary" : "bg-surface-container text-on-surface-variant border-outline"
+              className={`hig-control state-layer cursor-pointer rounded-full px-4.5 py-2.5 text-label-l transition-colors ${
+                active ? "border-primary bg-primary text-on-primary" : "border-outline text-on-surface-variant"
               }`}
             >
               {f.label}

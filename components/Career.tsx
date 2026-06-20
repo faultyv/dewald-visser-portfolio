@@ -71,7 +71,7 @@ function RoleEvidence({ proof, seed }: { proof: ProofItem[]; seed: SeedName }) {
               type="button"
               aria-label="Show more role evidence"
               onClick={() => setIndex((v) => (v + 1) % proof.length)}
-              className={`state-layer grid h-[30px] w-[30px] place-items-center rounded-full border ${SEED_CONTAINER_BG[seed]} ${SEED_CONTAINER_TEXT[seed]}`}
+              className={`hig-control state-layer grid h-[30px] w-[30px] place-items-center rounded-full ${SEED_CONTAINER_BG[seed]} ${SEED_CONTAINER_TEXT[seed]}`}
             >
               →
             </button>
@@ -134,6 +134,9 @@ export function Career({ cv }: { cv: CVEntry[] }) {
           <Reveal delay={0.05}>
             <h2 className="text-headline-l text-on-surface">The career, unfolding.</h2>
           </Reveal>
+          <Reveal delay={0.1}>
+            <div className="snap-hint mt-4 md:hidden">Swipe roles</div>
+          </Reveal>
         </div>
 
         <div className="relative md:pl-[clamp(30px,5vw,64px)] xl:pl-0">
@@ -146,7 +149,7 @@ export function Career({ cv }: { cv: CVEntry[] }) {
               const brandSeed = entry.brandColor ?? seed;
               return (
                 <Reveal key={`${entry.org}-${entry.date}`} dir="up" className={`min-w-[86vw] max-w-[86vw] md:min-w-0 md:max-w-none ${i % 2 ? "lg:ml-14 xl:ml-0" : ""}`}>
-                  <article className="relative h-full overflow-hidden rounded-xl border border-outline bg-surface-container p-5 elevation-2 md:p-6 xl:p-7">
+                  <article className="hig-card h-full rounded-[22px] p-5 md:p-6 xl:p-7">
                     <div
                       className={`absolute top-7 hidden h-3.5 w-3.5 rounded-full border-[3px] border-surface md:block xl:hidden ${SEED_BG[seed]}`}
                       style={{ left: "calc(-1 * clamp(30px,5vw,64px) + clamp(8px,2vw,24px) - 6px)" }}

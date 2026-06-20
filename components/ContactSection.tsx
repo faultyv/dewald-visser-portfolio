@@ -39,7 +39,7 @@ export function ContactSection({ site }: { site: SiteConfig }) {
         </h2>
       </Reveal>
 
-      <div className="mt-12 flex justify-between items-end flex-wrap gap-9 pt-7 border-t border-outline-variant">
+      <div className="hig-glass mt-12 flex flex-wrap items-end justify-between gap-9 rounded-[28px] p-5 md:p-7">
         <div>
           <div className="text-label-m text-on-surface-variant mb-3">Get in touch</div>
           <button
@@ -65,13 +65,13 @@ export function ContactSection({ site }: { site: SiteConfig }) {
             </ButtonLink>
           </div>
         </div>
-        <div className="flex gap-5 flex-wrap text-label-l">
+        <div className="flex gap-2.5 flex-wrap text-label-l">
           {socialLinks.map((s) => (
-            <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" className="text-on-surface no-underline state-layer rounded px-1">
+            <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" className="hig-control state-layer rounded-full px-3 py-2 text-on-surface no-underline">
               {s.label} <IconSymbol name="open_in_new" size={14} />
             </a>
           ))}
-          <a href={site.socials.website} target="_blank" rel="noopener noreferrer" className="text-primary no-underline state-layer rounded px-1">
+          <a href={site.socials.website} target="_blank" rel="noopener noreferrer" className="hig-control state-layer rounded-full px-3 py-2 text-primary no-underline">
             {site.socials.website.replace("https://", "")} <IconSymbol name="open_in_new" size={14} />
           </a>
         </div>
@@ -79,7 +79,7 @@ export function ContactSection({ site }: { site: SiteConfig }) {
       <div className="mt-11 text-body-s text-on-surface-variant opacity-70">© 2026 {site.name} · Designed & built end-to-end</div>
 
       {wa ? (
-        <a href={wa} target="_blank" rel="noopener noreferrer" className="state-layer fixed bottom-20 left-4 z-[87] inline-flex items-center gap-2.5 rounded-full bg-success px-4 py-3 text-label-l text-on-success no-underline elevation-3 sm:bottom-5 sm:left-5">
+        <a href={wa} target="_blank" rel="noopener noreferrer" className="hig-control state-layer fixed bottom-20 left-4 z-[87] inline-flex items-center gap-2.5 rounded-full bg-success px-4 py-3 text-label-l text-on-success no-underline sm:bottom-5 sm:left-5">
           <span className="grid h-[22px] w-[22px] place-items-center rounded-full bg-white/20 text-[10px]" style={{ fontFamily: "var(--font-display)", fontWeight: 700 }}>
             WA
           </span>

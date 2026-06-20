@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import { ButtonLink } from "./Button";
 import { IconSymbol } from "./IconSymbol";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
@@ -28,6 +29,7 @@ export function Hero({ site }: { site: SiteConfig }) {
       .from(".hero-pos", { opacity: 0, y: 16, duration: 0.6 }, "-=0.4")
       .from(".hero-cta", { opacity: 0, y: 16, duration: 0.6, stagger: 0.1, ease: "back.out(1.5)" }, "-=0.45")
       .from(".hero-tools", { opacity: 0, y: 16, duration: 0.6 }, "-=0.4")
+      .from(".hero-lens", { opacity: 0, y: 28, scale: 0.96, duration: 0.85, ease: "power3.out" }, "-=0.8")
       .from(".hero-scroll", { opacity: 0, duration: 0.5 }, "-=0.2");
 
     const st = gsap.to(innerRef.current, {
@@ -46,10 +48,29 @@ export function Hero({ site }: { site: SiteConfig }) {
   }, []);
 
   return (
-    <section id="hero" className="relative flex min-h-[100svh] items-center px-5 pb-16 pt-24 sm:pt-28 md:px-14 md:pb-20 md:pt-32">
-      <div ref={innerRef} className="w-full max-w-[1300px] mx-auto">
+    <section id="hero" className="relative flex min-h-[100svh] items-center overflow-hidden px-5 pb-16 pt-28 sm:pt-32 md:px-14 md:pb-20 md:pt-36">
+      <div className="pointer-events-none absolute inset-0 z-0 hidden lg:block" aria-hidden="true">
+        <div className="hero-lens hig-glass absolute right-[6vw] top-[18vh] w-[min(28vw,360px)] rounded-[34px] p-2 opacity-95">
+          <div className="relative aspect-[4/5] overflow-hidden rounded-[28px]">
+            <Image
+              src="/images/about/portrait.jpg"
+              alt=""
+              fill
+              priority
+              sizes="360px"
+              className="object-cover"
+            />
+          </div>
+          <div className="hig-glass absolute -bottom-7 left-7 right-7 rounded-[22px] p-4">
+            <div className="text-label-s text-primary">Interface-minded operator</div>
+            <div className="mt-1 text-body-s text-on-surface-variant">Strategy, systems, campaigns, creative and AI adoption.</div>
+          </div>
+        </div>
+      </div>
+
+      <div ref={innerRef} className="relative z-10 mx-auto w-full max-w-[1300px]">
         <div className="hero-eyebrow mb-5 flex flex-wrap items-center gap-3 md:mb-6">
-          <span className="inline-flex items-center gap-2 text-label-l text-on-surface bg-surface-container border border-outline px-4 py-2 rounded-full elevation-1">
+          <span className="hig-control inline-flex items-center gap-2 rounded-full px-4 py-2 text-label-l text-on-surface">
             <span className="relative w-2.5 h-2.5 inline-block">
               <span className="absolute inset-0 rounded-full bg-success" />
               <span className="absolute inset-0 rounded-full bg-success animate-[pingDot_1.8s_cubic-bezier(0,0,0.2,1)_infinite]" />
@@ -59,7 +80,7 @@ export function Hero({ site }: { site: SiteConfig }) {
           <span className="text-label-m text-on-surface-variant">{site.location}</span>
         </div>
 
-        <h1 className="m-0 text-display-l text-on-surface">
+        <h1 className="m-0 max-w-[900px] text-display-l text-on-surface lg:max-w-[760px] xl:max-w-[860px]">
           {site.name.split(" ").map((word, i) => (
             <span key={i} className="hero-mask block overflow-hidden pb-[0.04em]">
               <span className="hero-inner-line block">
@@ -70,9 +91,9 @@ export function Hero({ site }: { site: SiteConfig }) {
           ))}
         </h1>
 
-        <div className="hero-tag mt-6 flex flex-wrap gap-2 text-label-l md:mt-7 md:gap-2.5">
+        <div className="hero-tag mt-6 flex max-w-[760px] flex-wrap gap-2 text-label-l md:mt-7 md:gap-2.5">
           {site.tags.map((tag) => (
-            <span key={tag} className={`rounded-full px-3 py-1.5 sm:px-4 sm:py-2 ${TAG_TINT[tag] ?? "bg-surface-container text-on-surface"}`}>
+            <span key={tag} className={`hig-control rounded-full px-3 py-1.5 sm:px-4 sm:py-2 ${TAG_TINT[tag] ?? "bg-surface-container text-on-surface"}`}>
               {tag}
             </span>
           ))}
@@ -99,7 +120,7 @@ export function Hero({ site }: { site: SiteConfig }) {
           <span className="text-label-m text-on-surface-variant">Building with</span>
           <div className="flex gap-2.5 flex-wrap text-label-l text-on-surface">
             {site.buildingWith.map((tool) => (
-              <span key={tool} className="px-3 py-1.5 rounded-lg bg-surface-container-high">
+              <span key={tool} className="hig-control rounded-full px-3 py-1.5">
                 {tool}
               </span>
             ))}

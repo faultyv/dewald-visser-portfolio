@@ -82,7 +82,7 @@ export function Pillars() {
         <StaggerGroup className="flex flex-col gap-4.5">
           <StaggerItem>
             <TiltCard>
-              <article className="relative overflow-hidden rounded-[24px] border border-highlight/30 bg-surface-container p-5 elevation-3 md:rounded-[28px] md:p-8">
+              <article className="hig-glass rounded-[24px] p-5 md:rounded-[28px] md:p-8">
                 <div className="absolute right-6 top-1/2 hidden -translate-y-1/2 select-none text-[148px] font-bold leading-none text-highlight/10 sm:block" style={{ fontFamily: "var(--font-display)" }}>
                   AI
                 </div>
@@ -117,7 +117,7 @@ export function Pillars() {
             {core.map((p) => (
               <StaggerItem key={p.n} className="min-w-[78vw] max-w-[78vw] sm:min-w-0 sm:max-w-none">
                 <TiltCard className="h-full">
-                  <article className="relative flex h-full flex-col overflow-hidden rounded-xl border border-outline bg-surface-container p-5 elevation-2 md:min-h-[300px] md:p-6">
+                  <article className="hig-card flex h-full flex-col rounded-[22px] p-5 md:min-h-[300px] md:p-6">
                     <div className={`grid h-13 w-13 place-items-center rounded-2xl ${SEED_BG[p.seed]}`} style={{ width: 52, height: 52 }}>
                       <IconSymbol name={p.icon} size={26} filled className={SEED_ON[p.seed]} />
                     </div>
