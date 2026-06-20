@@ -217,59 +217,70 @@ body {
   padding-inline: 20px;
 }
 
-.surface-band {
-  border-block: 1px solid var(--color-outline-variant);
-  background: var(--hig-band);
-}
+/*
+ * Tailwind v4 puts auto-generated utilities (bg-primary, text-on-primary, etc.) in the
+ * `utilities` layer, which always wins over earlier layers regardless of source order.
+ * These "glass chrome" classes set their own `background`, so they must live in the
+ * `components` layer too — otherwise, as plain unlayered CSS, they'd unconditionally
+ * beat any Tailwind bg-* utility applied to the same element (e.g. a "filled" button
+ * would lose its solid bg-primary to this translucent glass background, while keeping
+ * text-on-primary's contrast-for-a-solid-background color — unreadable in dark mode).
+ */
+@layer components {
+  .surface-band {
+    border-block: 1px solid var(--color-outline-variant);
+    background: var(--hig-band);
+  }
 
-.hig-glass {
-  overflow: hidden;
-  border: 1px solid var(--hig-glass-border);
-  background: var(--hig-glass);
-  box-shadow: var(--hig-shadow);
-  backdrop-filter: blur(28px) saturate(1.38);
-  -webkit-backdrop-filter: blur(28px) saturate(1.38);
-}
+  .hig-glass {
+    overflow: hidden;
+    border: 1px solid var(--hig-glass-border);
+    background: var(--hig-glass);
+    box-shadow: var(--hig-shadow);
+    backdrop-filter: blur(28px) saturate(1.38);
+    -webkit-backdrop-filter: blur(28px) saturate(1.38);
+  }
 
-.hig-glass::before,
-.hig-card::before,
-.hig-control::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: linear-gradient(135deg, var(--hig-specular), transparent 42%);
-  opacity: 0.48;
-  pointer-events: none;
-}
+  .hig-glass::before,
+  .hig-card::before,
+  .hig-control::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(135deg, var(--hig-specular), transparent 42%);
+    opacity: 0.48;
+    pointer-events: none;
+  }
 
-.hig-card {
-  position: relative;
-  overflow: hidden;
-  border: 1px solid var(--hig-hairline);
-  background:
-    linear-gradient(180deg, color-mix(in srgb, var(--color-surface-container) 88%, transparent), color-mix(in srgb, var(--color-surface-container-low) 82%, transparent)),
-    var(--color-surface-container);
-  box-shadow: var(--hig-shadow-soft);
-}
+  .hig-card {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--hig-hairline);
+    background:
+      linear-gradient(180deg, color-mix(in srgb, var(--color-surface-container) 88%, transparent), color-mix(in srgb, var(--color-surface-container-low) 82%, transparent)),
+      var(--color-surface-container);
+    box-shadow: var(--hig-shadow-soft);
+  }
 
-.hig-control {
-  overflow: hidden;
-  border: 1px solid var(--hig-glass-border);
-  background: var(--hig-control-bg);
-  box-shadow: 0 1px 0 var(--hig-specular) inset, 0 10px 24px -20px var(--m3-shadow);
-  backdrop-filter: blur(18px) saturate(1.25);
-  -webkit-backdrop-filter: blur(18px) saturate(1.25);
-  transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease, border-color 0.18s ease;
-}
+  .hig-control {
+    overflow: hidden;
+    border: 1px solid var(--hig-glass-border);
+    background: var(--hig-control-bg);
+    box-shadow: 0 1px 0 var(--hig-specular) inset, 0 10px 24px -20px var(--m3-shadow);
+    backdrop-filter: blur(18px) saturate(1.25);
+    -webkit-backdrop-filter: blur(18px) saturate(1.25);
+    transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease, border-color 0.18s ease;
+  }
 
-.hig-control:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 1px 0 var(--hig-specular) inset, 0 18px 34px -24px var(--m3-shadow);
-}
+  .hig-control:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 1px 0 var(--hig-specular) inset, 0 18px 34px -24px var(--m3-shadow);
+  }
 
-.hig-control:active {
-  transform: translateY(0) scale(0.985);
+  .hig-control:active {
+    transform: translateY(0) scale(0.985);
+  }
 }
 
 .hig-caption {
