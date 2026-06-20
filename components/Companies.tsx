@@ -5,8 +5,8 @@ import type { CompanyEntry } from "@/lib/content";
 
 export function Companies({ companies }: { companies: CompanyEntry[] }) {
   return (
-    <section id="companies" className="relative px-5 md:px-14" style={{ paddingBlock: "clamp(55px,8vh,120px)" }}>
-      <div className="max-w-[1340px] mx-auto rounded-[34px] border border-outline-variant bg-surface-container-low elevation-1 p-6 md:p-12">
+    <section id="companies" className="surface-band section-pad-tight relative">
+      <div className="content-shell-wide">
         <div className="mb-7 flex flex-wrap items-end justify-between gap-6">
           <div>
             <Reveal>
@@ -23,30 +23,30 @@ export function Companies({ companies }: { companies: CompanyEntry[] }) {
           </Reveal>
         </div>
 
-        <StaggerGroup className="grid gap-3" style={{ gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,210px),1fr))" }}>
+        <StaggerGroup className="no-scrollbar -mx-5 grid auto-cols-[152px] grid-flow-col grid-rows-2 gap-2.5 overflow-x-auto px-5 pb-3 [scroll-padding-inline:20px] [scroll-snap-type:x_mandatory] sm:mx-0 sm:grid-flow-row sm:grid-rows-none sm:grid-cols-3 sm:overflow-visible sm:px-0 sm:pb-0 sm:[scroll-snap-type:none] lg:grid-cols-5 lg:gap-3">
           {companies.map((company) => {
             const card = (
-              <article className="relative flex min-h-[190px] flex-col gap-4 overflow-hidden rounded-xl border border-outline bg-surface-container elevation-2 p-4.5 text-on-surface">
+              <article className="relative flex min-h-[162px] flex-col gap-3 overflow-hidden rounded-xl border border-outline bg-surface-container p-3.5 text-on-surface elevation-2 md:min-h-[190px] md:gap-4 md:p-4.5">
                 <div className={`absolute -right-9 -top-9 h-28 w-28 rounded-full opacity-15 ${SEED_BG[company.seed]}`} />
                 <div className="relative z-10 flex items-start justify-between gap-3">
-                  <span className={`grid h-14 w-14 place-items-center rounded-2xl ${SEED_BG[company.seed]} ${SEED_ON[company.seed]} elevation-1 text-label-l`} style={{ fontFamily: "var(--font-display)", fontWeight: 800 }}>
+                  <span className={`grid h-12 w-12 place-items-center rounded-2xl ${SEED_BG[company.seed]} ${SEED_ON[company.seed]} text-label-l elevation-1 md:h-14 md:w-14`} style={{ fontFamily: "var(--font-display)", fontWeight: 800 }}>
                     {company.mark}
                   </span>
                   <span className={`pt-1 text-label-s ${company.url ? SEED_TEXT[company.seed] : "text-on-surface-variant"}`}>{company.url ? "Website" : "Archive"}</span>
                 </div>
                 <div className="relative z-10 mt-auto">
-                  <h3 className="m-0 mb-1.5 text-title-m text-on-surface">{company.name}</h3>
+                  <h3 className="m-0 mb-1.5 text-title-s text-on-surface md:text-title-m">{company.name}</h3>
                   <div className={`mb-1.5 text-label-s ${SEED_TEXT[company.seed]}`}>{[company.period, company.relationship].filter(Boolean).join(" · ")}</div>
-                  <p className="m-0 text-body-s text-on-surface-variant">{company.discipline}</p>
+                  <p className="m-0 overflow-hidden text-body-s text-on-surface-variant [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:2]">{company.discipline}</p>
                 </div>
               </article>
             );
 
             return (
-              <StaggerItem key={company.name}>
+              <StaggerItem key={company.name} className="snap-start">
                 <TiltCard className="h-full">
                   {company.url ? (
-                    <a href={company.url} target="_blank" rel="noopener noreferrer" className="block h-full no-underline">
+                    <a href={company.url} target="_blank" rel="noopener noreferrer" className="block h-full no-underline" aria-label={`Open ${company.name} website`}>
                       {card}
                     </a>
                   ) : (

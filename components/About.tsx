@@ -35,7 +35,7 @@ export function About({ site }: { site: SiteConfig }) {
   }, []);
 
   return (
-    <section id="about" className="relative px-5 md:px-14 max-w-[1300px] mx-auto" style={{ paddingBlock: "clamp(70px,11vh,150px)" }}>
+    <section id="about" className="section-pad content-shell relative">
       <div className="grid gap-10 md:gap-20 items-center" style={{ gridTemplateColumns: "repeat(auto-fit,minmax(280px,1fr))" }}>
         <div>
           <Reveal>
@@ -57,10 +57,10 @@ export function About({ site }: { site: SiteConfig }) {
             <p className="mt-6 max-w-[520px] text-body-l text-on-surface-variant">{site.aboutBody}</p>
           </Reveal>
           <Reveal delay={0.15}>
-            <div className="mt-8 flex gap-9 flex-wrap">
+            <div className="mt-8 grid grid-cols-3 gap-3 sm:flex sm:flex-wrap sm:gap-9">
               {site.stats.map((stat) => (
-                <div key={stat.label}>
-                  <div className="text-display-s text-primary" style={{ fontSize: 40 }}>
+                <div key={stat.label} className="rounded-xl border border-outline-variant bg-surface-container-low p-3 sm:border-0 sm:bg-transparent sm:p-0">
+                  <div className="text-display-s text-primary sm:text-[40px]">
                     {stat.value}
                     {stat.suffix}
                   </div>
@@ -73,7 +73,7 @@ export function About({ site }: { site: SiteConfig }) {
 
         <Reveal dir="scale">
           <div className="relative">
-            <div ref={maskRef} className="relative overflow-hidden rounded-2xl elevation-3" style={{ aspectRatio: "4/5" }}>
+            <div ref={maskRef} className="relative aspect-[4/3] overflow-hidden rounded-[22px] elevation-3 md:aspect-[4/5]">
               <div ref={photoRef} className="absolute -inset-y-[8%] inset-x-0 will-change-transform">
                 <Image
                   src="/images/about/portrait.jpg"
@@ -85,7 +85,7 @@ export function About({ site }: { site: SiteConfig }) {
                 />
               </div>
             </div>
-            <div className="absolute -bottom-4 -left-4 bg-surface-container border border-outline elevation-3 px-5 py-3.5 rounded-2xl text-label-l text-on-surface flex items-center gap-2.5">
+            <div className="absolute bottom-3 left-3 flex items-center gap-2.5 rounded-2xl border border-outline bg-surface-container px-4 py-3 text-label-l text-on-surface elevation-3 md:-bottom-4 md:-left-4 md:px-5 md:py-3.5">
               <span className="w-2.5 h-2.5 rounded-full bg-success inline-block" />
               Durban · KwaZulu-Natal
             </div>

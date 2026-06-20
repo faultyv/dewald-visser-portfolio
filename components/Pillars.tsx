@@ -57,9 +57,9 @@ export function Pillars() {
   const core = PILLARS.slice(0, -1);
 
   return (
-    <section id="pillars" className="relative px-3.5 md:px-10" style={{ paddingBlock: "clamp(40px,6vh,90px)" }}>
-      <div className="max-w-[1340px] mx-auto bg-surface-container-low border border-outline-variant rounded-[34px] elevation-1" style={{ padding: "clamp(44px,5vw,84px) clamp(24px,4vw,64px)" }}>
-        <div className="flex justify-between items-end flex-wrap gap-5 mb-12">
+    <section id="pillars" className="surface-band section-pad-tight relative">
+      <div className="content-shell-wide">
+        <div className="mb-9 flex flex-wrap items-end justify-between gap-5 md:mb-12">
           <div>
             <Reveal>
               <div className="text-label-l text-primary mb-4">Capabilities</div>
@@ -82,11 +82,11 @@ export function Pillars() {
         <StaggerGroup className="flex flex-col gap-4.5">
           <StaggerItem>
             <TiltCard>
-              <article className="relative overflow-hidden rounded-[28px] border border-highlight/30 bg-surface-container elevation-3 p-6 md:p-8">
-                <div className="absolute right-6 top-1/2 -translate-y-1/2 select-none text-[clamp(72px,13vw,148px)] font-bold leading-none text-highlight/10" style={{ fontFamily: "var(--font-display)" }}>
+              <article className="relative overflow-hidden rounded-[24px] border border-highlight/30 bg-surface-container p-5 elevation-3 md:rounded-[28px] md:p-8">
+                <div className="absolute right-6 top-1/2 hidden -translate-y-1/2 select-none text-[148px] font-bold leading-none text-highlight/10 sm:block" style={{ fontFamily: "var(--font-display)" }}>
                   AI
                 </div>
-                <div className="relative z-10 grid gap-8 md:grid-cols-[1fr_1.05fr] md:items-end">
+                <div className="relative z-10 grid gap-6 md:grid-cols-[1fr_1.05fr] md:items-end md:gap-8">
                   <div>
                     <div className="mb-5 flex flex-wrap items-center gap-3">
                       <div className={`grid h-14 w-14 place-items-center rounded-2xl ${SEED_BG[ai.seed]}`}>
@@ -97,12 +97,12 @@ export function Pillars() {
                         <div className="text-label-s text-on-surface-variant">{ai.proof}</div>
                       </div>
                     </div>
-                    <h3 className="m-0 text-display-s text-on-surface">{ai.title}</h3>
+                    <h3 className="m-0 text-headline-l text-on-surface md:text-display-s">{ai.title}</h3>
                     <p className="mt-3 max-w-[620px] text-body-l text-on-surface-variant">{ai.summary}</p>
                   </div>
                   <div className="grid gap-2.5">
                     {ai.items.map((it, idx) => (
-                      <div key={it} className={`flex items-start gap-3 rounded-xl px-3.5 py-3 ${SEED_CONTAINER_BG[ai.seed]} ${SEED_CONTAINER_TEXT[ai.seed]}`}>
+                      <div key={it} className={`flex items-start gap-3 rounded-xl px-3.5 py-2.5 md:py-3 ${SEED_CONTAINER_BG[ai.seed]} ${SEED_CONTAINER_TEXT[ai.seed]}`}>
                         <span className={`grid h-7 w-7 shrink-0 place-items-center rounded-full ${SEED_BG[ai.seed]} ${SEED_ON[ai.seed]} text-label-s`}>{idx + 1}</span>
                         <span className="text-body-s">{it}</span>
                       </div>
@@ -113,17 +113,17 @@ export function Pillars() {
             </TiltCard>
           </StaggerItem>
 
-          <div className="grid gap-4.5" style={{ gridTemplateColumns: "repeat(auto-fit,minmax(250px,1fr))" }}>
+          <div className="mobile-strip no-scrollbar -mx-5 flex gap-3.5 px-5 pb-3 sm:mx-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 sm:pb-0 md:gap-4.5 xl:grid-cols-4">
             {core.map((p) => (
-              <StaggerItem key={p.n}>
+              <StaggerItem key={p.n} className="min-w-[78vw] max-w-[78vw] sm:min-w-0 sm:max-w-none">
                 <TiltCard className="h-full">
-                  <article className="relative h-full overflow-hidden bg-surface-container border border-outline rounded-xl p-6 min-h-[300px] flex flex-col elevation-2">
+                  <article className="relative flex h-full flex-col overflow-hidden rounded-xl border border-outline bg-surface-container p-5 elevation-2 md:min-h-[300px] md:p-6">
                     <div className={`grid h-13 w-13 place-items-center rounded-2xl ${SEED_BG[p.seed]}`} style={{ width: 52, height: 52 }}>
                       <IconSymbol name={p.icon} size={26} filled className={SEED_ON[p.seed]} />
                     </div>
                     <div className={`text-label-m mt-6 mb-2 ${SEED_TEXT[p.seed]}`}>Pillar {p.n}</div>
                     <div className={`mb-3 w-max max-w-full rounded-full px-2.5 py-1 text-label-s ${SEED_CONTAINER_BG[p.seed]} ${SEED_CONTAINER_TEXT[p.seed]}`}>{p.proof}</div>
-                    <h3 className="text-title-l text-on-surface mb-2" style={{ fontSize: 23 }}>
+                    <h3 className="mb-2 text-title-l text-on-surface">
                       {p.title}
                     </h3>
                     <p className="m-0 mb-4 text-body-s text-on-surface-variant">{p.summary}</p>

@@ -7,7 +7,7 @@ import type { CertsData, SiteConfig } from "@/lib/content";
 
 export function Credentials({ certs, site }: { certs: CertsData; site: SiteConfig }) {
   return (
-    <section id="credentials" className="relative px-5 md:px-14 max-w-[1300px] mx-auto" style={{ paddingBlock: "clamp(70px,11vh,150px)" }}>
+    <section id="credentials" className="section-pad content-shell relative">
       <div className="flex justify-between items-end flex-wrap gap-6 mb-10">
         <div>
           <Reveal>
@@ -22,9 +22,9 @@ export function Credentials({ certs, site }: { certs: CertsData; site: SiteConfi
         </Reveal>
       </div>
 
-      <StaggerGroup className="grid gap-4.5" style={{ gridTemplateColumns: "repeat(auto-fit,minmax(260px,1fr))" }}>
+      <StaggerGroup className="mobile-strip no-scrollbar -mx-5 flex gap-3.5 px-5 pb-3 md:mx-0 md:grid md:grid-cols-2 md:gap-4.5 md:overflow-visible md:px-0 md:pb-0">
         {certs.featured.map((cert) => (
-          <StaggerItem key={cert.id}>
+          <StaggerItem key={cert.id} className="min-w-[82vw] max-w-[82vw] md:min-w-0 md:max-w-none">
             <TiltCard>
               <div className="relative overflow-hidden rounded-xl border border-outline bg-surface-container elevation-2">
                 <div className="relative bg-surface-container-high" style={{ aspectRatio: "1.4/1" }}>
@@ -43,9 +43,9 @@ export function Credentials({ certs, site }: { certs: CertsData; site: SiteConfi
       <Reveal delay={0.15}>
         <div className="mt-9 pt-7 border-t border-outline-variant">
           <div className="text-label-m text-on-surface-variant mb-3">Additional certifications</div>
-          <div className="flex flex-wrap gap-x-8 gap-y-2.5">
+          <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
             {certs.additional.map((c) => (
-              <div key={c.title} className="text-body-s text-on-surface-variant inline-flex items-center gap-1.5">
+              <div key={c.title} className="inline-flex items-start gap-1.5 rounded-lg border border-outline-variant bg-surface-container-low px-3 py-2 text-body-s text-on-surface-variant">
                 <IconSymbol name="verified" size={15} className="text-success" />
                 <span className="text-on-surface font-medium">{c.title}</span> — {c.issuer}
               </div>

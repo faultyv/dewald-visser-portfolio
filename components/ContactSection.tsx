@@ -30,9 +30,9 @@ export function ContactSection({ site }: { site: SiteConfig }) {
   ];
 
   return (
-    <section id="contact" className="relative px-5 md:px-14 max-w-[1300px] mx-auto" style={{ paddingBlock: "clamp(80px,13vh,170px) 80px" }}>
+    <section id="contact" className="content-shell relative py-16 md:py-24 xl:py-32">
       <Reveal>
-        <h2 className="m-0 text-on-surface" style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(40px,8.5vw,118px)", lineHeight: 1, letterSpacing: "-0.025em" }}>
+        <h2 className="m-0 text-display-m text-on-surface md:text-display-l">
           Let&apos;s build
           <br />
           something <span className="text-primary">that lasts.</span>
@@ -46,8 +46,8 @@ export function ContactSection({ site }: { site: SiteConfig }) {
             type="button"
             onClick={copy}
             data-cursor-hover
-            className="state-layer text-left bg-transparent border-none p-0 cursor-pointer"
-            style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: "clamp(22px,3vw,34px)", color: copied ? "var(--color-success)" : "var(--color-on-surface)" }}
+            className="state-layer max-w-full cursor-pointer break-all border-none bg-transparent p-0 text-left text-title-l md:text-headline-m"
+            style={{ color: copied ? "var(--color-success)" : "var(--color-on-surface)" }}
           >
             {copied ? "Copied ✓" : site.email}
           </button>
@@ -57,11 +57,11 @@ export function ContactSection({ site }: { site: SiteConfig }) {
           <div className="mt-5 flex flex-wrap gap-2.5">
             {wa ? (
               <ButtonLink href={wa} external variant="filled">
-                WA Chat with me
+                <IconSymbol name="chat" size={18} /> Chat with me
               </ButtonLink>
             ) : null}
             <ButtonLink href={`mailto:${site.email}`} external variant="tonal">
-              Email me
+              <IconSymbol name="mail" size={18} /> Email me
             </ButtonLink>
           </div>
         </div>
@@ -79,7 +79,7 @@ export function ContactSection({ site }: { site: SiteConfig }) {
       <div className="mt-11 text-body-s text-on-surface-variant opacity-70">© 2026 {site.name} · Designed & built end-to-end</div>
 
       {wa ? (
-        <a href={wa} target="_blank" rel="noopener noreferrer" className="fixed bottom-5 left-5 z-[87] inline-flex items-center gap-2.5 rounded-full bg-success px-4 py-3 text-label-l text-on-success no-underline elevation-3 state-layer">
+        <a href={wa} target="_blank" rel="noopener noreferrer" className="state-layer fixed bottom-20 left-4 z-[87] inline-flex items-center gap-2.5 rounded-full bg-success px-4 py-3 text-label-l text-on-success no-underline elevation-3 sm:bottom-5 sm:left-5">
           <span className="grid h-[22px] w-[22px] place-items-center rounded-full bg-white/20 text-[10px]" style={{ fontFamily: "var(--font-display)", fontWeight: 700 }}>
             WA
           </span>

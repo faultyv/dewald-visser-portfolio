@@ -51,7 +51,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           <div className="text-body-m text-on-surface-variant mb-7">
             {project.org} · {project.tools}
           </div>
-          <p className="text-body-l text-on-surface max-w-[680px] mb-7" style={{ fontSize: "clamp(17px,2vw,21px)", lineHeight: 1.55 }}>
+          <p className="mb-7 max-w-[680px] text-body-l text-on-surface md:text-title-l">
             {project.outcome}
           </p>
 

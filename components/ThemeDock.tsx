@@ -31,8 +31,8 @@ export function ThemeDock() {
   }, [setTheme]);
 
   return (
-    <div className="fixed z-[88] bottom-5 right-5 flex items-center gap-3 px-3.5 py-2 rounded-[28px] bg-surface-container-high border border-outline elevation-3">
-      <div className="flex min-w-14 flex-col leading-tight">
+    <div className="fixed bottom-4 right-4 z-[88] flex items-center gap-2 rounded-full border border-outline bg-surface-container-high p-2 elevation-3 sm:bottom-5 sm:right-5 sm:gap-3 sm:rounded-[28px] sm:px-3.5 sm:py-2">
+      <div className="hidden min-w-14 flex-col leading-tight sm:flex">
         <span className="text-label-s text-on-surface-variant">Theme</span>
         <span data-theme-name className="text-title-s text-on-surface">{label[theme]}</span>
       </div>
@@ -48,7 +48,7 @@ export function ThemeDock() {
               aria-pressed={on}
               onClick={() => setTheme(item.key)}
               onPointerDown={() => setTheme(item.key)}
-              className={`state-layer grid h-[38px] w-[38px] place-items-center rounded-full border transition-colors ${
+              className={`state-layer grid h-10 w-10 place-items-center rounded-full border transition-colors ${
                 on ? "border-primary bg-primary text-on-primary elevation-1" : "border-transparent bg-transparent text-on-surface-variant"
               }`}
             >

@@ -33,11 +33,21 @@ function toolMark(tool: string) {
 
 function RoleEvidence({ proof, seed }: { proof: ProofItem[]; seed: SeedName }) {
   const [index, setIndex] = useState(0);
-  const canCycle = proof.length > 2;
+  const [visibleCount, setVisibleCount] = useState(2);
+  const count = Math.min(visibleCount, proof.length);
+  const canCycle = proof.length > count;
   const visible = useMemo(() => {
     if (!canCycle) return proof;
-    return [proof[index], proof[(index + 1) % proof.length]];
-  }, [canCycle, index, proof]);
+    return Array.from({ length: count }, (_, offset) => proof[(index + offset) % proof.length]);
+  }, [canCycle, count, index, proof]);
+
+  useEffect(() => {
+    const media = window.matchMedia("(max-width: 767px)");
+    const update = () => setVisibleCount(media.matches ? 1 : 2);
+    update();
+    media.addEventListener("change", update);
+    return () => media.removeEventListener("change", update);
+  }, []);
 
   useEffect(() => {
     if (!canCycle) return;
@@ -68,7 +78,7 @@ function RoleEvidence({ proof, seed }: { proof: ProofItem[]; seed: SeedName }) {
           ) : null}
         </div>
       </div>
-      <div className="grid min-h-[124px] gap-0 transition-all">
+      <div className="grid min-h-[92px] gap-0 transition-all md:min-h-[124px]">
         {visible.map((item, i) => (
           <div key={`${item.type}-${item.title}-${i}`} className={`grid gap-3 py-2.5 sm:grid-cols-[86px_minmax(0,1fr)] ${i === visible.length - 1 ? "" : "border-b border-outline-variant"}`}>
             <span className={`w-max rounded-full px-2.5 py-1 text-label-s ${SEED_CONTAINER_BG[seed]} ${SEED_CONTAINER_TEXT[seed]}`}>{item.type}</span>
@@ -115,9 +125,9 @@ export function Career({ cv }: { cv: CVEntry[] }) {
   }, []);
 
   return (
-    <section id="cv" className="relative px-5 md:px-14" style={{ paddingBlock: "clamp(70px,11vh,150px)" }}>
-      <div className="max-w-[1100px] mx-auto">
-        <div className="mb-12">
+    <section id="cv" className="section-pad relative">
+      <div className="mx-auto w-full max-w-[1120px] px-5 md:px-14">
+        <div className="mb-8 md:mb-12">
           <Reveal>
             <div className="text-label-l text-tertiary mb-4">Experience</div>
           </Reveal>
@@ -126,19 +136,19 @@ export function Career({ cv }: { cv: CVEntry[] }) {
           </Reveal>
         </div>
 
-        <div className="relative" style={{ paddingLeft: "clamp(30px,5vw,64px)" }}>
-          <div className="absolute top-1.5 bottom-1.5 w-[3px] rounded-sm bg-outline" style={{ left: "clamp(8px,2vw,24px)" }}>
+        <div className="relative md:pl-[clamp(30px,5vw,64px)] xl:pl-0">
+          <div className="absolute bottom-1.5 top-1.5 hidden w-[3px] rounded-sm bg-outline md:block xl:hidden" style={{ left: "clamp(8px,2vw,24px)" }}>
             <div ref={progressRef} className="absolute left-0 top-0 w-full h-0 rounded-sm" style={{ background: "linear-gradient(var(--color-primary),var(--color-secondary) 50%,var(--color-tertiary))" }} />
           </div>
-          <div ref={listRef} className="flex flex-col gap-5">
+          <div ref={listRef} className="career-list mobile-strip no-scrollbar -mx-5 gap-3.5 px-5 pb-3 md:mx-0 md:gap-5 md:overflow-visible md:px-0 md:pb-0">
             {cv.map((entry, i) => {
               const seed = tagSeed(entry.tags[0]);
               const brandSeed = entry.brandColor ?? seed;
               return (
-                <Reveal key={`${entry.org}-${entry.date}`} dir="up" className={i % 2 ? "lg:ml-14" : ""}>
-                  <article className="relative overflow-hidden bg-surface-container border border-outline rounded-xl elevation-2" style={{ padding: "24px clamp(22px,3vw,32px)" }}>
+                <Reveal key={`${entry.org}-${entry.date}`} dir="up" className={`min-w-[86vw] max-w-[86vw] md:min-w-0 md:max-w-none ${i % 2 ? "lg:ml-14 xl:ml-0" : ""}`}>
+                  <article className="relative h-full overflow-hidden rounded-xl border border-outline bg-surface-container p-5 elevation-2 md:p-6 xl:p-7">
                     <div
-                      className={`absolute top-7 w-3.5 h-3.5 rounded-full border-[3px] border-surface ${SEED_BG[seed]}`}
+                      className={`absolute top-7 hidden h-3.5 w-3.5 rounded-full border-[3px] border-surface md:block xl:hidden ${SEED_BG[seed]}`}
                       style={{ left: "calc(-1 * clamp(30px,5vw,64px) + clamp(8px,2vw,24px) - 6px)" }}
                     />
                     <div className="flex items-start justify-between gap-4">
@@ -159,7 +169,7 @@ export function Career({ cv }: { cv: CVEntry[] }) {
                         {entry.brandMark ?? entry.org.slice(0, 2).toUpperCase()}
                       </div>
                     </div>
-                    <h3 className="text-title-l text-on-surface mt-3 mb-0.5" style={{ fontSize: "clamp(20px,2.6vw,27px)" }}>
+                    <h3 className="mt-3 mb-0.5 text-title-l text-on-surface md:text-headline-s">
                       {entry.role}
                     </h3>
                     <div className={`text-body-m font-semibold mb-2.5 ${SEED_TEXT[seed]}`}>{entry.org}</div>
@@ -168,9 +178,9 @@ export function Career({ cv }: { cv: CVEntry[] }) {
                     {entry.proof ? <RoleEvidence proof={entry.proof} seed={seed} /> : null}
 
                     {entry.software?.length ? (
-                      <div className="mt-4 flex flex-wrap items-start gap-2.5 border-t border-outline-variant pt-3.5">
-                        <span className="min-w-16 pt-1.5 text-label-s text-on-surface-variant">Stack</span>
-                        <div className="flex flex-1 flex-wrap gap-2">
+                      <div className="mt-4 flex items-start gap-2.5 overflow-hidden border-t border-outline-variant pt-3.5">
+                        <span className="min-w-12 pt-1.5 text-label-s text-on-surface-variant md:min-w-16">Stack</span>
+                        <div className="no-scrollbar flex flex-1 flex-nowrap gap-2 overflow-x-auto pb-1 md:flex-wrap md:overflow-visible md:pb-0">
                           {entry.software.map((tool) => (
                             <span key={tool} className="inline-flex min-h-8 max-w-full items-center gap-2 rounded-full border border-outline bg-surface-container-high px-2.5 py-1 text-label-m text-on-surface">
                               <span className={`grid h-[22px] w-[22px] shrink-0 place-items-center rounded-full ${SEED_BG[seed]} ${SEED_ON[seed]} text-[8px]`}>{toolMark(tool)}</span>

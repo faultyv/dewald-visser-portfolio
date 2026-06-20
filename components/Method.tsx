@@ -5,7 +5,7 @@ import type { MethodStep } from "@/lib/content";
 
 export function Method({ steps }: { steps: MethodStep[] }) {
   return (
-    <section id="method" className="relative max-w-[1300px] mx-auto px-5 md:px-14" style={{ paddingBlock: "clamp(60px,9vh,120px)" }}>
+    <section id="method" className="section-pad-tight content-shell relative">
       <div className="grid gap-8 lg:grid-cols-[0.88fr_1.12fr] lg:items-start">
         <div>
           <Reveal>
@@ -25,12 +25,12 @@ export function Method({ steps }: { steps: MethodStep[] }) {
           </Reveal>
         </div>
 
-        <StaggerGroup className="grid gap-3.5 sm:grid-cols-2">
+        <StaggerGroup className="grid gap-3 sm:grid-cols-2 md:gap-3.5">
           {steps.map((step, i) => (
             <StaggerItem key={step.title}>
-              <article className="relative min-h-[188px] overflow-hidden rounded-xl border border-outline bg-surface-container elevation-2 p-5">
+              <article className="relative min-h-[156px] overflow-hidden rounded-xl border border-outline bg-surface-container p-4.5 elevation-2 md:min-h-[188px] md:p-5">
                 <div className={`absolute -right-7 -top-7 h-28 w-28 rounded-full opacity-15 ${SEED_BG[step.seed]}`} />
-                <div className="relative z-10 mb-7 flex items-start justify-between gap-3">
+                <div className="relative z-10 mb-5 flex items-start justify-between gap-3 md:mb-7">
                   <div>
                     <div className={`text-label-s ${SEED_TEXT[step.seed]}`}>{step.kicker}</div>
                     <h3 className="mt-1 text-title-l text-on-surface">{step.title}</h3>

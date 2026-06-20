@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { ButtonLink } from "./Button";
+import { IconSymbol } from "./IconSymbol";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
 import type { SiteConfig } from "@/lib/content";
 
@@ -45,9 +46,9 @@ export function Hero({ site }: { site: SiteConfig }) {
   }, []);
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center px-5 md:px-14 pt-32 pb-20">
+    <section id="hero" className="relative flex min-h-[100svh] items-center px-5 pb-16 pt-24 sm:pt-28 md:px-14 md:pb-20 md:pt-32">
       <div ref={innerRef} className="w-full max-w-[1300px] mx-auto">
-        <div className="hero-eyebrow mb-6 flex gap-3 items-center flex-wrap">
+        <div className="hero-eyebrow mb-5 flex flex-wrap items-center gap-3 md:mb-6">
           <span className="inline-flex items-center gap-2 text-label-l text-on-surface bg-surface-container border border-outline px-4 py-2 rounded-full elevation-1">
             <span className="relative w-2.5 h-2.5 inline-block">
               <span className="absolute inset-0 rounded-full bg-success" />
@@ -69,32 +70,32 @@ export function Hero({ site }: { site: SiteConfig }) {
           ))}
         </h1>
 
-        <div className="hero-tag mt-7 flex gap-2.5 flex-wrap text-label-l">
+        <div className="hero-tag mt-6 flex flex-wrap gap-2 text-label-l md:mt-7 md:gap-2.5">
           {site.tags.map((tag) => (
-            <span key={tag} className={`px-4 py-2 rounded-full ${TAG_TINT[tag] ?? "bg-surface-container text-on-surface"}`}>
+            <span key={tag} className={`rounded-full px-3 py-1.5 sm:px-4 sm:py-2 ${TAG_TINT[tag] ?? "bg-surface-container text-on-surface"}`}>
               {tag}
             </span>
           ))}
         </div>
 
-        <p className="hero-pos mt-8 max-w-[600px] text-body-l text-on-surface-variant" style={{ fontSize: "clamp(18px,2.1vw,23px)" }}>
+        <p className="hero-pos mt-7 max-w-[620px] text-body-l text-on-surface-variant md:mt-8 md:text-title-l">
           {site.heroPosition}
         </p>
 
-        <div className="mt-10 flex gap-3.5 flex-wrap">
+        <div className="mt-8 flex flex-wrap gap-3 md:mt-10 md:gap-3.5">
           <span className="hero-cta">
             <ButtonLink href="/work" variant="filled" magnetic>
-              View work
+              View work <IconSymbol name="arrow_forward" size={18} />
             </ButtonLink>
           </span>
           <span className="hero-cta">
             <ButtonLink href={site.socials.linkedin} variant="outlined" external magnetic>
-              LinkedIn ↗
+              LinkedIn <IconSymbol name="open_in_new" size={17} />
             </ButtonLink>
           </span>
         </div>
 
-        <div className="hero-tools mt-12 flex items-center gap-4.5 flex-wrap">
+        <div className="hero-tools mt-8 flex flex-wrap items-center gap-3 md:mt-12 md:gap-4.5">
           <span className="text-label-m text-on-surface-variant">Building with</span>
           <div className="flex gap-2.5 flex-wrap text-label-l text-on-surface">
             {site.buildingWith.map((tool) => (
@@ -106,7 +107,7 @@ export function Hero({ site }: { site: SiteConfig }) {
         </div>
       </div>
 
-      <div className="hero-scroll absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2.5 text-label-m text-on-surface-variant">
+      <div className="hero-scroll absolute bottom-8 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2.5 text-label-m text-on-surface-variant sm:flex">
         Scroll
         <span className="w-0.5 h-8 rounded-sm animate-[scrollPulse_1.8s_ease-in-out_infinite]" style={{ background: "linear-gradient(var(--color-primary),transparent)" }} />
       </div>

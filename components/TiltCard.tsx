@@ -1,12 +1,29 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { gsap } from "@/lib/gsap";
 
 export function TiltCard({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
+  const canTiltRef = useRef(false);
+
+  useEffect(() => {
+    const coarse = window.matchMedia("(pointer: coarse)");
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const update = () => {
+      canTiltRef.current = !coarse.matches && !reduced.matches;
+    };
+    update();
+    coarse.addEventListener("change", update);
+    reduced.addEventListener("change", update);
+    return () => {
+      coarse.removeEventListener("change", update);
+      reduced.removeEventListener("change", update);
+    };
+  }, []);
 
   const onMove = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (!canTiltRef.current) return;
     const card = ref.current;
     if (!card) return;
     const r = card.getBoundingClientRect();
@@ -15,9 +32,11 @@ export function TiltCard({ children, className = "" }: { children: React.ReactNo
     gsap.to(card, { rotateX: rx, rotateY: ry, transformPerspective: 900, duration: 0.4, ease: "power2.out" });
   };
   const onEnter = () => {
+    if (!canTiltRef.current) return;
     gsap.to(ref.current, { y: -8, duration: 0.35, ease: "power2.out", boxShadow: "0 24px 50px -20px var(--m3-shadow)" });
   };
   const onLeave = () => {
+    if (!canTiltRef.current) return;
     gsap.to(ref.current, { rotateX: 0, rotateY: 0, y: 0, duration: 0.5, ease: "power3.out", boxShadow: "0 4px 16px -4px var(--m3-shadow)" });
   };
 

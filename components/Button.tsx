@@ -40,7 +40,7 @@ function useMagnetic(enabled: boolean | undefined) {
 }
 
 const base =
-  "ripple-container state-layer inline-flex items-center justify-center gap-2 rounded-full text-label-l px-6 py-3.5 cursor-pointer transition-shadow will-change-transform select-none";
+  "ripple-container state-layer inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-5 py-3 text-label-l cursor-pointer transition-shadow will-change-transform select-none sm:px-6 sm:py-3.5";
 
 export function Button({
   variant = "filled",

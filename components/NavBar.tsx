@@ -14,19 +14,20 @@ const LINKS = [
   { href: "/#companies", label: "Companies" },
   { href: "/work", label: "Work" },
   { href: "/#credentials", label: "Certs" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 export function NavBar({ name = "Dewald Visser" }: { name?: string }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-[80] flex items-center justify-between px-5 md:px-10 py-4 backdrop-blur-md bg-surface/70 border-b border-outline-variant/60">
-      <Link href="/#hero" className="flex items-center gap-2.5 no-underline text-title-l text-on-surface">
+    <nav className="fixed top-0 left-0 right-0 z-[80] flex items-center justify-between px-4 py-3 backdrop-blur-md bg-surface/75 border-b border-outline-variant/60 sm:px-5 xl:px-10 xl:py-4">
+      <Link href="/#hero" className="flex min-w-0 items-center gap-2.5 no-underline text-title-m text-on-surface sm:text-title-l">
         <span className="w-2.5 h-2.5 rounded-full bg-primary inline-block" />
-        {name}
+        <span className="truncate">{name}</span>
       </Link>
 
-      <div className="hidden md:flex items-center gap-7 text-label-l">
+      <div className="hidden xl:flex items-center gap-6 text-label-l">
         {LINKS.map((l) => (
           <Link key={l.href} href={l.href} className="text-on-surface-variant no-underline hover:text-on-surface transition-colors">
             {l.label}
@@ -46,7 +47,7 @@ export function NavBar({ name = "Dewald Visser" }: { name?: string }) {
         type="button"
         aria-label="Toggle menu"
         onClick={() => setOpen((v) => !v)}
-        className="md:hidden state-layer rounded-full p-2 text-on-surface"
+        className="state-layer grid h-11 w-11 place-items-center rounded-full text-on-surface xl:hidden"
       >
         <IconSymbol name={open ? "close" : "menu"} size={26} />
       </button>
@@ -58,7 +59,7 @@ export function NavBar({ name = "Dewald Visser" }: { name?: string }) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
             transition={fmTransition.standard}
-            className="absolute top-full left-0 right-0 md:hidden bg-surface-container border-b border-outline-variant flex flex-col p-5 gap-1"
+            className="absolute top-full left-0 right-0 flex flex-col gap-1 rounded-b-[28px] border-b border-outline-variant bg-surface-container p-4 elevation-3 xl:hidden"
           >
             {LINKS.map((l) => (
               <Link

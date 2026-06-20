@@ -11,7 +11,7 @@ export function WorkTeaser({ projects }: { projects: Project[] }) {
   const featured = projects.slice(0, 3);
 
   return (
-    <section id="work" className="relative px-5 md:px-14 max-w-[1300px] mx-auto" style={{ paddingBlock: "clamp(70px,11vh,150px)" }}>
+    <section id="work" className="section-pad content-shell relative">
       <div className="flex justify-between items-end flex-wrap gap-6 mb-9">
         <div>
           <Reveal>
@@ -28,9 +28,9 @@ export function WorkTeaser({ projects }: { projects: Project[] }) {
         </Reveal>
       </div>
 
-      <StaggerGroup className="grid gap-4.5" style={{ gridTemplateColumns: "repeat(auto-fill,minmax(300px,1fr))" }}>
+      <StaggerGroup className="mobile-strip no-scrollbar -mx-5 flex gap-3.5 px-5 pb-3 md:mx-0 md:grid md:grid-cols-2 md:gap-4.5 md:overflow-visible md:px-0 md:pb-0 xl:grid-cols-3">
         {featured.map((project) => (
-          <StaggerItem key={project.slug}>
+          <StaggerItem key={project.slug} className="min-w-[82vw] max-w-[82vw] md:min-w-0 md:max-w-none">
             <TiltCard>
               <Link href={`/work/${project.slug}`} className="block no-underline group">
                 <div className="relative overflow-hidden rounded-xl border border-outline bg-surface-container elevation-2">
