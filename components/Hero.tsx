@@ -62,8 +62,8 @@ export function Hero({ site }: { site: SiteConfig }) {
             />
           </div>
           <div className="hig-glass absolute -bottom-7 left-7 right-7 rounded-[22px] p-4">
-            <div className="text-label-s text-primary">Interface-minded operator</div>
-            <div className="mt-1 text-body-s text-on-surface-variant">Strategy, systems, campaigns, creative and AI adoption.</div>
+            <div className="text-label-s text-primary">Strategy-minded maker</div>
+            <div className="mt-1 text-body-s text-on-surface-variant">Campaigns, design, web systems and practical AI adoption.</div>
           </div>
         </div>
       </div>

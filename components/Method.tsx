@@ -13,14 +13,14 @@ export function Method({ steps }: { steps: MethodStep[] }) {
           </Reveal>
           <Reveal delay={0.05}>
             <h2 className="text-headline-l text-on-surface">
-              Not just output.
+              From brief
               <br />
-              Working systems.
+              to working system.
             </h2>
           </Reveal>
           <Reveal delay={0.1}>
             <p className="mt-5 max-w-[460px] text-body-m text-on-surface-variant">
-              A portfolio should show how a person thinks. This system makes the thinking visible: diagnose the business need, design the language, deploy the system, then learn from the result.
+              The process starts with the business problem, then turns strategy into language, assets, interfaces and workflows the team can actually use.
             </p>
           </Reveal>
         </div>

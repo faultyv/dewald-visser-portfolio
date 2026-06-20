@@ -17,9 +17,9 @@ const figtree = Figtree({
 });
 
 export const metadata: Metadata = {
-  title: "Dewald Visser — Founder, Marketer, Designer, Builder",
+  title: "Dewald Visser - Founder, Growth Marketer, Designer, Systems Builder",
   description:
-    "Multidisciplinary founder and creative — building brands, running the marketing that grows them, and shipping the web experiences that carry them.",
+    "Founder-operator across brand, growth marketing, web systems and practical AI enablement.",
 };
 
 const THEME_INIT_SCRIPT = `

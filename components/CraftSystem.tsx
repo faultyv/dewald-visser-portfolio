@@ -7,35 +7,35 @@ import type { SeedName } from "@/lib/m3-theme";
 const PRINCIPLES: { title: string; body: string; seed: SeedName; icon: string; signal: string }[] = [
   {
     title: "Clarity",
-    body: "Large readable hierarchy, fewer competing surfaces, and controls that explain themselves through placement and state.",
+    body: "Readable hierarchy, fewer competing surfaces, and controls that make the next action obvious.",
     seed: "primary",
     icon: "visibility",
     signal: "Legible",
   },
   {
     title: "Deference",
-    body: "The interface recedes so the work, career evidence, and project media can carry the page.",
+    body: "The interface stays quiet so the career evidence, project media and proof points can carry the page.",
     seed: "secondary",
     icon: "layers",
     signal: "Content first",
   },
   {
     title: "Depth",
-    body: "Glass, hairlines, shadows, and parallax create a sense of place without heavy decoration.",
+    body: "Glass, hairlines, shadow and motion create a sense of place without heavy decoration.",
     seed: "highlight",
     icon: "blur_on",
     signal: "Layered",
   },
   {
     title: "Continuity",
-    body: "Swipe strips, active navigation, and purposeful motion keep the experience understandable across screen sizes.",
+    body: "Swipe strips, active navigation and purposeful motion keep the experience understandable from desktop to phone.",
     seed: "success",
     icon: "sync_alt",
     signal: "Adaptive",
   },
 ];
 
-const TOKENS = ["Glass material", "Hairline borders", "Touch-first strips", "Reduced-motion safe", "Light / dark", "Active context"];
+const TOKENS = ["Glass material", "Hairline borders", "Touch-first strips", "Reduced-motion safe", "Light / dark", "Context cues"];
 
 export function CraftSystem() {
   return (
@@ -43,18 +43,18 @@ export function CraftSystem() {
       <div className="grid gap-8 lg:grid-cols-[0.86fr_1.14fr] lg:items-start">
         <div>
           <Reveal>
-            <div className="text-label-l text-primary mb-4">Interface craft</div>
+            <div className="text-label-l text-primary mb-4">Design system</div>
           </Reveal>
           <Reveal delay={0.05}>
             <h2 className="text-headline-l text-on-surface">
-              A portfolio system,
+              The site is
               <br />
-              tuned to the details.
+              part of the proof.
             </h2>
           </Reveal>
           <Reveal delay={0.1}>
             <p className="mt-5 max-w-[470px] text-body-m text-on-surface-variant">
-              Inspired by platform-level design principles: clear hierarchy, quiet controls, layered materials, and continuity from desktop to phone.
+              Built as a product surface: clear hierarchy, quiet controls, layered material and responsive proof blocks that make the work easier to judge.
             </p>
           </Reveal>
           <Reveal delay={0.15}>

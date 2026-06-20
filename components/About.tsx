@@ -39,18 +39,13 @@ export function About({ site }: { site: SiteConfig }) {
       <div className="grid gap-10 md:gap-20 items-center" style={{ gridTemplateColumns: "repeat(auto-fit,minmax(280px,1fr))" }}>
         <div>
           <Reveal>
-            <div className="text-label-l text-secondary mb-5">Founder & Creative</div>
+            <div className="text-label-l text-secondary mb-5">Founder, Creative and Systems</div>
           </Reveal>
           <Reveal delay={0.05}>
             <h2 className="text-headline-l text-on-surface">
-              {site.aboutHeadline.split("marketing").length > 1 ? (
-                <>
-                  A multidisciplinary founder who builds brands, runs the <span className="text-primary">marketing</span> that grows
-                  them, and ships the <span className="text-success">web experiences</span> that carry them.
-                </>
-              ) : (
-                site.aboutHeadline
-              )}
+              A founder-operator across <span className="text-secondary">brand</span>, <span className="text-primary">marketing</span>,{" "}
+              <span className="text-success">web systems</span> and <span className="text-highlight">AI enablement</span> - built
+              for teams that need the thinking and the making in one place.
             </h2>
           </Reveal>
           <Reveal delay={0.1}>

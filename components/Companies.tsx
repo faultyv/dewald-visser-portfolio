@@ -13,12 +13,12 @@ export function Companies({ companies }: { companies: CompanyEntry[] }) {
               <div className="text-label-l text-success mb-3.5">Companies & collaborators</div>
             </Reveal>
             <Reveal delay={0.05}>
-              <h2 className="text-headline-l text-on-surface">Where the work has lived.</h2>
+              <h2 className="text-headline-l text-on-surface">The brand map.</h2>
             </Reveal>
           </div>
           <Reveal delay={0.1}>
             <p className="m-0 max-w-[430px] text-body-m text-on-surface-variant">
-              A linked brand map of companies, ventures and organisations connected to the career timeline. Logos are intentionally flattened into the site system so they support the design rather than fight it.
+              Companies, ventures and organisations connected to the career timeline. Each mark is flattened into the site system so the logos add context without breaking the design language.
             </p>
           </Reveal>
           <Reveal delay={0.15}>

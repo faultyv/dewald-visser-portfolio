@@ -4,7 +4,7 @@
     "mark": "CL",
     "seed": "primary",
     "relationship": "Founder / Director",
-    "discipline": "Brand, platform and operating systems",
+    "discipline": "Brand, platform, content and operating systems",
     "period": "Present",
     "url": ""
   },
@@ -13,7 +13,7 @@
     "mark": "MT",
     "seed": "tertiary",
     "relationship": "Graphic Design Specialist",
-    "discipline": "Print, brand and digital creative",
+    "discipline": "Print, brand, social and motion creative",
     "period": "Present",
     "url": "https://mediatrade.co.za/"
   },
@@ -22,7 +22,7 @@
     "mark": "JBS",
     "seed": "success",
     "relationship": "Multimedia Specialist",
-    "discipline": "Campaigns, web systems and learning content",
+    "discipline": "Campaigns, web systems, learning and multimedia content",
     "period": "Present",
     "url": "https://jbsa.org.za/"
   },
@@ -57,8 +57,8 @@
     "name": "Contours Design Studio",
     "mark": "CDS",
     "seed": "warning",
-    "relationship": "Design & Sales",
-    "discipline": "Shopify, products, installations and reporting",
+    "relationship": "Design and Sales",
+    "discipline": "Shopify, product design, installations and reporting",
     "period": "2020",
     "url": "https://contoursdesignstudio.co.za/"
   },
@@ -67,7 +67,7 @@
     "mark": "ED",
     "seed": "secondary",
     "relationship": "Programme Advisor",
-    "discipline": "Campaign creative, sales and analytics",
+    "discipline": "Campaign creative, admissions, analytics and AI readiness",
     "period": "2016-2019",
     "url": "https://educor.co.za/"
   },
@@ -75,7 +75,7 @@
     "name": "The Unlimited",
     "mark": "TU",
     "seed": "warning",
-    "relationship": "Sales & Lead Generation",
+    "relationship": "Sales and Lead Generation",
     "discipline": "Sales foundation and lead generation",
     "period": "2014-2016",
     "url": "https://theunlimited.co.za/"
@@ -84,8 +84,8 @@
     "name": "Old Mutual",
     "mark": "OM",
     "seed": "success",
-    "relationship": "Sales & Lead Generation",
-    "discipline": "Financial services exposure",
+    "relationship": "Sales and Lead Generation",
+    "discipline": "Sales, advisory context and self-taught web foundations",
     "period": "2014-2016",
     "url": "https://www.oldmutual.co.za/"
   }

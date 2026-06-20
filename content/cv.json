@@ -6,18 +6,18 @@
     "brandMark": "CL",
     "brandColor": "primary",
     "tags": ["Founder"],
-    "detail": "Own the venture end-to-end — brand, platform and the systems that run it. Local-business focus, built and led from the ground up.",
+    "detail": "Own the venture end-to-end - brand, platform, content and the operating systems behind it. Built for local businesses and led from the ground up.",
     "software": ["WordPress", "SEO", "Google Ads", "CRM", "Canva"],
     "proof": [
       {
         "type": "Platform",
         "title": "Local-business system",
-        "detail": "Built and shaped the brand, website structure and operating flow behind the clicklocal.co.za platform."
+        "detail": "Built the brand direction, website structure and operating flow behind the clicklocal.co.za platform."
       },
       {
         "type": "Founder",
         "title": "End-to-end ownership",
-        "detail": "Owns positioning, content, systems and business direction rather than only one narrow delivery lane."
+        "detail": "Own positioning, content, systems and business direction rather than one narrow delivery lane."
       }
     ]
   },
@@ -28,7 +28,7 @@
     "brandMark": "MT",
     "brandColor": "tertiary",
     "tags": ["Design"],
-    "detail": "Brand and creative production across print and digital — identity, social creative and motion graphics through the full Adobe suite.",
+    "detail": "Brand and creative production across print and digital - identity, social creative and motion graphics through the full Adobe suite.",
     "software": ["Photoshop", "Illustrator", "InDesign", "After Effects", "Canva"],
     "proof": [
       {
@@ -50,22 +50,22 @@
     "brandMark": "JBS",
     "brandColor": "success",
     "tags": ["Design", "Web", "Marketing"],
-    "detail": "Multimedia, design, campaign and web delivery across multiple disciplines — from visual content and learning material to the systems that present and support it.",
+    "detail": "Multimedia, design, campaign and web delivery across multiple disciplines - from visual content and learning material to the systems that present, promote and support it.",
     "software": ["Photoshop", "Illustrator", "InDesign", "After Effects", "WordPress", "Elementor", "Mailchimp", "Meta Ads", "Google Workspace", "CRM"],
     "proof": [
       {
         "type": "Campaigns",
-        "title": "Multi-channel campaign work",
-        "detail": "Worked across social, email, web and internal communication campaigns, connecting design assets with delivery channels."
+        "title": "Campaigns across channels",
+        "detail": "Worked across social, email, web and internal communication campaigns, connecting design assets with delivery channels and audience context."
       },
       {
         "type": "Systems",
         "title": "Web and workflow systems",
-        "detail": "Built and supported digital systems that helped present programmes, content and operational information more clearly."
+        "detail": "Built and supported digital systems that made programmes, content and operational information easier to present and maintain."
       },
       {
         "type": "Multimedia",
-        "title": "Learning + brand content",
+        "title": "Learning and brand content",
         "detail": "Produced visual, motion and web assets for different audiences while keeping the brand language consistent."
       }
     ]
@@ -77,7 +77,7 @@
     "brandMark": "KCH",
     "brandColor": "primary",
     "tags": ["Marketing", "Web", "Design"],
-    "detail": "Drove organic + sponsored search, social and email marketing that increased car rentals. Created animated video & image adverts and built a WordPress appointment system tracking clients, payments, fines and maintenance — with budgeted email campaigns.",
+    "detail": "Drove organic and sponsored search, social and email marketing that increased car rentals. Created animated video and image adverts, then built a WordPress appointment system for clients, payments, fines and maintenance.",
     "software": ["WordPress", "Google Ads", "Meta Ads", "Mailchimp", "After Effects", "Photoshop", "CRM", "SEO"],
     "proof": [
       {
@@ -104,7 +104,7 @@
     "brandMark": "AD",
     "brandColor": "success",
     "tags": ["Web", "Design"],
-    "detail": "Built an online store, wrote the copy and sourced suppliers; redesigned the company logo in Illustrator & InDesign.",
+    "detail": "Built an online store, wrote the copy and sourced suppliers; redesigned the company logo in Illustrator and InDesign.",
     "software": ["WordPress", "Photoshop", "Illustrator", "InDesign", "SEO"],
     "proof": [
       {
@@ -138,12 +138,12 @@
   },
   {
     "date": "2020",
-    "role": "Design & Sales",
+    "role": "Design and Sales",
     "org": "Contours Design Studio · Faux Flora",
     "brandMark": "FF",
     "brandColor": "warning",
     "tags": ["Founder", "Web", "Design"],
-    "detail": "Bespoke design & installation. Built a Shopify store + drop-ship model during hard lockdown to protect cash flow and jobs — product design and reporting included.",
+    "detail": "Bespoke design and installation. Built a Shopify store and drop-ship model during hard lockdown to protect cash flow and jobs - product design and reporting included.",
     "software": ["Shopify", "Photoshop", "Illustrator", "SketchUp", "Canva", "Sage Pastel"],
     "proof": [
       {
@@ -165,7 +165,7 @@
     "brandMark": "ED",
     "brandColor": "secondary",
     "tags": ["Marketing", "Design", "AI"],
-    "detail": "Designed templates, booklets, animated video adverts and email campaign creative; advising, sales and data analytics. Started on the launch team for Educor's online brands, then moved onto LCIBS and early AI-readiness work.",
+    "detail": "Designed templates, booklets, animated video adverts and email campaign creative while working close to advising, sales and data analytics. Started on the launch team for Educor's online brands, then moved onto LCIBS and early AI-readiness work.",
     "software": ["InDesign", "After Effects", "Photoshop", "Mailchimp", "CRM", "Canva"],
     "proof": [
       {
@@ -176,23 +176,23 @@
       {
         "type": "AI readiness",
         "title": "LCIBS early AI adoption",
-        "detail": "Worked under a former Apple executive on how education and industry could prepare teams for AI change."
+        "detail": "Worked under a former Apple executive on AI-readiness thinking for education, industry change and practical training programmes."
       },
       {
         "type": "Admissions",
         "title": "International brand context",
-        "detail": "Supported the group's first international brand while pairing creative work with advising, sales context and data analysis."
+        "detail": "Supported the group's first international brand while pairing creative work with admissions, sales context and data analysis."
       }
     ]
   },
   {
     "date": "2014-2016",
-    "role": "Sales & Lead Generation",
+    "role": "Sales and Lead Generation",
     "org": "The Unlimited · Old Mutual · Investors Choice",
     "brandMark": "SA",
     "brandColor": "warning",
     "tags": ["Foundations"],
-    "detail": "Sales, lead generation and commercial foundations under the creative work — including, at Old Mutual's Welstand Agri division, a fully self-taught website build and a full rebrand.",
+    "detail": "Sales, lead generation and commercial foundations under the creative work - including, at Old Mutual's Welstand Agri division, a self-taught website build and a full rebrand.",
     "software": ["CRM", "Google Workspace", "SEO"],
     "proof": [
       {

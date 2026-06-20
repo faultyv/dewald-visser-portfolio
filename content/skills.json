@@ -2,7 +2,7 @@
   {
     "title": "Entrepreneurship",
     "seed": "secondary",
-    "items": ["Venture building", "Brand strategy", "Systems & ops", "Leadership"]
+    "items": ["Venture building", "Brand strategy", "Systems and ops", "Leadership"]
   },
   {
     "title": "Marketing",
@@ -12,11 +12,16 @@
   {
     "title": "Graphic Design",
     "seed": "tertiary",
-    "items": ["Photoshop · Illustrator", "InDesign · After Effects", "Brand & logo design", "Motion graphics"]
+    "items": ["Photoshop · Illustrator", "InDesign · After Effects", "Brand and logo design", "Motion graphics"]
   },
   {
-    "title": "Web & Front-End",
+    "title": "Web and Front-End",
     "seed": "success",
-    "items": ["WordPress · Elementor", "Shopify", "HTML / CSS / JS", "Booking & automation"]
+    "items": ["WordPress · Elementor", "Shopify", "HTML / CSS / JS", "Booking and automation"]
+  },
+  {
+    "title": "AI Enablement",
+    "seed": "highlight",
+    "items": ["Prompt workflows", "AI training direction", "Human-in-the-loop systems", "Change readiness"]
   }
 ]

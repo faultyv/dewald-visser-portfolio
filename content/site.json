@@ -1,20 +1,20 @@
 {
   "name": "Dewald Visser",
-  "role": "Founder, Marketer, Designer, Builder",
+  "role": "Founder, Growth Marketer, Designer, Systems Builder",
   "location": "Hillcrest · Durban · ZA",
   "languages": ["English", "Zulu", "Afrikaans", "German"],
   "email": "dewaldvisser94@gmail.com",
   "availability": "Available for select projects",
   "tags": ["Entrepreneur", "Marketing", "Graphic Design", "Web Design", "AI Enablement"],
-  "heroPosition": "I build brands — and the businesses and systems behind them. Strategy, design and code under one roof.",
-  "aboutHeadline": "A multidisciplinary founder who builds brands, runs the marketing that grows them, and ships the web experiences that carry them.",
-  "aboutBody": "Director at clicklocal.co.za and a hands-on designer-developer across the full Adobe and front-end stack. I've launched e-commerce stores under pressure, built booking and automation systems, and run campaigns tied to real growth — equally at home owning the strategy and pushing the pixels.",
+  "heroPosition": "I connect strategy, campaigns, design, websites and practical AI adoption into systems that help brands move.",
+  "aboutHeadline": "A founder-operator across brand, marketing, web systems and AI enablement, built for teams that need the thinking and the making in one place.",
+  "aboutBody": "Director at clicklocal.co.za and a hands-on designer-developer across Adobe, WordPress, Shopify, front-end code and campaign systems. The work spans e-commerce pivots, booking platforms, learning content, paid campaigns and early AI-readiness programmes - comfortable owning the strategy, the system and the final pixel.",
   "stats": [
-    { "value": 10, "suffix": "+", "label": "Years across brand & web" },
-    { "value": 4, "suffix": "", "label": "Disciplines, one operator" },
+    { "value": 10, "suffix": "+", "label": "Years across brand, web and growth" },
+    { "value": 5, "suffix": "", "label": "Disciplines, one operator" },
     { "value": 4, "suffix": "", "label": "Languages EN·ZU·AF·DE" }
   ],
-  "buildingWith": ["WordPress", "Shopify", "Adobe Suite", "Meta & Google Ads"],
+  "buildingWith": ["WordPress", "Shopify", "Adobe Suite", "Meta and Google Ads", "AI workflow design"],
   "socials": {
     "linkedin": "https://linkedin.com/in/dewaldvisser",
     "behance": "https://behance.net/dewaldvisser",

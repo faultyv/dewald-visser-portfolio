@@ -39,9 +39,9 @@ export function SkillsMarquee({ tags, skills }: { tags: string[]; skills: SkillC
 
       <div className="content-shell pt-12 md:pt-20">
         <Reveal>
-          <div className="text-label-l text-warning mb-9">The Stack</div>
+          <div className="text-label-l text-warning mb-9">Tools and Fluency</div>
         </Reveal>
-        <StaggerGroup className="grid grid-cols-2 gap-3 lg:grid-cols-4 lg:gap-4.5">
+        <StaggerGroup className="grid grid-cols-2 gap-3 lg:grid-cols-5 lg:gap-4.5">
           {skills.map((col) => (
             <StaggerItem key={col.title}>
               <div className="hig-card rounded-[22px] p-4 md:p-6">

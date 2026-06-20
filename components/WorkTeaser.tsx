@@ -18,7 +18,7 @@ export function WorkTeaser({ projects }: { projects: Project[] }) {
             <div className="text-label-l text-success mb-4">Selected Work</div>
           </Reveal>
           <Reveal delay={0.05}>
-            <h2 className="text-headline-l text-on-surface">Proof, by discipline.</h2>
+            <h2 className="text-headline-l text-on-surface">Proof across disciplines.</h2>
           </Reveal>
         </div>
         <Reveal delay={0.1}>

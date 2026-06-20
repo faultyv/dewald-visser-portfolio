@@ -9,10 +9,10 @@ const PILLARS: { n: string; seed: SeedName; icon: string; title: string; proof: 
     n: "01",
     seed: "secondary",
     icon: "rocket_launch",
-    title: "Entrepreneurship & Strategy",
+    title: "Entrepreneurship and Strategy",
     proof: "Founder / operator",
     summary: "Building ventures, brands and operating systems from the ground up.",
-    items: ["Founding ventures & building systems", "Brand + business strategy", "Director-level ownership & leadership"],
+    items: ["Founding ventures and business systems", "Brand and positioning strategy", "Director-level ownership and leadership"],
   },
   {
     n: "02",
@@ -21,7 +21,7 @@ const PILLARS: { n: string; seed: SeedName; icon: string; title: string; proof: 
     title: "Marketing",
     proof: "Growth channels",
     summary: "Campaign strategy tied to acquisition, lead generation and measurable demand.",
-    items: ["SEO & paid social — Meta / Google / YouTube", "Email automation & lead generation", "Campaign + budget planning, brand strategy"],
+    items: ["SEO and paid media across Meta, Google and YouTube", "Email automation and lead generation", "Campaign planning, budget control and brand strategy"],
   },
   {
     n: "03",
@@ -30,16 +30,16 @@ const PILLARS: { n: string; seed: SeedName; icon: string; title: string; proof: 
     title: "Graphic Design",
     proof: "Adobe-led creative",
     summary: "Visual systems that carry a brand across print, social, motion and web.",
-    items: ["Brand identity & logo design", "Print & social creative", "Motion graphics — full Adobe suite"],
+    items: ["Brand identity and logo design", "Print, social and campaign creative", "Motion graphics across the Adobe suite"],
   },
   {
     n: "04",
     seed: "success",
     icon: "code",
-    title: "Web & Front-End",
+    title: "Web and Front-End",
     proof: "Systems that ship",
     summary: "Websites, stores and automation flows designed around real operational needs.",
-    items: ["WordPress, Shopify & custom HTML/CSS/JS", "E-commerce stores & drop-ship models", "Booking & automation systems"],
+    items: ["WordPress, Shopify and custom HTML/CSS/JS", "E-commerce stores and drop-ship models", "Booking, CRM and automation systems"],
   },
   {
     n: "05",
@@ -47,8 +47,8 @@ const PILLARS: { n: string; seed: SeedName; icon: string; title: string; proof: 
     icon: "auto_awesome",
     title: "AI Enablement",
     proof: "Early adopter at LCIBS",
-    summary: "Helping people and organizations prepare for AI-led change, from training to workflow design.",
-    items: ["Worked under a former Apple executive on AI readiness", "AI training direction for HR and industry change", "Prompting, workflow design & practical adoption"],
+    summary: "Helping people and organisations prepare for AI-led change through training, workflow design and practical adoption.",
+    items: ["Early AI-readiness work at LCIBS under a former Apple executive", "Training direction for HR and industry change", "Prompt systems, workflow design and human-in-the-loop adoption"],
   },
 ];
 
@@ -74,7 +74,7 @@ export function Pillars() {
           </div>
           <Reveal delay={0.1}>
             <p className="max-w-[390px] text-body-m text-on-surface-variant">
-              Most people do one of these. I connect all five — strategy, marketing, design, web systems and practical AI adoption.
+              The advantage is the connection between them: strategy, campaigns, design, web systems and AI adoption working as one operating layer.
             </p>
           </Reveal>
         </div>
