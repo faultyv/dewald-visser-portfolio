@@ -13,7 +13,7 @@
     "mark": "MT",
     "seed": "tertiary",
     "relationship": "Graphic Design Specialist",
-    "discipline": "Print, brand, social and motion creative",
+    "discipline": "Retail production, POS, repro and print artworking",
     "period": "Present",
     "url": "https://mediatrade.co.za/"
   },
@@ -22,9 +22,52 @@
     "mark": "JBS",
     "seed": "success",
     "relationship": "Multimedia Specialist",
-    "discipline": "Campaigns, web systems, learning and multimedia content",
+    "discipline": "Web systems, learning and multimedia content",
     "period": "Present",
     "url": "https://jbsa.org.za/"
+  },
+  {
+    "name": "Clinton Palframan Ministries",
+    "mark": "CPM",
+    "seed": "success",
+    "relationship": "Web & Brand Designer",
+    "discipline": "Website, brand identity and app for The Dreambook",
+    "period": "2024",
+    "url": "https://www.behance.net/gallery/197281959/The-Dreambook",
+    "socials": [
+      { "kind": "facebook", "url": "https://www.facebook.com/thedreambookofficial" },
+      { "kind": "instagram", "url": "https://www.instagram.com/theofficialdreambook" }
+    ]
+  },
+  {
+    "name": "Africa Paints",
+    "mark": "AP",
+    "seed": "info",
+    "relationship": "Brand & Fleet Design",
+    "discipline": "Logo, tarpaulin livery and campaign branding",
+    "period": "2024",
+    "url": "https://africapaints.co.za/"
+  },
+  {
+    "name": "Solid Doors",
+    "mark": "SD",
+    "seed": "secondary",
+    "relationship": "Graphic Design",
+    "discipline": "Brand, catalogue and print production",
+    "period": "Production",
+    "url": "https://soliddoors.co.za/"
+  },
+  {
+    "name": "Alif Doors",
+    "mark": "AL",
+    "seed": "warning",
+    "relationship": "Graphic Design",
+    "discipline": "Brand, catalogue and print production",
+    "period": "Production",
+    "url": "https://alifdoors.co.za/",
+    "socials": [
+      { "kind": "facebook", "url": "https://www.facebook.com/alifdoorssa/" }
+    ]
   },
   {
     "name": "Kirstenhof Car Hire",
@@ -84,9 +127,9 @@
     "name": "Old Mutual",
     "mark": "OM",
     "seed": "success",
-    "relationship": "Sales and Lead Generation",
-    "discipline": "Sales, advisory context and self-taught web foundations",
-    "period": "2014-2016",
+    "relationship": "Development Assistant",
+    "discipline": "Self-taught web build and franchise rebrand (Welstand Agri)",
+    "period": "2015-2016",
     "url": "https://www.oldmutual.co.za/"
   }
 ]

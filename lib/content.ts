@@ -48,6 +48,8 @@ export type MethodStep = {
   body: string;
 };
 
+export type CompanySocial = { kind: "instagram" | "facebook"; url: string };
+
 export type CompanyEntry = {
   name: string;
   mark: string;
@@ -56,6 +58,7 @@ export type CompanyEntry = {
   discipline: string;
   period: string;
   url?: string;
+  socials?: CompanySocial[];
 };
 
 export type SkillColumn = {
@@ -100,6 +103,7 @@ export type ProjectFrontmatter = {
   gallery: GalleryItem[];
   video: string | null;
   links?: ProjectLink[];
+  brands?: string[];
 };
 
 export type Project = ProjectFrontmatter & { slug: string; content: string };

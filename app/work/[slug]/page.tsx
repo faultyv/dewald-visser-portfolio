@@ -99,6 +99,19 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           </Reveal>
         )}
 
+        {project.brands && project.brands.length > 0 && (
+          <Reveal>
+            <div className="text-label-l text-on-surface-variant mb-4">Brands worked on</div>
+            <div className="flex flex-wrap gap-2.5 mb-10">
+              {project.brands.map((brand) => (
+                <span key={brand} className="hig-control text-label-l px-4 py-2 rounded-full text-on-surface">
+                  {brand}
+                </span>
+              ))}
+            </div>
+          </Reveal>
+        )}
+
         <div id="stack" className="scroll-mt-24">
           <Reveal>
             <div className="text-label-l text-on-surface-variant mb-4">Stack</div>
