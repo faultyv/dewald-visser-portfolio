@@ -55,3 +55,10 @@ export const SEED_CONTAINER_TEXT: Record<SeedName, string> = {
   accent: "text-on-accent-container",
   highlight: "text-on-highlight-container",
 };
+
+/** Fixed, theme-independent backdrops for logo ("contain") covers, so a white or dark
+ * logo always has correct contrast regardless of the active light/dark theme. */
+export const COVER_BG: Record<"light" | "dark", string> = {
+  light: "bg-[#f4f5fb]",
+  dark: "bg-[#141a2e]",
+};

@@ -4,8 +4,14 @@ import { Reveal, StaggerGroup, StaggerItem } from "./Reveal";
 import { TiltCard } from "./TiltCard";
 import { ButtonLink } from "./Button";
 import { IconSymbol } from "./IconSymbol";
-import { SEED_BG, SEED_ON } from "@/lib/seed-classes";
+import { SEED_BG, SEED_ON, COVER_BG } from "@/lib/seed-classes";
 import type { Project } from "@/lib/content";
+
+function containBackdrop(project: Project): string {
+  if (project.coverFit !== "contain") return "absolute inset-0";
+  if (project.coverBg) return `absolute inset-0 ${COVER_BG[project.coverBg]}`;
+  return `absolute inset-0 ${SEED_BG[project.seed]} opacity-10`;
+}
 
 export function WorkTeaser({ projects }: { projects: Project[] }) {
   const featured = projects.slice(0, 3);
@@ -39,7 +45,7 @@ export function WorkTeaser({ projects }: { projects: Project[] }) {
                 <div className="hig-card rounded-[24px]">
                   <div className="relative" style={{ aspectRatio: "4/3" }}>
                     {project.cover ? (
-                      <div className={project.coverFit === "contain" ? `absolute inset-0 ${SEED_BG[project.seed]} opacity-10` : "absolute inset-0"}>
+                      <div className={containBackdrop(project)}>
                         <Image
                           src={project.cover}
                           alt={project.title}

@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { gsap } from "@/lib/gsap";
-import { SEED_BG } from "@/lib/seed-classes";
+import { SEED_BG, COVER_BG } from "@/lib/seed-classes";
 import type { SeedName } from "@/lib/m3-theme";
 
 export function ProjectHeroMedia({
@@ -11,11 +11,13 @@ export function ProjectHeroMedia({
   title,
   seed,
   coverFit = "cover",
+  coverBg,
 }: {
   cover: string | null;
   title: string;
   seed: SeedName;
   coverFit?: "cover" | "contain";
+  coverBg?: "light" | "dark";
 }) {
   const wrapRef = useRef<HTMLDivElement>(null);
   const mediaRef = useRef<HTMLDivElement>(null);
@@ -40,7 +42,9 @@ export function ProjectHeroMedia({
       <div ref={mediaRef} className="absolute inset-0 will-change-transform">
         {cover ? (
           <>
-            {coverFit === "contain" && <div className={`absolute inset-0 ${SEED_BG[seed]} opacity-10`} />}
+            {coverFit === "contain" && (
+              <div className={`absolute inset-0 ${coverBg ? COVER_BG[coverBg] : `${SEED_BG[seed]} opacity-10`}`} />
+            )}
             <Image
               src={cover}
               alt={title}

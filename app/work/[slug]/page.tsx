@@ -40,7 +40,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
     <>
       <article className="relative px-5 md:px-14 max-w-[1100px] mx-auto pt-32">
         <Reveal>
-          <ProjectHeroMedia cover={project.cover} title={project.title} seed={project.seed} coverFit={project.coverFit} />
+          <ProjectHeroMedia cover={project.cover} title={project.title} seed={project.seed} coverFit={project.coverFit} coverBg={project.coverBg} />
         </Reveal>
 
         <Reveal delay={0.05} className="mt-8">

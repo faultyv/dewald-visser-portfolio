@@ -97,6 +97,7 @@ export type ProjectFrontmatter = {
   seed: SeedName;
   cover: string | null;
   coverFit?: "cover" | "contain";
+  coverBg?: "light" | "dark";
   order: number;
   metrics: ProjectMetric[];
   stack: string[];
