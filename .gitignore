@@ -49,3 +49,5 @@ screencapture-*.pdf
 full-page.png
 /.playwright-mcp/
 /research/
+
+.vercel
