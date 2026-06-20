@@ -6,7 +6,11 @@
     "relationship": "Founder / Director",
     "discipline": "Brand, platform, content and operating systems",
     "period": "Present",
-    "url": ""
+    "url": "https://www.instagram.com/clicklocal.co.za/",
+    "socials": [
+      { "kind": "instagram", "url": "https://www.instagram.com/clicklocal.co.za/" },
+      { "kind": "facebook", "url": "https://www.facebook.com/clicklocal.co.za/" }
+    ]
   },
   {
     "name": "Mediatrade",

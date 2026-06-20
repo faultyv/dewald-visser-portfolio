@@ -1,5 +1,6 @@
 "use client";
 
+import { useSyncExternalStore } from "react";
 import { motion } from "motion/react";
 import { fmTransition } from "@/lib/motion-tokens";
 
@@ -12,6 +13,14 @@ const OFFSETS: Record<Dir, Record<string, number>> = {
   scale: { scale: 0.92 },
 };
 
+const subscribeHydration = () => () => {};
+const getHydratedSnapshot = () => true;
+const getServerSnapshot = () => false;
+
+function useHydratedMotion() {
+  return useSyncExternalStore(subscribeHydration, getHydratedSnapshot, getServerSnapshot);
+}
+
 export function Reveal({
   children,
   dir = "up",
@@ -23,6 +32,12 @@ export function Reveal({
   className?: string;
   delay?: number;
 }) {
+  const ready = useHydratedMotion();
+
+  if (!ready) {
+    return <div className={className}>{children}</div>;
+  }
+
   return (
     <motion.div
       initial={{ opacity: 0, ...OFFSETS[dir] }}
@@ -45,6 +60,16 @@ export function StaggerGroup({
   className?: string;
   style?: React.CSSProperties;
 }) {
+  const ready = useHydratedMotion();
+
+  if (!ready) {
+    return (
+      <div className={className} style={style}>
+        {children}
+      </div>
+    );
+  }
+
   return (
     <motion.div
       initial="hidden"
@@ -68,6 +93,16 @@ export function StaggerItem({
   className?: string;
   style?: React.CSSProperties;
 }) {
+  const ready = useHydratedMotion();
+
+  if (!ready) {
+    return (
+      <div className={className} style={style}>
+        {children}
+      </div>
+    );
+  }
+
   return (
     <motion.div
       variants={{
