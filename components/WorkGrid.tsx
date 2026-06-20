@@ -25,14 +25,18 @@ function ProjectCard({ project, large }: { project: Project; large?: boolean }) 
           <div className="relative overflow-hidden rounded-xl border border-outline bg-surface-container elevation-2">
             <div className="relative" style={{ aspectRatio: large ? "16/9" : "4/3" }}>
               {project.cover ? (
-                <Image
-                  src={project.cover}
-                  alt={project.title}
-                  fill
-                  priority={large}
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes={large ? "(max-width:768px) 95vw, 800px" : "(max-width:768px) 90vw, 420px"}
-                />
+                <div className={project.coverFit === "contain" ? `absolute inset-0 ${SEED_BG[project.seed]} opacity-10` : "absolute inset-0"}>
+                  <Image
+                    src={project.cover}
+                    alt={project.title}
+                    fill
+                    priority={large}
+                    className={`transition-transform duration-500 group-hover:scale-105 ${
+                      project.coverFit === "contain" ? "object-contain p-10" : "object-cover"
+                    }`}
+                    sizes={large ? "(max-width:768px) 95vw, 800px" : "(max-width:768px) 90vw, 420px"}
+                  />
+                </div>
               ) : (
                 <div className={`absolute inset-0 ${SEED_BG[project.seed]} opacity-20`} />
               )}

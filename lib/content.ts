@@ -53,6 +53,7 @@ export type CertsData = {
 
 export type ProjectMetric = { value: string; label: string };
 export type GalleryItem = { id: string; label: string; src?: string };
+export type ProjectLink = { label: string; url: string };
 
 export type ProjectFrontmatter = {
   title: string;
@@ -64,11 +65,13 @@ export type ProjectFrontmatter = {
   outcome: string;
   seed: SeedName;
   cover: string | null;
+  coverFit?: "cover" | "contain";
   order: number;
   metrics: ProjectMetric[];
   stack: string[];
   gallery: GalleryItem[];
   video: string | null;
+  links?: ProjectLink[];
 };
 
 export type Project = ProjectFrontmatter & { slug: string; content: string };

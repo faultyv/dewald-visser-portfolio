@@ -24,8 +24,8 @@ export default function WorkPage() {
         </Reveal>
         <Reveal delay={0.1}>
           <p className="text-body-l text-on-surface-variant max-w-[620px] mt-5">
-            Six projects across marketing, web and brand — each one a full case study, not a footnote. Filter by discipline or dive
-            straight into one.
+            {projects.length} projects across marketing, web and brand — each one a full case study, not a footnote. Filter by
+            discipline or dive straight into one.
           </p>
         </Reveal>
       </section>

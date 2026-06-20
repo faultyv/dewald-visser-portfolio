@@ -6,7 +6,17 @@ import { gsap } from "@/lib/gsap";
 import { SEED_BG } from "@/lib/seed-classes";
 import type { SeedName } from "@/lib/m3-theme";
 
-export function ProjectHeroMedia({ cover, title, seed }: { cover: string | null; title: string; seed: SeedName }) {
+export function ProjectHeroMedia({
+  cover,
+  title,
+  seed,
+  coverFit = "cover",
+}: {
+  cover: string | null;
+  title: string;
+  seed: SeedName;
+  coverFit?: "cover" | "contain";
+}) {
   const wrapRef = useRef<HTMLDivElement>(null);
   const mediaRef = useRef<HTMLDivElement>(null);
 
@@ -29,7 +39,17 @@ export function ProjectHeroMedia({ cover, title, seed }: { cover: string | null;
     <div ref={wrapRef} className="relative overflow-hidden rounded-2xl elevation-4" style={{ aspectRatio: "16/7" }}>
       <div ref={mediaRef} className="absolute inset-0 will-change-transform">
         {cover ? (
-          <Image src={cover} alt={title} fill className="object-cover" sizes="(max-width:768px) 100vw, 1100px" priority />
+          <>
+            {coverFit === "contain" && <div className={`absolute inset-0 ${SEED_BG[seed]} opacity-10`} />}
+            <Image
+              src={cover}
+              alt={title}
+              fill
+              className={coverFit === "contain" ? "object-contain p-12 md:p-20" : "object-cover"}
+              sizes="(max-width:768px) 100vw, 1100px"
+              priority
+            />
+          </>
         ) : (
           <div className={`absolute inset-0 ${SEED_BG[seed]} opacity-20`} />
         )}

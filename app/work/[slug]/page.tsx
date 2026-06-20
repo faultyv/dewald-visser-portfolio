@@ -7,6 +7,7 @@ import { ProjectMiniNav } from "@/components/ProjectMiniNav";
 import { ProjectGallery } from "@/components/ProjectGallery";
 import { ProjectVideo } from "@/components/ProjectVideo";
 import { ProjectPager } from "@/components/ProjectPager";
+import { ExternalLinks } from "@/components/ExternalLinks";
 import { Footer } from "@/components/Footer";
 import { mdxComponents } from "@/components/MdxComponents";
 import { SEED_TEXT, SEED_CONTAINER_BG, SEED_CONTAINER_TEXT } from "@/lib/seed-classes";
@@ -39,7 +40,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
     <>
       <article className="relative px-5 md:px-14 max-w-[1100px] mx-auto pt-32">
         <Reveal>
-          <ProjectHeroMedia cover={project.cover} title={project.title} seed={project.seed} />
+          <ProjectHeroMedia cover={project.cover} title={project.title} seed={project.seed} coverFit={project.coverFit} />
         </Reveal>
 
         <Reveal delay={0.05} className="mt-8">
@@ -50,9 +51,11 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           <div className="text-body-m text-on-surface-variant mb-7">
             {project.org} · {project.tools}
           </div>
-          <p className="text-body-l text-on-surface max-w-[680px] mb-9" style={{ fontSize: "clamp(17px,2vw,21px)", lineHeight: 1.55 }}>
+          <p className="text-body-l text-on-surface max-w-[680px] mb-7" style={{ fontSize: "clamp(17px,2vw,21px)", lineHeight: 1.55 }}>
             {project.outcome}
           </p>
+
+          {project.links && <ExternalLinks links={project.links} seed={project.seed} />}
         </Reveal>
 
         {project.metrics.length > 0 && (

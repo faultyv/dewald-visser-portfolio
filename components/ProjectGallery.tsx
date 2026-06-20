@@ -55,9 +55,9 @@ export function ProjectGallery({ gallery, seed }: { gallery: GalleryItem[]; seed
                 className="fixed inset-0 z-[121] flex items-center justify-center p-6"
               >
                 <Dialog.Title className="sr-only">{gallery[openIdx]?.label}</Dialog.Title>
-                <div className="relative w-full max-w-3xl rounded-2xl overflow-hidden bg-surface-container" style={{ aspectRatio: "4/3" }}>
+                <div className="relative w-full max-w-3xl max-h-[80vh] aspect-[4/3] rounded-2xl overflow-hidden bg-surface-container">
                   {gallery[openIdx]?.src ? (
-                    <Image src={gallery[openIdx].src!} alt={gallery[openIdx].label} fill className="object-cover" />
+                    <Image src={gallery[openIdx].src!} alt={gallery[openIdx].label} fill className="object-contain" />
                   ) : (
                     <div className={`absolute inset-0 flex items-center justify-center ${SEED_BG[seed]} opacity-15`}>
                       <IconSymbol name="image" size={48} className="text-on-surface-variant opacity-60" />
