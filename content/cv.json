@@ -1,0 +1,65 @@
+[
+  {
+    "date": "Present",
+    "role": "Director",
+    "org": "clicklocal.co.za",
+    "tags": ["Founder"],
+    "detail": "Own the venture end-to-end — brand, platform and the systems that run it. Local-business focus, built and led from the ground up."
+  },
+  {
+    "date": "Present",
+    "role": "Graphic Design Specialist",
+    "org": "Mediatrade",
+    "tags": ["Design"],
+    "detail": "Brand and creative production across print and digital — identity, social creative and motion graphics through the full Adobe suite."
+  },
+  {
+    "date": "Present",
+    "role": "Multimedia Specialist",
+    "org": "Joseph Business School Africa",
+    "tags": ["Design", "Web"],
+    "detail": "Multimedia, design and web delivery — visual content, learning material and the front-end that presents it."
+  },
+  {
+    "date": "2021",
+    "role": "Marketing Designer",
+    "org": "Kirstenhof Car Hire",
+    "tags": ["Marketing", "Web", "Design"],
+    "detail": "Drove organic + sponsored search, social and email marketing that increased car rentals. Created animated video & image adverts and built a WordPress appointment system tracking clients, payments, fines and maintenance — with budgeted email campaigns."
+  },
+  {
+    "date": "2021",
+    "role": "Front-End Web Designer",
+    "org": "Autodoc Diagnostics",
+    "tags": ["Web", "Design"],
+    "detail": "Built an online store, wrote the copy and sourced suppliers; redesigned the company logo in Illustrator & InDesign."
+  },
+  {
+    "date": "Mar–Jul 2021",
+    "role": "Logo Designer",
+    "org": "Cambridge University initiative",
+    "tags": ["Design"],
+    "detail": "Designed a logo and mockups for an international sustainable-development initiative."
+  },
+  {
+    "date": "2020",
+    "role": "Design & Sales",
+    "org": "Contours Design Studio · Faux Flora",
+    "tags": ["Founder", "Web", "Design"],
+    "detail": "Bespoke design & installation. Built a Shopify store + drop-ship model during hard lockdown to protect cash flow and jobs — product design and reporting included."
+  },
+  {
+    "date": "2016–2019",
+    "role": "Programme Advisor",
+    "org": "Educor Holdings",
+    "tags": ["Marketing", "Design"],
+    "detail": "Designed templates, booklets, animated video adverts and email campaign creative; advising, sales and data analytics."
+  },
+  {
+    "date": "2014–2016",
+    "role": "Sales & Lead Generation",
+    "org": "The Unlimited · Old Mutual · Investors Choice",
+    "tags": ["Foundations"],
+    "detail": "Sales, lead generation and commercial foundations under the creative work — including, at Old Mutual's Welstand Agri division, a fully self-taught website build (online quotations and appointment booking) and a full rebrand: logo, contracts, client files, email templates and signage."
+  }
+]

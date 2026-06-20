@@ -1,0 +1,26 @@
+{
+  "name": "Dewald Visser",
+  "role": "Founder, Marketer, Designer, Builder",
+  "location": "Hillcrest · Durban · ZA",
+  "languages": ["English", "Zulu", "Afrikaans", "German"],
+  "email": "dewaldvisser94@gmail.com",
+  "availability": "Available for select projects",
+  "tags": ["Entrepreneur", "Marketing", "Graphic Design", "Web Design"],
+  "heroPosition": "I build brands — and the businesses and systems behind them. Strategy, design and code under one roof.",
+  "aboutHeadline": "A multidisciplinary founder who builds brands, runs the marketing that grows them, and ships the web experiences that carry them.",
+  "aboutBody": "Director at clicklocal.co.za and a hands-on designer-developer across the full Adobe and front-end stack. I've launched e-commerce stores under pressure, built booking and automation systems, and run campaigns tied to real growth — equally at home owning the strategy and pushing the pixels.",
+  "stats": [
+    { "value": 10, "suffix": "+", "label": "Years across brand & web" },
+    { "value": 4, "suffix": "", "label": "Disciplines, one operator" },
+    { "value": 4, "suffix": "", "label": "Languages EN·ZU·AF·DE" }
+  ],
+  "buildingWith": ["WordPress", "Shopify", "Adobe Suite", "Meta & Google Ads"],
+  "socials": {
+    "linkedin": "https://linkedin.com/in/dewaldvisser",
+    "behance": "https://behance.net/dewaldvisser",
+    "instagram": "https://instagram.com/dewaldv84",
+    "x": "https://x.com/TheBBQhunter",
+    "website": "https://dewaldvisser.co.za"
+  },
+  "education": "National Senior Certificate — Hillcrest High School, 2013"
+}

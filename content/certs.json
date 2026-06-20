@@ -1,0 +1,26 @@
+{
+  "featured": [
+    {
+      "id": "google-digital-marketing",
+      "title": "Fundamentals of Digital Marketing",
+      "issuer": "Google Digital Garage · 2021",
+      "image": "/images/certs/google-digital-marketing.png",
+      "seed": "primary"
+    },
+    {
+      "id": "hubspot-content-marketing",
+      "title": "Content Marketing Certified",
+      "issuer": "HubSpot Academy · 2024–2026",
+      "image": "/images/certs/hubspot-content-marketing.jpg",
+      "seed": "success"
+    }
+  ],
+  "additional": [
+    { "title": "Operations Management Certificate", "issuer": "Damelin College" },
+    { "title": "Email and Telephone Etiquette", "issuer": "Educor Staff Development · 2018" },
+    { "title": "Meeting Procedure and Protocol", "issuer": "Educor Staff Development · 2018" },
+    { "title": "Microsoft Office Word 2016", "issuer": "Educor Staff Development · 2018" },
+    { "title": "Basic Computer Skills", "issuer": "Educor Staff Development · 2018" },
+    { "title": "Basic Tutorial in PowerPoint 2016", "issuer": "Educor Staff Development · 2018" }
+  ]
+}

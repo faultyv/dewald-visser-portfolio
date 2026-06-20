@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Entrepreneurship",
+    "seed": "secondary",
+    "items": ["Venture building", "Brand strategy", "Systems & ops", "Leadership"]
+  },
+  {
+    "title": "Marketing",
+    "seed": "primary",
+    "items": ["SEO", "Google / Meta / YouTube Ads", "Email automation", "Lead generation"]
+  },
+  {
+    "title": "Graphic Design",
+    "seed": "tertiary",
+    "items": ["Photoshop · Illustrator", "InDesign · After Effects", "Brand & logo design", "Motion graphics"]
+  },
+  {
+    "title": "Web & Front-End",
+    "seed": "success",
+    "items": ["WordPress · Elementor", "Shopify", "HTML / CSS / JS", "Booking & automation"]
+  }
+]
