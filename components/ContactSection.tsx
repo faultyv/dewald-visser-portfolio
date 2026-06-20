@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Reveal } from "./Reveal";
 import { Snackbar } from "./Snackbar";
 import { IconSymbol } from "./IconSymbol";
+import { WhatsAppIcon } from "./WhatsAppIcon";
 import { ButtonLink } from "./Button";
 import { whatsappUrl } from "@/lib/whatsapp";
 import type { SiteConfig } from "@/lib/content";
@@ -57,7 +58,7 @@ export function ContactSection({ site }: { site: SiteConfig }) {
           <div className="mt-5 flex flex-wrap gap-2.5">
             {wa ? (
               <ButtonLink href={wa} external variant="filled">
-                <IconSymbol name="chat" size={18} /> Chat with me
+                <WhatsAppIcon size={18} /> Chat with me
               </ButtonLink>
             ) : null}
             <ButtonLink href={`mailto:${site.email}`} external variant="tonal">
@@ -79,10 +80,8 @@ export function ContactSection({ site }: { site: SiteConfig }) {
       <div className="mt-11 text-body-s text-on-surface-variant opacity-70">© 2026 {site.name} · Designed & built end-to-end</div>
 
       {wa ? (
-        <a href={wa} target="_blank" rel="noopener noreferrer" className="hig-control state-layer fixed bottom-20 left-4 z-[87] inline-flex items-center gap-2.5 rounded-full bg-success px-4 py-3 text-label-l text-on-success no-underline sm:bottom-5 sm:left-5">
-          <span className="grid h-[22px] w-[22px] place-items-center rounded-full bg-white/20 text-[10px]" style={{ fontFamily: "var(--font-display)", fontWeight: 700 }}>
-            WA
-          </span>
+        <a href={wa} target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" className="hig-control state-layer fixed bottom-20 left-4 z-[87] inline-flex items-center gap-2.5 rounded-full bg-success px-4 py-3 text-label-l text-on-success no-underline sm:bottom-5 sm:left-5">
+          <WhatsAppIcon size={20} />
           Chat with me
         </a>
       ) : null}

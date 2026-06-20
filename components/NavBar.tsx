@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "motion/react";
 import { IconSymbol } from "./IconSymbol";
+import { WhatsAppIcon } from "./WhatsAppIcon";
+import { whatsappLink } from "@/lib/whatsapp";
 import { fmTransition } from "@/lib/motion-tokens";
 
 const LINKS = [
@@ -43,7 +45,7 @@ export function NavBar({ name = "Dewald Visser" }: { name?: string }) {
   }, []);
 
   return (
-    <nav className="hig-glass fixed left-3 right-3 top-3 z-[80] flex items-center justify-between rounded-[24px] px-3.5 py-2.5 sm:left-5 sm:right-5 sm:px-4 xl:left-8 xl:right-8 xl:py-3">
+    <nav className="hig-glass !overflow-visible fixed left-3 right-3 top-3 z-[80] flex items-center justify-between rounded-[24px] px-3.5 py-2.5 sm:left-5 sm:right-5 sm:px-4 xl:left-8 xl:right-8 xl:py-3">
       <Link href="/#hero" className="state-layer flex min-w-0 items-center gap-2.5 rounded-full px-2 py-1.5 no-underline text-title-m text-on-surface sm:text-title-l">
         <span className="relative inline-block h-2.5 w-2.5 rounded-full bg-primary shadow-[0_0_18px_var(--color-primary)]" />
         <span className="truncate">{name}</span>
@@ -68,7 +70,16 @@ export function NavBar({ name = "Dewald Visser" }: { name?: string }) {
         })}
       </div>
 
-      <div className="hidden xl:block">
+      <div className="hidden items-center gap-2 xl:flex">
+        <a
+          href={whatsappLink()}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Chat on WhatsApp"
+          className="hig-control state-layer inline-flex items-center gap-1.5 rounded-full bg-success px-4 py-2.5 text-label-l text-on-success no-underline"
+        >
+          <WhatsAppIcon size={16} /> WhatsApp
+        </a>
         <a
           href="https://linkedin.com/in/dewaldvisser"
           target="_blank"
@@ -96,7 +107,7 @@ export function NavBar({ name = "Dewald Visser" }: { name?: string }) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
             transition={fmTransition.standard}
-            className="hig-glass absolute left-0 right-0 top-[calc(100%+10px)] flex flex-col gap-1 rounded-[24px] p-3 xl:hidden"
+            className="absolute left-0 right-0 top-[calc(100%+10px)] flex flex-col gap-1 rounded-[24px] border border-outline-variant bg-surface-container p-3 elevation-4 xl:hidden"
           >
             {LINKS.map((l) => (
               <Link
@@ -108,15 +119,26 @@ export function NavBar({ name = "Dewald Visser" }: { name?: string }) {
                 {l.label}
               </Link>
             ))}
-            <a
-              href="https://linkedin.com/in/dewaldvisser"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setOpen(false)}
-              className="hig-control mt-2 inline-flex items-center justify-center gap-1.5 rounded-full bg-primary px-4 py-3 text-label-l text-on-primary no-underline"
-            >
-              LinkedIn <IconSymbol name="open_in_new" size={16} />
-            </a>
+            <div className="mt-2 grid grid-cols-2 gap-2">
+              <a
+                href={whatsappLink()}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setOpen(false)}
+                className="hig-control inline-flex items-center justify-center gap-1.5 rounded-full bg-success px-4 py-3 text-label-l text-on-success no-underline"
+              >
+                <WhatsAppIcon size={16} /> WhatsApp
+              </a>
+              <a
+                href="https://linkedin.com/in/dewaldvisser"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setOpen(false)}
+                className="hig-control inline-flex items-center justify-center gap-1.5 rounded-full bg-primary px-4 py-3 text-label-l text-on-primary no-underline"
+              >
+                LinkedIn <IconSymbol name="open_in_new" size={16} />
+              </a>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
