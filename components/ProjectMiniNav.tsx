@@ -1,12 +1,12 @@
 "use client";
 
-const ITEMS = [
-  { id: "overview", label: "Overview" },
-  { id: "gallery", label: "Gallery" },
-  { id: "stack", label: "Stack" },
-];
+export function ProjectMiniNav({ hasGallery }: { hasGallery: boolean }) {
+  const items = [
+    { id: "overview", label: "Overview" },
+    ...(hasGallery ? [{ id: "gallery", label: "Gallery" }] : []),
+    { id: "stack", label: "Stack" },
+  ];
 
-export function ProjectMiniNav() {
   const go = (id: string) => {
     const el = document.getElementById(id);
     if (!el) return;
@@ -17,7 +17,7 @@ export function ProjectMiniNav() {
 
   return (
     <div className="sticky top-[68px] z-[40] -mx-1 mb-9 flex gap-2 overflow-x-auto bg-surface/85 backdrop-blur-md py-3 px-1 border-b border-outline-variant">
-      {ITEMS.map((item) => (
+      {items.map((item) => (
         <button
           key={item.id}
           onClick={() => go(item.id)}

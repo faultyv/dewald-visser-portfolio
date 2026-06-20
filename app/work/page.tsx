@@ -7,6 +7,12 @@ import { getAllProjects, getSiteConfig } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Work — Dewald Visser",
   description: "Selected projects across marketing, web, brand and systems - the proof behind the pillars.",
+  alternates: { canonical: "/work" },
+  openGraph: {
+    title: "Work — Dewald Visser",
+    description: "Selected projects across marketing, web, brand and systems - the proof behind the pillars.",
+    url: "/work",
+  },
 };
 
 export default function WorkPage() {

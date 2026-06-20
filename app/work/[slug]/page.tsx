@@ -21,9 +21,24 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const project = getProjectBySlug(slug);
   if (!project) return {};
+  const url = `/work/${project.slug}`;
   return {
     title: `${project.title} — Dewald Visser`,
     description: project.outcome,
+    alternates: { canonical: url },
+    openGraph: {
+      title: `${project.title} — Dewald Visser`,
+      description: project.outcome,
+      url,
+      type: "article",
+      images: project.cover ? [{ url: project.cover, alt: project.title }] : undefined,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${project.title} — Dewald Visser`,
+      description: project.outcome,
+      images: project.cover ? [project.cover] : undefined,
+    },
   };
 }
 
@@ -35,6 +50,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
   const site = getSiteConfig();
   const { prev, next } = getAdjacentProjects(slug);
   const { content } = await compileMDX({ source: project.content, components: mdxComponents });
+  const gallery = project.gallery.filter((item) => item.src);
 
   return (
     <>
@@ -75,7 +91,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
       </article>
 
       <div id="overview" className="px-5 md:px-14 max-w-[1100px] mx-auto">
-        <ProjectMiniNav />
+        <ProjectMiniNav hasGallery={gallery.length > 0} />
       </div>
 
       <article className="relative px-5 md:px-14 max-w-[1100px] mx-auto">
@@ -83,11 +99,11 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           <div className="mb-9">{content}</div>
         </Reveal>
 
-        {project.gallery.length > 0 && (
+        {gallery.length > 0 && (
           <div id="gallery" className="scroll-mt-24">
             <div className="text-label-l text-on-surface-variant mb-4">Gallery</div>
             <Reveal>
-              <ProjectGallery gallery={project.gallery} seed={project.seed} />
+              <ProjectGallery gallery={gallery} />
             </Reveal>
           </div>
         )}
