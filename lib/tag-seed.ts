@@ -5,6 +5,7 @@ export const TAG_SEED: Record<string, SeedName> = {
   Marketing: "primary",
   Design: "tertiary",
   Web: "success",
+  AI: "highlight",
   Foundations: "warning",
 };
 

@@ -1,12 +1,14 @@
 import { Hero } from "@/components/Hero";
 import { About } from "@/components/About";
 import { Pillars } from "@/components/Pillars";
+import { Method } from "@/components/Method";
 import { Career } from "@/components/Career";
+import { Companies } from "@/components/Companies";
 import { WorkTeaser } from "@/components/WorkTeaser";
 import { SkillsMarquee } from "@/components/SkillsMarquee";
 import { Credentials } from "@/components/Credentials";
 import { ContactSection } from "@/components/ContactSection";
-import { getSiteConfig, getCV, getSkills, getCerts, getMarqueeTags, getAllProjects } from "@/lib/content";
+import { getSiteConfig, getCV, getSkills, getCerts, getMarqueeTags, getAllProjects, getMethod, getCompanies } from "@/lib/content";
 
 export default function Home() {
   const site = getSiteConfig();
@@ -15,13 +17,17 @@ export default function Home() {
   const certs = getCerts();
   const marqueeTags = getMarqueeTags();
   const projects = getAllProjects();
+  const method = getMethod();
+  const companies = getCompanies();
 
   return (
     <>
       <Hero site={site} />
       <About site={site} />
       <Pillars />
+      <Method steps={method} />
       <Career cv={cv} />
+      <Companies companies={companies} />
       <WorkTeaser projects={projects} />
       <SkillsMarquee tags={marqueeTags} skills={skills} />
       <Credentials certs={certs} site={site} />

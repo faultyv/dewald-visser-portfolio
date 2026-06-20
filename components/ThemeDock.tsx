@@ -1,41 +1,59 @@
 "use client";
 
+import { useEffect } from "react";
+import { IconSymbol } from "./IconSymbol";
 import { useTheme } from "./ThemeContext";
-import type { ThemeName } from "@/lib/m3-theme";
-
-const SWATCH: Record<ThemeName, string> = {
-  light: "linear-gradient(135deg,#FFFFFF 0 50%,#0073EA 50% 100%)",
-  cloud: "linear-gradient(135deg,#E8EBF5 0 50%,#00C875 50% 100%)",
-  bold: "linear-gradient(135deg,#EAE7FD 0 50%,#6C6CFF 50% 100%)",
-  dark: "linear-gradient(135deg,#14182B 0 50%,#FDAB3D 50% 100%)",
-};
 
 export function ThemeDock() {
-  const { theme, setTheme, themes, label } = useTheme();
+  const { theme, setTheme, label } = useTheme();
+  const items = [
+    { key: "light" as const, icon: "light_mode" },
+    { key: "dark" as const, icon: "dark_mode" },
+  ];
+
+  useEffect(() => {
+    const buttons = Array.from(document.querySelectorAll<HTMLButtonElement>("[data-theme-btn]"));
+    const listeners = buttons.map((button) => {
+      const handler = () => {
+        const next = button.dataset.themeBtn;
+        if (next === "light" || next === "dark") setTheme(next);
+      };
+      button.addEventListener("click", handler);
+      button.addEventListener("pointerdown", handler);
+      return [button, handler] as const;
+    });
+    return () => {
+      listeners.forEach(([button, handler]) => {
+        button.removeEventListener("click", handler);
+        button.removeEventListener("pointerdown", handler);
+      });
+    };
+  }, [setTheme]);
 
   return (
-    <div className="fixed z-[88] bottom-5 right-5 flex items-center gap-3.5 px-4 py-2.5 rounded-full bg-surface-container border border-outline elevation-3">
-      <div className="flex flex-col leading-tight">
-        <span className="text-label-m text-on-surface-variant">Theme</span>
-        <span className="text-title-s text-on-surface">{label[theme]}</span>
+    <div className="fixed z-[88] bottom-5 right-5 flex items-center gap-3 px-3.5 py-2 rounded-[28px] bg-surface-container-high border border-outline elevation-3">
+      <div className="flex min-w-14 flex-col leading-tight">
+        <span className="text-label-s text-on-surface-variant">Theme</span>
+        <span data-theme-name className="text-title-s text-on-surface">{label[theme]}</span>
       </div>
-      <div className="flex gap-2">
-        {themes.map((t) => {
-          const on = t === theme;
+      <div role="group" aria-label="Theme" className="flex gap-1 rounded-full bg-surface-container-highest p-1">
+        {items.map((item) => {
+          const on = item.key === theme;
           return (
             <button
-              key={t}
+              key={item.key}
               type="button"
-              aria-label={`${label[t]} theme`}
-              onClick={() => setTheme(t)}
-              className="w-7 h-7 rounded-full border-none cursor-pointer transition-transform duration-300"
-              style={{
-                background: SWATCH[t],
-                transform: on ? "scale(1.18)" : "scale(1)",
-                boxShadow: on ? "0 0 0 2px var(--color-surface-container), 0 0 0 4px var(--color-primary)" : "none",
-                opacity: on ? 1 : 0.6,
-              }}
-            />
+              data-theme-btn={item.key}
+              aria-label={`${label[item.key]} theme`}
+              aria-pressed={on}
+              onClick={() => setTheme(item.key)}
+              onPointerDown={() => setTheme(item.key)}
+              className={`state-layer grid h-[38px] w-[38px] place-items-center rounded-full border transition-colors ${
+                on ? "border-primary bg-primary text-on-primary elevation-1" : "border-transparent bg-transparent text-on-surface-variant"
+              }`}
+            >
+              <IconSymbol name={item.icon} size={20} filled={on} />
+            </button>
           );
         })}
       </div>

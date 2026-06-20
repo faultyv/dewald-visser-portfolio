@@ -4,12 +4,15 @@ import { useState } from "react";
 import { Reveal } from "./Reveal";
 import { Snackbar } from "./Snackbar";
 import { IconSymbol } from "./IconSymbol";
+import { ButtonLink } from "./Button";
+import { whatsappUrl } from "@/lib/whatsapp";
 import type { SiteConfig } from "@/lib/content";
 
 const LANG_CODE: Record<string, string> = { English: "EN", Zulu: "ZU", Afrikaans: "AF", German: "DE" };
 
 export function ContactSection({ site }: { site: SiteConfig }) {
   const [copied, setCopied] = useState(false);
+  const wa = whatsappUrl(site);
 
   const copy = async () => {
     try {
@@ -51,6 +54,16 @@ export function ContactSection({ site }: { site: SiteConfig }) {
           <div className="mt-3 text-body-s text-on-surface-variant">
             {site.location} &nbsp;·&nbsp; {site.languages.map((l) => LANG_CODE[l] ?? l.slice(0, 2).toUpperCase()).join(" · ")}
           </div>
+          <div className="mt-5 flex flex-wrap gap-2.5">
+            {wa ? (
+              <ButtonLink href={wa} external variant="filled">
+                WA Chat with me
+              </ButtonLink>
+            ) : null}
+            <ButtonLink href={`mailto:${site.email}`} external variant="tonal">
+              Email me
+            </ButtonLink>
+          </div>
         </div>
         <div className="flex gap-5 flex-wrap text-label-l">
           {socialLinks.map((s) => (
@@ -64,6 +77,15 @@ export function ContactSection({ site }: { site: SiteConfig }) {
         </div>
       </div>
       <div className="mt-11 text-body-s text-on-surface-variant opacity-70">© 2026 {site.name} · Designed & built end-to-end</div>
+
+      {wa ? (
+        <a href={wa} target="_blank" rel="noopener noreferrer" className="fixed bottom-5 left-5 z-[87] inline-flex items-center gap-2.5 rounded-full bg-success px-4 py-3 text-label-l text-on-success no-underline elevation-3 state-layer">
+          <span className="grid h-[22px] w-[22px] place-items-center rounded-full bg-white/20 text-[10px]" style={{ fontFamily: "var(--font-display)", fontWeight: 700 }}>
+            WA
+          </span>
+          Chat with me
+        </a>
+      ) : null}
 
       <Snackbar open={copied}>
         <IconSymbol name="check_circle" size={18} filled className="text-success" />

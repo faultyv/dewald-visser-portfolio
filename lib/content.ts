@@ -18,16 +18,44 @@ export type SiteConfig = {
   aboutBody: string;
   stats: { value: number; suffix: string; label: string }[];
   buildingWith: string[];
-  socials: { linkedin: string; behance: string; instagram: string; x: string; website: string };
+  whatsapp?: { number?: string; url?: string; message?: string };
+  socials: { linkedin: string; behance: string; instagram: string; x: string; website: string; whatsapp?: string };
   education: string;
+};
+
+export type ProofItem = {
+  type: string;
+  title: string;
+  detail: string;
 };
 
 export type CVEntry = {
   date: string;
   role: string;
   org: string;
+  brandMark?: string;
+  brandColor?: SeedName;
   tags: string[];
   detail: string;
+  software?: string[];
+  proof?: ProofItem[];
+};
+
+export type MethodStep = {
+  title: string;
+  kicker: string;
+  seed: SeedName;
+  body: string;
+};
+
+export type CompanyEntry = {
+  name: string;
+  mark: string;
+  seed: SeedName;
+  relationship: string;
+  discipline: string;
+  period: string;
+  url?: string;
 };
 
 export type SkillColumn = {
@@ -87,6 +115,14 @@ export function getSiteConfig(): SiteConfig {
 
 export function getCV(): CVEntry[] {
   return readJSON<CVEntry[]>("cv.json");
+}
+
+export function getMethod(): MethodStep[] {
+  return readJSON<MethodStep[]>("method.json");
+}
+
+export function getCompanies(): CompanyEntry[] {
+  return readJSON<CompanyEntry[]>("companies.json");
 }
 
 export function getSkills(): SkillColumn[] {

@@ -8,8 +8,10 @@ import { fmTransition } from "@/lib/motion-tokens";
 
 const LINKS = [
   { href: "/#about", label: "About" },
-  { href: "/#pillars", label: "Skills" },
+  { href: "/#pillars", label: "Pillars" },
+  { href: "/#method", label: "Method" },
   { href: "/#cv", label: "Career" },
+  { href: "/#companies", label: "Companies" },
   { href: "/work", label: "Work" },
   { href: "/#credentials", label: "Certs" },
 ];

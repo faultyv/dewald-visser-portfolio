@@ -13,7 +13,7 @@ export const SEEDS = {
 } as const;
 
 export type SeedName = keyof typeof SEEDS;
-export type ThemeName = "light" | "cloud" | "bold" | "dark";
+export type ThemeName = "light" | "dark";
 
 const ROLE_TONES = {
   light: { base: 45, on: 99, container: 92, onContainer: 19 },
@@ -64,38 +64,6 @@ const SURFACES: Record<ThemeName, SurfaceTokens> = {
     scrim: "rgba(8,12,24,0.55)",
     cursorBlend: "normal",
   },
-  cloud: {
-    surface: "#F1F3FA",
-    surfaceDim: "#DEE2EF",
-    surfaceBright: "#FFFFFF",
-    surfaceContainerLow: "#F7F8FC",
-    surfaceContainer: "#FFFFFF",
-    surfaceContainerHigh: "#E8EBF5",
-    surfaceContainerHighest: "#DFE3EF",
-    onSurface: "#292F4C",
-    onSurfaceVariant: "#676879",
-    outline: "#DFE3EF",
-    outlineVariant: "#E8EBF5",
-    shadow: "rgba(41,47,76,0.10)",
-    scrim: "rgba(8,12,24,0.55)",
-    cursorBlend: "normal",
-  },
-  bold: {
-    surface: "#F2F0FE",
-    surfaceDim: "#DFDAF8",
-    surfaceBright: "#FFFFFF",
-    surfaceContainerLow: "#F8F6FE",
-    surfaceContainer: "#FFFFFF",
-    surfaceContainerHigh: "#EAE7FD",
-    surfaceContainerHighest: "#E2DEFA",
-    onSurface: "#2B2A45",
-    onSurfaceVariant: "#6A6788",
-    outline: "#E2DEFA",
-    outlineVariant: "#EAE7FD",
-    shadow: "rgba(70,50,140,0.13)",
-    scrim: "rgba(8,12,24,0.55)",
-    cursorBlend: "normal",
-  },
   dark: {
     surface: "#14182B",
     surfaceDim: "#10132280",
@@ -116,19 +84,15 @@ const SURFACES: Record<ThemeName, SurfaceTokens> = {
 
 const THEME_MODE: Record<ThemeName, "light" | "dark"> = {
   light: "light",
-  cloud: "light",
-  bold: "light",
   dark: "dark",
 };
 
 export const THEME_LABEL: Record<ThemeName, string> = {
   light: "Light",
-  cloud: "Cloud",
-  bold: "Bold",
   dark: "Dark",
 };
 
-export const THEME_NAMES: ThemeName[] = ["light", "cloud", "bold", "dark"];
+export const THEME_NAMES: ThemeName[] = ["light", "dark"];
 
 function cssVarBlock(theme: ThemeName): string {
   const mode = THEME_MODE[theme];
