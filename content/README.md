@@ -1,27 +1,46 @@
-# Editing your site content (the "CMS")
+# Editing your site content
 
-Your site is **content-driven**: all the words, projects, companies and credentials
-live in plain files in this `content/` folder. There is **no login and no separate
-admin website** — the files _are_ the CMS. You edit a file, save, and the live site
-updates automatically (Vercel rebuilds on every push to GitHub).
+Your site now has a browser CMS at:
 
-> Why no login? A git-based CMS is free, has zero moving parts, can't be hacked or
-> go down, and every change is versioned (you can always undo). If you'd prefer a
-> form-based admin screen you log into instead, that can be added later (see the
-> bottom of this file).
+`/admin/`
 
-## The three ways to edit
+It is powered by Sveltia CMS, a Git-based editor. It saves changes directly back
+to this GitHub repository, then Vercel redeploys the site automatically.
 
-1. **Easiest — on GitHub (in the browser):**
+## CMS login
+
+There is no website-owned username/password stored in the codebase. Login is
+handled by GitHub, because GitHub is where the content files live.
+
+Use the CMS like this:
+
+1. Open `https://YOUR-LIVE-SITE/admin/`.
+2. Click **Sign in with Token**.
+3. Generate a GitHub personal access token when prompted.
+4. Give the token access only to this repository:
+   `faultyv/dewald-visser-portfolio`.
+5. Paste the token into the CMS.
+6. Edit content and save.
+
+The browser remembers the token locally. Treat it like a password; do not share it
+in chat or commit it to the repo.
+
+For the smoothest future login experience, a GitHub OAuth worker can be added
+later so the screen says **Sign in with GitHub** instead of asking for a token.
+The CMS itself is already installed now.
+
+## Other ways to edit
+
+1. **On GitHub (in the browser):**
    - Go to https://github.com/faultyv/dewald-visser-portfolio
-   - Open the file under `content/` you want to change (e.g. `content/site.json`).
-   - Click the **pencil (Edit) icon**, make your change, then **Commit changes**.
-   - Vercel redeploys in ~1 minute. That's it.
+   - Open the file under `content/` you want to change.
+   - Click the pencil icon, make your change, then commit.
+   - Vercel redeploys in about a minute.
 
 2. **On your computer:** edit the file in any text editor, then
    `git add . && git commit -m "update copy" && git push`.
 
-3. **Ask Claude / your developer** to make the change for you.
+3. **Ask Codex / Claude / your developer** to make the change.
 
 ## What each file controls
 
@@ -77,8 +96,13 @@ Body paragraph. Write as much as you like in normal Markdown.
 **Images:** drop files into `public/images/work/<slug>/` and reference them as
 `/images/work/<slug>/filename.jpg`. Logos look best with `coverFit: "contain"`.
 
-## Want a login-based admin screen instead?
+## Admin config
 
-A form-based editor (log in, fill in fields, no code) can be added with **Decap CMS**
-— it still saves to this same GitHub repo behind the scenes, so nothing else changes.
-It needs a one-time GitHub login connection set up. Ask and it can be wired in.
+The admin app lives in:
+
+- `public/admin/index.html`
+- `public/admin/config.yml`
+
+The current setup uses Sveltia CMS with the GitHub backend. The admin is hidden
+from search engines via `noindex` and `robots.txt`, but security comes from
+GitHub write access: only someone with a valid token for the repo can save.

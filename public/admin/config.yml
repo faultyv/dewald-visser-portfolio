@@ -1,0 +1,318 @@
+backend:
+  name: github
+  repo: faultyv/dewald-visser-portfolio
+  branch: main
+  use_graphql: true
+  squash_merges: true
+  commit_messages:
+    create: "cms: create {{collection}} {{slug}}"
+    update: "cms: update {{collection}} {{slug}}"
+    delete: "cms: delete {{collection}} {{slug}}"
+    uploadMedia: "cms: upload {{path}}"
+    deleteMedia: "cms: delete {{path}}"
+
+# For a friendlier "Sign in with GitHub" button later, deploy Sveltia CMS
+# Authenticator to Cloudflare Workers and add:
+#   base_url: https://YOUR-WORKER.workers.dev
+#
+# For now, use Sveltia's built-in "Sign in with Token" flow. It is immediate,
+# free and does not require storing any secret in this repository.
+
+site_url: https://dewald-visser-portfolio.vercel.app
+display_url: https://dewald-visser-portfolio.vercel.app
+logo_url: /icon
+
+media_folder: public/images/uploads
+public_folder: /images/uploads
+
+collections:
+  - name: site_settings
+    label: Site Settings
+    files:
+      - name: site
+        label: Main Site Copy
+        file: content/site.json
+        format: json
+        fields:
+          - { label: Name, name: name, widget: string }
+          - { label: Role, name: role, widget: string }
+          - { label: Location, name: location, widget: string }
+          - label: Languages
+            name: languages
+            widget: list
+            field: { label: Language, name: language, widget: string }
+          - { label: Email, name: email, widget: string }
+          - { label: Availability, name: availability, widget: string }
+          - label: Hero Tags
+            name: tags
+            widget: list
+            field: { label: Tag, name: tag, widget: string }
+          - { label: Hero Positioning, name: heroPosition, widget: text }
+          - { label: About Headline, name: aboutHeadline, widget: text }
+          - { label: About Body, name: aboutBody, widget: text }
+          - label: Stats
+            name: stats
+            widget: list
+            fields:
+              - { label: Value, name: value, widget: number, value_type: int }
+              - { label: Suffix, name: suffix, widget: string, required: false }
+              - { label: Label, name: label, widget: string }
+          - label: Building With
+            name: buildingWith
+            widget: list
+            field: { label: Tool, name: tool, widget: string }
+          - label: Social Links
+            name: socials
+            widget: object
+            fields:
+              - { label: LinkedIn, name: linkedin, widget: string, required: false }
+              - { label: Behance, name: behance, widget: string, required: false }
+              - { label: Instagram, name: instagram, widget: string, required: false }
+              - { label: X, name: x, widget: string, required: false }
+              - { label: Website, name: website, widget: string, required: false }
+              - { label: WhatsApp Legacy URL, name: whatsapp, widget: string, required: false }
+          - label: WhatsApp
+            name: whatsapp
+            widget: object
+            fields:
+              - { label: Number, name: number, widget: string, required: false, hint: "Use international format, e.g. +27678952710" }
+              - { label: Message, name: message, widget: text, required: false }
+          - { label: Education, name: education, widget: string }
+
+      - name: certs
+        label: Credentials
+        file: content/certs.json
+        format: json
+        fields:
+          - label: Featured Certificates
+            name: featured
+            widget: list
+            fields:
+              - { label: ID, name: id, widget: string }
+              - { label: Title, name: title, widget: string }
+              - { label: Issuer, name: issuer, widget: string }
+              - { label: Image, name: image, widget: image }
+              - label: Colour
+                name: seed
+                widget: select
+                options: [primary, secondary, tertiary, success, warning, info, accent, highlight]
+          - label: Additional Certificates
+            name: additional
+            widget: list
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Issuer, name: issuer, widget: string }
+
+  - name: projects
+    label: Projects
+    label_singular: Project
+    folder: content/projects
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    extension: mdx
+    format: frontmatter
+    summary: "{{title}} · {{org}}"
+    sortable_fields: [order, title, org, period]
+    view_filters:
+      - label: Marketing
+        field: categories
+        pattern: marketing
+      - label: Web
+        field: categories
+        pattern: web
+      - label: Brand
+        field: categories
+        pattern: brand
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Organisation, name: org, widget: string }
+      - { label: Period, name: period, widget: string }
+      - label: Categories
+        name: categories
+        widget: select
+        multiple: true
+        options: [marketing, web, brand]
+      - { label: Label Chip, name: label, widget: string }
+      - { label: Tools Summary, name: tools, widget: string }
+      - { label: Outcome, name: outcome, widget: text }
+      - label: Colour
+        name: seed
+        widget: select
+        options: [primary, secondary, tertiary, success, warning, info, accent, highlight]
+      - { label: Cover Image, name: cover, widget: image, required: false, hint: "Use logo covers with coverFit = contain." }
+      - label: Cover Fit
+        name: coverFit
+        widget: select
+        required: false
+        options: [cover, contain]
+      - label: Cover Background
+        name: coverBg
+        widget: select
+        required: false
+        options: [light, dark]
+      - { label: Order, name: order, widget: number, value_type: int }
+      - label: Metrics
+        name: metrics
+        widget: list
+        collapsed: false
+        fields:
+          - { label: Value, name: value, widget: string }
+          - { label: Label, name: label, widget: string }
+      - label: Stack
+        name: stack
+        widget: list
+        field: { label: Tool, name: tool, widget: string }
+      - label: Brands Worked On
+        name: brands
+        widget: list
+        required: false
+        field: { label: Brand, name: brand, widget: string }
+      - label: Gallery
+        name: gallery
+        widget: list
+        required: false
+        fields:
+          - { label: ID, name: id, widget: string, hint: "Example: g1, g2, g3" }
+          - { label: Caption, name: label, widget: string }
+          - { label: Image, name: src, widget: image, required: false }
+      - { label: Video URL, name: video, widget: string, required: false }
+      - label: Links
+        name: links
+        widget: list
+        required: false
+        fields:
+          - { label: Label, name: label, widget: string }
+          - { label: URL, name: url, widget: string }
+      - { label: Body, name: body, widget: markdown }
+
+  - name: career
+    label: Career Timeline
+    files:
+      - name: cv
+        label: Roles
+        file: content/cv.json
+        format: json
+        fields:
+          - label: Roles
+            name: roles
+            widget: list
+            root: true
+            summary: "{{fields.role}} · {{fields.org}}"
+            fields:
+              - { label: Date, name: date, widget: string }
+              - { label: Role, name: role, widget: string }
+              - { label: Organisation, name: org, widget: string }
+              - { label: Brand Mark, name: brandMark, widget: string, required: false }
+              - label: Brand Colour
+                name: brandColor
+                widget: select
+                required: false
+                options: [primary, secondary, tertiary, success, warning, info, accent, highlight]
+              - label: Tags
+                name: tags
+                widget: list
+                field: { label: Tag, name: tag, widget: string }
+              - { label: Detail, name: detail, widget: text }
+              - label: Software
+                name: software
+                widget: list
+                required: false
+                field: { label: Tool, name: tool, widget: string }
+              - label: Role Evidence
+                name: proof
+                widget: list
+                required: false
+                fields:
+                  - { label: Type, name: type, widget: string }
+                  - { label: Title, name: title, widget: string }
+                  - { label: Detail, name: detail, widget: text }
+
+  - name: companies
+    label: Brand Map
+    files:
+      - name: companies
+        label: Companies
+        file: content/companies.json
+        format: json
+        fields:
+          - label: Companies
+            name: companies
+            widget: list
+            root: true
+            summary: "{{fields.name}}"
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Mark, name: mark, widget: string }
+              - label: Colour
+                name: seed
+                widget: select
+                options: [primary, secondary, tertiary, success, warning, info, accent, highlight]
+              - { label: Relationship, name: relationship, widget: string }
+              - { label: Discipline, name: discipline, widget: text }
+              - { label: Period, name: period, widget: string }
+              - { label: Website URL, name: url, widget: string, required: false }
+              - label: Social Links
+                name: socials
+                widget: list
+                required: false
+                fields:
+                  - label: Kind
+                    name: kind
+                    widget: select
+                    options: [instagram, facebook]
+                  - { label: URL, name: url, widget: string }
+
+  - name: capability_data
+    label: Capability Data
+    files:
+      - name: skills
+        label: Skills
+        file: content/skills.json
+        format: json
+        fields:
+          - label: Skill Columns
+            name: skills
+            widget: list
+            root: true
+            summary: "{{fields.title}}"
+            fields:
+              - { label: Title, name: title, widget: string }
+              - label: Colour
+                name: seed
+                widget: select
+                options: [primary, secondary, tertiary, success, warning, info, accent, highlight]
+              - label: Items
+                name: items
+                widget: list
+                field: { label: Item, name: item, widget: string }
+
+      - name: method
+        label: Operating Method
+        file: content/method.json
+        format: json
+        fields:
+          - label: Steps
+            name: steps
+            widget: list
+            root: true
+            summary: "{{fields.title}}"
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Kicker, name: kicker, widget: string }
+              - label: Colour
+                name: seed
+                widget: select
+                options: [primary, secondary, tertiary, success, warning, info, accent, highlight]
+              - { label: Body, name: body, widget: text }
+
+      - name: marquee
+        label: Marquee Tools
+        file: content/marquee.json
+        format: json
+        fields:
+          - label: Tools
+            name: tools
+            widget: list
+            root: true
+            field: { label: Tool, name: tool, widget: string }
