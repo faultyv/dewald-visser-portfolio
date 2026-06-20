@@ -102,9 +102,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         {gallery.length > 0 && (
           <div id="gallery" className="scroll-mt-24">
             <div className="text-label-l text-on-surface-variant mb-4">Gallery</div>
-            <Reveal>
-              <ProjectGallery gallery={gallery} />
-            </Reveal>
+            <ProjectGallery gallery={gallery} />
           </div>
         )}
 
