@@ -45,9 +45,9 @@ const PILLARS: { n: string; seed: SeedName; icon: string; title: string; proof: 
     n: "05",
     seed: "highlight",
     icon: "auto_awesome",
-    title: "AI Enablement",
-    proof: "Early adopter at LCIBS",
-    summary: "Helping people and organisations prepare for AI-led change through training, workflow design and practical adoption.",
+    title: "Practical AI Enablement",
+    proof: "Workflow layer",
+    summary: "Turning AI from a buzzword into prompts, training, workflows and human-in-the-loop adoption people can actually use.",
     items: ["Early AI-readiness work at LCIBS under a former Apple executive", "Training direction for HR and industry change", "Prompt systems, workflow design and human-in-the-loop adoption"],
   },
 ];
@@ -64,19 +64,19 @@ export function Pillars() {
             <Reveal>
               <div className="text-label-l text-primary mb-4">Capabilities</div>
             </Reveal>
-            <Reveal delay={0.05}>
-              <h2 className="text-headline-l text-on-surface">
-                Five pillars,
+          <Reveal delay={0.05}>
+            <h2 className="text-headline-l text-on-surface">
+                Connected disciplines,
                 <br />
                 one operator.
-              </h2>
-            </Reveal>
-          </div>
-          <Reveal delay={0.1}>
-            <p className="max-w-[390px] text-body-m text-on-surface-variant">
-              The advantage is the connection between them: strategy, campaigns, design, web systems and AI adoption working as one operating layer.
-            </p>
+            </h2>
           </Reveal>
+        </div>
+        <Reveal delay={0.1}>
+          <p className="max-w-[390px] text-body-m text-on-surface-variant">
+              The advantage is the handoff between them: strategy shaping the campaign, design carrying the message, web systems making it usable and AI tightening the workflow.
+          </p>
+        </Reveal>
         </div>
 
         <StaggerGroup className="flex flex-col gap-4.5">
@@ -93,7 +93,7 @@ export function Pillars() {
                         <IconSymbol name={ai.icon} size={28} filled className={SEED_ON[ai.seed]} />
                       </div>
                       <div>
-                        <div className={`text-label-s ${SEED_TEXT[ai.seed]}`}>Pillar {ai.n} · Future layer</div>
+                    <div className={`text-label-s ${SEED_TEXT[ai.seed]}`}>Pillar {ai.n} · Practical layer</div>
                         <div className="text-label-s text-on-surface-variant">{ai.proof}</div>
                       </div>
                     </div>
@@ -117,7 +117,7 @@ export function Pillars() {
             {core.map((p) => (
               <StaggerItem key={p.n} className="min-w-[78vw] max-w-[78vw] sm:min-w-0 sm:max-w-none">
                 <TiltCard className="h-full">
-                  <article className="hig-card flex h-full flex-col rounded-[22px] p-5 md:min-h-[300px] md:p-6">
+                  <article className="hig-card flex h-full flex-col rounded-[22px] p-5 md:min-h-[280px] md:p-6">
                     <div className={`grid h-13 w-13 place-items-center rounded-2xl ${SEED_BG[p.seed]}`} style={{ width: 52, height: 52 }}>
                       <IconSymbol name={p.icon} size={26} filled className={SEED_ON[p.seed]} />
                     </div>

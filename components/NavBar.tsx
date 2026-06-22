@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "motion/react";
 import { IconSymbol } from "./IconSymbol";
 import { WhatsAppIcon } from "./WhatsAppIcon";
+import { useTheme } from "./ThemeContext";
 import { whatsappLink } from "@/lib/whatsapp";
 import { fmTransition } from "@/lib/motion-tokens";
 
@@ -20,28 +21,53 @@ const LINKS = [
   { href: "/#contact", label: "Contact" },
 ];
 
+const THEME_ITEMS = [
+  { key: "light" as const, icon: "light_mode" },
+  { key: "dark" as const, icon: "dark_mode" },
+];
+
 export function NavBar({ name = "Dewald Visser" }: { name?: string }) {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("hero");
+  const { theme, setTheme, label } = useTheme();
 
   useEffect(() => {
     const ids = ["hero", ...LINKS.map((link) => link.href.split("#")[1]).filter(Boolean)];
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-        if (visible?.target.id) setActive(visible.target.id);
-      },
-      { rootMargin: "-28% 0px -62% 0px", threshold: [0.08, 0.2, 0.45] },
-    );
+    let frame = 0;
 
-    ids.forEach((id) => {
-      const node = document.getElementById(id);
-      if (node) observer.observe(node);
-    });
+    const updateActive = () => {
+      frame = 0;
+      const anchor = window.innerHeight * 0.48;
+      let current = "hero";
 
-    return () => observer.disconnect();
+      for (const id of ids) {
+        const node = document.getElementById(id);
+        if (!node) continue;
+        const rect = node.getBoundingClientRect();
+        if (rect.top <= anchor && rect.bottom >= anchor) {
+          current = id;
+          break;
+        }
+        if (rect.top <= anchor) current = id;
+      }
+
+      setActive(current);
+    };
+
+    const scheduleUpdate = () => {
+      if (frame) return;
+      frame = window.requestAnimationFrame(updateActive);
+    };
+
+    scheduleUpdate();
+    window.addEventListener("scroll", scheduleUpdate, { passive: true });
+    window.addEventListener("resize", scheduleUpdate);
+
+    return () => {
+      if (frame) window.cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", scheduleUpdate);
+      window.removeEventListener("resize", scheduleUpdate);
+    };
   }, []);
 
   return (
@@ -71,6 +97,27 @@ export function NavBar({ name = "Dewald Visser" }: { name?: string }) {
       </div>
 
       <div className="hidden items-center gap-2 xl:flex">
+        <div role="group" aria-label="Theme" className="flex gap-1 rounded-full border border-outline-variant/60 bg-surface-container/44 p-1">
+          {THEME_ITEMS.map((item) => {
+            const on = item.key === theme;
+            return (
+              <button
+                key={item.key}
+                type="button"
+                data-theme-btn={item.key}
+                aria-label={`${label[item.key]} theme`}
+                aria-pressed={on}
+                onClick={() => setTheme(item.key)}
+                onPointerDown={() => setTheme(item.key)}
+                className={`hig-control state-layer grid h-9 w-9 place-items-center rounded-full transition-colors ${
+                  on ? "border-primary bg-primary text-on-primary" : "border-transparent bg-transparent text-on-surface-variant"
+                }`}
+              >
+                <IconSymbol name={item.icon} size={18} filled={on} />
+              </button>
+            );
+          })}
+        </div>
         <a
           href={whatsappLink()}
           target="_blank"
@@ -119,6 +166,28 @@ export function NavBar({ name = "Dewald Visser" }: { name?: string }) {
                 {l.label}
               </Link>
             ))}
+            <div className="mt-2 grid grid-cols-2 gap-2">
+              {THEME_ITEMS.map((item) => {
+                const on = item.key === theme;
+                return (
+                  <button
+                    key={item.key}
+                    type="button"
+                    data-theme-btn={item.key}
+                    aria-label={`${label[item.key]} theme`}
+                    aria-pressed={on}
+                    onClick={() => setTheme(item.key)}
+                    onPointerDown={() => setTheme(item.key)}
+                    className={`hig-control state-layer inline-flex items-center justify-center gap-1.5 rounded-full px-4 py-3 text-label-l ${
+                      on ? "border-primary bg-primary text-on-primary" : "border-outline text-on-surface"
+                    }`}
+                  >
+                    <IconSymbol name={item.icon} size={18} filled={on} />
+                    {label[item.key]}
+                  </button>
+                );
+              })}
+            </div>
             <div className="mt-2 grid grid-cols-2 gap-2">
               <a
                 href={whatsappLink()}

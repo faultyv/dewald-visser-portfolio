@@ -42,7 +42,7 @@ export function WorkTeaser({ projects }: { projects: Project[] }) {
           <StaggerItem key={project.slug} className="min-w-[82vw] max-w-[82vw] md:min-w-0 md:max-w-none">
             <TiltCard>
               <Link href={`/work/${project.slug}`} className="block no-underline group">
-                <div className="hig-card rounded-[24px]">
+                <div className="hig-card overflow-hidden rounded-[24px]">
                   <div className="relative" style={{ aspectRatio: "4/3" }}>
                     {project.cover ? (
                       <div className={containBackdrop(project)}>

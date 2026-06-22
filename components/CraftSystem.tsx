@@ -6,36 +6,36 @@ import type { SeedName } from "@/lib/m3-theme";
 
 const PRINCIPLES: { title: string; body: string; seed: SeedName; icon: string; signal: string }[] = [
   {
-    title: "Clarity",
-    body: "Readable hierarchy, fewer competing surfaces, and controls that make the next action obvious.",
+    title: "Commercial clarity",
+    body: "Start with the offer, audience and friction so the creative work has a business job to do.",
     seed: "primary",
     icon: "visibility",
-    signal: "Legible",
+    signal: "Business first",
   },
   {
-    title: "Deference",
-    body: "The interface stays quiet so the career evidence, project media and proof points can carry the page.",
+    title: "Reusable assets",
+    body: "Turn campaign, brand and web decisions into visual systems a team can keep using.",
     seed: "secondary",
     icon: "layers",
-    signal: "Content first",
+    signal: "Systemised",
   },
   {
-    title: "Depth",
-    body: "Glass, hairlines, shadow and motion create a sense of place without heavy decoration.",
+    title: "Practical depth",
+    body: "Use motion, material and hierarchy to support the proof, not to compete with it.",
     seed: "highlight",
     icon: "blur_on",
-    signal: "Layered",
+    signal: "Polished",
   },
   {
-    title: "Continuity",
-    body: "Swipe strips, active navigation and purposeful motion keep the experience understandable from desktop to phone.",
+    title: "Measured iteration",
+    body: "Read what the work changes, then tighten the next campaign, page or process around that signal.",
     seed: "success",
     icon: "sync_alt",
-    signal: "Adaptive",
+    signal: "Learning loop",
   },
 ];
 
-const TOKENS = ["Glass material", "Hairline borders", "Touch-first strips", "Reduced-motion safe", "Light / dark", "Context cues"];
+const TOKENS = ["Offer clarity", "Campaign assets", "Web systems", "Production workflows", "Light / dark", "Reduced-motion safe"];
 
 export function CraftSystem() {
   return (
@@ -43,18 +43,18 @@ export function CraftSystem() {
       <div className="grid gap-8 lg:grid-cols-[0.86fr_1.14fr] lg:items-start">
         <div>
           <Reveal>
-            <div className="text-label-l text-primary mb-4">Design system</div>
+            <div className="text-label-l text-primary mb-4">Working system</div>
           </Reveal>
           <Reveal delay={0.05}>
             <h2 className="text-headline-l text-on-surface">
-              The site is
+              Built like
               <br />
-              part of the proof.
+              a working system.
             </h2>
           </Reveal>
           <Reveal delay={0.1}>
             <p className="mt-5 max-w-[470px] text-body-m text-on-surface-variant">
-              Built as a product surface: clear hierarchy, quiet controls, layered material and responsive proof blocks that make the work easier to judge.
+              The portfolio carries the same thinking as the work: clear offer, reusable parts, calm hierarchy and enough polish to make the evidence easy to judge.
             </p>
           </Reveal>
           <Reveal delay={0.15}>

@@ -1,18 +1,14 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import { Reveal } from "./Reveal";
 import { gsap } from "@/lib/gsap";
 import type { SiteConfig } from "@/lib/content";
 
-const OPERATOR_SIGNALS = [
-  { label: "Current venture", value: "Sun Paper and Coatings" },
-  { label: "Core range", value: "Strategy, campaigns, design, websites and AI workflows" },
-  { label: "Working base", value: "Durban, KwaZulu-Natal" },
-];
-
 export function About({ site }: { site: SiteConfig }) {
   const maskRef = useRef<HTMLDivElement>(null);
+  const photoRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -24,19 +20,29 @@ export function About({ site }: { site: SiteConfig }) {
       ease: "power3.out",
       scrollTrigger: { trigger: maskRef.current, start: "top 84%" },
     });
+    const parallax = photoRef.current
+      ? gsap.to(photoRef.current, {
+          yPercent: -7,
+          scale: 1.04,
+          ease: "none",
+          scrollTrigger: { trigger: "#about", start: "top bottom", end: "bottom top", scrub: true },
+        })
+      : null;
 
     return () => {
       reveal.scrollTrigger?.kill();
       reveal.kill();
+      parallax?.scrollTrigger?.kill();
+      parallax?.kill();
     };
   }, []);
 
   return (
-    <section id="about" className="section-pad content-shell relative">
-      <div className="grid gap-10 md:gap-20 items-center" style={{ gridTemplateColumns: "repeat(auto-fit,minmax(280px,1fr))" }}>
+    <section id="about" className="content-shell relative scroll-mt-32 py-24 md:py-32 xl:py-36">
+      <div className="grid gap-10 md:gap-16 lg:grid-cols-[0.96fr_1.04fr] lg:items-center xl:gap-20">
         <div>
           <Reveal>
-            <div className="text-label-l text-secondary mb-5">Founder, Creative and Systems</div>
+            <div className="mb-5 text-label-l text-secondary">Founder, Creative Operator</div>
           </Reveal>
           <Reveal delay={0.05}>
             <h2 className="text-headline-l text-on-surface">
@@ -46,7 +52,7 @@ export function About({ site }: { site: SiteConfig }) {
             </h2>
           </Reveal>
           <Reveal delay={0.1}>
-            <p className="mt-6 max-w-[520px] text-body-l text-on-surface-variant">{site.aboutBody}</p>
+            <p className="mt-6 max-w-[560px] text-body-l text-on-surface-variant">{site.aboutBody}</p>
           </Reveal>
           <Reveal delay={0.15}>
             <div className="mt-8 grid grid-cols-3 gap-3 sm:flex sm:flex-wrap sm:gap-9">
@@ -64,32 +70,34 @@ export function About({ site }: { site: SiteConfig }) {
         </div>
 
         <Reveal dir="scale">
-          <div ref={maskRef} className="relative overflow-hidden rounded-[22px] border border-outline-variant bg-surface-container-low p-6 elevation-3 md:p-8">
-            <div className="relative">
-              <div className="text-label-l text-secondary">Current operator map</div>
-              <h3 className="mt-5 text-headline-m text-on-surface">Founder-led creative systems, built from the business problem outward.</h3>
-              <p className="mt-4 text-body-l text-on-surface-variant">
-                The work sits where brand, sales, operations and delivery meet: enough strategy to choose the right move, enough craft to ship it cleanly.
-              </p>
-
-              <div className="mt-8 divide-y divide-outline-variant border-y border-outline-variant">
-                {OPERATOR_SIGNALS.map((item) => (
-                  <div key={item.label} className="grid gap-1 py-4 sm:grid-cols-[150px_1fr] sm:gap-5">
-                    <div className="text-label-m text-primary">{item.label}</div>
-                    <div className="text-body-m text-on-surface">{item.value}</div>
-                  </div>
-                ))}
-              </div>
-
-              <div className="mt-7 flex flex-wrap gap-2.5">
-                {site.buildingWith.map((tool) => (
-                  <span key={tool} className="hig-control rounded-full px-3 py-1.5 text-label-m text-on-surface">
-                    {tool}
-                  </span>
-                ))}
+          <figure className="m-0">
+            <div ref={maskRef} className="relative overflow-hidden rounded-[24px] border border-outline-variant bg-surface-container-low elevation-3">
+              <div className="relative aspect-[4/3] overflow-hidden md:aspect-[4/5]">
+                <div ref={photoRef} className="absolute -inset-y-[7%] inset-x-0 will-change-transform">
+                  <Image
+                    src={site.media.aboutImage}
+                    alt={site.media.aboutImageAlt}
+                    fill
+                    sizes="(max-width: 768px) 90vw, 520px"
+                    className="object-cover object-[68%_center]"
+                  />
+                </div>
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/82 via-black/42 to-transparent p-5 pt-16 text-white md:p-6 md:pt-20">
+                  <div className="mb-1.5 text-label-s text-white/74">In action</div>
+                  <figcaption className="max-w-[34ch] text-title-s text-white md:text-title-m">
+                    {site.media.aboutImageCaption}
+                  </figcaption>
+                </div>
               </div>
             </div>
-          </div>
+            <div className="mt-3 flex flex-wrap gap-2.5">
+              {site.buildingWith.slice(0, 3).map((tool) => (
+                <span key={tool} className="hig-control rounded-full px-3 py-1.5 text-label-m text-on-surface">
+                  {tool}
+                </span>
+              ))}
+            </div>
+          </figure>
         </Reveal>
       </div>
     </section>

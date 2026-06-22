@@ -46,7 +46,7 @@ export function Hero({ site }: { site: SiteConfig }) {
   }, []);
 
   return (
-    <section id="hero" className="relative flex min-h-[100svh] items-center overflow-hidden px-5 pb-16 pt-28 sm:pt-32 md:px-14 md:pb-20 md:pt-36">
+    <section id="hero" className="relative flex min-h-[88svh] items-center overflow-hidden px-5 pb-14 pt-28 sm:min-h-[90svh] sm:pt-32 md:px-14 md:pb-16 md:pt-32 xl:min-h-[92svh]">
       <div ref={innerRef} className="relative z-10 mx-auto w-full max-w-[1300px]">
         <div className="hero-eyebrow mb-5 flex flex-wrap items-center gap-3 md:mb-6">
           <span className="hig-control inline-flex items-center gap-2 rounded-full px-4 py-2 text-label-l text-on-surface">
@@ -70,7 +70,7 @@ export function Hero({ site }: { site: SiteConfig }) {
           ))}
         </h1>
 
-        <div className="hero-tag mt-6 flex max-w-[760px] flex-wrap gap-2 text-label-l md:mt-7 md:gap-2.5">
+        <div className="hero-tag mt-6 flex max-w-[820px] flex-wrap gap-2 text-label-l md:mt-7 md:gap-2.5">
           {site.tags.map((tag) => (
             <span key={tag} className={`hig-control rounded-full px-3 py-1.5 sm:px-4 sm:py-2 ${TAG_TINT[tag] ?? "bg-surface-container text-on-surface"}`}>
               {tag}
@@ -78,7 +78,7 @@ export function Hero({ site }: { site: SiteConfig }) {
           ))}
         </div>
 
-        <p className="hero-pos mt-7 max-w-[620px] text-body-l text-on-surface-variant md:mt-8 md:text-title-l">
+        <p className="hero-pos mt-7 max-w-[680px] text-body-l text-on-surface-variant md:mt-8 md:text-title-l">
           {site.heroPosition}
         </p>
 
@@ -95,7 +95,7 @@ export function Hero({ site }: { site: SiteConfig }) {
           </span>
         </div>
 
-        <div className="hero-tools mt-8 flex flex-wrap items-center gap-3 md:mt-12 md:gap-4.5">
+        <div className="hero-tools mt-8 flex max-w-[980px] flex-wrap items-center gap-3 md:mt-10 md:gap-4.5">
           <span className="text-label-m text-on-surface-variant">Building with</span>
           <div className="flex gap-2.5 flex-wrap text-label-l text-on-surface">
             {site.buildingWith.map((tool) => (

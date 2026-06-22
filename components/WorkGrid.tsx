@@ -30,7 +30,7 @@ function ProjectCard({ project, large }: { project: Project; large?: boolean }) 
     <motion.div layout transition={fmTransition.standard}>
       <TiltCard>
         <Link href={`/work/${project.slug}`} className="block no-underline group">
-          <div className="hig-card rounded-[24px]">
+          <div className="hig-card overflow-hidden rounded-[24px]">
             <div className="relative" style={{ aspectRatio: large ? "16/9" : "4/3" }}>
               {project.cover ? (
                 <div className={containBackdrop(project)}>
@@ -72,6 +72,13 @@ function ProjectCard({ project, large }: { project: Project; large?: boolean }) 
 
 export function WorkGrid({ projects }: { projects: Project[] }) {
   const [filter, setFilter] = useState<string>("all");
+  const counts = useMemo<Record<string, number>>(() => {
+    const next: Record<string, number> = { all: projects.length };
+    FILTERS.slice(1).forEach((f) => {
+      next[f.id] = projects.filter((p) => p.categories.includes(f.id)).length;
+    });
+    return next;
+  }, [projects]);
 
   const filtered = useMemo(() => {
     if (filter === "all") return projects;
@@ -86,12 +93,17 @@ export function WorkGrid({ projects }: { projects: Project[] }) {
           return (
             <button
               key={f.id}
+              type="button"
               onClick={() => setFilter(f.id)}
+              aria-pressed={active}
               className={`hig-control state-layer cursor-pointer rounded-full px-4.5 py-2.5 text-label-l transition-colors ${
                 active ? "border-primary bg-primary text-on-primary" : "border-outline text-on-surface-variant"
               }`}
             >
-              {f.label}
+              <span className="inline-flex items-center gap-2">
+                {f.label}
+                <span className="rounded-full border border-current/25 px-1.5 py-0.5 text-label-s leading-none opacity-80">{counts[f.id]}</span>
+              </span>
             </button>
           );
         })}

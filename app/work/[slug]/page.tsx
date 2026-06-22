@@ -82,12 +82,12 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(creativeWorkJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
-      <article className="relative px-5 md:px-14 max-w-[1100px] mx-auto pt-32">
+      <article className="relative mx-auto max-w-[1140px] px-5 pt-32 md:px-14 md:pt-36">
         <Reveal>
           <ProjectHeroMedia cover={project.cover} title={project.title} seed={project.seed} coverFit={project.coverFit} coverBg={project.coverBg} />
         </Reveal>
 
-        <Reveal delay={0.05} className="mt-8">
+        <Reveal delay={0.05} className="mt-8 md:mt-10">
           <div className={`text-label-l mb-3.5 ${SEED_TEXT[project.seed]}`}>
             {project.label} &nbsp;·&nbsp; {project.period}
           </div>
@@ -104,9 +104,9 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 
         {project.metrics.length > 0 && (
           <Reveal delay={0.1}>
-            <div className="flex gap-3 flex-wrap mb-9">
+            <div className="mb-10 flex flex-wrap gap-3 md:mb-12">
               {project.metrics.map((m) => (
-                <div key={m.label} className="flex-1 min-w-[150px] bg-surface-container-low rounded-2xl px-5 py-4.5">
+                <div key={m.label} className="hig-card flex-1 min-w-[150px] rounded-2xl px-5 py-4.5">
                   <div className={`text-title-l font-bold ${SEED_TEXT[project.seed]}`} style={{ fontSize: 22 }}>
                     {m.value}
                   </div>
@@ -118,18 +118,18 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         )}
       </article>
 
-      <div id="overview" className="px-5 md:px-14 max-w-[1100px] mx-auto">
+      <div id="overview" className="mx-auto max-w-[1140px] px-5 md:px-14">
         <ProjectMiniNav hasGallery={gallery.length > 0} />
       </div>
 
-      <article className="relative px-5 md:px-14 max-w-[1100px] mx-auto">
+      <article className="relative mx-auto max-w-[1140px] px-5 md:px-14">
         <Reveal>
-          <div className="mb-9">{content}</div>
+          <div className="mb-12">{content}</div>
         </Reveal>
 
         {gallery.length > 0 && (
           <div id="gallery" className="scroll-mt-24">
-            <div className="text-label-l text-on-surface-variant mb-4">Gallery</div>
+            <div className="mb-4 text-label-l text-on-surface-variant">Gallery</div>
             <ProjectGallery gallery={gallery} />
           </div>
         )}
@@ -143,8 +143,8 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 
         {project.brands && project.brands.length > 0 && (
           <Reveal>
-            <div className="text-label-l text-on-surface-variant mb-4">Brands worked on</div>
-            <div className="flex flex-wrap gap-2.5 mb-10">
+            <div className="mb-4 text-label-l text-on-surface-variant">Brands worked on</div>
+            <div className="mb-12 flex flex-wrap gap-2.5">
               {project.brands.map((brand) => (
                 <span key={brand} className="hig-control text-label-l px-4 py-2 rounded-full text-on-surface">
                   {brand}
@@ -156,8 +156,8 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 
         <div id="stack" className="scroll-mt-24">
           <Reveal>
-            <div className="text-label-l text-on-surface-variant mb-4">Stack</div>
-            <div className="flex flex-wrap gap-2.5 mb-12">
+            <div className="mb-4 text-label-l text-on-surface-variant">Stack</div>
+            <div className="mb-14 flex flex-wrap gap-2.5">
               {project.stack.map((tool) => (
                 <span key={tool} className={`text-label-l px-4 py-2 rounded-full ${SEED_CONTAINER_BG[project.seed]} ${SEED_CONTAINER_TEXT[project.seed]}`}>
                   {tool}

@@ -50,6 +50,13 @@ collections:
           - { label: Hero Positioning, name: heroPosition, widget: text }
           - { label: About Headline, name: aboutHeadline, widget: text }
           - { label: About Body, name: aboutBody, widget: text }
+          - label: About Media
+            name: media
+            widget: object
+            fields:
+              - { label: About Image, name: aboutImage, widget: image, required: false }
+              - { label: About Image Alt Text, name: aboutImageAlt, widget: string }
+              - { label: About Image Caption, name: aboutImageCaption, widget: string }
           - label: Stats
             name: stats
             widget: list

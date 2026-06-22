@@ -16,6 +16,11 @@ export type SiteConfig = {
   heroPosition: string;
   aboutHeadline: string;
   aboutBody: string;
+  media: {
+    aboutImage: string;
+    aboutImageAlt: string;
+    aboutImageCaption: string;
+  };
   stats: { value: number; suffix: string; label: string }[];
   buildingWith: string[];
   whatsapp?: { number?: string; url?: string; message?: string };

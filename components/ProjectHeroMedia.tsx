@@ -38,7 +38,7 @@ export function ProjectHeroMedia({
   }, []);
 
   return (
-    <div ref={wrapRef} className="relative overflow-hidden rounded-2xl elevation-4" style={{ aspectRatio: "16/7" }}>
+    <div ref={wrapRef} className="relative aspect-[4/3] overflow-hidden rounded-[24px] border border-outline-variant bg-surface-container-low elevation-4 md:aspect-[16/7]">
       <div ref={mediaRef} className="absolute inset-0 will-change-transform">
         {cover ? (
           <>

@@ -9,18 +9,18 @@ export function Method({ steps }: { steps: MethodStep[] }) {
       <div className="grid gap-8 lg:grid-cols-[0.88fr_1.12fr] lg:items-start">
         <div>
           <Reveal>
-            <div className="text-label-l text-highlight mb-4">Operating System</div>
+            <div className="text-label-l text-highlight mb-4">Operating method</div>
           </Reveal>
           <Reveal delay={0.05}>
             <h2 className="text-headline-l text-on-surface">
-              From brief
+              How the work
               <br />
-              to working system.
+              moves.
             </h2>
           </Reveal>
           <Reveal delay={0.1}>
             <p className="mt-5 max-w-[460px] text-body-m text-on-surface-variant">
-              The process starts with the business problem, then turns strategy into language, assets, interfaces and workflows the team can actually use.
+              The process stays simple on purpose: diagnose the business problem, design the reusable system, deploy what the team can use and learn from the result.
             </p>
           </Reveal>
         </div>
@@ -28,7 +28,7 @@ export function Method({ steps }: { steps: MethodStep[] }) {
         <StaggerGroup className="grid gap-3 sm:grid-cols-2 md:gap-3.5">
           {steps.map((step, i) => (
             <StaggerItem key={step.title}>
-              <article className="hig-card min-h-[156px] rounded-[22px] p-4.5 md:min-h-[188px] md:p-5">
+              <article className="hig-card min-h-[150px] rounded-[22px] p-4.5 md:min-h-[176px] md:p-5">
                 <div className={`absolute -right-7 -top-7 h-28 w-28 rounded-full opacity-15 ${SEED_BG[step.seed]}`} />
                 <div className="relative z-10 mb-5 flex items-start justify-between gap-3 md:mb-7">
                   <div>

@@ -78,14 +78,6 @@ export function ContactSection({ site }: { site: SiteConfig }) {
         </div>
       </div>
       <div className="mt-11 text-body-s text-on-surface-variant opacity-70">© 2026 {site.name} · Designed & built end-to-end</div>
-
-      {wa ? (
-        <a href={wa} target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" className="hig-control state-layer fixed bottom-20 left-4 z-[87] inline-flex items-center gap-2.5 rounded-full bg-success px-4 py-3 text-label-l text-on-success no-underline sm:bottom-5 sm:left-5">
-          <WhatsAppIcon size={20} />
-          Chat with me
-        </a>
-      ) : null}
-
       <Snackbar open={copied}>
         <IconSymbol name="check_circle" size={18} filled className="text-success" />
         Email copied to clipboard
