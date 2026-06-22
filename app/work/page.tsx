@@ -5,7 +5,7 @@ import { Footer } from "@/components/Footer";
 import { getAllProjects, getSiteConfig } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Work — Dewald Visser",
+  title: "Work",
   description: "Selected projects across marketing, web, brand and systems - the proof behind the pillars.",
   alternates: { canonical: "/work" },
   openGraph: {

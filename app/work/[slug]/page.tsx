@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!project) return {};
   const url = `/work/${project.slug}`;
   return {
-    title: `${project.title} — Dewald Visser`,
+    title: project.title,
     description: project.outcome,
     alternates: { canonical: url },
     openGraph: {
