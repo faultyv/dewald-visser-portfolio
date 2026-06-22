@@ -86,7 +86,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <article className="relative mx-auto max-w-[1140px] px-5 pt-32 md:px-14 md:pt-36">
         <Reveal>
-          <ProjectHeroMedia cover={project.cover} title={project.title} seed={project.seed} coverFit={project.coverFit} coverBg={project.coverBg} />
+          <ProjectHeroMedia project={project} cover={project.cover} title={project.title} seed={project.seed} coverFit={project.coverFit} coverBg={project.coverBg} />
         </Reveal>
 
         <Reveal delay={0.05} className="mt-8 md:mt-10">

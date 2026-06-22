@@ -3,19 +3,23 @@
 import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { gsap } from "@/lib/gsap";
+import { ProjectCoverVisual } from "./ProjectCoverVisual";
 import { SEED_BG, COVER_BG } from "@/lib/seed-classes";
 import type { SeedName } from "@/lib/m3-theme";
+import type { Project } from "@/lib/content";
 
 export function ProjectHeroMedia({
   cover,
   title,
   seed,
+  project,
   coverFit = "cover",
   coverBg,
 }: {
   cover: string | null;
   title: string;
   seed: SeedName;
+  project?: Project;
   coverFit?: "cover" | "contain";
   coverBg?: "light" | "dark";
 }) {
@@ -40,7 +44,9 @@ export function ProjectHeroMedia({
   return (
     <div ref={wrapRef} className="relative aspect-[4/3] overflow-hidden rounded-[24px] border border-outline-variant bg-surface-container-low elevation-4 md:aspect-[16/7]">
       <div ref={mediaRef} className="absolute inset-0 will-change-transform">
-        {cover ? (
+        {project?.slug === "retail-production-dtp" ? (
+          <ProjectCoverVisual project={project} priority sizes="(max-width:768px) 100vw, 1100px" variant="hero" />
+        ) : cover ? (
           <>
             {coverFit === "contain" && (
               <div className={`absolute inset-0 ${coverBg ? COVER_BG[coverBg] : `${SEED_BG[seed]} opacity-10`}`} />

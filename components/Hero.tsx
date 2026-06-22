@@ -59,7 +59,7 @@ export function Hero({ site }: { site: SiteConfig }) {
           <span className="text-label-m text-on-surface-variant">{site.location}</span>
         </div>
 
-        <h1 className="m-0 max-w-[900px] text-display-l text-on-surface lg:max-w-[980px] xl:max-w-[1080px]">
+        <h1 aria-label={`${site.name}.`} className="m-0 max-w-[900px] text-display-l text-on-surface lg:max-w-[980px] xl:max-w-[1080px]">
           {site.name.split(" ").map((word, i) => (
             <span key={i} className="hero-mask block overflow-hidden pb-[0.04em]">
               <span className="hero-inner-line block">
