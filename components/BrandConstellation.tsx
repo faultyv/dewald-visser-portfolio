@@ -72,6 +72,16 @@ function domainSeed(domain: string): SeedName {
   return (DOMAINS.find((d) => d.id === domain)?.seed ?? "primary") as SeedName;
 }
 
+function isExternalUrl(url?: string) {
+  return Boolean(url && /^https?:\/\//.test(url));
+}
+
+function openCompanyUrl(url?: string) {
+  if (!url) return;
+  if (isExternalUrl(url)) window.open(url, "_blank", "noopener");
+  else window.location.href = url;
+}
+
 export function BrandConstellation({ companies }: { companies: CompanyEntry[] }) {
   const [active, setActive] = useState<string | null>(null);
   const [filter, setFilter] = useState<string>("all");
@@ -120,7 +130,8 @@ export function BrandConstellation({ companies }: { companies: CompanyEntry[] })
             <p className="m-0 max-w-[440px] text-body-m text-on-surface-variant">
               {companies.length} companies, ventures and clients — mapped by the worlds they sit in and the threads that connect
               them. Hover a node to trace its links; the highlighted strand is the Clinton Palframan network tying ministry,
-              production and education together.
+              production and education together, while the retail cluster carries the clicklocal / Think Local route through
+              Africa Paints, Solid Doors and Alif Doors.
             </p>
           </Reveal>
         </div>
@@ -197,9 +208,7 @@ export function BrandConstellation({ companies }: { companies: CompanyEntry[] })
                   type="button"
                   onMouseEnter={() => setActive(c.name)}
                   onFocus={() => setActive(c.name)}
-                  onClick={() => {
-                    if (c.url) window.open(c.url, "_blank", "noopener");
-                  }}
+                  onClick={() => openCompanyUrl(c.url)}
                   aria-label={`${c.name} — ${c.relationship}`}
                   className="group absolute -translate-x-1/2 -translate-y-1/2 cursor-pointer rounded-2xl outline-none"
                   style={{ left: `${pos.x}%`, top: `${pos.y}%`, opacity: focused ? 1 : 0.28, transition: "opacity 320ms ease, transform 320ms ease", transform: `translate(-50%, -50%) scale(${isActive ? 1.12 : 1})`, zIndex: isActive ? 30 : 10 }}
@@ -220,7 +229,7 @@ export function BrandConstellation({ companies }: { companies: CompanyEntry[] })
             })}
 
             {/* detail / insight panel */}
-            <div className="pointer-events-none absolute bottom-4 left-4 right-4 flex justify-between gap-3 md:right-auto md:max-w-[340px]">
+            <div className="pointer-events-none absolute left-4 right-4 top-4 flex justify-between gap-3 md:right-auto md:max-w-[340px]">
               <div className="hig-glass pointer-events-auto w-full rounded-2xl px-4 py-3">
                 {activeCompany ? (
                   <>
@@ -269,6 +278,7 @@ export function BrandConstellation({ companies }: { companies: CompanyEntry[] })
                 </div>
                 <div className="flex flex-col gap-2.5">
                   {items.map((c) => {
+                    const external = isExternalUrl(c.url);
                     const inner = (
                       <div className="flex items-center gap-3">
                         <span className={`grid h-9 w-9 shrink-0 place-items-center rounded-xl ${SEED_BG[d.seed]} ${SEED_ON[d.seed]} text-label-s`} style={{ fontFamily: "var(--font-display)", fontWeight: 800 }}>
@@ -282,7 +292,7 @@ export function BrandConstellation({ companies }: { companies: CompanyEntry[] })
                       </div>
                     );
                     return c.url ? (
-                      <a key={c.name} href={c.url} target="_blank" rel="noopener noreferrer" className="no-underline">
+                      <a key={c.name} href={c.url} target={external ? "_blank" : undefined} rel={external ? "noopener noreferrer" : undefined} className="no-underline">
                         {inner}
                       </a>
                     ) : (
