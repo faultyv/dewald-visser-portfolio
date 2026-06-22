@@ -4,7 +4,7 @@ import { CraftSystem } from "@/components/CraftSystem";
 import { Pillars } from "@/components/Pillars";
 import { Method } from "@/components/Method";
 import { Career } from "@/components/Career";
-import { Companies } from "@/components/Companies";
+import { BrandConstellation } from "@/components/BrandConstellation";
 import { WorkTeaser } from "@/components/WorkTeaser";
 import { SkillsMarquee } from "@/components/SkillsMarquee";
 import { Credentials } from "@/components/Credentials";
@@ -29,7 +29,7 @@ export default function Home() {
       <WorkTeaser projects={projects} />
       <Pillars />
       <Career cv={cv} />
-      <Companies companies={companies} />
+      <BrandConstellation companies={companies} />
       <Method steps={method} />
       <SkillsMarquee tags={marqueeTags} skills={skills} />
       <Credentials certs={certs} site={site} />
