@@ -56,7 +56,6 @@ export function Hero({ site }: { site: SiteConfig }) {
               src="/images/about/portrait.jpg"
               alt=""
               fill
-              priority
               sizes="360px"
               className="object-cover"
             />

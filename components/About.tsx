@@ -72,11 +72,10 @@ export function About({ site }: { site: SiteConfig }) {
               <div ref={photoRef} className="absolute -inset-y-[8%] inset-x-0 will-change-transform">
                 <Image
                   src="/images/about/portrait.jpg"
-                  alt={site.name}
+                  alt={`${site.name} — portrait`}
                   fill
                   sizes="(max-width: 768px) 90vw, 520px"
                   className="object-cover"
-                  priority
                 />
               </div>
             </div>
