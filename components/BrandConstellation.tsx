@@ -67,27 +67,24 @@ const ICON_BY_COMPANY: Record<string, string> = {
   "Investors Choice": "monitoring",
 };
 
-const THREADS = [
+const THREADS: { label: string; seed: SeedName; icon: string; body: string }[] = [
   {
     label: "Palframan network",
-    seed: "highlight" as SeedName,
+    seed: "highlight",
     icon: "hub",
-    companies: ["Clinton Palframan Ministries", "Joseph Business School Africa", "Mediatrade"],
-    body: "One relationship moving through ministry, education, live production and retail artworking.",
+    body: "Clinton Palframan Ministries, Joseph Business School and Mediatrade — one relationship across ministry, education and production.",
   },
   {
     label: "clicklocal agency",
-    seed: "tertiary" as SeedName,
+    seed: "tertiary",
     icon: "route",
-    companies: ["clicklocal", "Africa Paints", "Solid Doors", "Alif Doors", "Dynamic Automation"],
-    body: "My own digital + design agency and the local-business clients that ran through it — brand, web, campaigns, signage and production.",
+    body: "My own agency and the clients that ran through it — Africa Paints, Solid Doors, Alif Doors and Dynamic Automation.",
   },
   {
     label: "Founder path",
-    seed: "secondary" as SeedName,
+    seed: "secondary",
     icon: "rocket_launch",
-    companies: ["Sun Paper and Coatings", "clicklocal", "Contours Design Studio / Faux Flora"],
-    body: "Owned ventures where the strategy, offer, brand and operating system sat together.",
+    body: "Owned ventures where strategy, offer, brand and operating system all sat together — Sun Paper, clicklocal and Faux Flora.",
   },
 ];
 
@@ -100,13 +97,42 @@ function isExternalUrl(url?: string) {
   return Boolean(url && /^https?:\/\//.test(url));
 }
 
-function relatedThreads(name?: string) {
-  if (!name) return THREADS;
-  return THREADS.filter((thread) => thread.companies.includes(name));
+function CompanyCard({ company, domain }: { company: CompanyEntry; domain: Domain }) {
+  const icon = ICON_BY_COMPANY[company.name] ?? domain.icon;
+  const inner = (
+    <article className="hig-card group relative flex h-full flex-col rounded-[20px] p-4 transition-[transform,box-shadow] duration-300 hover:-translate-y-1 md:p-4.5">
+      <div className="flex items-start justify-between gap-3">
+        <span className={`grid h-11 w-11 shrink-0 place-items-center rounded-2xl ${SEED_BG[domain.seed]} ${SEED_ON[domain.seed]} elevation-1`}>
+          <IconSymbol name={icon} size={22} filled />
+        </span>
+        {company.url ? (
+          <IconSymbol
+            name={isExternalUrl(company.url) ? "open_in_new" : "arrow_outward"}
+            size={16}
+            className="mt-1 text-on-surface-variant opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+          />
+        ) : null}
+      </div>
+      <div className="mt-3.5 text-title-s text-on-surface">{company.name}</div>
+      <div className={`mt-1 text-label-m ${SEED_TEXT[domain.seed]}`}>{company.relationship}</div>
+      <div className="mt-auto pt-3 text-label-s text-on-surface-variant">{company.period}</div>
+    </article>
+  );
+
+  if (!company.url) return inner;
+  return (
+    <a
+      href={company.url}
+      target={isExternalUrl(company.url) ? "_blank" : undefined}
+      rel={isExternalUrl(company.url) ? "noopener noreferrer" : undefined}
+      className="block no-underline"
+    >
+      {inner}
+    </a>
+  );
 }
 
 export function BrandConstellation({ companies }: { companies: CompanyEntry[] }) {
-  const [active, setActive] = useState(companies[0]?.name ?? "");
   const [filter, setFilter] = useState("all");
 
   const grouped = useMemo(
@@ -118,11 +144,7 @@ export function BrandConstellation({ companies }: { companies: CompanyEntry[] })
     [companies],
   );
 
-  const activeCompany = companies.find((company) => company.name === active) ?? companies[0];
-  const activeDomain = activeCompany ? domainFor(activeCompany) : DOMAINS[0];
-  const visibleGroups = grouped.filter((group) => filter === "all" || group.id === filter);
-  const activeThreads = relatedThreads(activeCompany?.name);
-  const activeGroupCount = visibleGroups.reduce((total, group) => total + group.items.length, 0);
+  const visibleGroups = grouped.filter((group) => (filter === "all" || group.id === filter) && group.items.length);
 
   return (
     <section id="companies" className="surface-band section-pad-tight relative">
@@ -133,25 +155,26 @@ export function BrandConstellation({ companies }: { companies: CompanyEntry[] })
               <div className="text-label-l text-success mb-3.5">Companies &amp; collaborators</div>
             </Reveal>
             <Reveal delay={0.05}>
-              <h2 className="text-headline-l text-on-surface">The operating map behind the work.</h2>
+              <h2 className="text-headline-l text-on-surface">The brands behind the work.</h2>
             </Reveal>
           </div>
           <Reveal delay={0.1}>
-            <p className="m-0 max-w-[460px] text-body-m text-on-surface-variant">
-              {companies.length} companies, ventures and clients, arranged as proof paths instead of abstract logo dots. Select a card
-              to see the relationship, discipline and hidden thread it belongs to.
+            <p className="m-0 max-w-[440px] text-body-m text-on-surface-variant">
+              {companies.length} companies, ventures and clients across five worlds — from my own ventures to the agencies, ministries
+              and manufacturers I&apos;ve built for.
             </p>
           </Reveal>
         </div>
 
+        {/* Filters */}
         <Reveal delay={0.12}>
-          <div className="mb-5 flex flex-wrap gap-2">
+          <div className="mb-8 flex flex-wrap gap-2">
             <button
               type="button"
               onClick={() => setFilter("all")}
               aria-pressed={filter === "all"}
               className={`state-layer cursor-pointer rounded-full border px-3.5 py-1.5 text-label-m transition-colors ${
-                filter === "all" ? "border-transparent bg-on-surface text-surface" : "border-outline-variant text-on-surface-variant"
+                filter === "all" ? "border-transparent bg-on-surface text-surface" : "border-outline-variant text-on-surface-variant hover:text-on-surface"
               }`}
             >
               All worlds
@@ -165,7 +188,7 @@ export function BrandConstellation({ companies }: { companies: CompanyEntry[] })
                   onClick={() => setFilter(on ? "all" : domain.id)}
                   aria-pressed={on}
                   className={`state-layer inline-flex cursor-pointer items-center gap-2 rounded-full border px-3.5 py-1.5 text-label-m transition-colors ${
-                    on ? `border-transparent ${SEED_CONTAINER_BG[domain.seed]} ${SEED_CONTAINER_TEXT[domain.seed]}` : "border-outline-variant text-on-surface-variant"
+                    on ? `border-transparent ${SEED_CONTAINER_BG[domain.seed]} ${SEED_CONTAINER_TEXT[domain.seed]}` : "border-outline-variant text-on-surface-variant hover:text-on-surface"
                   }`}
                 >
                   <IconSymbol name={domain.icon} size={15} filled className={on ? undefined : SEED_TEXT[domain.seed]} />
@@ -176,140 +199,53 @@ export function BrandConstellation({ companies }: { companies: CompanyEntry[] })
           </div>
         </Reveal>
 
-        <Reveal delay={0.13}>
-          <div className="intel-status mb-5 grid gap-2 rounded-[22px] border border-outline-variant bg-surface-container-low p-2.5 sm:grid-cols-3">
-            <div className="intel-status-item">
-              <IconSymbol name="account_tree" size={18} filled />
-              <span><strong>{activeGroupCount}</strong> visible proof points</span>
-            </div>
-            <div className="intel-status-item">
-              <IconSymbol name="hub" size={18} filled />
-              <span><strong>{THREADS.length}</strong> relationship threads</span>
-            </div>
-            <div className="intel-status-item">
-              <IconSymbol name="radar" size={18} filled />
-              <span><strong>{DOMAINS.length}</strong> operating worlds</span>
-            </div>
-          </div>
-        </Reveal>
-
-        <Reveal delay={0.15} dir="scale">
-          <div className="intel-map hig-card rounded-[28px] p-4 md:p-5 lg:p-6">
-            <div className="grid gap-5 lg:grid-cols-[360px_minmax(0,1fr)]">
-              <aside className="intel-readout rounded-[24px] border border-outline-variant bg-surface-container-low p-4 md:p-5">
-                {activeCompany ? (
-                  <>
-                    <div className="mb-4 flex items-start gap-3">
-                      <span className={`grid h-12 w-12 shrink-0 place-items-center rounded-2xl ${SEED_BG[activeDomain.seed]} ${SEED_ON[activeDomain.seed]} elevation-1`}>
-                        <IconSymbol name={ICON_BY_COMPANY[activeCompany.name] ?? activeDomain.icon} size={25} filled />
-                      </span>
-                      <div className="min-w-0">
-                        <div className={`text-label-m ${SEED_TEXT[activeDomain.seed]}`}>{activeDomain.label}</div>
-                        <h3 className="mt-1 text-title-l text-on-surface">{activeCompany.name}</h3>
-                      </div>
-                    </div>
-
-                    <div className="grid gap-3">
-                      <div>
-                        <div className="text-label-s text-on-surface-variant">Relationship</div>
-                        <div className="mt-1 text-body-m text-on-surface">{activeCompany.relationship}</div>
-                      </div>
-                      <div>
-                        <div className="text-label-s text-on-surface-variant">Discipline</div>
-                        <div className="mt-1 text-body-m text-on-surface">{activeCompany.discipline}</div>
-                      </div>
-                      <div>
-                        <div className="text-label-s text-on-surface-variant">Period</div>
-                        <div className="mt-1 text-body-m text-on-surface">{activeCompany.period}</div>
-                      </div>
-                    </div>
-
-                    {activeCompany.url ? (
-                      <a
-                        href={activeCompany.url}
-                        target={isExternalUrl(activeCompany.url) ? "_blank" : undefined}
-                        rel={isExternalUrl(activeCompany.url) ? "noopener noreferrer" : undefined}
-                        className={`state-layer mt-5 inline-flex items-center gap-2 rounded-full border border-outline-variant px-3.5 py-2 text-label-m no-underline ${SEED_TEXT[activeDomain.seed]}`}
-                      >
-                        Open proof
-                        <IconSymbol name={isExternalUrl(activeCompany.url) ? "open_in_new" : "arrow_forward"} size={15} />
-                      </a>
-                    ) : null}
-                  </>
-                ) : null}
-
-                <div className="hig-divider my-5" />
-                <div className="mb-3 text-label-m text-on-surface-variant">Connection threads</div>
-                <div className="grid gap-2.5">
-                  {activeThreads.length ? (
-                    activeThreads.map((thread) => (
-                      <div key={thread.label} className={`rounded-2xl p-3 ${SEED_CONTAINER_BG[thread.seed]} ${SEED_CONTAINER_TEXT[thread.seed]}`}>
-                        <div className="flex items-center gap-2 text-title-s">
-                          <IconSymbol name={thread.icon} size={17} filled />
-                          {thread.label}
-                        </div>
-                        <div className="mt-1.5 text-body-s">{thread.body}</div>
-                      </div>
-                    ))
-                  ) : (
-                    <div className="rounded-2xl border border-outline-variant bg-surface-container p-3 text-body-s text-on-surface-variant">
-                      This role sits as a standalone proof point in the wider operating map.
-                    </div>
-                  )}
+        {/* Grouped grid */}
+        <div className="flex flex-col gap-9">
+          {visibleGroups.map((domain) => (
+            <Reveal key={domain.id} delay={0.04}>
+              <div>
+                <div className="mb-4 flex items-center gap-3">
+                  <span className={`grid h-10 w-10 shrink-0 place-items-center rounded-2xl ${SEED_CONTAINER_BG[domain.seed]} ${SEED_CONTAINER_TEXT[domain.seed]}`}>
+                    <IconSymbol name={domain.icon} size={20} filled />
+                  </span>
+                  <div>
+                    <div className="text-title-m text-on-surface">{domain.label}</div>
+                    <div className="text-label-s text-on-surface-variant">{domain.note}</div>
+                  </div>
+                  <span className={`ml-auto rounded-full px-2.5 py-1 text-label-s ${SEED_CONTAINER_BG[domain.seed]} ${SEED_CONTAINER_TEXT[domain.seed]}`}>{domain.items.length}</span>
                 </div>
-              </aside>
+                <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                  {domain.items.map((company) => (
+                    <CompanyCard key={company.name} company={company} domain={domain} />
+                  ))}
+                </div>
+              </div>
+            </Reveal>
+          ))}
+        </div>
 
-              <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
-                {visibleGroups.map((domain) => (
-                  <article key={domain.id} className="intel-lane rounded-[22px] border border-outline-variant bg-surface-container-low p-3.5">
-                    <div className="mb-3 flex items-start justify-between gap-3">
-                      <div className="flex items-start gap-2.5">
-                        <span className={`grid h-9 w-9 shrink-0 place-items-center rounded-xl ${SEED_CONTAINER_BG[domain.seed]} ${SEED_CONTAINER_TEXT[domain.seed]}`}>
-                          <IconSymbol name={domain.icon} size={19} filled />
-                        </span>
-                        <div>
-                          <div className="text-title-s text-on-surface">{domain.label}</div>
-                          <div className="mt-0.5 text-label-s text-on-surface-variant">{domain.note}</div>
-                        </div>
-                      </div>
-                      <span className={`rounded-full px-2 py-0.5 text-label-s ${SEED_CONTAINER_BG[domain.seed]} ${SEED_CONTAINER_TEXT[domain.seed]}`}>{domain.items.length}</span>
+        {/* Connection threads */}
+        {filter === "all" ? (
+          <Reveal delay={0.1}>
+            <div className="mt-12 border-t border-outline-variant pt-9">
+              <div className="mb-4 flex items-center gap-2 text-label-l text-on-surface-variant">
+                <IconSymbol name="hub" size={16} className="text-highlight" />
+                The threads that connect them
+              </div>
+              <div className="grid gap-3 md:grid-cols-3">
+                {THREADS.map((thread) => (
+                  <div key={thread.label} className="hig-card rounded-[20px] p-4.5">
+                    <div className={`flex items-center gap-2 text-title-s ${SEED_TEXT[thread.seed]}`}>
+                      <IconSymbol name={thread.icon} size={18} filled />
+                      {thread.label}
                     </div>
-
-                    <div className="grid gap-2">
-                      {domain.items.map((company) => {
-                        const selected = activeCompany?.name === company.name;
-                        return (
-                          <button
-                            key={company.name}
-                            type="button"
-                            onMouseEnter={() => setActive(company.name)}
-                            onFocus={() => setActive(company.name)}
-                            onClick={() => setActive(company.name)}
-                            aria-pressed={selected}
-                            className={`intel-company state-layer grid cursor-pointer grid-cols-[38px_minmax(0,1fr)_auto] items-center gap-3 rounded-2xl border p-2.5 text-left transition-all ${
-                              selected
-                                ? `border-transparent ${SEED_CONTAINER_BG[domain.seed]} ${SEED_CONTAINER_TEXT[domain.seed]} elevation-1`
-                                : "border-outline-variant bg-surface-container text-on-surface hover:border-outline"
-                            }`}
-                          >
-                            <span className={`grid h-[38px] w-[38px] place-items-center rounded-xl ${selected ? `${SEED_BG[domain.seed]} ${SEED_ON[domain.seed]}` : `${SEED_CONTAINER_BG[domain.seed]} ${SEED_CONTAINER_TEXT[domain.seed]}`}`}>
-                              <IconSymbol name={ICON_BY_COMPANY[company.name] ?? domain.icon} size={20} filled />
-                            </span>
-                            <span className="min-w-0">
-                              <span className="block truncate text-title-s">{company.name}</span>
-                              <span className="mt-0.5 block truncate text-label-s opacity-75">{company.relationship}</span>
-                            </span>
-                            <IconSymbol name="chevron_right" size={18} className="opacity-60" />
-                          </button>
-                        );
-                      })}
-                    </div>
-                  </article>
+                    <p className="mt-2 text-body-s text-on-surface-variant">{thread.body}</p>
+                  </div>
                 ))}
               </div>
             </div>
-          </div>
-        </Reveal>
+          </Reveal>
+        ) : null}
       </div>
     </section>
   );
