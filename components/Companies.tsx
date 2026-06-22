@@ -25,7 +25,7 @@ export function Companies({ companies }: { companies: CompanyEntry[] }) {
           </div>
           <Reveal delay={0.1}>
             <p className="m-0 max-w-[430px] text-body-m text-on-surface-variant">
-              Companies, ventures and organisations connected to the career timeline. Each mark is flattened into the site system so the logos add context without breaking the design language.
+              The companies, ventures and clients behind the timeline — retail production, faith-based education, e-commerce, financial services and my own ventures across brand, web and growth.
             </p>
           </Reveal>
           <Reveal delay={0.15}>

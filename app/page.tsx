@@ -26,11 +26,11 @@ export default function Home() {
       <Hero site={site} />
       <About site={site} />
       <CraftSystem site={site} />
+      <WorkTeaser projects={projects} />
       <Pillars />
-      <Method steps={method} />
       <Career cv={cv} />
       <Companies companies={companies} />
-      <WorkTeaser projects={projects} />
+      <Method steps={method} />
       <SkillsMarquee tags={marqueeTags} skills={skills} />
       <Credentials certs={certs} site={site} />
       <ContactSection site={site} />

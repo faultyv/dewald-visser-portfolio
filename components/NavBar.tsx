@@ -12,11 +12,11 @@ import { fmTransition } from "@/lib/motion-tokens";
 const LINKS = [
   { href: "/#about", label: "About" },
   { href: "/#system", label: "System" },
+  { href: "/work", label: "Work" },
   { href: "/#pillars", label: "Pillars" },
-  { href: "/#method", label: "Method" },
   { href: "/#cv", label: "Career" },
   { href: "/#companies", label: "Companies" },
-  { href: "/work", label: "Work" },
+  { href: "/#method", label: "Method" },
   { href: "/#credentials", label: "Certs" },
   { href: "/#contact", label: "Contact" },
 ];

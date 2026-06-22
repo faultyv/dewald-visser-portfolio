@@ -74,7 +74,7 @@ export function CraftSystem({ site }: { site: SiteConfig }) {
     <section id="system" className="section-pad content-shell-wide relative">
       <div className="mx-auto mb-10 max-w-[820px] text-center md:mb-12">
         <Reveal>
-          <div className="mb-4 text-label-l text-primary">Portfolio operating board</div>
+          <div className="mb-4 text-label-l text-primary">How a project runs</div>
         </Reveal>
         <Reveal delay={0.05}>
           <h2 className="text-headline-l text-on-surface">
@@ -83,7 +83,7 @@ export function CraftSystem({ site }: { site: SiteConfig }) {
         </Reveal>
         <Reveal delay={0.1}>
           <p className="mx-auto mt-5 max-w-[620px] text-body-l text-on-surface-variant">
-            A live map of how strategy, creative direction, web systems and AI workflow design become one practical operating layer for projects.
+            What it looks like to carry a project end to end with one operator — brief, creative, build and iteration moving on the same board, instead of a chain of handoffs between agencies.
           </p>
         </Reveal>
       </div>
