@@ -186,7 +186,7 @@ export function ProjectGallery({ gallery }: { gallery: GalleryItem[] }) {
                     </div>
                   </div>
 
-                  <Dialog.Close className="absolute right-4 top-4 grid h-11 w-11 cursor-pointer place-items-center rounded-full border border-outline bg-surface-container text-on-surface elevation-2 state-layer md:right-6 md:top-6">
+                  <Dialog.Close aria-label="Close" className="absolute right-4 top-4 grid h-11 w-11 cursor-pointer place-items-center rounded-full border border-outline bg-surface-container text-on-surface elevation-2 state-layer md:right-6 md:top-6">
                     <IconSymbol name="close" size={22} />
                   </Dialog.Close>
                 </motion.div>
