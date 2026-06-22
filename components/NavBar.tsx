@@ -86,11 +86,18 @@ export function NavBar({ name = "Dewald Visser" }: { name?: string }) {
             key={l.href}
             href={l.href}
             aria-current={on ? "page" : undefined}
-            className={`state-layer rounded-full px-3.5 py-2 no-underline transition-colors ${
-              on ? "bg-primary text-on-primary shadow-[0_10px_22px_-16px_var(--color-primary)]" : "text-on-surface-variant hover:text-on-surface"
+            className={`relative state-layer rounded-full px-3.5 py-2 no-underline transition-colors ${
+              on ? "text-on-primary" : "text-on-surface-variant hover:text-on-surface"
             }`}
           >
-            {l.label}
+            {on && (
+              <motion.span
+                layoutId="navPill"
+                transition={fmTransition.standard}
+                className="absolute inset-0 rounded-full bg-primary shadow-[0_10px_22px_-16px_var(--color-primary)]"
+              />
+            )}
+            <span className="relative z-10">{l.label}</span>
           </Link>
           );
         })}
