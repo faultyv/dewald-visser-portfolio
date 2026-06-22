@@ -1,34 +1,56 @@
 [
   {
-    "date": "Present",
-    "role": "Director",
-    "org": "clicklocal.co.za",
-    "brandMark": "CL",
-    "brandColor": "primary",
-    "tags": ["Founder"],
-    "detail": "Own the venture end-to-end - brand, platform, content and the operating systems behind it. Built for local businesses and led from the ground up.",
-    "software": ["WordPress", "SEO", "Google Ads", "CRM", "Canva"],
+    "date": "2026-Present",
+    "role": "Founder / Owner",
+    "org": "Sun Paper and Coatings",
+    "brandMark": "SP",
+    "brandColor": "secondary",
+    "tags": ["Founder", "Marketing"],
+    "detail": "Founder-led venture focused on practical business setup, brand direction, commercial positioning and the systems needed to sell and deliver cleanly.",
+    "software": ["CRM", "Google Workspace", "Canva", "WordPress"],
     "proof": [
       {
-        "type": "Platform",
-        "title": "Local-business system",
-        "detail": "Built the brand direction, website structure and operating flow behind the clicklocal.co.za platform."
+        "type": "Founder",
+        "title": "Current venture ownership",
+        "detail": "Own the positioning, operating setup and delivery thinking behind the current business direction."
       },
       {
-        "type": "Founder",
-        "title": "End-to-end ownership",
-        "detail": "Own positioning, content, systems and business direction rather than one narrow delivery lane."
+        "type": "Systems",
+        "title": "Commercial setup",
+        "detail": "Build the practical workflows, content and marketing structure needed to turn ideas into usable offers."
       }
     ]
   },
   {
-    "date": "Present",
-    "role": "Graphic Design Specialist",
+    "date": "Jul 2025-Mar 2026",
+    "role": "Lead CAC - Creative Arts & Communications",
+    "org": "Olive Tree Church",
+    "brandMark": "OT",
+    "brandColor": "success",
+    "tags": ["Design", "Marketing", "Web"],
+    "detail": "Led creative arts and communications delivery across church media, campaigns, design output and operational communications.",
+    "software": ["Photoshop", "Illustrator", "InDesign", "After Effects", "Canva", "Google Workspace"],
+    "proof": [
+      {
+        "type": "Creative",
+        "title": "Church media leadership",
+        "detail": "Coordinated visual and communication output across services, campaigns and internal needs."
+      },
+      {
+        "type": "Operations",
+        "title": "Creative delivery rhythm",
+        "detail": "Helped keep content, campaigns and communications moving with a consistent production cadence."
+      }
+    ]
+  },
+  {
+    "date": "2024-Jul 2025",
+    "role": "Graphic Design Specialist / Production Creative",
     "org": "Mediatrade",
     "brandMark": "MT",
     "brandColor": "tertiary",
     "tags": ["Design"],
-    "detail": "Brand and creative production across print and digital - identity, social creative and motion graphics through the full Adobe suite.",
+    "detail": "Brand and creative production across print and digital - identity, social creative, DTP and production artwork through the Adobe suite.",
     "software": ["Photoshop", "Illustrator", "InDesign", "After Effects", "Canva"],
     "proof": [
       {
@@ -37,14 +59,14 @@
         "detail": "Produced campaign-ready visual assets across brand, print, social and motion formats."
       },
       {
-        "type": "Design",
-        "title": "Brand system support",
-        "detail": "Carried visual consistency across multiple output types without losing execution speed."
+        "type": "DTP",
+        "title": "Production artworking",
+        "detail": "Prepared retail and print assets with the precision needed for production and repro."
       }
     ]
   },
   {
-    "date": "Present",
+    "date": "2023/2024-Jul 2025",
     "role": "Multimedia Specialist",
     "org": "Joseph Business School Africa",
     "brandMark": "JBS",
@@ -71,7 +93,24 @@
     ]
   },
   {
-    "date": "2021",
+    "date": "Mar-Jul 2021",
+    "role": "Logo Designer",
+    "org": "Cambridge University initiative",
+    "brandMark": "CU",
+    "brandColor": "accent",
+    "tags": ["Design"],
+    "detail": "Designed a logo and mockups for an international sustainable-development initiative.",
+    "software": ["Illustrator", "Photoshop", "InDesign"],
+    "proof": [
+      {
+        "type": "Identity",
+        "title": "Sustainability logo system",
+        "detail": "Created the logo direction and mockup presentation for an international initiative."
+      }
+    ]
+  },
+  {
+    "date": "May 2021",
     "role": "Marketing Designer",
     "org": "Kirstenhof Car Hire",
     "brandMark": "KCH",
@@ -98,7 +137,7 @@
     ]
   },
   {
-    "date": "2021",
+    "date": "May 2021",
     "role": "Front-End Web Designer",
     "org": "Autodoc Diagnostics",
     "brandMark": "AD",
@@ -120,34 +159,17 @@
     ]
   },
   {
-    "date": "Mar-Jul 2021",
-    "role": "Logo Designer",
-    "org": "Cambridge University initiative",
-    "brandMark": "CU",
-    "brandColor": "accent",
-    "tags": ["Design"],
-    "detail": "Designed a logo and mockups for an international sustainable-development initiative.",
-    "software": ["Illustrator", "Photoshop", "InDesign"],
-    "proof": [
-      {
-        "type": "Identity",
-        "title": "Sustainability logo system",
-        "detail": "Created the logo direction and mockup presentation for an international initiative."
-      }
-    ]
-  },
-  {
-    "date": "2020",
-    "role": "Design and Sales",
-    "org": "Contours Design Studio · Faux Flora",
-    "brandMark": "FF",
+    "date": "Feb-Dec 2020",
+    "role": "Sales Assistant / Design and Sales",
+    "org": "Contours Design Studio / Faux Flora",
+    "brandMark": "CDS",
     "brandColor": "warning",
-    "tags": ["Founder", "Web", "Design"],
-    "detail": "Bespoke design and installation. Built a Shopify store and drop-ship model during hard lockdown to protect cash flow and jobs - product design and reporting included.",
+    "tags": ["Design", "Web", "Marketing"],
+    "detail": "Bespoke design and installation support. Built a Shopify store and drop-ship model during hard lockdown to protect cash flow and jobs - product design and reporting included.",
     "software": ["Shopify", "Photoshop", "Illustrator", "SketchUp", "Canva", "Sage Pastel"],
     "proof": [
       {
-        "type": "Founder",
+        "type": "E-commerce",
         "title": "Lockdown e-commerce pivot",
         "detail": "Built a Shopify store and drop-ship model under pressure to keep cash moving during lockdown."
       },
@@ -159,7 +181,7 @@
     ]
   },
   {
-    "date": "2016-2019",
+    "date": "Nov 2016-Dec 2019",
     "role": "Programme Advisor",
     "org": "Educor Holdings",
     "brandMark": "ED",
@@ -186,24 +208,58 @@
     ]
   },
   {
-    "date": "2014-2016",
-    "role": "Sales and Lead Generation",
-    "org": "The Unlimited · Old Mutual · Investors Choice",
-    "brandMark": "SA",
+    "date": "Jan-Sep 2016",
+    "role": "Telemarketer",
+    "org": "The Unlimited",
+    "brandMark": "TU",
     "brandColor": "warning",
     "tags": ["Foundations"],
-    "detail": "Sales, lead generation and commercial foundations under the creative work - including, at Old Mutual's Welstand Agri division, a self-taught website build and a full rebrand.",
-    "software": ["CRM", "Google Workspace", "SEO"],
+    "detail": "Sales, lead generation and call-based commercial foundations before the later creative, marketing and systems work.",
+    "software": ["CRM", "Google Workspace"],
     "proof": [
       {
         "type": "Sales",
-        "title": "Lead generation foundation",
-        "detail": "Built early commercial muscle through sales, lead generation, training and web-support exposure."
-      },
+        "title": "Call-based sales foundation",
+        "detail": "Built early commercial muscle through telemarketing, lead generation and high-volume customer conversations."
+      }
+    ]
+  },
+  {
+    "date": "Oct 2014-Dec 2015",
+    "role": "Development Assistant",
+    "org": "Old Mutual",
+    "brandMark": "OM",
+    "brandColor": "success",
+    "tags": ["Foundations", "Web", "Design"],
+    "detail": "Supported development work at Old Mutual, including the Welstand Agri context where a self-taught website build and rebrand formed an early bridge into digital delivery.",
+    "software": ["CRM", "Google Workspace", "SEO"],
+    "proof": [
       {
         "type": "Web",
         "title": "Self-taught site build",
         "detail": "Built online quotation and appointment-booking support while learning the web stack hands-on."
+      },
+      {
+        "type": "Brand",
+        "title": "Welstand Agri rebrand",
+        "detail": "Supported a practical rebrand context that connected business development with visual and digital execution."
+      }
+    ]
+  },
+  {
+    "date": "Jan-Sep 2014",
+    "role": "Software Telemarketer",
+    "org": "Investors Choice",
+    "brandMark": "IC",
+    "brandColor": "info",
+    "tags": ["Foundations"],
+    "detail": "Early software telemarketing role focused on product conversation, lead handling and sales discipline.",
+    "software": ["CRM", "Google Workspace"],
+    "proof": [
+      {
+        "type": "Sales",
+        "title": "Software sales foundation",
+        "detail": "Built early experience translating software offers into customer conversations."
       }
     ]
   }

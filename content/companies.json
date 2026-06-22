@@ -1,24 +1,29 @@
 [
   {
-    "name": "clicklocal.co.za",
-    "mark": "CL",
-    "seed": "primary",
-    "relationship": "Founder / Director",
-    "discipline": "Brand, platform, content and operating systems",
-    "period": "Present",
-    "url": "https://www.instagram.com/clicklocal.co.za/",
-    "socials": [
-      { "kind": "instagram", "url": "https://www.instagram.com/clicklocal.co.za/" },
-      { "kind": "facebook", "url": "https://www.facebook.com/clicklocal.co.za/" }
-    ]
+    "name": "Sun Paper and Coatings",
+    "mark": "SP",
+    "seed": "secondary",
+    "relationship": "Founder / Owner",
+    "discipline": "Business setup, brand direction and operating systems",
+    "period": "2026-Present",
+    "url": ""
+  },
+  {
+    "name": "Olive Tree Church",
+    "mark": "OT",
+    "seed": "success",
+    "relationship": "Lead CAC - Creative Arts & Communications",
+    "discipline": "Church media, campaigns and communications",
+    "period": "Jul 2025-Mar 2026",
+    "url": ""
   },
   {
     "name": "Mediatrade",
     "mark": "MT",
     "seed": "tertiary",
-    "relationship": "Graphic Design Specialist",
+    "relationship": "Graphic Design Specialist / Production Creative",
     "discipline": "Retail production, POS, repro and print artworking",
-    "period": "Present",
+    "period": "2024-Jul 2025",
     "url": "https://mediatrade.co.za/"
   },
   {
@@ -27,16 +32,16 @@
     "seed": "success",
     "relationship": "Multimedia Specialist",
     "discipline": "Web systems, learning and multimedia content",
-    "period": "Present",
+    "period": "2023/2024-Jul 2025",
     "url": "https://jbsa.org.za/"
   },
   {
     "name": "Clinton Palframan Ministries",
     "mark": "CPM",
     "seed": "success",
-    "relationship": "Web & Brand Designer",
+    "relationship": "Creative / Web / Brand Partner",
     "discipline": "Website, brand identity and app for The Dreambook",
-    "period": "2024",
+    "period": "2024-2025",
     "url": "https://www.behance.net/gallery/197281959/The-Dreambook",
     "socials": [
       { "kind": "facebook", "url": "https://www.facebook.com/thedreambookofficial" },
@@ -74,12 +79,21 @@
     ]
   },
   {
+    "name": "Cambridge University initiative",
+    "mark": "CU",
+    "seed": "accent",
+    "relationship": "Logo Designer",
+    "discipline": "Identity and mockup presentation",
+    "period": "Mar-Jul 2021",
+    "url": "https://www.behance.net/gallery/123143649/Logo-Design"
+  },
+  {
     "name": "Kirstenhof Car Hire",
     "mark": "KCH",
     "seed": "primary",
     "relationship": "Marketing Designer",
     "discipline": "Search, social, email and booking systems",
-    "period": "2021",
+    "period": "May 2021",
     "url": "https://kirstenhofcarhire.co.za/"
   },
   {
@@ -88,25 +102,16 @@
     "seed": "success",
     "relationship": "Front-End Web Designer",
     "discipline": "Online store, copy and logo redesign",
-    "period": "2021",
+    "period": "May 2021",
     "url": "https://www.theautodoc.co.za/shop/"
   },
   {
-    "name": "Cambridge University initiative",
-    "mark": "CU",
-    "seed": "accent",
-    "relationship": "Logo Designer",
-    "discipline": "Identity and mockup presentation",
-    "period": "2021",
-    "url": "https://www.behance.net/gallery/123143649/Logo-Design"
-  },
-  {
-    "name": "Contours Design Studio",
+    "name": "Contours Design Studio / Faux Flora",
     "mark": "CDS",
     "seed": "warning",
-    "relationship": "Design and Sales",
+    "relationship": "Sales Assistant / Design and Sales",
     "discipline": "Shopify, product design, installations and reporting",
-    "period": "2020",
+    "period": "Feb-Dec 2020",
     "url": ""
   },
   {
@@ -115,16 +120,16 @@
     "seed": "secondary",
     "relationship": "Programme Advisor",
     "discipline": "Campaign creative, admissions, analytics and AI readiness",
-    "period": "2016-2019",
+    "period": "Nov 2016-Dec 2019",
     "url": "https://educor.co.za/"
   },
   {
     "name": "The Unlimited",
     "mark": "TU",
     "seed": "warning",
-    "relationship": "Sales and Lead Generation",
+    "relationship": "Telemarketer",
     "discipline": "Sales foundation and lead generation",
-    "period": "2014-2016",
+    "period": "Jan-Sep 2016",
     "url": "https://theunlimited.co.za/"
   },
   {
@@ -133,7 +138,16 @@
     "seed": "success",
     "relationship": "Development Assistant",
     "discipline": "Self-taught web build and franchise rebrand (Welstand Agri)",
-    "period": "2015-2016",
+    "period": "Oct 2014-Dec 2015",
     "url": "https://www.oldmutual.co.za/"
+  },
+  {
+    "name": "Investors Choice",
+    "mark": "IC",
+    "seed": "info",
+    "relationship": "Software Telemarketer",
+    "discipline": "Software sales conversation and lead handling",
+    "period": "Jan-Sep 2014",
+    "url": ""
   }
 ]

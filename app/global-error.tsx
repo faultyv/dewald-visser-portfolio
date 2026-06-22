@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 // Renders only when the root layout itself throws, so the M3 theme CSS and fonts
 // are not available here — everything is inlined and self-contained on purpose.
 export default function GlobalError({ reset }: { error: Error & { digest?: string }; reset: () => void }) {
@@ -33,12 +35,12 @@ export default function GlobalError({ reset }: { error: Error & { digest?: strin
             >
               Try again
             </button>
-            <a
+            <Link
               href="/"
               style={{ borderRadius: 999, border: "1px solid #2a3350", color: "#e8eaf2", padding: "12px 22px", fontSize: 14, fontWeight: 600, textDecoration: "none" }}
             >
               Home
-            </a>
+            </Link>
           </div>
         </main>
       </body>

@@ -1,14 +1,18 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import Image from "next/image";
 import { Reveal } from "./Reveal";
 import { gsap } from "@/lib/gsap";
 import type { SiteConfig } from "@/lib/content";
 
+const OPERATOR_SIGNALS = [
+  { label: "Current venture", value: "Sun Paper and Coatings" },
+  { label: "Core range", value: "Strategy, campaigns, design, websites and AI workflows" },
+  { label: "Working base", value: "Durban, KwaZulu-Natal" },
+];
+
 export function About({ site }: { site: SiteConfig }) {
   const maskRef = useRef<HTMLDivElement>(null);
-  const photoRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -20,17 +24,10 @@ export function About({ site }: { site: SiteConfig }) {
       ease: "power3.out",
       scrollTrigger: { trigger: maskRef.current, start: "top 84%" },
     });
-    const parallax = gsap.to(photoRef.current, {
-      yPercent: -10,
-      ease: "none",
-      scrollTrigger: { trigger: "#about", start: "top bottom", end: "bottom top", scrub: true },
-    });
 
     return () => {
       reveal.scrollTrigger?.kill();
       reveal.kill();
-      parallax.scrollTrigger?.kill();
-      parallax.kill();
     };
   }, []);
 
@@ -67,21 +64,30 @@ export function About({ site }: { site: SiteConfig }) {
         </div>
 
         <Reveal dir="scale">
-          <div className="relative">
-            <div ref={maskRef} className="relative aspect-[4/3] overflow-hidden rounded-[22px] elevation-3 md:aspect-[4/5]">
-              <div ref={photoRef} className="absolute -inset-y-[8%] inset-x-0 will-change-transform">
-                <Image
-                  src="/images/about/portrait.jpg"
-                  alt={`${site.name} — portrait`}
-                  fill
-                  sizes="(max-width: 768px) 90vw, 520px"
-                  className="object-cover"
-                />
+          <div ref={maskRef} className="relative overflow-hidden rounded-[22px] border border-outline-variant bg-surface-container-low p-6 elevation-3 md:p-8">
+            <div className="relative">
+              <div className="text-label-l text-secondary">Current operator map</div>
+              <h3 className="mt-5 text-headline-m text-on-surface">Founder-led creative systems, built from the business problem outward.</h3>
+              <p className="mt-4 text-body-l text-on-surface-variant">
+                The work sits where brand, sales, operations and delivery meet: enough strategy to choose the right move, enough craft to ship it cleanly.
+              </p>
+
+              <div className="mt-8 divide-y divide-outline-variant border-y border-outline-variant">
+                {OPERATOR_SIGNALS.map((item) => (
+                  <div key={item.label} className="grid gap-1 py-4 sm:grid-cols-[150px_1fr] sm:gap-5">
+                    <div className="text-label-m text-primary">{item.label}</div>
+                    <div className="text-body-m text-on-surface">{item.value}</div>
+                  </div>
+                ))}
               </div>
-            </div>
-            <div className="absolute bottom-3 left-3 flex items-center gap-2.5 rounded-2xl border border-outline bg-surface-container px-4 py-3 text-label-l text-on-surface elevation-3 md:-bottom-4 md:-left-4 md:px-5 md:py-3.5">
-              <span className="w-2.5 h-2.5 rounded-full bg-success inline-block" />
-              Durban · KwaZulu-Natal
+
+              <div className="mt-7 flex flex-wrap gap-2.5">
+                {site.buildingWith.map((tool) => (
+                  <span key={tool} className="hig-control rounded-full px-3 py-1.5 text-label-m text-on-surface">
+                    {tool}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </Reveal>
