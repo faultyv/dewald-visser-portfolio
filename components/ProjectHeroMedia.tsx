@@ -14,6 +14,7 @@ export function ProjectHeroMedia({
   seed,
   project,
   coverFit = "cover",
+  coverPosition,
   coverBg,
 }: {
   cover: string | null;
@@ -21,6 +22,7 @@ export function ProjectHeroMedia({
   seed: SeedName;
   project?: Project;
   coverFit?: "cover" | "contain";
+  coverPosition?: string;
   coverBg?: "light" | "dark";
 }) {
   const wrapRef = useRef<HTMLDivElement>(null);
@@ -56,6 +58,7 @@ export function ProjectHeroMedia({
               alt={title}
               fill
               className={coverFit === "contain" ? "object-contain p-12 md:p-20" : "object-cover"}
+              style={coverPosition && coverFit !== "contain" ? { objectPosition: coverPosition } : undefined}
               sizes="(max-width:768px) 100vw, 1100px"
               priority
             />

@@ -95,6 +95,7 @@ export function ProjectCoverVisual({ project, priority, sizes, variant = "card" 
           className={`transition-transform duration-500 group-hover:scale-105 ${
             project.coverFit === "contain" ? "object-contain p-8 md:p-10" : "object-cover"
           }`}
+          style={project.coverPosition && project.coverFit !== "contain" ? { objectPosition: project.coverPosition } : undefined}
           sizes={sizes}
         />
       </div>

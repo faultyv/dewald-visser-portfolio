@@ -10,12 +10,12 @@
   "aboutHeadline": "A founder-operator across brand, marketing, web systems and AI enablement, built for teams that need the thinking and the making in one place.",
   "aboutBody": "Founder of Sun Paper and Coatings with hands-on delivery across Adobe, WordPress, Shopify, campaign systems and practical AI adoption. I connect brand, marketing and operations so ideas become usable systems, not just assets.",
   "media": {
-    "aboutImage": "/images/about/dewald-about-action.jpg",
-    "aboutImageAlt": "Dewald Visser in a collaborative strategy conversation",
-    "aboutImageCaption": "Strategy, creative direction and practical delivery in the same conversation.",
-    "systemImage": "/images/about/dewald-about-action.jpg",
-    "systemImageAlt": "Dewald Visser at the centre of a live project room",
-    "systemImageCaption": "Dewald at the centre of strategy, design and delivery."
+    "aboutImage": "/images/dewald/dewald-main-headshot.png",
+    "aboutImageAlt": "Dewald Visser seated in a professional office portrait",
+    "aboutImageCaption": "Founder-operator across strategy, creative systems and delivery.",
+    "systemImage": "/images/dewald/dewald-leading-group-discussion.png",
+    "systemImageAlt": "Dewald Visser leading a group discussion around laptops",
+    "systemImageCaption": "Dewald guiding the room from brief to delivery."
   },
   "stats": [
     { "value": 10, "suffix": "+", "label": "Years across brand, web and growth" },

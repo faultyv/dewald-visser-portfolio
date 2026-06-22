@@ -84,7 +84,7 @@ export function About({ site }: { site: SiteConfig }) {
                   />
                 </div>
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/82 via-black/42 to-transparent p-5 pt-16 text-white md:p-6 md:pt-20">
-                  <div className="mb-1.5 text-label-s text-white/74">In action</div>
+                  <div className="mb-1.5 text-label-s text-white/74">Dewald Visser</div>
                   <figcaption className="max-w-[34ch] text-title-s text-white md:text-title-m">
                     {site.media.aboutImageCaption}
                   </figcaption>

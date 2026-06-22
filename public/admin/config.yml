@@ -156,6 +156,7 @@ collections:
         widget: select
         required: false
         options: [cover, contain]
+      - { label: Cover Position, name: coverPosition, widget: string, required: false, hint: "Optional CSS object-position for photo crops, for example center 30%." }
       - label: Cover Background
         name: coverBg
         widget: select
