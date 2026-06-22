@@ -12,6 +12,7 @@ import { Footer } from "@/components/Footer";
 import { mdxComponents } from "@/components/MdxComponents";
 import { SEED_TEXT, SEED_CONTAINER_BG, SEED_CONTAINER_TEXT } from "@/lib/seed-classes";
 import { getAllProjects, getProjectBySlug, getAdjacentProjects, getSiteConfig } from "@/lib/content";
+import { SITE_URL } from "@/lib/site-url";
 
 export function generateStaticParams() {
   return getAllProjects().map((p) => ({ slug: p.slug }));
@@ -52,8 +53,35 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
   const { content } = await compileMDX({ source: project.content, components: mdxComponents });
   const gallery = project.gallery.filter((item) => item.src);
 
+  const projectUrl = `${SITE_URL}/work/${project.slug}`;
+  const createdYear = project.period.match(/\b(?:19|20)\d{2}\b/)?.[0];
+  const creativeWorkJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    name: project.title,
+    description: project.outcome,
+    url: projectUrl,
+    ...(project.cover ? { image: new URL(project.cover, SITE_URL).toString() } : {}),
+    ...(createdYear ? { dateCreated: createdYear } : {}),
+    creator: { "@type": "Person", name: site.name, url: SITE_URL },
+    ...(project.org ? { sourceOrganization: { "@type": "Organization", name: project.org } } : {}),
+    keywords: [...project.stack, ...project.categories].join(", "),
+    inLanguage: "en",
+  };
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+      { "@type": "ListItem", position: 2, name: "Work", item: `${SITE_URL}/work` },
+      { "@type": "ListItem", position: 3, name: project.title, item: projectUrl },
+    ],
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(creativeWorkJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <article className="relative px-5 md:px-14 max-w-[1100px] mx-auto pt-32">
         <Reveal>
           <ProjectHeroMedia cover={project.cover} title={project.title} seed={project.seed} coverFit={project.coverFit} coverBg={project.coverBg} />
