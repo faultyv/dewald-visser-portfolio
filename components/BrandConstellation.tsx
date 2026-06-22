@@ -116,6 +116,7 @@ export function BrandConstellation({ companies }: { companies: CompanyEntry[] })
   const activeDomain = activeCompany ? domainFor(activeCompany) : DOMAINS[0];
   const visibleGroups = grouped.filter((group) => filter === "all" || group.id === filter);
   const activeThreads = relatedThreads(activeCompany?.name);
+  const activeGroupCount = visibleGroups.reduce((total, group) => total + group.items.length, 0);
 
   return (
     <section id="companies" className="surface-band section-pad-tight relative">
@@ -166,6 +167,23 @@ export function BrandConstellation({ companies }: { companies: CompanyEntry[] })
                 </button>
               );
             })}
+          </div>
+        </Reveal>
+
+        <Reveal delay={0.13}>
+          <div className="intel-status mb-5 grid gap-2 rounded-[22px] border border-outline-variant bg-surface-container-low p-2.5 sm:grid-cols-3">
+            <div className="intel-status-item">
+              <IconSymbol name="account_tree" size={18} filled />
+              <span><strong>{activeGroupCount}</strong> visible proof points</span>
+            </div>
+            <div className="intel-status-item">
+              <IconSymbol name="hub" size={18} filled />
+              <span><strong>{THREADS.length}</strong> relationship threads</span>
+            </div>
+            <div className="intel-status-item">
+              <IconSymbol name="radar" size={18} filled />
+              <span><strong>{DOMAINS.length}</strong> operating worlds</span>
+            </div>
           </div>
         </Reveal>
 

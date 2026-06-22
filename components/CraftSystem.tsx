@@ -71,7 +71,7 @@ function SystemCard({ card, index }: { card: (typeof SYSTEM_CARDS)[number]; inde
 
 export function CraftSystem({ site }: { site: SiteConfig }) {
   return (
-    <section id="system" className="section-pad content-shell-wide relative">
+    <section id="system" className="section-pad-tight content-shell-wide relative">
       <div className="mx-auto mb-10 max-w-[820px] text-center md:mb-12">
         <Reveal>
           <div className="mb-4 text-label-l text-primary">How a project runs</div>
@@ -90,6 +90,21 @@ export function CraftSystem({ site }: { site: SiteConfig }) {
 
       <Reveal delay={0.15} dir="scale">
         <div className="system-stage relative mx-auto overflow-hidden rounded-[28px] border border-outline-variant bg-surface-container-low p-3.5 elevation-4 sm:p-5 lg:p-7">
+          <div className="system-stage-toolbar relative z-20 mb-4 flex flex-wrap items-center justify-between gap-3 rounded-[20px] border border-outline-variant bg-surface-container/74 px-3 py-2.5 backdrop-blur-xl md:px-4">
+            <div className="inline-flex items-center gap-2 text-label-m text-on-surface">
+              <span className="h-2 w-2 rounded-full bg-success shadow-[0_0_0_6px_color-mix(in_srgb,var(--color-success)_18%,transparent)]" />
+              Live operating board
+            </div>
+            <div className="flex flex-wrap items-center gap-1.5 text-label-s text-on-surface-variant">
+              <span>Signal</span>
+              <IconSymbol name="arrow_forward" size={14} />
+              <span>Creative</span>
+              <IconSymbol name="arrow_forward" size={14} />
+              <span>Build</span>
+              <IconSymbol name="arrow_forward" size={14} />
+              <span>Learn</span>
+            </div>
+          </div>
           <div className="system-flow-line system-flow-line-a" aria-hidden="true" />
           <div className="system-flow-line system-flow-line-b" aria-hidden="true" />
           <span className="system-pulse system-pulse-a" aria-hidden="true" />

@@ -5,10 +5,10 @@ import { SEEDS } from "@/lib/m3-theme";
 import { useTheme } from "./ThemeContext";
 
 const ALPHA: Record<string, { b: number; s: number }> = {
-  light: { b: 0.06, s: 0.14 },
-  cloud: { b: 0.05, s: 0.12 },
-  bold: { b: 0.07, s: 0.15 },
-  dark: { b: 0.17, s: 0.26 },
+  light: { b: 0.028, s: 0.07 },
+  cloud: { b: 0.024, s: 0.06 },
+  bold: { b: 0.035, s: 0.08 },
+  dark: { b: 0.08, s: 0.13 },
 };
 
 function hexToRgbTriplet(hex: string) {
@@ -52,7 +52,7 @@ export function AtmosphereCanvas() {
     resize();
     window.addEventListener("resize", resize);
 
-    const blobs = Array.from({ length: 5 }, (_, i) => ({
+    const blobs = Array.from({ length: 3 }, (_, i) => ({
       x: rand(0, w),
       y: rand(0, h),
       r: rand(240, 520),
@@ -62,12 +62,12 @@ export function AtmosphereCanvas() {
       vy: rand(-0.06, 0.06),
     }));
 
-    const N = w < 760 ? 7 : 14;
+    const N = w < 760 ? 4 : 8;
     const shapes = Array.from({ length: N }, (_, i) => ({
       x: rand(0, w),
       y: rand(0, h),
-      s: rand(16, 50),
-      type: i % 3,
+      s: rand(10, 34),
+      type: (i % 2) + 1,
       c: shapePal[i % shapePal.length],
       k: rand(0.7, 1.2),
       rot: rand(0, Math.PI),
