@@ -12,7 +12,10 @@
   "media": {
     "aboutImage": "/images/about/dewald-about-action.jpg",
     "aboutImageAlt": "Dewald Visser in a collaborative strategy conversation",
-    "aboutImageCaption": "Strategy, creative direction and practical delivery in the same conversation."
+    "aboutImageCaption": "Strategy, creative direction and practical delivery in the same conversation.",
+    "systemImage": "/images/about/dewald-about-action.jpg",
+    "systemImageAlt": "Dewald Visser at the centre of a live project room",
+    "systemImageCaption": "Dewald at the centre of strategy, design and delivery."
   },
   "stats": [
     { "value": 10, "suffix": "+", "label": "Years across brand, web and growth" },

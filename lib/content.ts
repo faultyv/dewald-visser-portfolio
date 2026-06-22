@@ -20,6 +20,9 @@ export type SiteConfig = {
     aboutImage: string;
     aboutImageAlt: string;
     aboutImageCaption: string;
+    systemImage: string;
+    systemImageAlt: string;
+    systemImageCaption: string;
   };
   stats: { value: number; suffix: string; label: string }[];
   buildingWith: string[];

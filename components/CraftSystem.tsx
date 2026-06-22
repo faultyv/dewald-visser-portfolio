@@ -113,8 +113,8 @@ export function CraftSystem({ site }: { site: SiteConfig }) {
             <figure className="system-portrait-panel hig-card m-0 rounded-[26px] p-3 md:p-4">
               <div className="relative aspect-square overflow-hidden rounded-[22px] bg-surface-container-high">
                 <Image
-                  src={site.media.aboutImage}
-                  alt={site.media.aboutImageAlt}
+                  src={site.media.systemImage}
+                  alt={site.media.systemImageAlt}
                   fill
                   unoptimized
                   sizes="(max-width: 768px) 92vw, (max-width: 1200px) 46vw, 520px"
@@ -127,7 +127,7 @@ export function CraftSystem({ site }: { site: SiteConfig }) {
                     Live project room
                   </div>
                   <figcaption className="max-w-[36ch] text-title-s text-white md:text-title-m">
-                    Dewald at the centre of strategy, design and delivery.
+                    {site.media.systemImageCaption}
                   </figcaption>
                 </div>
               </div>
