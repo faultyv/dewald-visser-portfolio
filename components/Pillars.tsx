@@ -38,8 +38,8 @@ const PILLARS: { n: string; seed: SeedName; icon: string; title: string; proof: 
     icon: "code",
     title: "Web and Front-End",
     proof: "Systems that ship",
-    summary: "Websites, stores and automation flows designed around real operational needs.",
-    items: ["WordPress, Shopify and custom HTML/CSS/JS", "E-commerce stores and drop-ship models", "Booking, CRM and automation systems"],
+    summary: "Websites, stores and quote/automation tools designed around real operational needs.",
+    items: ["WordPress, Shopify and custom HTML/CSS/JS", "E-commerce stores and drop-ship models", "Booking, CRM and CPQ quote-automation systems"],
   },
   {
     n: "05",
@@ -47,8 +47,8 @@ const PILLARS: { n: string; seed: SeedName; icon: string; title: string; proof: 
     icon: "auto_awesome",
     title: "Practical AI Enablement",
     proof: "Workflow layer",
-    summary: "Turning AI from a buzzword into prompts, training, workflows and human-in-the-loop adoption people can actually use.",
-    items: ["Early AI-readiness work at LCIBS under a former Apple executive", "Training direction for HR and industry change", "Prompt systems, workflow design and human-in-the-loop adoption"],
+    summary: "Turning AI from a buzzword into trained teams, working prompt systems and tools people actually use day to day.",
+    items: ["Rolled out and trained teams on Canva + ChatGPT inside a live business", "Built a web-based CPQ quote tool from tangled spreadsheet logic", "Early AI-readiness work at LCIBS under a former Apple executive"],
   },
 ];
 

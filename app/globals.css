@@ -373,7 +373,7 @@ body {
 }
 
 .dewald-action-focus {
-  object-position: 86% center;
+  object-position: center center;
 }
 
 .dewald-action-focus-tight {
@@ -1015,9 +1015,8 @@ body {
     justify-content: center;
   }
 
-  .dewald-action-focus,
   .dewald-action-focus-tight {
-    object-position: 96% center;
+    object-position: 100% center;
   }
 }
 

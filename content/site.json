@@ -8,14 +8,14 @@
   "tags": ["Entrepreneur", "Marketing", "Graphic Design", "Web Design", "AI Enablement"],
   "heroPosition": "I connect strategy, campaigns, design, websites and practical AI adoption into systems that help brands move.",
   "aboutHeadline": "A founder-operator across brand, marketing, web systems and AI enablement, built for teams that need the thinking and the making in one place.",
-  "aboutBody": "Founder of Sun Paper and Coatings with hands-on delivery across Adobe, WordPress, Shopify, campaign systems and practical AI adoption. I connect brand, marketing and operations so ideas become usable systems, not just assets.",
+  "aboutBody": "Founder of Sun Paper and Coatings and a creative systems builder — brand, marketing, web and practical AI under one roof. From founding my own agency to running live production for 500-strong audiences and turning a tangled quoting spreadsheet into a working web tool, I connect strategy, design and operations so ideas ship as systems, not just assets.",
   "media": {
-    "aboutImage": "/images/dewald/dewald-main-headshot.png",
-    "aboutImageAlt": "Dewald Visser seated in a professional office portrait",
+    "aboutImage": "/images/dewald/dewald-about-centered.png",
+    "aboutImageAlt": "Dewald Visser seated with a laptop in a professional workspace",
     "aboutImageCaption": "Founder-operator across strategy, creative systems and delivery.",
-    "systemImage": "/images/dewald/dewald-leading-group-discussion.png",
-    "systemImageAlt": "Dewald Visser leading a group discussion around laptops",
-    "systemImageCaption": "Dewald guiding the room from brief to delivery."
+    "systemImage": "/images/dewald/dewald-system-working-session.png",
+    "systemImageAlt": "Dewald Visser in a collaborative working session with laptops",
+    "systemImageCaption": "Dewald turning project context into usable systems."
   },
   "stats": [
     { "value": 10, "suffix": "+", "label": "Years across brand, web and growth" },
