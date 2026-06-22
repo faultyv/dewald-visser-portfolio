@@ -330,6 +330,229 @@ body {
   scroll-snap-align: start;
 }
 
+.dewald-action-focus {
+  object-position: 86% center;
+}
+
+.dewald-action-focus-tight {
+  object-position: 100% center;
+}
+
+.system-stage {
+  isolation: isolate;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--color-primary) 12%, transparent), transparent 42%),
+    linear-gradient(225deg, color-mix(in srgb, var(--color-tertiary) 10%, transparent), transparent 45%),
+    linear-gradient(180deg, color-mix(in srgb, var(--color-surface-container-high) 86%, transparent), color-mix(in srgb, var(--color-surface-container-low) 94%, transparent));
+}
+
+.system-stage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: radial-gradient(color-mix(in srgb, var(--color-outline) 42%, transparent) 1px, transparent 1px);
+  background-size: 18px 18px;
+  mask-image: linear-gradient(180deg, transparent, #000 14%, #000 82%, transparent);
+  opacity: 0.38;
+  pointer-events: none;
+}
+
+.system-stage::after {
+  content: "";
+  position: absolute;
+  inset: 18% 9%;
+  z-index: 0;
+  border: 1px solid color-mix(in srgb, var(--color-primary) 24%, transparent);
+  border-radius: 34px;
+  opacity: 0.34;
+  transform: rotate(-4deg);
+  pointer-events: none;
+}
+
+.system-node,
+.system-portrait-panel {
+  transform: translateZ(0);
+}
+
+.system-node {
+  transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
+}
+
+.system-node::after {
+  content: "";
+  position: absolute;
+  inset: auto 16px 14px 16px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--color-primary) 62%, transparent), transparent);
+  opacity: 0.42;
+}
+
+.system-node:hover {
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, var(--color-primary) 28%, var(--hig-hairline));
+  box-shadow: 0 24px 54px -30px var(--m3-shadow);
+}
+
+.system-card-breathe {
+  animation: systemBreath 6.8s ease-in-out infinite;
+  will-change: transform;
+}
+
+.system-flow-line {
+  position: absolute;
+  z-index: 1;
+  height: 2px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--color-outline) 56%, transparent), transparent);
+  opacity: 0.58;
+  pointer-events: none;
+}
+
+.system-flow-line::before {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  left: -18%;
+  width: 26%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, transparent, var(--color-primary), var(--color-tertiary), transparent);
+  animation: systemLineSweep 5.6s ease-in-out infinite;
+}
+
+.system-flow-line-a {
+  left: 9%;
+  right: 9%;
+  top: 34%;
+}
+
+.system-flow-line-b {
+  bottom: 31%;
+  left: 11%;
+  right: 12%;
+  transform: rotate(-7deg);
+}
+
+.system-pulse {
+  position: absolute;
+  z-index: 2;
+  width: 12px;
+  height: 12px;
+  border: 2px solid var(--color-surface);
+  border-radius: 999px;
+  color: var(--color-primary);
+  background: var(--color-primary);
+  box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-primary) 36%, transparent);
+  animation: systemPulse 3.2s ease-out infinite;
+  pointer-events: none;
+}
+
+.system-pulse-a {
+  left: 22%;
+  top: 32%;
+}
+
+.system-pulse-b {
+  right: 28%;
+  top: 48%;
+  animation-delay: 0.8s;
+  color: var(--color-tertiary);
+  background: var(--color-tertiary);
+  box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-tertiary) 34%, transparent);
+}
+
+.system-pulse-c {
+  left: 52%;
+  bottom: 28%;
+  animation-delay: 1.35s;
+  color: var(--color-success);
+  background: var(--color-success);
+  box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-success) 34%, transparent);
+}
+
+.system-cursor {
+  position: absolute;
+  z-index: 20;
+  align-items: center;
+  gap: 6px;
+  filter: drop-shadow(0 12px 18px rgba(0, 0, 0, 0.2));
+  pointer-events: none;
+  will-change: transform;
+}
+
+.system-cursor-arrow {
+  transform: rotate(-28deg);
+}
+
+.system-cursor-a {
+  left: 14%;
+  top: 16%;
+  color: var(--color-primary);
+  animation: systemCursorA 8.4s ease-in-out infinite;
+}
+
+.system-cursor-b {
+  right: 17%;
+  top: 18%;
+  color: var(--color-tertiary);
+  animation: systemCursorB 9s ease-in-out infinite;
+}
+
+.system-cursor-c {
+  left: 42%;
+  bottom: 15%;
+  color: var(--color-success);
+  animation: systemCursorC 8.8s ease-in-out infinite;
+}
+
+.system-portrait-panel {
+  box-shadow: 0 28px 80px -36px var(--m3-shadow);
+}
+
+.system-scan {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, transparent 28%, rgba(255, 255, 255, 0.22) 44%, transparent 58%);
+  mix-blend-mode: screen;
+  transform: translateX(-120%);
+  animation: systemScan 6.4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.system-console {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 16px 42px -30px var(--m3-shadow);
+}
+
+.system-console::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--hig-specular), transparent 44%);
+  opacity: 0.38;
+  pointer-events: none;
+}
+
+.system-meter {
+  position: relative;
+  overflow: hidden;
+  animation: systemMeter 5.4s ease-in-out infinite;
+  transform-origin: left center;
+}
+
+.system-meter::after {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  left: -40%;
+  width: 34%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.58), transparent);
+  animation: systemLineSweep 3.8s ease-in-out infinite;
+}
+
 .career-list {
   display: flex;
 }
@@ -352,6 +575,19 @@ body {
   }
   .career-list {
     flex-direction: column;
+  }
+}
+
+@media (max-width: 767px) {
+  .system-stage::after,
+  .system-flow-line,
+  .system-pulse {
+    display: none;
+  }
+
+  .dewald-action-focus,
+  .dewald-action-focus-tight {
+    object-position: 96% center;
   }
 }
 
@@ -409,3 +645,41 @@ body {
 @keyframes marqueeR { from { transform: translateX(-50%); } to { transform: translateX(0); } }
 @keyframes scrollPulse { 0%, 100% { transform: translateY(0); opacity: 0.35; } 50% { transform: translateY(8px); opacity: 1; } }
 @keyframes pingDot { 0% { transform: scale(1); opacity: 0.7; } 70%, 100% { transform: scale(2.4); opacity: 0; } }
+@keyframes systemBreath {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+@keyframes systemLineSweep {
+  0% { transform: translateX(0); opacity: 0; }
+  18% { opacity: 1; }
+  78% { opacity: 1; }
+  100% { transform: translateX(520%); opacity: 0; }
+}
+@keyframes systemPulse {
+  0% { box-shadow: 0 0 0 0 currentColor; transform: scale(0.86); opacity: 0.72; }
+  70%, 100% { box-shadow: 0 0 0 18px transparent; transform: scale(1); opacity: 0; }
+}
+@keyframes systemCursorA {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  38% { transform: translate3d(24px, 18px, 0); }
+  70% { transform: translate3d(-8px, 42px, 0); }
+}
+@keyframes systemCursorB {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  34% { transform: translate3d(-28px, 14px, 0); }
+  72% { transform: translate3d(-10px, 52px, 0); }
+}
+@keyframes systemCursorC {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  42% { transform: translate3d(34px, -16px, 0); }
+  76% { transform: translate3d(-18px, -26px, 0); }
+}
+@keyframes systemScan {
+  0%, 46% { transform: translateX(-120%); opacity: 0; }
+  58% { opacity: 0.9; }
+  82%, 100% { transform: translateX(120%); opacity: 0; }
+}
+@keyframes systemMeter {
+  0%, 100% { transform: scaleX(0.94); }
+  50% { transform: scaleX(1); }
+}

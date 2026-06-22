@@ -25,7 +25,7 @@ export default function Home() {
     <>
       <Hero site={site} />
       <About site={site} />
-      <CraftSystem />
+      <CraftSystem site={site} />
       <Pillars />
       <Method steps={method} />
       <Career cv={cv} />

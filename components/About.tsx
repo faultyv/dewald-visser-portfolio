@@ -55,7 +55,7 @@ export function About({ site }: { site: SiteConfig }) {
             <p className="mt-6 max-w-[560px] text-body-l text-on-surface-variant">{site.aboutBody}</p>
           </Reveal>
           <Reveal delay={0.15}>
-            <div className="mt-8 grid grid-cols-3 gap-3 sm:flex sm:flex-wrap sm:gap-9">
+            <div className="mt-8 grid grid-cols-3 gap-3 sm:gap-6 lg:gap-8">
               {site.stats.map((stat) => (
                 <div key={stat.label} className="rounded-xl border border-outline-variant bg-surface-container-low p-3 sm:border-0 sm:bg-transparent sm:p-0">
                   <div className="text-display-s text-primary sm:text-[40px]">
@@ -78,8 +78,9 @@ export function About({ site }: { site: SiteConfig }) {
                     src={site.media.aboutImage}
                     alt={site.media.aboutImageAlt}
                     fill
+                    unoptimized
                     sizes="(max-width: 768px) 90vw, 520px"
-                    className="object-cover object-[68%_center]"
+                    className="dewald-action-focus object-cover"
                   />
                 </div>
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/82 via-black/42 to-transparent p-5 pt-16 text-white md:p-6 md:pt-20">

@@ -1,100 +1,188 @@
-import { Reveal, StaggerGroup, StaggerItem } from "./Reveal";
-import { TiltCard } from "./TiltCard";
+import Image from "next/image";
+import { Reveal } from "./Reveal";
 import { IconSymbol } from "./IconSymbol";
-import { SEED_BG, SEED_ON, SEED_TEXT } from "@/lib/seed-classes";
-import type { SeedName } from "@/lib/m3-theme";
+import type { SiteConfig } from "@/lib/content";
 
-const PRINCIPLES: { title: string; body: string; seed: SeedName; icon: string; signal: string }[] = [
+const SYSTEM_CARDS = [
   {
-    title: "Commercial clarity",
-    body: "Start with the offer, audience and friction so the creative work has a business job to do.",
-    seed: "primary",
-    icon: "visibility",
-    signal: "Business first",
+    label: "Signal",
+    title: "Brief clarity",
+    body: "Audience, offer and friction get mapped before the creative work starts.",
+    icon: "travel_explore",
+    accent: "bg-primary text-on-primary",
+    text: "text-primary",
   },
   {
-    title: "Reusable assets",
-    body: "Turn campaign, brand and web decisions into visual systems a team can keep using.",
-    seed: "secondary",
-    icon: "layers",
-    signal: "Systemised",
+    label: "Creative",
+    title: "Campaign language",
+    body: "Design, copy and content decisions become reusable assets for the team.",
+    icon: "palette",
+    accent: "bg-tertiary text-on-tertiary",
+    text: "text-tertiary",
   },
   {
-    title: "Practical depth",
-    body: "Use motion, material and hierarchy to support the proof, not to compete with it.",
-    seed: "highlight",
-    icon: "blur_on",
-    signal: "Polished",
+    label: "System",
+    title: "Working surface",
+    body: "Pages, contact paths and production tools turn ideas into usable flows.",
+    icon: "web",
+    accent: "bg-success text-on-success",
+    text: "text-success",
   },
   {
-    title: "Measured iteration",
-    body: "Read what the work changes, then tighten the next campaign, page or process around that signal.",
-    seed: "success",
-    icon: "sync_alt",
-    signal: "Learning loop",
+    label: "Loop",
+    title: "AI-assisted iteration",
+    body: "Prompt systems and review habits keep the next move faster and sharper.",
+    icon: "auto_awesome",
+    accent: "bg-highlight text-on-highlight",
+    text: "text-highlight",
   },
-];
+] as const;
 
-const TOKENS = ["Offer clarity", "Campaign assets", "Web systems", "Production workflows", "Light / dark", "Reduced-motion safe"];
+const CURSORS = [
+  { label: "Strategy", className: "system-cursor-a", tone: "bg-primary text-on-primary" },
+  { label: "Creative", className: "system-cursor-b", tone: "bg-tertiary text-on-tertiary" },
+  { label: "Delivery", className: "system-cursor-c", tone: "bg-success text-on-success" },
+] as const;
 
-export function CraftSystem() {
+const BOARD_ROWS = [
+  { label: "Brand", value: "Positioning", width: "82%" },
+  { label: "Web", value: "Conversion flow", width: "68%" },
+  { label: "AI", value: "Workflow assist", width: "76%" },
+] as const;
+
+const OUTCOMES = ["Sharper briefs", "Reusable assets", "Live web systems", "Measured learning"];
+
+function SystemCard({ card, index }: { card: (typeof SYSTEM_CARDS)[number]; index: number }) {
+  return (
+    <article className="system-node system-card-breathe hig-card flex min-h-[174px] flex-col rounded-[22px] p-4 md:p-5" style={{ animationDelay: `${index * 0.35}s` }}>
+      <div className="relative z-10 flex items-start justify-between gap-3">
+        <div className={`grid h-11 w-11 shrink-0 place-items-center rounded-[16px] ${card.accent}`}>
+          <IconSymbol name={card.icon} size={23} filled />
+        </div>
+        <span className={`rounded-full px-2.5 py-1 text-label-s ${card.text}`}>{card.label}</span>
+      </div>
+      <div className="relative z-10 mt-auto pt-6">
+        <h3 className="m-0 text-title-m text-on-surface">{card.title}</h3>
+        <p className="mt-2 text-body-s text-on-surface-variant">{card.body}</p>
+      </div>
+    </article>
+  );
+}
+
+export function CraftSystem({ site }: { site: SiteConfig }) {
   return (
     <section id="system" className="section-pad content-shell-wide relative">
-      <div className="grid gap-8 lg:grid-cols-[0.86fr_1.14fr] lg:items-start">
-        <div>
-          <Reveal>
-            <div className="text-label-l text-primary mb-4">Working system</div>
-          </Reveal>
-          <Reveal delay={0.05}>
-            <h2 className="text-headline-l text-on-surface">
-              Built like
-              <br />
-              a working system.
-            </h2>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <p className="mt-5 max-w-[470px] text-body-m text-on-surface-variant">
-              The portfolio carries the same thinking as the work: clear offer, reusable parts, calm hierarchy and enough polish to make the evidence easy to judge.
-            </p>
-          </Reveal>
-          <Reveal delay={0.15}>
-            <div className="mt-7 flex flex-wrap gap-2">
-              {TOKENS.map((token) => (
-                <span key={token} className="hig-control rounded-full px-3 py-1.5 text-label-m text-on-surface">
-                  {token}
-                </span>
+      <div className="mx-auto mb-10 max-w-[820px] text-center md:mb-12">
+        <Reveal>
+          <div className="mb-4 text-label-l text-primary">Portfolio operating board</div>
+        </Reveal>
+        <Reveal delay={0.05}>
+          <h2 className="text-headline-l text-on-surface">
+            Better teamwork, by <span className="text-primary">designed systems.</span>
+          </h2>
+        </Reveal>
+        <Reveal delay={0.1}>
+          <p className="mx-auto mt-5 max-w-[620px] text-body-l text-on-surface-variant">
+            A live map of how strategy, creative direction, web systems and AI workflow design become one practical operating layer for projects.
+          </p>
+        </Reveal>
+      </div>
+
+      <Reveal delay={0.15} dir="scale">
+        <div className="system-stage relative mx-auto overflow-hidden rounded-[28px] border border-outline-variant bg-surface-container-low p-3.5 elevation-4 sm:p-5 lg:p-7">
+          <div className="system-flow-line system-flow-line-a" aria-hidden="true" />
+          <div className="system-flow-line system-flow-line-b" aria-hidden="true" />
+          <span className="system-pulse system-pulse-a" aria-hidden="true" />
+          <span className="system-pulse system-pulse-b" aria-hidden="true" />
+          <span className="system-pulse system-pulse-c" aria-hidden="true" />
+
+          {CURSORS.map((cursor) => (
+            <div key={cursor.label} className={`system-cursor hidden sm:flex ${cursor.className}`} aria-hidden="true">
+              <IconSymbol name="near_me" size={23} filled className="system-cursor-arrow" />
+              <span className={`rounded-full px-2.5 py-1 text-label-m shadow-lg ${cursor.tone}`}>{cursor.label}</span>
+            </div>
+          ))}
+
+          <div className="relative z-10 grid gap-4 lg:grid-cols-[minmax(0,0.92fr)_minmax(320px,1.25fr)_minmax(0,0.92fr)] lg:items-stretch">
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
+              {SYSTEM_CARDS.slice(0, 2).map((card, index) => (
+                <SystemCard key={card.title} card={card} index={index} />
               ))}
             </div>
-          </Reveal>
-          <Reveal delay={0.2}>
-            <div className="snap-hint mt-5 lg:hidden">Swipe principles</div>
-          </Reveal>
-        </div>
 
-        <StaggerGroup className="mobile-strip no-scrollbar -mx-5 flex gap-3.5 px-5 pb-3 sm:mx-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 sm:pb-0">
-          {PRINCIPLES.map((principle, index) => (
-            <StaggerItem key={principle.title} className="min-w-[78vw] max-w-[78vw] sm:min-w-0 sm:max-w-none">
-              <TiltCard className="h-full">
-                <article className="hig-card group flex h-full min-h-[220px] flex-col rounded-[24px] p-5 md:p-6">
-                  <div className="relative z-10 flex items-start justify-between gap-4">
-                    <div className={`grid h-12 w-12 shrink-0 place-items-center rounded-2xl ${SEED_BG[principle.seed]}`}>
-                      <IconSymbol name={principle.icon} size={24} filled className={SEED_ON[principle.seed]} />
-                    </div>
-                    <div className={`rounded-full px-2.5 py-1 text-label-s ${SEED_TEXT[principle.seed]}`}>
-                      {String(index + 1).padStart(2, "0")}
-                    </div>
+            <figure className="system-portrait-panel hig-card m-0 rounded-[26px] p-3 md:p-4">
+              <div className="relative aspect-square overflow-hidden rounded-[22px] bg-surface-container-high">
+                <Image
+                  src={site.media.aboutImage}
+                  alt={site.media.aboutImageAlt}
+                  fill
+                  unoptimized
+                  sizes="(max-width: 768px) 92vw, (max-width: 1200px) 46vw, 520px"
+                  className="dewald-action-focus-tight object-cover"
+                />
+                <div className="system-scan" aria-hidden="true" />
+                <div className="absolute inset-x-3 bottom-3 rounded-[18px] border border-white/18 bg-black/58 p-3 text-white backdrop-blur-xl md:inset-x-4 md:bottom-4 md:p-4">
+                  <div className="mb-1.5 flex items-center gap-2 text-label-s text-white/76">
+                    <span className="h-2 w-2 rounded-full bg-success shadow-[0_0_0_6px_rgba(131,222,151,0.18)]" />
+                    Live project room
                   </div>
-                  <div className="relative z-10 mt-auto">
-                    <div className={`mb-2 text-label-s ${SEED_TEXT[principle.seed]}`}>{principle.signal}</div>
-                    <h3 className="m-0 text-title-l text-on-surface">{principle.title}</h3>
-                    <p className="mt-2 text-body-s text-on-surface-variant">{principle.body}</p>
+                  <figcaption className="max-w-[36ch] text-title-s text-white md:text-title-m">
+                    Dewald at the centre of strategy, design and delivery.
+                  </figcaption>
+                </div>
+              </div>
+
+              <div className="mt-3 grid grid-cols-3 gap-2">
+                {OUTCOMES.slice(0, 3).map((outcome) => (
+                  <div key={outcome} className="rounded-[16px] border border-outline-variant bg-surface-container px-3 py-2">
+                    <div className="text-label-s text-primary">Proof</div>
+                    <div className="mt-1 text-label-m text-on-surface">{outcome}</div>
                   </div>
-                </article>
-              </TiltCard>
-            </StaggerItem>
-          ))}
-        </StaggerGroup>
-      </div>
+                ))}
+              </div>
+            </figure>
+
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
+              {SYSTEM_CARDS.slice(2).map((card, index) => (
+                <SystemCard key={card.title} card={card} index={index + 2} />
+              ))}
+
+              <article className="system-console rounded-[22px] border border-outline-variant bg-surface-container/80 p-4 backdrop-blur-xl sm:col-span-2 lg:col-span-1">
+                <div className="mb-4 flex items-center justify-between gap-3">
+                  <div>
+                    <div className="text-label-s text-primary">Decision loop</div>
+                    <h3 className="mt-1 text-title-s text-on-surface">From idea to useful system</h3>
+                  </div>
+                  <div className="grid h-10 w-10 place-items-center rounded-[14px] bg-primary text-on-primary">
+                    <IconSymbol name="hub" size={22} filled />
+                  </div>
+                </div>
+                <div className="space-y-3">
+                  {BOARD_ROWS.map((row, index) => (
+                    <div key={row.label}>
+                      <div className="mb-1.5 flex items-center justify-between gap-3 text-label-m">
+                        <span className="text-on-surface">{row.label}</span>
+                        <span className="text-on-surface-variant">{row.value}</span>
+                      </div>
+                      <div className="h-2 overflow-hidden rounded-full bg-outline-variant/60">
+                        <div className="system-meter h-full rounded-full bg-primary" style={{ width: row.width, animationDelay: `${index * 0.28}s` }} />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div className="relative z-10 mt-4 flex flex-wrap justify-center gap-2">
+            {OUTCOMES.map((outcome) => (
+              <span key={outcome} className="hig-control rounded-full px-3 py-1.5 text-label-m text-on-surface">
+                {outcome}
+              </span>
+            ))}
+          </div>
+        </div>
+      </Reveal>
     </section>
   );
 }
