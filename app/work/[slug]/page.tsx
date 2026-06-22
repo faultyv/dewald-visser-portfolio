@@ -7,6 +7,7 @@ import { ProjectMiniNav } from "@/components/ProjectMiniNav";
 import { ProjectGallery } from "@/components/ProjectGallery";
 import { ProjectVideo } from "@/components/ProjectVideo";
 import { ProjectPager } from "@/components/ProjectPager";
+import { RelatedWork } from "@/components/RelatedWork";
 import { ExternalLinks } from "@/components/ExternalLinks";
 import { Footer } from "@/components/Footer";
 import { mdxComponents } from "@/components/MdxComponents";
@@ -49,6 +50,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
   if (!project) notFound();
 
   const site = getSiteConfig();
+  const allProjects = getAllProjects();
   const { prev, next } = getAdjacentProjects(slug);
   const { content } = await compileMDX({ source: project.content, components: mdxComponents });
   const gallery = project.gallery.filter((item) => item.src);
@@ -166,6 +168,10 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             </div>
           </Reveal>
         </div>
+
+        <Reveal>
+          <RelatedWork current={project} all={allProjects} />
+        </Reveal>
 
         <Reveal>
           <ProjectPager prev={prev} next={next} />
