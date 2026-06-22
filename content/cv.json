@@ -98,6 +98,55 @@
     ]
   },
   {
+    "date": "2021 - 2024",
+    "role": "Founder / Director",
+    "org": "clicklocal",
+    "brandMark": "CL",
+    "brandColor": "primary",
+    "tags": ["Founder", "Web", "Design", "Marketing"],
+    "detail": "My own digital and design services agency for local businesses — brand, web, campaigns and production under one roof. Ran the client base behind Africa Paints, Solid Doors, Alif Doors, Natal Associated Chemicals and the Dynamic Automation quote system, until Mediatrade acquired the portfolio and moved me full-time onto the Director's ventures.",
+    "software": ["WordPress", "Illustrator", "Photoshop", "SEO", "Meta Ads", "CRM"],
+    "proof": [
+      {
+        "type": "Founder",
+        "title": "Built the agency",
+        "detail": "Founded and ran a digital + design services business serving local companies across brand, web, campaigns and production."
+      },
+      {
+        "type": "Clients",
+        "title": "Local-business portfolio",
+        "detail": "Carried clients including Africa Paints, Solid Doors, Alif Doors, Natal Associated Chemicals and Dynamic Automation across design, web and quoting systems."
+      },
+      {
+        "type": "Exit",
+        "title": "Portfolio acquired",
+        "detail": "The client portfolio was acquired and serviced through Mediatrade, the transition that took me full-time onto the Director's ventures."
+      }
+    ]
+  },
+  {
+    "date": "2021 - 2022",
+    "role": "Senior Graphic Designer",
+    "org": "Thinklocal",
+    "brandMark": "TL",
+    "brandColor": "tertiary",
+    "tags": ["Design", "Web"],
+    "detail": "Senior design role spanning brand strategy, DTP, signage and front-end — Illustrator, Photoshop and InDesign through to HTML5/CSS3 website development, social and video graphics.",
+    "software": ["Illustrator", "Photoshop", "InDesign", "HTML/CSS", "WordPress", "After Effects"],
+    "proof": [
+      {
+        "type": "Design",
+        "title": "Brand, DTP & signage",
+        "detail": "Delivered brand strategy, print/DTP, signage and retouching across a senior design remit."
+      },
+      {
+        "type": "Web",
+        "title": "Front-end build",
+        "detail": "Built and styled websites in HTML5/CSS3 and WordPress, alongside social and video graphics."
+      }
+    ]
+  },
+  {
     "date": "Mar-Jul 2021",
     "role": "Logo Designer",
     "org": "Cambridge University initiative",

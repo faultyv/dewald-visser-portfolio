@@ -25,7 +25,9 @@ const DOMAINS: Domain[] = [
 
 const COMPANY_DOMAINS: Record<string, string> = {
   "Sun Paper and Coatings": "ventures",
+  clicklocal: "ventures",
   "Contours Design Studio / Faux Flora": "ventures",
+  Thinklocal: "web",
   "Clinton Palframan Ministries": "ministry",
   "Joseph Business School Africa": "ministry",
   "Olive Tree Church": "ministry",
@@ -44,7 +46,9 @@ const COMPANY_DOMAINS: Record<string, string> = {
 
 const ICON_BY_COMPANY: Record<string, string> = {
   "Sun Paper and Coatings": "storefront",
+  clicklocal: "ads_click",
   "Contours Design Studio / Faux Flora": "local_florist",
+  Thinklocal: "design_services",
   "Clinton Palframan Ministries": "volunteer_activism",
   "Joseph Business School Africa": "school",
   "Olive Tree Church": "diversity_3",
@@ -70,17 +74,17 @@ const THREADS = [
     body: "One relationship moving through ministry, education, live production and retail artworking.",
   },
   {
-    label: "clicklocal / Think Local",
+    label: "clicklocal agency",
     seed: "tertiary" as SeedName,
     icon: "route",
-    companies: ["Africa Paints", "Solid Doors", "Alif Doors"],
-    body: "A local-business route across campaigns, listings, sites and supplier-side production.",
+    companies: ["clicklocal", "Africa Paints", "Solid Doors", "Alif Doors"],
+    body: "My own digital + design agency and the local-business clients that ran through it — brand, web, campaigns and production.",
   },
   {
     label: "Founder path",
     seed: "secondary" as SeedName,
     icon: "rocket_launch",
-    companies: ["Sun Paper and Coatings", "Contours Design Studio / Faux Flora"],
+    companies: ["Sun Paper and Coatings", "clicklocal", "Contours Design Studio / Faux Flora"],
     body: "Owned ventures where the strategy, offer, brand and operating system sat together.",
   },
 ];

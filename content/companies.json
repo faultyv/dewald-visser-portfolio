@@ -49,6 +49,24 @@
     ]
   },
   {
+    "name": "clicklocal",
+    "mark": "CL",
+    "seed": "primary",
+    "relationship": "Founder / Director",
+    "discipline": "Digital + design agency: brand, web, campaigns and production",
+    "period": "2021-2024",
+    "url": ""
+  },
+  {
+    "name": "Thinklocal",
+    "mark": "TL",
+    "seed": "tertiary",
+    "relationship": "Senior Graphic Designer",
+    "discipline": "Brand, DTP, signage and front-end web",
+    "period": "2021-2022",
+    "url": ""
+  },
+  {
     "name": "Africa Paints",
     "mark": "AP",
     "seed": "info",
