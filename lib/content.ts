@@ -73,6 +73,7 @@ export type FeaturedCert = {
   issuer: string;
   image: string;
   seed: SeedName;
+  verify?: string;
 };
 
 export type AdditionalCert = { title: string; issuer: string };

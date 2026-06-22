@@ -25,22 +25,38 @@ export function Credentials({ certs, site }: { certs: CertsData; site: SiteConfi
         </Reveal>
       </div>
 
-      <StaggerGroup className="mobile-strip no-scrollbar -mx-5 flex gap-3.5 px-5 pb-3 md:mx-0 md:grid md:grid-cols-2 md:gap-4.5 md:overflow-visible md:px-0 md:pb-0">
-        {certs.featured.map((cert) => (
-          <StaggerItem key={cert.id} className="min-w-[82vw] max-w-[82vw] md:min-w-0 md:max-w-none">
-            <TiltCard>
-              <div className="hig-card rounded-[24px]">
-                <div className="relative bg-surface-container-high" style={{ aspectRatio: "1.4/1" }}>
-                  <Image src={cert.image} alt={cert.title} fill className="object-cover" sizes="(max-width:768px) 90vw, 360px" />
-                </div>
-                <div className="p-4.5">
-                  <div className="text-title-m text-on-surface">{cert.title}</div>
-                  <div className={`text-label-m mt-1 ${SEED_TEXT[cert.seed]}`}>{cert.issuer}</div>
-                </div>
+      <StaggerGroup className="mobile-strip no-scrollbar -mx-5 flex gap-3.5 px-5 pb-3 md:mx-0 md:grid md:grid-cols-2 md:gap-4.5 md:overflow-visible md:px-0 md:pb-0 lg:grid-cols-3">
+        {certs.featured.map((cert) => {
+          const inner = (
+            <div className="hig-card group h-full rounded-[24px]">
+              <div className="relative bg-[#f4f5fb]" style={{ aspectRatio: "1.55/1" }}>
+                <Image src={cert.image} alt={cert.title} fill className="object-contain p-3" sizes="(max-width:768px) 90vw, 360px" />
+                {cert.verify ? (
+                  <span className="absolute right-3 top-3 inline-flex items-center gap-1 rounded-full bg-surface-container/90 px-2.5 py-1 text-label-s text-on-surface-variant backdrop-blur-sm">
+                    <IconSymbol name="verified" size={13} className="text-success" /> Verify
+                  </span>
+                ) : null}
               </div>
-            </TiltCard>
-          </StaggerItem>
-        ))}
+              <div className="p-4.5">
+                <div className="text-title-m text-on-surface">{cert.title}</div>
+                <div className={`text-label-m mt-1 ${SEED_TEXT[cert.seed]}`}>{cert.issuer}</div>
+              </div>
+            </div>
+          );
+          return (
+            <StaggerItem key={cert.id} className="min-w-[82vw] max-w-[82vw] md:min-w-0 md:max-w-none">
+              <TiltCard className="h-full">
+                {cert.verify ? (
+                  <a href={cert.verify} target="_blank" rel="noopener noreferrer" aria-label={`Verify ${cert.title}`} className="block h-full no-underline">
+                    {inner}
+                  </a>
+                ) : (
+                  inner
+                )}
+              </TiltCard>
+            </StaggerItem>
+          );
+        })}
       </StaggerGroup>
 
       <Reveal delay={0.15}>

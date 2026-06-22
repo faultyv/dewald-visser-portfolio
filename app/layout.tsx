@@ -57,14 +57,12 @@ export const metadata: Metadata = {
     description: DESCRIPTION,
     url: SITE_URL,
     locale: "en_ZA",
-    images: [{ url: "/og-image.svg", width: 1200, height: 630, alt: `${NAME} portfolio preview`, type: "image/svg+xml" }],
   },
   twitter: {
     card: "summary_large_image",
     title: `${NAME} — ${TAGLINE}`,
     description: DESCRIPTION,
     creator: "@TheBBQhunter",
-    images: ["/og-image.svg"],
   },
   robots: {
     index: true,

@@ -13,6 +13,30 @@
       "issuer": "HubSpot Academy · 2024–2026",
       "image": "/images/certs/hubspot-content-marketing.jpg",
       "seed": "success"
+    },
+    {
+      "id": "coursera-chatfuel",
+      "title": "Lead Generation Messenger Chatbot with Chatfuel",
+      "issuer": "Coursera · 2024",
+      "image": "/images/certs/coursera-chatfuel-lead-gen.jpg",
+      "seed": "secondary",
+      "verify": "https://coursera.org/verify/89YNLT53BWLL"
+    },
+    {
+      "id": "coursera-wordpress",
+      "title": "Build a Website with WordPress",
+      "issuer": "Coursera · 2024",
+      "image": "/images/certs/coursera-wordpress-website.jpg",
+      "seed": "tertiary",
+      "verify": "https://coursera.org/verify/ET7C7XXSK3VJ"
+    },
+    {
+      "id": "coursera-business-analysis",
+      "title": "Business Analysis & Process Management",
+      "issuer": "Coursera · 2024",
+      "image": "/images/certs/coursera-business-analysis.jpg",
+      "seed": "warning",
+      "verify": "https://coursera.org/verify/4BQ7T29S3VFB"
     }
   ],
   "additional": [
