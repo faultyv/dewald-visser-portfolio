@@ -6,18 +6,18 @@
     "brandMark": "SP",
     "brandColor": "secondary",
     "tags": ["Founder", "Marketing"],
-    "detail": "Founder-led venture focused on practical business setup, brand direction, commercial positioning and the systems needed to sell and deliver cleanly.",
+    "detail": "My own venture, built from the ground up — supplier relationships, customer development, pricing, stock planning and the brand and sales systems behind a working paper, coatings and self-adhesive supply business.",
     "software": ["CRM", "Google Workspace", "Canva", "WordPress"],
     "proof": [
       {
         "type": "Founder",
-        "title": "Current venture ownership",
-        "detail": "Own the positioning, operating setup and delivery thinking behind the current business direction."
+        "title": "Built from zero",
+        "detail": "Set up suppliers, the customer pipeline, pricing and stock planning for a new paper, coatings and self-adhesive supply business."
       },
       {
         "type": "Systems",
-        "title": "Commercial setup",
-        "detail": "Build the practical workflows, content and marketing structure needed to turn ideas into usable offers."
+        "title": "Brand & sales engine",
+        "detail": "Own the brand direction, sales process and operating systems that turn master-reel stock into delivered, customer-spec orders."
       }
     ]
   },
@@ -28,18 +28,23 @@
     "brandMark": "OT",
     "brandColor": "success",
     "tags": ["Design", "Marketing", "Web"],
-    "detail": "Led creative arts and communications delivery across church media, campaigns, design output and operational communications.",
-    "software": ["Photoshop", "Illustrator", "InDesign", "After Effects", "Canva", "Google Workspace"],
+    "detail": "Led creative arts and communications for the Florida Road flagship church — sermon-series design, social content, photography, videography and post-production, live production and equipment setup, and volunteer and intern training, all on Adobe-led, industry-standard media workflows.",
+    "software": ["Photoshop", "Illustrator", "InDesign", "After Effects", "Premiere Pro", "Lightroom"],
     "proof": [
       {
-        "type": "Creative",
-        "title": "Church media leadership",
-        "detail": "Coordinated visual and communication output across services, campaigns and internal needs."
+        "type": "Creative lead",
+        "title": "Flagship church communications",
+        "detail": "Owned sermon-series design, social content and the weekly visual language for a large, well-resourced ministry."
       },
       {
-        "type": "Operations",
-        "title": "Creative delivery rhythm",
-        "detail": "Helped keep content, campaigns and communications moving with a consistent production cadence."
+        "type": "Production",
+        "title": "Photo, video & live setup",
+        "detail": "Ran photography, videography, video editing, production and equipment setup to broadcast-standard quality."
+      },
+      {
+        "type": "People",
+        "title": "Volunteer & intern training",
+        "detail": "Trained volunteers and interns and held the team to Adobe-led, industry-standard production workflows."
       }
     ]
   },

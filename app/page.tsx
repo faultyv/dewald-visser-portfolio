@@ -3,7 +3,7 @@ import { About } from "@/components/About";
 import { CraftSystem } from "@/components/CraftSystem";
 import { Pillars } from "@/components/Pillars";
 import { Method } from "@/components/Method";
-import { Career } from "@/components/Career";
+import { CareerExplorer } from "@/components/CareerExplorer";
 import { BrandConstellation } from "@/components/BrandConstellation";
 import { WorkTeaser } from "@/components/WorkTeaser";
 import { SkillsMarquee } from "@/components/SkillsMarquee";
@@ -28,7 +28,7 @@ export default function Home() {
       <CraftSystem site={site} />
       <WorkTeaser projects={projects} />
       <Pillars />
-      <Career cv={cv} />
+      <CareerExplorer cv={cv} />
       <BrandConstellation companies={companies} />
       <Method steps={method} />
       <SkillsMarquee tags={marqueeTags} skills={skills} />
