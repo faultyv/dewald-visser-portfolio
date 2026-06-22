@@ -1,7 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import { IconSymbol } from "./IconSymbol";
-import { SEED_BG, COVER_BG } from "@/lib/seed-classes";
+import { ProjectCoverVisual } from "./ProjectCoverVisual";
 import type { Project } from "@/lib/content";
 
 /** Curated connections — the non-obvious threads, mirroring the brand-map intelligence. */
@@ -45,19 +44,7 @@ export function RelatedWork({ current, all }: { current: Project; all: Project[]
           <Link key={p.slug} href={`/work/${p.slug}`} className="group block no-underline">
             <div className="hig-card overflow-hidden rounded-[20px]">
               <div className="relative aspect-[16/10]">
-                {p.cover ? (
-                  <div className={`absolute inset-0 ${p.coverFit === "contain" && p.coverBg ? COVER_BG[p.coverBg] : ""}`}>
-                    <Image
-                      src={p.cover}
-                      alt={p.title}
-                      fill
-                      sizes="(max-width:768px) 90vw, 360px"
-                      className={p.coverFit === "contain" ? "object-contain p-6" : "object-cover transition-transform duration-500 group-hover:scale-[1.04]"}
-                    />
-                  </div>
-                ) : (
-                  <div className={`absolute inset-0 ${SEED_BG[p.seed]} opacity-20`} />
-                )}
+                <ProjectCoverVisual project={p} sizes="(max-width:768px) 90vw, 360px" />
               </div>
               <div className="flex items-center justify-between gap-3 p-4">
                 <div className="min-w-0">

@@ -18,6 +18,21 @@ const FILTERS = [
   { id: "Foundations", label: "Foundations" },
 ] as const;
 
+const ROLE_ICON: Record<string, string> = {
+  Founder: "rocket_launch",
+  Marketing: "campaign",
+  Design: "palette",
+  Web: "language",
+  Foundations: "support_agent",
+  AI: "auto_awesome",
+};
+
+function roleIcon(entry: CVEntry) {
+  const priority = ["AI", "Founder", "Web", "Marketing", "Design", "Foundations"];
+  const match = priority.find((tag) => entry.tags.includes(tag));
+  return match ? ROLE_ICON[match] : "work_history";
+}
+
 function RoleDetail({ entry }: { entry: CVEntry }) {
   const seed = tagSeed(entry.tags[0]);
   const brandSeed = entry.brandColor ?? seed;
@@ -29,8 +44,8 @@ function RoleDetail({ entry }: { entry: CVEntry }) {
           <h3 className="mt-1.5 text-headline-s text-on-surface md:text-headline-m">{entry.role}</h3>
           <div className="mt-1 text-title-s text-on-surface-variant">{entry.org}</div>
         </div>
-        <div className={`grid h-14 w-14 shrink-0 place-items-center rounded-2xl ${SEED_BG[brandSeed]} ${SEED_ON[brandSeed]} elevation-1`} style={{ fontFamily: "var(--font-display)", fontWeight: 800 }}>
-          {entry.brandMark ?? entry.org.slice(0, 2).toUpperCase()}
+        <div className={`grid h-14 w-14 shrink-0 place-items-center rounded-2xl ${SEED_BG[brandSeed]} ${SEED_ON[brandSeed]} elevation-1`}>
+          <IconSymbol name={roleIcon(entry)} size={28} filled />
         </div>
       </div>
 
@@ -140,8 +155,8 @@ export function CareerExplorer({ cv }: { cv: CVEntry[] }) {
                         )}
                         {/* node on the spine */}
                         <span className="relative grid h-[38px] w-[38px] shrink-0 place-items-center">
-                          <span className={`grid h-[38px] w-[38px] place-items-center rounded-xl text-label-s transition-colors ${on ? `${SEED_BG[seed]} ${SEED_ON[seed]}` : `${SEED_CONTAINER_BG[seed]} ${SEED_CONTAINER_TEXT[seed]}`}`} style={{ fontFamily: "var(--font-display)", fontWeight: 800 }}>
-                            {entry.brandMark ?? entry.org.slice(0, 2).toUpperCase()}
+                          <span className={`grid h-[38px] w-[38px] place-items-center rounded-xl transition-colors ${on ? `${SEED_BG[seed]} ${SEED_ON[seed]}` : `${SEED_CONTAINER_BG[seed]} ${SEED_CONTAINER_TEXT[seed]}`}`}>
+                            <IconSymbol name={roleIcon(entry)} size={20} filled />
                           </span>
                           {isPresent && <span className={`absolute -right-0.5 -top-0.5 h-2.5 w-2.5 rounded-full ${SEED_BG[seed]} animate-[pingDot_1.8s_cubic-bezier(0,0,0.2,1)_infinite]`} />}
                         </span>

@@ -52,6 +52,8 @@ const PILLARS: { n: string; seed: SeedName; icon: string; title: string; proof: 
   },
 ];
 
+const AI_ITEM_ICONS = ["model_training", "account_tree", "verified"];
+
 export function Pillars() {
   const ai = PILLARS[PILLARS.length - 1];
   const core = PILLARS.slice(0, -1);
@@ -64,36 +66,44 @@ export function Pillars() {
             <Reveal>
               <div className="text-label-l text-primary mb-4">Capabilities</div>
             </Reveal>
-          <Reveal delay={0.05}>
-            <h2 className="text-headline-l text-on-surface">
+            <Reveal delay={0.05}>
+              <h2 className="text-headline-l text-on-surface">
                 Connected disciplines,
                 <br />
                 one operator.
-            </h2>
-          </Reveal>
-        </div>
-        <Reveal delay={0.1}>
-          <p className="max-w-[390px] text-body-m text-on-surface-variant">
+              </h2>
+            </Reveal>
+          </div>
+          <Reveal delay={0.1}>
+            <p className="max-w-[390px] text-body-m text-on-surface-variant">
               The advantage is the handoff between them: strategy shaping the campaign, design carrying the message, web systems making it usable and AI tightening the workflow.
-          </p>
-        </Reveal>
+            </p>
+          </Reveal>
         </div>
 
         <StaggerGroup className="flex flex-col gap-4.5">
           <StaggerItem>
             <TiltCard>
-              <article className="hig-glass rounded-[24px] p-5 md:rounded-[28px] md:p-8">
-                <div className="absolute right-6 top-1/2 hidden -translate-y-1/2 select-none text-[148px] font-bold leading-none text-highlight/10 sm:block" style={{ fontFamily: "var(--font-display)" }}>
-                  AI
+              <article className="ai-feature-card hig-glass rounded-[24px] p-5 md:rounded-[28px] md:p-8">
+                <div className="ai-loop hidden sm:block" aria-hidden="true">
+                  <span className="ai-loop-ring ai-loop-ring-a" />
+                  <span className="ai-loop-ring ai-loop-ring-b" />
+                  <span className="ai-loop-node ai-loop-node-a" />
+                  <span className="ai-loop-node ai-loop-node-b" />
+                  <span className="ai-loop-node ai-loop-node-c" />
+                  <span className="ai-loop-core">
+                    <IconSymbol name="auto_awesome" size={30} filled />
+                    <span>AI</span>
+                  </span>
                 </div>
                 <div className="relative z-10 grid gap-6 md:grid-cols-[1fr_1.05fr] md:items-end md:gap-8">
                   <div>
                     <div className="mb-5 flex flex-wrap items-center gap-3">
-                      <div className={`grid h-14 w-14 place-items-center rounded-2xl ${SEED_BG[ai.seed]}`}>
+                      <div className={`ai-mark grid h-14 w-14 place-items-center rounded-2xl ${SEED_BG[ai.seed]}`}>
                         <IconSymbol name={ai.icon} size={28} filled className={SEED_ON[ai.seed]} />
                       </div>
                       <div>
-                    <div className={`text-label-s ${SEED_TEXT[ai.seed]}`}>Pillar {ai.n} · Practical layer</div>
+                        <div className={`text-label-s ${SEED_TEXT[ai.seed]}`}>Featured AI layer</div>
                         <div className="text-label-s text-on-surface-variant">{ai.proof}</div>
                       </div>
                     </div>
@@ -103,7 +113,9 @@ export function Pillars() {
                   <div className="grid gap-2.5">
                     {ai.items.map((it, idx) => (
                       <div key={it} className={`flex items-start gap-3 rounded-xl px-3.5 py-2.5 md:py-3 ${SEED_CONTAINER_BG[ai.seed]} ${SEED_CONTAINER_TEXT[ai.seed]}`}>
-                        <span className={`grid h-7 w-7 shrink-0 place-items-center rounded-full ${SEED_BG[ai.seed]} ${SEED_ON[ai.seed]} text-label-s`}>{idx + 1}</span>
+                        <span className={`grid h-7 w-7 shrink-0 place-items-center rounded-full ${SEED_BG[ai.seed]} ${SEED_ON[ai.seed]}`}>
+                          <IconSymbol name={AI_ITEM_ICONS[idx] ?? "task_alt"} size={16} filled />
+                        </span>
                         <span className="text-body-s">{it}</span>
                       </div>
                     ))}

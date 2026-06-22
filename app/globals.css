@@ -553,6 +553,231 @@ body {
   animation: systemLineSweep 3.8s ease-in-out infinite;
 }
 
+.ai-feature-card {
+  isolation: isolate;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--color-highlight) 12%, transparent), transparent 42%),
+    linear-gradient(225deg, color-mix(in srgb, var(--color-primary) 10%, transparent), transparent 48%),
+    var(--hig-glass);
+}
+
+.ai-feature-card::after {
+  content: "";
+  position: absolute;
+  inset: 16px;
+  z-index: 0;
+  border: 1px solid color-mix(in srgb, var(--color-highlight) 18%, transparent);
+  border-radius: 22px;
+  opacity: 0.44;
+  pointer-events: none;
+}
+
+.ai-mark {
+  box-shadow: 0 0 0 6px color-mix(in srgb, var(--color-highlight) 12%, transparent), 0 16px 28px -18px var(--color-highlight);
+  animation: aiMarkPulse 4.8s ease-in-out infinite;
+}
+
+.ai-loop {
+  position: absolute;
+  right: clamp(24px, 7vw, 96px);
+  top: 50%;
+  z-index: 0;
+  width: clamp(160px, 18vw, 240px);
+  height: clamp(160px, 18vw, 240px);
+  transform: translateY(-50%);
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.ai-loop-ring,
+.ai-loop-node,
+.ai-loop-core {
+  position: absolute;
+  border-radius: 999px;
+}
+
+.ai-loop-ring {
+  inset: 12%;
+  border: 1px solid color-mix(in srgb, var(--color-highlight) 38%, transparent);
+  box-shadow: 0 0 42px -26px var(--color-highlight);
+}
+
+.ai-loop-ring-a {
+  animation: aiOrbit 13s linear infinite;
+}
+
+.ai-loop-ring-b {
+  inset: 26%;
+  border-color: color-mix(in srgb, var(--color-primary) 34%, transparent);
+  animation: aiOrbitReverse 9s linear infinite;
+}
+
+.ai-loop-ring::before,
+.ai-loop-ring::after {
+  content: "";
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  border-radius: inherit;
+  background: var(--color-highlight);
+  box-shadow: 0 0 18px color-mix(in srgb, var(--color-highlight) 56%, transparent);
+}
+
+.ai-loop-ring::before {
+  left: 50%;
+  top: -5px;
+}
+
+.ai-loop-ring::after {
+  bottom: -5px;
+  right: 22%;
+  background: var(--color-primary);
+  box-shadow: 0 0 18px color-mix(in srgb, var(--color-primary) 50%, transparent);
+}
+
+.ai-loop-node {
+  width: 12px;
+  height: 12px;
+  background: var(--color-surface);
+  border: 2px solid var(--color-highlight);
+  box-shadow: 0 0 0 8px color-mix(in srgb, var(--color-highlight) 8%, transparent);
+  animation: aiNodeFloat 5.8s ease-in-out infinite;
+}
+
+.ai-loop-node-a {
+  left: 8%;
+  top: 28%;
+}
+
+.ai-loop-node-b {
+  right: 12%;
+  top: 18%;
+  border-color: var(--color-primary);
+  animation-delay: 0.7s;
+}
+
+.ai-loop-node-c {
+  bottom: 16%;
+  left: 34%;
+  border-color: var(--color-success);
+  animation-delay: 1.3s;
+}
+
+.ai-loop-core {
+  inset: 33%;
+  display: grid;
+  place-items: center;
+  gap: 2px;
+  color: var(--color-on-highlight);
+  background: var(--color-highlight);
+  box-shadow: 0 18px 46px -24px var(--color-highlight);
+  font-family: var(--font-display);
+  font-weight: 800;
+  animation: aiCoreBreathe 4.8s ease-in-out infinite;
+}
+
+.project-cover-board {
+  overflow: hidden;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--color-tertiary-container) 42%, transparent), transparent 42%),
+    linear-gradient(180deg, var(--color-surface-container-high), var(--color-surface-container-low));
+}
+
+.project-cover-board::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(color-mix(in srgb, var(--color-outline) 16%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--color-outline) 16%, transparent) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: linear-gradient(180deg, #000, transparent 88%);
+  opacity: 0.54;
+}
+
+.project-cover-board::after {
+  content: "";
+  position: absolute;
+  left: 9%;
+  right: 9%;
+  top: 50%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--color-tertiary) 60%, transparent), transparent);
+  transform: rotate(-8deg);
+  opacity: 0.76;
+}
+
+.project-cover-chip,
+.project-cover-proof {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  border: 1px solid var(--color-outline-variant);
+  background: color-mix(in srgb, var(--color-surface) 70%, transparent);
+  color: var(--color-on-surface);
+  box-shadow: 0 12px 30px -24px var(--m3-shadow);
+  backdrop-filter: blur(16px) saturate(1.2);
+  -webkit-backdrop-filter: blur(16px) saturate(1.2);
+}
+
+.project-cover-chip {
+  width: max-content;
+  border-radius: 999px;
+  padding: 7px 11px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.project-cover-proof {
+  min-height: 44px;
+  border-radius: 14px;
+  padding: 10px 12px;
+  color: var(--color-on-tertiary-container);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.project-cover-registration {
+  position: absolute;
+  width: 72px;
+  height: 72px;
+  border: 1px solid color-mix(in srgb, var(--color-tertiary) 46%, transparent);
+  border-radius: 999px;
+  opacity: 0.42;
+}
+
+.project-cover-registration::before,
+.project-cover-registration::after {
+  content: "";
+  position: absolute;
+  background: color-mix(in srgb, var(--color-tertiary) 52%, transparent);
+}
+
+.project-cover-registration::before {
+  left: 50%;
+  top: -12px;
+  width: 1px;
+  height: 96px;
+}
+
+.project-cover-registration::after {
+  left: -12px;
+  top: 50%;
+  width: 96px;
+  height: 1px;
+}
+
+.project-cover-registration-a {
+  right: 9%;
+  top: 18%;
+}
+
+.project-cover-registration-b {
+  bottom: 9%;
+  left: 10%;
+  transform: scale(0.68);
+}
+
 .career-list {
   display: flex;
 }
@@ -682,4 +907,24 @@ body {
 @keyframes systemMeter {
   0%, 100% { transform: scaleX(0.94); }
   50% { transform: scaleX(1); }
+}
+@keyframes aiOrbit {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes aiOrbitReverse {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+@keyframes aiMarkPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+}
+@keyframes aiNodeFloat {
+  0%, 100% { transform: translate3d(0, 0, 0); opacity: 0.78; }
+  50% { transform: translate3d(8px, -10px, 0); opacity: 1; }
+}
+@keyframes aiCoreBreathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.06); }
 }

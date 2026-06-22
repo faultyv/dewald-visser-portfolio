@@ -1,17 +1,11 @@
-import Image from "next/image";
 import Link from "next/link";
 import { Reveal, StaggerGroup, StaggerItem } from "./Reveal";
 import { TiltCard } from "./TiltCard";
 import { ButtonLink } from "./Button";
 import { IconSymbol } from "./IconSymbol";
-import { SEED_BG, SEED_ON, COVER_BG } from "@/lib/seed-classes";
+import { ProjectCoverVisual } from "./ProjectCoverVisual";
+import { SEED_BG, SEED_ON } from "@/lib/seed-classes";
 import type { Project } from "@/lib/content";
-
-function containBackdrop(project: Project): string {
-  if (project.coverFit !== "contain") return "absolute inset-0";
-  if (project.coverBg) return `absolute inset-0 ${COVER_BG[project.coverBg]}`;
-  return `absolute inset-0 ${SEED_BG[project.seed]} opacity-10`;
-}
 
 export function WorkTeaser({ projects }: { projects: Project[] }) {
   const featured = projects.slice(0, 3);
@@ -44,19 +38,7 @@ export function WorkTeaser({ projects }: { projects: Project[] }) {
               <Link href={`/work/${project.slug}`} className="block no-underline group">
                 <div className="hig-card overflow-hidden rounded-[24px]">
                   <div className="relative" style={{ aspectRatio: "4/3" }}>
-                    {project.cover ? (
-                      <div className={containBackdrop(project)}>
-                        <Image
-                          src={project.cover}
-                          alt={project.title}
-                          fill
-                          className={project.coverFit === "contain" ? "object-contain p-8" : "object-cover"}
-                          sizes="(max-width:768px) 90vw, 420px"
-                        />
-                      </div>
-                    ) : (
-                      <div className={`absolute inset-0 ${SEED_BG[project.seed]} opacity-20`} />
-                    )}
+                    <ProjectCoverVisual project={project} sizes="(max-width:768px) 90vw, 420px" />
                     <span className={`absolute top-3.5 left-3.5 z-[2] text-label-m px-3 py-1.5 rounded-full ${SEED_BG[project.seed]} ${SEED_ON[project.seed]}`}>
                       {project.label}
                     </span>

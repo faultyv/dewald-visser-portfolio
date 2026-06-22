@@ -1,22 +1,14 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { motion } from "motion/react";
 import { TiltCard } from "./TiltCard";
 import { IconSymbol } from "./IconSymbol";
-import { SEED_BG, SEED_ON, COVER_BG } from "@/lib/seed-classes";
+import { ProjectCoverVisual } from "./ProjectCoverVisual";
+import { SEED_BG, SEED_ON } from "@/lib/seed-classes";
 import { fmTransition } from "@/lib/motion-tokens";
 import type { Project } from "@/lib/content";
-
-/** Backdrop class for a contain-fit (logo) cover: a fixed light/dark panel when coverBg
- * is set (guaranteed contrast in both themes), else a faint theme-tinted seed wash. */
-function containBackdrop(project: Project): string {
-  if (project.coverFit !== "contain") return "absolute inset-0";
-  if (project.coverBg) return `absolute inset-0 ${COVER_BG[project.coverBg]}`;
-  return `absolute inset-0 ${SEED_BG[project.seed]} opacity-10`;
-}
 
 const FILTERS = [
   { id: "all", label: "All" },
@@ -32,22 +24,11 @@ function ProjectCard({ project, large }: { project: Project; large?: boolean }) 
         <Link href={`/work/${project.slug}`} className="block no-underline group">
           <div className="hig-card overflow-hidden rounded-[24px]">
             <div className="relative" style={{ aspectRatio: large ? "16/9" : "4/3" }}>
-              {project.cover ? (
-                <div className={containBackdrop(project)}>
-                  <Image
-                    src={project.cover}
-                    alt={project.title}
-                    fill
-                    priority={large}
-                    className={`transition-transform duration-500 group-hover:scale-105 ${
-                      project.coverFit === "contain" ? "object-contain p-8 md:p-10" : "object-cover"
-                    }`}
-                    sizes={large ? "(max-width:768px) 95vw, 800px" : "(max-width:768px) 90vw, 420px"}
-                  />
-                </div>
-              ) : (
-                <div className={`absolute inset-0 ${SEED_BG[project.seed]} opacity-20`} />
-              )}
+              <ProjectCoverVisual
+                project={project}
+                priority={large}
+                sizes={large ? "(max-width:768px) 95vw, 800px" : "(max-width:768px) 90vw, 420px"}
+              />
               <span className={`absolute top-4 left-4 z-[2] text-label-m px-3 py-1.5 rounded-full ${SEED_BG[project.seed]} ${SEED_ON[project.seed]}`}>
                 {project.label}
               </span>
