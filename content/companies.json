@@ -55,7 +55,7 @@
     "relationship": "Founder / Director",
     "discipline": "Digital + design agency: brand, web, campaigns and production",
     "period": "2021-2024",
-    "url": ""
+    "url": "/work/clicklocal"
   },
   {
     "name": "Thinklocal",
@@ -95,6 +95,15 @@
     "socials": [
       { "kind": "facebook", "url": "https://www.facebook.com/alifdoorssa/" }
     ]
+  },
+  {
+    "name": "Dynamic Automation",
+    "mark": "DA",
+    "seed": "success",
+    "relationship": "Web, brand & quote system (via clicklocal)",
+    "discipline": "Website, branding, signage and a CPQ quote tool",
+    "period": "2021-2024",
+    "url": "/work/dynamic-automation"
   },
   {
     "name": "Cambridge University initiative",
