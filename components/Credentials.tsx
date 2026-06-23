@@ -36,24 +36,42 @@ export function Credentials({ certs, site }: { certs: CertsData; site: SiteConfi
 
       <StaggerGroup className="mobile-strip no-scrollbar -mx-5 flex gap-3.5 px-5 pb-3 md:mx-0 md:grid md:grid-cols-2 md:gap-4.5 md:overflow-visible md:px-0 md:pb-0 lg:grid-cols-3">
         {certs.featured.map((cert) => {
+          const [issuerName, issuerDate] = cert.issuer.split(" · ");
           const inner = (
-            <div className="cert-proof-card hig-card group h-full overflow-hidden rounded-[24px]">
-              <div className="relative bg-[#f4f5fb]" style={{ aspectRatio: "1.55/1" }}>
-                <Image src={cert.image} alt={cert.title} fill className="object-contain p-3" sizes="(max-width:768px) 90vw, 360px" />
+            <div className="cert-card cert-proof-card hig-card group relative flex h-full flex-col overflow-hidden rounded-[24px]">
+              <span className={`cert-accent ${SEED_BG[cert.seed]}`} aria-hidden="true" />
+              <div className="relative bg-[#f4f5fb]" style={{ aspectRatio: "1.6/1" }}>
+                <Image
+                  src={cert.image}
+                  alt={cert.title}
+                  fill
+                  className="object-contain p-4 transition-transform duration-500 group-hover:scale-[1.03]"
+                  sizes="(max-width:768px) 90vw, 360px"
+                />
                 {cert.verify ? (
                   <span className="absolute right-3 top-3 inline-flex items-center gap-1 rounded-full bg-surface-container/90 px-2.5 py-1 text-label-s text-on-surface backdrop-blur-sm">
                     <IconSymbol name="verified" size={13} className="text-success" /> Verified link
                   </span>
                 ) : null}
               </div>
-              <div className="p-4.5">
-                <div className="text-title-m text-on-surface">{cert.title}</div>
-                <div className={`mt-1 text-label-m ${SEED_TEXT[cert.seed]}`}>{cert.issuer}</div>
-                {cert.verify ? (
-                  <div className="mt-4 inline-flex items-center gap-1.5 rounded-full border border-outline-variant px-3 py-1.5 text-label-m text-on-surface-variant">
-                    Open credential <IconSymbol name="open_in_new" size={13} />
-                  </div>
-                ) : null}
+              <div className="relative flex flex-1 flex-col p-4.5 md:p-5">
+                <span className={`cert-seal ${SEED_BG[cert.seed]} ${SEED_ON[cert.seed]}`} aria-hidden="true">
+                  <IconSymbol name="workspace_premium" size={20} filled />
+                </span>
+                <div className={`text-label-s font-semibold ${SEED_TEXT[cert.seed]}`}>{issuerName}</div>
+                <div className="mt-1 text-title-m text-on-surface">{cert.title}</div>
+                {issuerDate ? <div className="mt-1 text-label-s text-on-surface-variant">{issuerDate}</div> : null}
+                <div className="mt-auto pt-4">
+                  {cert.verify ? (
+                    <span className={`inline-flex items-center gap-1.5 rounded-full px-3.5 py-2 text-label-m transition-transform group-hover:translate-x-0.5 ${SEED_CONTAINER_BG[cert.seed]} ${SEED_CONTAINER_TEXT[cert.seed]}`}>
+                      Verify credential <IconSymbol name="open_in_new" size={14} />
+                    </span>
+                  ) : (
+                    <span className="inline-flex items-center gap-1.5 rounded-full border border-outline-variant px-3.5 py-2 text-label-m text-on-surface-variant">
+                      <IconSymbol name="task_alt" size={14} className="text-success" /> Certificate on file
+                    </span>
+                  )}
+                </div>
               </div>
             </div>
           );

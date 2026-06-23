@@ -1323,3 +1323,29 @@ body {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-9px); }
 }
+
+/* ---------- Credential cards ---------- */
+.cert-accent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  z-index: 3;
+  opacity: 0.92;
+}
+.cert-seal {
+  position: absolute;
+  top: 0;
+  right: 18px;
+  transform: translateY(-50%);
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  box-shadow:
+    0 0 0 4px var(--color-surface-container),
+    0 12px 26px -14px var(--m3-shadow);
+  z-index: 4;
+}
