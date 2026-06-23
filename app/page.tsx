@@ -6,6 +6,7 @@ import { Method } from "@/components/Method";
 import { CareerExplorer } from "@/components/CareerExplorer";
 import { BrandConstellation } from "@/components/BrandConstellation";
 import { WorkTeaser } from "@/components/WorkTeaser";
+import { ProofSnapshots } from "@/components/ProofSnapshots";
 import { SkillsMarquee } from "@/components/SkillsMarquee";
 import { Credentials } from "@/components/Credentials";
 import { ContactSection } from "@/components/ContactSection";
@@ -29,6 +30,7 @@ export default function Home() {
       <WorkTeaser projects={projects} />
       <Pillars />
       <CareerExplorer cv={cv} />
+      <ProofSnapshots site={site} />
       <BrandConstellation companies={companies} />
       <Method steps={method} />
       <SkillsMarquee tags={marqueeTags} skills={skills} />

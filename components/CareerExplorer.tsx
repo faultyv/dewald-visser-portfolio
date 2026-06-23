@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import { motion } from "motion/react";
 import { Reveal } from "./Reveal";
 import { IconSymbol } from "./IconSymbol";
 import { tagSeed } from "@/lib/tag-seed";
@@ -87,6 +87,12 @@ export function CareerExplorer({ cv }: { cv: CVEntry[] }) {
   const [filter, setFilter] = useState<string>("all");
 
   const matches = (entry: CVEntry) => filter === "all" || entry.tags.includes(filter);
+  const countFor = (id: string) => (id === "all" ? cv.length : cv.filter((entry) => entry.tags.includes(id)).length);
+  const applyFilter = (id: string) => {
+    setFilter(id);
+    const nextIndex = id === "all" ? 0 : cv.findIndex((entry) => entry.tags.includes(id));
+    if (nextIndex >= 0) setActive(nextIndex);
+  };
 
   return (
     <section id="cv" className="section-pad relative">
@@ -102,8 +108,8 @@ export function CareerExplorer({ cv }: { cv: CVEntry[] }) {
           </div>
           <Reveal delay={0.1}>
             <p className="m-0 max-w-[420px] text-body-m text-on-surface-variant">
-              {cv.length} roles from a 2014 sales floor to founding my own venture — select any to read the scope, the proof and the
-              stack behind it.
+              {cv.length} roles across sales, design, web, marketing, media and founder work — select any role to read the scope,
+              proof and stack behind it.
             </p>
           </Reveal>
         </div>
@@ -117,10 +123,13 @@ export function CareerExplorer({ cv }: { cv: CVEntry[] }) {
                 <button
                   key={f.id}
                   type="button"
-                  onClick={() => setFilter(f.id)}
+                  onClick={() => applyFilter(f.id)}
                   className={`state-layer cursor-pointer rounded-full border px-3.5 py-1.5 text-label-m transition-colors ${on ? "border-transparent bg-on-surface text-surface" : "border-outline-variant text-on-surface-variant hover:text-on-surface"}`}
                 >
-                  {f.label}
+                  <span className="inline-flex items-center gap-2">
+                    {f.label}
+                    <span className="rounded-full border border-current/25 px-1.5 py-0.5 text-label-s leading-none opacity-80">{countFor(f.id)}</span>
+                  </span>
                 </button>
               );
             })}
@@ -192,11 +201,7 @@ export function CareerExplorer({ cv }: { cv: CVEntry[] }) {
             {/* ---------- Detail panel (desktop) ---------- */}
             <div className="hidden lg:block">
               <div className="hig-card sticky top-28 rounded-[26px] p-6 xl:p-7">
-                <AnimatePresence mode="wait">
-                  <motion.div key={active} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }} transition={fmTransition.standard}>
-                    <RoleDetail entry={cv[active]} />
-                  </motion.div>
-                </AnimatePresence>
+                <RoleDetail entry={cv[active]} />
               </div>
             </div>
           </div>

@@ -45,11 +45,7 @@ export function About({ site }: { site: SiteConfig }) {
             <div className="mb-5 text-label-l text-secondary">Founder, Creative Operator</div>
           </Reveal>
           <Reveal delay={0.05}>
-            <h2 className="text-headline-l text-on-surface">
-              A founder-operator across <span className="text-secondary">brand</span>, <span className="text-primary">marketing</span>,{" "}
-              <span className="text-success">web systems</span> and <span className="text-highlight">AI enablement</span> - built
-              for teams that need the thinking and the making in one place.
-            </h2>
+            <h2 className="text-headline-l text-on-surface">{site.aboutHeadline}</h2>
           </Reveal>
           <Reveal delay={0.1}>
             <p className="mt-6 max-w-[560px] text-body-l text-on-surface-variant">{site.aboutBody}</p>

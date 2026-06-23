@@ -28,7 +28,7 @@ const COMPANY_DOMAINS: Record<string, string> = {
   clicklocal: "ventures",
   "Contours Design Studio / Faux Flora": "ventures",
   Thinklocal: "web",
-  "Clinton Palframan Ministries": "ministry",
+  "The Dreambook Ministry": "ministry",
   "Joseph Business School Africa": "ministry",
   "Olive Tree Church": "ministry",
   "Educor Holdings": "ministry",
@@ -50,7 +50,7 @@ const ICON_BY_COMPANY: Record<string, string> = {
   clicklocal: "ads_click",
   "Contours Design Studio / Faux Flora": "local_florist",
   Thinklocal: "design_services",
-  "Clinton Palframan Ministries": "volunteer_activism",
+  "The Dreambook Ministry": "volunteer_activism",
   "Joseph Business School Africa": "school",
   "Olive Tree Church": "diversity_3",
   "Educor Holdings": "workspace_premium",
@@ -69,16 +69,16 @@ const ICON_BY_COMPANY: Record<string, string> = {
 
 const THREADS: { label: string; seed: SeedName; icon: string; body: string }[] = [
   {
-    label: "Palframan network",
+    label: "Ministry, education & production group",
     seed: "highlight",
     icon: "hub",
-    body: "Clinton Palframan Ministries, Joseph Business School and Mediatrade — one relationship across ministry, education and production.",
+    body: "The Dreambook ministry work, Joseph Business School Africa and Mediatrade — connected work across ministry, education and production.",
   },
   {
     label: "clicklocal agency",
     seed: "tertiary",
     icon: "route",
-    body: "My own agency and the clients that ran through it — Africa Paints, Solid Doors, Alif Doors and Dynamic Automation.",
+    body: "My own agency and the client work that ran through it — Africa Paints, Solid Doors, Alif Doors and Dynamic Automation.",
   },
   {
     label: "Founder path",
@@ -155,13 +155,13 @@ export function BrandConstellation({ companies }: { companies: CompanyEntry[] })
               <div className="text-label-l text-success mb-3.5">Companies &amp; collaborators</div>
             </Reveal>
             <Reveal delay={0.05}>
-              <h2 className="text-headline-l text-on-surface">The brands behind the work.</h2>
+              <h2 className="text-headline-l text-on-surface">The organisations behind the work.</h2>
             </Reveal>
           </div>
           <Reveal delay={0.1}>
             <p className="m-0 max-w-[440px] text-body-m text-on-surface-variant">
-              {companies.length} companies, ventures and clients across five worlds — from my own ventures to the agencies, ministries
-              and manufacturers I&apos;ve built for.
+              {companies.length} organisations, ventures and clients across five worlds — from owned ventures to education, production,
+              manufacturing and sales foundations.
             </p>
           </Reveal>
         </div>

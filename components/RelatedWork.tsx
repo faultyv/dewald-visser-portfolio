@@ -7,7 +7,7 @@ import type { Project } from "@/lib/content";
 const CLUSTERS: { slugs: string[]; label: string }[] = [
   {
     slugs: ["dreambook-cpm", "joseph-business-school", "retail-production-dtp"],
-    label: "Connected through Clinton Palframan — one group spanning ministry, education and production.",
+    label: "Connected work across a ministry project, an entrepreneurship school and production design.",
   },
 ];
 

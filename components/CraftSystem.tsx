@@ -7,7 +7,7 @@ const SYSTEM_CARDS = [
   {
     label: "Signal",
     title: "Brief clarity",
-    body: "Audience, offer and friction get mapped before the creative work starts.",
+    body: "Audience, offer, constraints and success criteria are mapped before creative starts.",
     icon: "travel_explore",
     accent: "bg-primary text-on-primary",
     text: "text-primary",
@@ -15,7 +15,7 @@ const SYSTEM_CARDS = [
   {
     label: "Creative",
     title: "Campaign language",
-    body: "Design, copy and content decisions become reusable assets for the team.",
+    body: "Design, copy and content decisions become a reusable language the team can keep using.",
     icon: "palette",
     accent: "bg-tertiary text-on-tertiary",
     text: "text-tertiary",
@@ -23,7 +23,7 @@ const SYSTEM_CARDS = [
   {
     label: "System",
     title: "Working surface",
-    body: "Pages, contact paths and production tools turn ideas into usable flows.",
+    body: "Pages, forms, content paths and production tools turn the idea into a working flow.",
     icon: "web",
     accent: "bg-success text-on-success",
     text: "text-success",
@@ -31,7 +31,7 @@ const SYSTEM_CARDS = [
   {
     label: "Loop",
     title: "AI-assisted iteration",
-    body: "Prompt systems and review habits keep the next move faster and sharper.",
+    body: "Prompt systems, review habits and data points make the next move faster and sharper.",
     icon: "auto_awesome",
     accent: "bg-highlight text-on-highlight",
     text: "text-highlight",
@@ -78,12 +78,12 @@ export function CraftSystem({ site }: { site: SiteConfig }) {
         </Reveal>
         <Reveal delay={0.05}>
           <h2 className="text-headline-l text-on-surface">
-            Better teamwork, by <span className="text-primary">designed systems.</span>
+            Better work, by <span className="text-primary">designed systems.</span>
           </h2>
         </Reveal>
         <Reveal delay={0.1}>
           <p className="mx-auto mt-5 max-w-[620px] text-body-l text-on-surface-variant">
-            What it looks like to carry a project end to end with one operator — brief, creative, build and iteration moving on the same board, instead of a chain of handoffs between agencies.
+            One operating board for the brief, creative, build and learning loop — so the work moves as a system instead of a chain of disconnected handoffs.
           </p>
         </Reveal>
       </div>

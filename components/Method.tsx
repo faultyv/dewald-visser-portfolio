@@ -23,7 +23,7 @@ export function Method({ steps }: { steps: MethodStep[] }) {
           </Reveal>
           <Reveal delay={0.1}>
             <p className="mt-5 max-w-[460px] text-body-m text-on-surface-variant">
-              The process stays simple on purpose: diagnose the business problem, design the reusable system, deploy what the team can use and learn from the result.
+              A compact loop for mixed creative and systems work: find the business problem, design the reusable language, ship the working surface and improve it from real response.
             </p>
           </Reveal>
         </div>

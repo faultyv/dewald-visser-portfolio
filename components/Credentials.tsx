@@ -97,7 +97,7 @@ export function Credentials({ certs, site }: { certs: CertsData; site: SiteConfi
             <div className="text-label-m text-on-surface-variant">Additional certifications</div>
             <div className="inline-flex items-center gap-2 text-label-m text-success">
               <IconSymbol name="verified" size={16} filled />
-              Checked proof list
+              Credential record
             </div>
           </div>
           <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">

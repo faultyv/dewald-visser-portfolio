@@ -3,24 +3,24 @@
     "title": "Diagnose",
     "kicker": "Signal",
     "seed": "primary",
-    "body": "Clarify the audience, offer, operational friction and measurable goal before touching the visuals."
+    "body": "Clarify the audience, offer, operational friction and measurable goal before choosing the visual or technical route."
   },
   {
     "title": "Design",
     "kicker": "System",
     "seed": "tertiary",
-    "body": "Turn brand, content and interface decisions into a language the team can reuse."
+    "body": "Turn brand, content and interface decisions into a reusable language for campaigns, pages and internal handoff."
   },
   {
     "title": "Deploy",
     "kicker": "Build",
     "seed": "success",
-    "body": "Ship campaigns, websites, automations and assets that can be used in the real workflow."
+    "body": "Ship the website, campaign, automation or asset pack in a way the team can actually operate."
   },
   {
     "title": "Learn",
     "kicker": "Loop",
     "seed": "highlight",
-    "body": "Read the data, tighten the workflow and make the next iteration faster and sharper."
+    "body": "Read the response, tighten the workflow and make the next iteration faster, clearer and easier to repeat."
   }
 ]

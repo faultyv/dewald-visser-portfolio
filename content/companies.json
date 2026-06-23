@@ -36,11 +36,11 @@
     "url": "https://jbsa.org.za/"
   },
   {
-    "name": "Clinton Palframan Ministries",
-    "mark": "CPM",
+    "name": "The Dreambook Ministry",
+    "mark": "DB",
     "seed": "success",
     "relationship": "Web & Brand Partner",
-    "discipline": "Website, brand identity and app for The Dreambook",
+    "discipline": "Website, brand identity and app pathway for The Dreambook",
     "period": "2024-2025",
     "url": "https://www.behance.net/gallery/197281959/The-Dreambook",
     "socials": [
@@ -55,7 +55,7 @@
     "relationship": "Founder",
     "discipline": "Digital + design agency: brand, web, campaigns and production",
     "period": "2021-2024",
-    "url": "/work/clicklocal"
+    "url": ""
   },
   {
     "name": "Thinklocal",
@@ -70,8 +70,8 @@
     "name": "Africa Paints",
     "mark": "AP",
     "seed": "info",
-    "relationship": "Brand & Fleet Design via clicklocal",
-    "discipline": "Logo, tarpaulin livery and campaign branding through the clicklocal / Think Local pipeline",
+    "relationship": "Brand & Fleet Design via own agency",
+    "discipline": "Logo, tarpaulin livery and campaign branding through agency and Think Local production routes",
     "period": "2024",
     "url": "https://africapaints.co.za/"
   },
@@ -79,8 +79,8 @@
     "name": "Solid Doors",
     "mark": "SD",
     "seed": "secondary",
-    "relationship": "Graphic Design via clicklocal",
-    "discipline": "Brand, catalogue and print production through the clicklocal / Think Local pipeline",
+    "relationship": "Graphic Design via own agency",
+    "discipline": "Brand, catalogue and print production through agency and Think Local production routes",
     "period": "Production",
     "url": "https://soliddoors.co.za/"
   },
@@ -88,8 +88,8 @@
     "name": "Alif Doors",
     "mark": "AL",
     "seed": "warning",
-    "relationship": "Graphic Design via clicklocal",
-    "discipline": "Brand, catalogue and print production through the clicklocal / Think Local pipeline",
+    "relationship": "Graphic Design via own agency",
+    "discipline": "Brand, catalogue and print production through agency and Think Local production routes",
     "period": "Production",
     "url": "https://alifdoors.co.za/",
     "socials": [
@@ -100,7 +100,7 @@
     "name": "Dynamic Automation",
     "mark": "DA",
     "seed": "success",
-    "relationship": "Web, brand & quote system (via clicklocal)",
+    "relationship": "Web, brand & quote system via own agency",
     "discipline": "Website, branding, signage and a CPQ quote tool",
     "period": "2021-2024",
     "url": "/work/dynamic-automation"

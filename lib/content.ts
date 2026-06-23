@@ -23,6 +23,13 @@ export type SiteConfig = {
     systemImage: string;
     systemImageAlt: string;
     systemImageCaption: string;
+    proofImages?: {
+      src: string;
+      alt: string;
+      label: string;
+      caption: string;
+      focus?: string;
+    }[];
   };
   stats: { value: number; suffix: string; label: string }[];
   buildingWith: string[];

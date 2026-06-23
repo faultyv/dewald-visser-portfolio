@@ -30,7 +30,7 @@ export default function WorkPage() {
         </Reveal>
         <Reveal delay={0.1}>
           <p className="text-body-l text-on-surface-variant max-w-[620px] mt-5">
-            {projects.length} projects across marketing, web, brand and systems. Filter by discipline, then dive into the evidence behind a specific result.
+            {projects.length} projects across marketing, web, brand and systems. Filter by discipline, then dive into the evidence behind each result.
           </p>
         </Reveal>
       </section>

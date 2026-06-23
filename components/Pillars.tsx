@@ -11,8 +11,8 @@ const PILLARS: { n: string; seed: SeedName; icon: string; title: string; proof: 
     icon: "rocket_launch",
     title: "Entrepreneurship and Strategy",
     proof: "Founder / operator",
-    summary: "Building ventures, brands and operating systems from the ground up.",
-    items: ["Founding ventures and business systems", "Brand and positioning strategy", "Director-level ownership and leadership"],
+    summary: "Building ventures, offers and operating systems from the ground up.",
+    items: ["Founder-level ownership", "Brand and positioning strategy", "Pricing, pipeline and sales systems"],
   },
   {
     n: "02",
@@ -47,8 +47,8 @@ const PILLARS: { n: string; seed: SeedName; icon: string; title: string; proof: 
     icon: "auto_awesome",
     title: "Practical AI Enablement",
     proof: "Workflow layer",
-    summary: "Turning AI from a buzzword into trained teams, working prompt systems and tools people actually use day to day.",
-    items: ["Rolled out and trained teams on Canva + ChatGPT inside a live business", "Built a web-based CPQ quote tool from tangled spreadsheet logic", "Early AI-readiness work at LCIBS under a former Apple executive"],
+    summary: "Turning AI from a buzzword into trained teams, working prompt systems and useful business tooling.",
+    items: ["Rolled out Canva + ChatGPT workflows inside a live business", "Built a web-based CPQ quote tool from tangled spreadsheet logic", "Worked on education-sector AI readiness and change conversations"],
   },
 ];
 
@@ -76,7 +76,7 @@ export function Pillars() {
           </div>
           <Reveal delay={0.1}>
             <p className="max-w-[390px] text-body-m text-on-surface-variant">
-              The advantage is the handoff between them: strategy shaping the campaign, design carrying the message, web systems making it usable and AI tightening the workflow.
+              The advantage is the handoff between them: strategy shapes the offer, design carries the message, web systems make it usable and AI tightens the workflow.
             </p>
           </Reveal>
         </div>
