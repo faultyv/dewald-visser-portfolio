@@ -84,13 +84,13 @@ export function Pillars() {
         <StaggerGroup className="flex flex-col gap-4.5">
           <StaggerItem>
             <TiltCard>
-              <article className="ai-feature-card hig-glass relative overflow-hidden rounded-[24px] p-5 md:rounded-[28px] md:p-8">
+              <article className="ai-feature-card group hig-glass relative overflow-hidden rounded-[24px] p-5 md:rounded-[28px] md:p-8">
                 <span className="ai-glow hidden sm:block" aria-hidden="true" />
                 <div className="relative z-10 grid gap-7 md:grid-cols-[1.05fr_1fr] md:items-center md:gap-10">
                   <div>
                     <div className="mb-5 flex flex-wrap items-center gap-3">
                       <div className={`ai-mark grid h-14 w-14 place-items-center rounded-2xl ${SEED_BG[ai.seed]}`}>
-                        <IconSymbol name={ai.icon} size={28} filled className={SEED_ON[ai.seed]} />
+                        <IconSymbol name={ai.icon} size={28} filled className={`${SEED_ON[ai.seed]} feature-glyph transition-transform duration-300 group-hover:scale-110`} />
                       </div>
                       <div>
                         <div className={`text-label-s ${SEED_TEXT[ai.seed]}`}>Featured · The AI workflow layer</div>
@@ -125,12 +125,12 @@ export function Pillars() {
           </StaggerItem>
 
           <div className="mobile-strip no-scrollbar -mx-5 flex gap-3.5 px-5 pb-3 sm:mx-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 sm:pb-0 md:gap-4.5 xl:grid-cols-4">
-            {core.map((p) => (
+            {core.map((p, i) => (
               <StaggerItem key={p.n} className="min-w-[78vw] max-w-[78vw] sm:min-w-0 sm:max-w-none">
                 <TiltCard className="h-full">
-                  <article className="hig-card flex h-full flex-col rounded-[22px] p-5 md:min-h-[280px] md:p-6">
-                    <div className={`grid h-13 w-13 place-items-center rounded-2xl ${SEED_BG[p.seed]}`} style={{ width: 52, height: 52 }}>
-                      <IconSymbol name={p.icon} size={26} filled className={SEED_ON[p.seed]} />
+                  <article className="group hig-card flex h-full flex-col rounded-[22px] p-5 md:min-h-[280px] md:p-6">
+                    <div className={`feature-icon grid place-items-center rounded-2xl ${SEED_BG[p.seed]}`} style={{ width: 52, height: 52, animationDelay: `${i * 0.55}s` }}>
+                      <IconSymbol name={p.icon} size={26} filled className={`${SEED_ON[p.seed]} feature-glyph transition-transform duration-300 group-hover:scale-110`} />
                     </div>
                     <div className={`text-label-m mt-6 mb-2 ${SEED_TEXT[p.seed]}`}>Pillar {p.n}</div>
                     <div className={`mb-3 w-max max-w-full rounded-full px-2.5 py-1 text-label-s ${SEED_CONTAINER_BG[p.seed]} ${SEED_CONTAINER_TEXT[p.seed]}`}>{p.proof}</div>

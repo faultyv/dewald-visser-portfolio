@@ -1349,3 +1349,18 @@ body {
     0 12px 26px -14px var(--m3-shadow);
   z-index: 4;
 }
+
+/* ---------- Animated feature icons (capability badges) ---------- */
+.feature-icon {
+  animation: featureBadgeBreathe 4.2s ease-in-out infinite;
+  transition: box-shadow 0.3s ease;
+  will-change: transform;
+}
+.group:hover .feature-icon {
+  box-shadow: 0 16px 34px -16px var(--m3-shadow);
+}
+@keyframes featureBadgeBreathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+.feature-glyph { display: inline-block; }
