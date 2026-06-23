@@ -2,26 +2,26 @@
   {
     "title": "Entrepreneurship",
     "seed": "secondary",
-    "items": ["Venture building", "Brand strategy", "Systems and ops", "Leadership"]
+    "items": ["Venture building & ops", "Brand & positioning", "Agency & client management", "Pricing & sales systems"]
   },
   {
     "title": "Marketing",
     "seed": "primary",
-    "items": ["SEO", "Google / Meta / YouTube Ads", "Email automation", "Lead generation"]
+    "items": ["SEO & organic growth", "Google / Meta / YouTube Ads", "Email & lead generation", "Content marketing"]
   },
   {
     "title": "Graphic Design",
     "seed": "tertiary",
-    "items": ["Photoshop · Illustrator", "InDesign · After Effects", "Brand and logo design", "Motion graphics"]
+    "items": ["Photoshop · Illustrator · InDesign", "Packaging, labels & POS", "Brand identity & signage", "DTP, repro & motion"]
   },
   {
-    "title": "Web and Front-End",
+    "title": "Web & Systems",
     "seed": "success",
-    "items": ["WordPress · Elementor", "Shopify", "HTML / CSS / JS", "Booking and automation"]
+    "items": ["WordPress · Shopify · HTML/CSS", "E-commerce & booking systems", "CRM, Pastel & Excel", "CPQ / quote tooling"]
   },
   {
     "title": "AI Enablement",
     "seed": "highlight",
-    "items": ["Prompt workflows", "AI training direction", "Human-in-the-loop systems", "Change readiness"]
+    "items": ["Canva + ChatGPT rollout", "Prompt & content systems", "Spreadsheet → web automation", "Business analysis & process"]
   }
 ]
