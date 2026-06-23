@@ -29,6 +29,12 @@ const HERO_COPY: Record<string, { eyebrow: string; headline: string; body: strin
     body: "Website, brand and a CPQ prototype that translated complex spreadsheet logic into a clearer self-serve flow.",
     icon: "precision_manufacturing",
   },
+  "sun-paper-and-coatings": {
+    eyebrow: "Founder venture",
+    headline: "A supply brand built from zero.",
+    body: "Logo, sales collateral, supplier language and operating assets for a paper and coatings business under construction.",
+    icon: "storefront",
+  },
   "car-hire-booking-system": {
     eyebrow: "Growth + booking ops",
     headline: "Marketing demand connected to the booking engine.",
@@ -211,6 +217,50 @@ function LogoSystemCover({ project, priority, sizes, variant = "card" }: Project
   );
 }
 
+function SunPaperCover({ project, priority, sizes, variant = "card" }: ProjectCoverVisualProps) {
+  const isHero = variant === "hero";
+
+  return (
+    <div className={`sun-paper-cover evidence-cover-shell evidence-cover-${variant} absolute inset-0`}>
+      <div className="evidence-pulse evidence-pulse-a" aria-hidden="true" />
+      <div className="evidence-pulse evidence-pulse-b" aria-hidden="true" />
+      <div className="sun-paper-cover-inner">
+        <div className="sun-paper-mark">
+          <div className="sun-paper-logo-lockup">
+            <Image
+              src={project.cover || "/images/work/sun-paper/logo-trimmed.png"}
+              alt=""
+              fill
+              priority={priority}
+              className="object-contain"
+              sizes={sizes}
+            />
+          </div>
+        </div>
+
+        <div className="sun-paper-cover-copy">
+          <span className={`evidence-orbit-icon ${SEED_BG[project.seed]} ${SEED_ON[project.seed]}`}>
+            <IconSymbol name="storefront" size={isHero ? 25 : 20} filled />
+          </span>
+          <div className={isHero ? "evidence-headline evidence-headline-hero" : "evidence-headline"}>
+            Founder-led supply venture.
+          </div>
+          {isHero ? (
+            <p className="evidence-body">
+              A brand and operating system for adhesive paper, coating materials, supplier conversations and B2B sales enablement.
+            </p>
+          ) : null}
+          <div className="sun-paper-proof-line">
+            <span><small>Build</small> Founder setup</span>
+            <span><small>Market</small> B2B supply</span>
+            <span><small>System</small> Sales kit</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function RetailProductionCover({ project, variant = "card" }: { project: Project; variant?: "card" | "hero" }) {
   const isHero = variant === "hero";
   const proof = [
@@ -279,6 +329,7 @@ function RetailProductionCover({ project, variant = "card" }: { project: Project
 export function ProjectCoverVisual({ project, priority, sizes, variant = "card" }: ProjectCoverVisualProps) {
   if (project.slug === "retail-production-dtp") return <RetailProductionCover project={project} variant={variant} />;
   if (project.slug === "dreambook-cpm") return <DreambookCover project={project} priority={priority} sizes={sizes} variant={variant} />;
+  if (project.slug === "sun-paper-and-coatings") return <SunPaperCover project={project} priority={priority} sizes={sizes} variant={variant} />;
   if (project.coverFit === "contain") return <LogoSystemCover project={project} priority={priority} sizes={sizes} variant={variant} />;
   return <EvidenceCover project={project} priority={priority} sizes={sizes} variant={variant} />;
 }
