@@ -86,6 +86,14 @@ export function Pillars() {
             <TiltCard>
               <article className="ai-feature-card group hig-glass relative overflow-hidden rounded-[24px] p-5 md:rounded-[28px] md:p-8">
                 <span className="ai-glow hidden sm:block" aria-hidden="true" />
+                <span className="ai-loop hidden md:block" aria-hidden="true">
+                  <span className="ai-loop-ring ai-loop-ring-a" />
+                  <span className="ai-loop-ring ai-loop-ring-b" />
+                  <span className="ai-loop-node ai-loop-node-a" />
+                  <span className="ai-loop-node ai-loop-node-b" />
+                  <span className="ai-loop-node ai-loop-node-c" />
+                  <span className="ai-loop-core">AI</span>
+                </span>
                 <div className="relative z-10 grid gap-7 md:grid-cols-[1.05fr_1fr] md:items-center md:gap-10">
                   <div>
                     <div className="mb-5 flex flex-wrap items-center gap-3">

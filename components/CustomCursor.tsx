@@ -14,10 +14,20 @@ export function CustomCursor() {
       cur.style.display = "none";
       return;
     }
+    const pos = { x: window.innerWidth / 2, y: window.innerHeight / 2, tx: window.innerWidth / 2, ty: window.innerHeight / 2 };
+    let raf = 0;
+    const render = () => {
+      pos.x += (pos.tx - pos.x) * 0.22;
+      pos.y += (pos.ty - pos.y) * 0.22;
+      cur.style.transform = `translate3d(${pos.x}px,${pos.y}px,0)`;
+      raf = requestAnimationFrame(render);
+    };
     const onMove = (e: PointerEvent) => {
-      cur.style.transform = `translate(${e.clientX}px,${e.clientY}px)`;
+      pos.tx = e.clientX;
+      pos.ty = e.clientY;
     };
     window.addEventListener("pointermove", onMove);
+    raf = requestAnimationFrame(render);
 
     const grow = () => {
       cur.style.width = "52px";
@@ -25,6 +35,7 @@ export function CustomCursor() {
       cur.style.marginLeft = "-26px";
       cur.style.marginTop = "-26px";
       cur.style.background = "rgba(0,115,234,0.12)";
+      cur.style.borderWidth = "1px";
     };
     const shrink = () => {
       cur.style.width = "24px";
@@ -32,12 +43,16 @@ export function CustomCursor() {
       cur.style.marginLeft = "-12px";
       cur.style.marginTop = "-12px";
       cur.style.background = "transparent";
+      cur.style.borderWidth = "2px";
     };
 
+    const wired = new Set<Element>();
     const attach = () => {
       document.querySelectorAll("a, button, [data-cursor-hover]").forEach((el) => {
+        if (wired.has(el)) return;
         el.addEventListener("pointerenter", grow);
         el.addEventListener("pointerleave", shrink);
+        wired.add(el);
       });
     };
     attach();
@@ -46,6 +61,11 @@ export function CustomCursor() {
 
     return () => {
       window.removeEventListener("pointermove", onMove);
+      cancelAnimationFrame(raf);
+      wired.forEach((el) => {
+        el.removeEventListener("pointerenter", grow);
+        el.removeEventListener("pointerleave", shrink);
+      });
       observer.disconnect();
     };
   }, []);

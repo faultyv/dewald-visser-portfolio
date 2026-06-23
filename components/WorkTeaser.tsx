@@ -23,6 +23,11 @@ export function WorkTeaser({ projects }: { projects: Project[] }) {
           <Reveal delay={0.05}>
             <h2 className="text-headline-l text-on-surface">Proof, not portfolio filler.</h2>
           </Reveal>
+          <Reveal delay={0.08}>
+            <p className="mt-4 max-w-[560px] text-body-m text-on-surface-variant">
+              Three proof routes: a flagship brand ecosystem, a live learning platform and production work with commercial pressure behind it.
+            </p>
+          </Reveal>
         </div>
         <Reveal delay={0.08}>
           <div className="section-proof-strip">
@@ -41,20 +46,20 @@ export function WorkTeaser({ projects }: { projects: Project[] }) {
         </Reveal>
       </div>
 
-      <StaggerGroup className="work-showcase-grid mobile-strip no-scrollbar -mx-5 flex gap-3.5 px-5 pb-3 md:mx-0 md:grid md:grid-cols-2 md:gap-4.5 md:overflow-visible md:px-0 md:pb-0 xl:grid-cols-3">
+      <StaggerGroup className="work-featured-deck work-showcase-grid mobile-strip no-scrollbar -mx-5 flex gap-3.5 px-5 pb-3 md:mx-0 md:grid md:gap-4.5 md:overflow-visible md:px-0 md:pb-0">
         {featured.map((project, index) => (
-          <StaggerItem key={project.slug} className="min-w-[82vw] max-w-[82vw] md:min-w-0 md:max-w-none">
+          <StaggerItem key={project.slug} className={`work-featured-item ${index === 0 ? "is-primary" : "is-secondary"} min-w-[82vw] max-w-[82vw] md:min-w-0 md:max-w-none`}>
             <TiltCard>
               <Link href={`/work/${project.slug}`} className="block no-underline group">
                 <div className="work-proof-card hig-card overflow-hidden rounded-[24px]">
-                  <div className="relative" style={{ aspectRatio: "4/3" }}>
+                  <div className="work-proof-media relative" style={{ aspectRatio: "4/3" }}>
                     <ProjectCoverVisual project={project} sizes="(max-width:768px) 90vw, 420px" />
                     <span className={`absolute top-3.5 left-3.5 z-[2] text-label-m px-3 py-1.5 rounded-full ${SEED_BG[project.seed]} ${SEED_ON[project.seed]}`}>
                       {project.label}
                     </span>
                     <span className="work-proof-number">0{index + 1}</span>
                   </div>
-                  <div className="p-5">
+                  <div className="work-proof-body p-5">
                     <div className="mb-3 flex items-center justify-between gap-3 text-label-s text-on-surface-variant">
                       <span>{FEATURED_META[index] ?? "Proof route"}</span>
                       <span>{project.period}</span>

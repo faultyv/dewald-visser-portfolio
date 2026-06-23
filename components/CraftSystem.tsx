@@ -52,6 +52,12 @@ const BOARD_ROWS = [
 
 const OUTCOMES = ["Sharper briefs", "Reusable assets", "Live web systems", "Measured learning"];
 
+const SYSTEM_LOGIC = [
+  { label: "Input", value: "messy brief, scattered assets" },
+  { label: "Move", value: "shared operating board" },
+  { label: "Output", value: "campaign, web and workflow system" },
+] as const;
+
 function SystemCard({ card, index }: { card: (typeof SYSTEM_CARDS)[number]; index: number }) {
   return (
     <article className="system-node system-card-breathe hig-card flex min-h-[174px] flex-col rounded-[22px] p-4 md:p-5" style={{ animationDelay: `${index * 0.35}s` }}>
@@ -78,13 +84,23 @@ export function CraftSystem({ site }: { site: SiteConfig }) {
         </Reveal>
         <Reveal delay={0.05}>
           <h2 className="text-headline-l text-on-surface">
-            Better work, by <span className="text-primary">designed systems.</span>
+            A project room for turning ambiguity into <span className="text-primary">shipped systems.</span>
           </h2>
         </Reveal>
         <Reveal delay={0.1}>
           <p className="mx-auto mt-5 max-w-[620px] text-body-l text-on-surface-variant">
-            One operating board for the brief, creative, build and learning loop — so the work moves as a system instead of a chain of disconnected handoffs.
+            The section shows the repeatable operating shape behind the portfolio: diagnose the problem, make the language, build the surface and tighten the loop from real use.
           </p>
+        </Reveal>
+        <Reveal delay={0.14}>
+          <div className="system-logic-strip mx-auto mt-7">
+            {SYSTEM_LOGIC.map((item) => (
+              <div key={item.label}>
+                <span>{item.label}</span>
+                <strong>{item.value}</strong>
+              </div>
+            ))}
+          </div>
         </Reveal>
       </div>
 

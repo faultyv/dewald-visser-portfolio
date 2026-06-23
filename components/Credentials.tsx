@@ -7,6 +7,11 @@ import type { CertsData, SiteConfig } from "@/lib/content";
 
 export function Credentials({ certs, site }: { certs: CertsData; site: SiteConfig }) {
   const verifiedCount = certs.featured.filter((cert) => cert.verify).length;
+  const trustSignals = [
+    { label: "Verified links", value: `${verifiedCount}/${certs.featured.length}` },
+    { label: "Issued record", value: "Coursera · Google · HubSpot" },
+    { label: "Extra proof", value: `${certs.additional.length} additional certificates` },
+  ];
 
   return (
     <section id="credentials" className="section-pad-tight content-shell-wide relative">
@@ -33,6 +38,17 @@ export function Credentials({ certs, site }: { certs: CertsData; site: SiteConfi
           <div className="snap-hint md:hidden">Swipe credentials</div>
         </Reveal>
       </div>
+
+      <Reveal delay={0.16}>
+        <div className="credential-trust-strip mb-7">
+          {trustSignals.map((signal) => (
+            <div key={signal.label}>
+              <span>{signal.label}</span>
+              <strong>{signal.value}</strong>
+            </div>
+          ))}
+        </div>
+      </Reveal>
 
       <StaggerGroup className="mobile-strip no-scrollbar -mx-5 flex gap-3.5 px-5 pb-3 md:mx-0 md:grid md:grid-cols-2 md:gap-4.5 md:overflow-visible md:px-0 md:pb-0 lg:grid-cols-3">
         {certs.featured.map((cert) => {

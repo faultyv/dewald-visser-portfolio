@@ -152,7 +152,7 @@ export function BrandConstellation({ companies }: { companies: CompanyEntry[] })
         <div className="mb-7 flex flex-wrap items-end justify-between gap-6">
           <div>
             <Reveal>
-              <div className="text-label-l text-success mb-3.5">Companies &amp; collaborators</div>
+              <div className="text-label-l text-success mb-3.5">Operating map</div>
             </Reveal>
             <Reveal delay={0.05}>
               <h2 className="text-headline-l text-on-surface">The organisations behind the work.</h2>
@@ -160,8 +160,8 @@ export function BrandConstellation({ companies }: { companies: CompanyEntry[] })
           </div>
           <Reveal delay={0.1}>
             <p className="m-0 max-w-[440px] text-body-m text-on-surface-variant">
-              {companies.length} organisations, ventures and clients across five worlds — from owned ventures to education, production,
-              manufacturing and sales foundations.
+              {companies.length} organisations grouped by the kind of pressure they created: owned ventures, education and ministry, production,
+              web growth and commercial foundations.
             </p>
           </Reveal>
         </div>
@@ -177,10 +177,11 @@ export function BrandConstellation({ companies }: { companies: CompanyEntry[] })
                 filter === "all" ? "border-transparent bg-on-surface text-surface" : "border-outline-variant text-on-surface-variant hover:text-on-surface"
               }`}
             >
-              All worlds
+              All worlds <span className="ml-1 rounded-full border border-current/25 px-1.5 py-0.5 text-label-s leading-none opacity-80">{companies.length}</span>
             </button>
             {DOMAINS.map((domain) => {
               const on = filter === domain.id;
+              const count = grouped.find((group) => group.id === domain.id)?.items.length ?? 0;
               return (
                 <button
                   key={domain.id}
@@ -193,6 +194,7 @@ export function BrandConstellation({ companies }: { companies: CompanyEntry[] })
                 >
                   <IconSymbol name={domain.icon} size={15} filled className={on ? undefined : SEED_TEXT[domain.seed]} />
                   {domain.label}
+                  <span className="rounded-full border border-current/25 px-1.5 py-0.5 text-label-s leading-none opacity-80">{count}</span>
                 </button>
               );
             })}

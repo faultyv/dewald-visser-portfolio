@@ -5,6 +5,7 @@ import type { MethodStep } from "@/lib/content";
 
 const STEP_ICONS = ["search_insights", "design_services", "rocket_launch", "autorenew"];
 const STEP_OUTPUTS = ["Clear brief", "Reusable language", "Live system", "Sharper loop"];
+const METHOD_LOGIC = ["Business problem", "Reusable language", "Working surface", "Measured learning"];
 
 export function Method({ steps }: { steps: MethodStep[] }) {
   return (
@@ -25,6 +26,16 @@ export function Method({ steps }: { steps: MethodStep[] }) {
             <p className="mt-5 max-w-[460px] text-body-m text-on-surface-variant">
               A compact loop for mixed creative and systems work: find the business problem, design the reusable language, ship the working surface and improve it from real response.
             </p>
+          </Reveal>
+          <Reveal delay={0.15}>
+            <div className="method-logic-rail mt-7">
+              {METHOD_LOGIC.map((item, index) => (
+                <span key={item}>
+                  <strong>{String(index + 1).padStart(2, "0")}</strong>
+                  {item}
+                </span>
+              ))}
+            </div>
           </Reveal>
         </div>
 

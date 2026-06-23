@@ -13,6 +13,12 @@ import type { SiteConfig } from "@/lib/content";
 
 const LANG_CODE: Record<string, string> = { English: "EN", Zulu: "ZU", Afrikaans: "AF", German: "DE" };
 
+const CONTACT_ROUTES = [
+  { label: "Fastest route", value: "WhatsApp project fit" },
+  { label: "Best for briefs", value: "Email scope and links" },
+  { label: "Based in", value: "Durban, South Africa" },
+];
+
 export function ContactSection({ site }: { site: SiteConfig }) {
   const [copied, setCopied] = useState(false);
   const wa = whatsappUrl(site);
@@ -93,6 +99,14 @@ export function ContactSection({ site }: { site: SiteConfig }) {
               <ButtonLink href={`mailto:${site.email}`} external variant="tonal">
                 <IconSymbol name="mail" size={18} /> Email me
               </ButtonLink>
+            </div>
+            <div className="contact-route-strip mt-6">
+              {CONTACT_ROUTES.map((route) => (
+                <div key={route.label}>
+                  <span>{route.label}</span>
+                  <strong>{route.value}</strong>
+                </div>
+              ))}
             </div>
           </div>
           <div className="flex gap-2.5 flex-wrap text-label-l">

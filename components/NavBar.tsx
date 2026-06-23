@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "motion/react";
 import { IconSymbol } from "./IconSymbol";
 import { WhatsAppIcon } from "./WhatsAppIcon";
@@ -29,25 +30,25 @@ const THEME_ITEMS = [
 export function NavBar({ name = "Dewald Visser" }: { name?: string }) {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("hero");
+  const pathname = usePathname();
   const { theme, setTheme, label } = useTheme();
 
   useEffect(() => {
-    const ids = ["hero", ...LINKS.map((link) => link.href.split("#")[1]).filter(Boolean)];
+    const ids = [
+      "hero",
+      ...LINKS.map((link) => (link.href === "/work" ? "work" : link.href.split("#")[1])).filter(Boolean),
+    ];
     let frame = 0;
 
     const updateActive = () => {
       frame = 0;
-      const anchor = window.innerHeight * 0.48;
+      const anchor = Math.min(190, window.innerHeight * 0.3);
       let current = "hero";
 
       for (const id of ids) {
         const node = document.getElementById(id);
         if (!node) continue;
         const rect = node.getBoundingClientRect();
-        if (rect.top <= anchor && rect.bottom >= anchor) {
-          current = id;
-          break;
-        }
         if (rect.top <= anchor) current = id;
       }
 
@@ -79,8 +80,8 @@ export function NavBar({ name = "Dewald Visser" }: { name?: string }) {
 
       <div className="hidden items-center gap-1 rounded-full border border-outline-variant/70 bg-surface-container/38 p-1 text-label-l xl:flex">
         {LINKS.map((l) => {
-          const id = l.href.split("#")[1] ?? (l.href === "/work" ? "work-route" : "");
-          const on = id && active === id;
+          const id = l.href === "/work" ? "work" : l.href.split("#")[1] ?? "";
+          const on = l.href === "/work" ? pathname.startsWith("/work") || active === "work" : pathname === "/" && id && active === id;
           return (
           <Link
             key={l.href}
