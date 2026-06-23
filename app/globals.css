@@ -742,9 +742,22 @@ body {
 .ai-feature-card {
   isolation: isolate;
   background:
-    linear-gradient(135deg, color-mix(in srgb, var(--color-highlight) 12%, transparent), transparent 42%),
-    linear-gradient(225deg, color-mix(in srgb, var(--color-primary) 10%, transparent), transparent 48%),
+    radial-gradient(130% 150% at 14% 0%, color-mix(in srgb, var(--color-highlight) 15%, transparent), transparent 46%),
+    radial-gradient(120% 150% at 100% 100%, color-mix(in srgb, var(--color-primary) 12%, transparent), transparent 52%),
     var(--hig-glass);
+}
+
+.ai-feature-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: radial-gradient(color-mix(in srgb, var(--color-highlight) 24%, transparent) 1px, transparent 1.4px);
+  background-size: 22px 22px;
+  opacity: 0.12;
+  -webkit-mask-image: radial-gradient(130% 110% at 82% 26%, #000, transparent 66%);
+  mask-image: radial-gradient(130% 110% at 82% 26%, #000, transparent 66%);
 }
 
 .ai-feature-card::after {
@@ -860,6 +873,78 @@ body {
   font-family: var(--font-display);
   font-weight: 800;
   animation: aiCoreBreathe 4.8s ease-in-out infinite;
+}
+
+.ai-glow {
+  position: absolute;
+  z-index: 0;
+  right: -8%;
+  top: 50%;
+  width: clamp(220px, 28vw, 380px);
+  height: clamp(220px, 28vw, 380px);
+  transform: translateY(-50%);
+  border-radius: 999px;
+  pointer-events: none;
+  background: radial-gradient(circle, color-mix(in srgb, var(--color-highlight) 30%, transparent), transparent 62%);
+  filter: blur(6px);
+  animation: aiGlowPulse 5.6s ease-in-out infinite;
+}
+
+@keyframes aiGlowPulse {
+  0%, 100% { opacity: 0.5; transform: translateY(-50%) scale(1); }
+  50% { opacity: 0.85; transform: translateY(-50%) scale(1.08); }
+}
+
+.ai-flow {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  max-width: 440px;
+}
+
+.ai-flow-line {
+  position: absolute;
+  left: 8px;
+  right: 8px;
+  top: 6px;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg,
+    color-mix(in srgb, var(--color-highlight) 55%, transparent),
+    color-mix(in srgb, var(--color-primary) 55%, transparent));
+}
+
+.ai-flow-node {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+}
+
+.ai-flow-bead {
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  background: var(--color-highlight);
+  box-shadow:
+    0 0 0 4px color-mix(in srgb, var(--color-highlight) 16%, transparent),
+    0 0 16px color-mix(in srgb, var(--color-highlight) 60%, transparent);
+  animation: aiBeadPulse 2.8s ease-in-out infinite;
+}
+
+@keyframes aiBeadPulse {
+  0%, 100% { transform: scale(0.78); opacity: 0.7; }
+  50% { transform: scale(1.18); opacity: 1; }
+}
+
+.ai-flow-label {
+  font-size: 10.5px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-on-surface-variant);
+  white-space: nowrap;
 }
 
 .project-cover-board {

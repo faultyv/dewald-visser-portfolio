@@ -84,39 +84,38 @@ export function Pillars() {
         <StaggerGroup className="flex flex-col gap-4.5">
           <StaggerItem>
             <TiltCard>
-              <article className="ai-feature-card hig-glass rounded-[24px] p-5 md:rounded-[28px] md:p-8">
-                <div className="ai-loop hidden sm:block" aria-hidden="true">
-                  <span className="ai-loop-ring ai-loop-ring-a" />
-                  <span className="ai-loop-ring ai-loop-ring-b" />
-                  <span className="ai-loop-node ai-loop-node-a" />
-                  <span className="ai-loop-node ai-loop-node-b" />
-                  <span className="ai-loop-node ai-loop-node-c" />
-                  <span className="ai-loop-core">
-                    <IconSymbol name="auto_awesome" size={30} filled />
-                    <span>AI</span>
-                  </span>
-                </div>
-                <div className="relative z-10 grid gap-6 md:grid-cols-[1fr_1.05fr] md:items-end md:gap-8">
+              <article className="ai-feature-card hig-glass relative overflow-hidden rounded-[24px] p-5 md:rounded-[28px] md:p-8">
+                <span className="ai-glow hidden sm:block" aria-hidden="true" />
+                <div className="relative z-10 grid gap-7 md:grid-cols-[1.05fr_1fr] md:items-center md:gap-10">
                   <div>
                     <div className="mb-5 flex flex-wrap items-center gap-3">
                       <div className={`ai-mark grid h-14 w-14 place-items-center rounded-2xl ${SEED_BG[ai.seed]}`}>
                         <IconSymbol name={ai.icon} size={28} filled className={SEED_ON[ai.seed]} />
                       </div>
                       <div>
-                        <div className={`text-label-s ${SEED_TEXT[ai.seed]}`}>Featured AI layer</div>
+                        <div className={`text-label-s ${SEED_TEXT[ai.seed]}`}>Featured · The AI workflow layer</div>
                         <div className="text-label-s text-on-surface-variant">{ai.proof}</div>
                       </div>
                     </div>
                     <h3 className="m-0 text-headline-l text-on-surface md:text-display-s">{ai.title}</h3>
-                    <p className="mt-3 max-w-[620px] text-body-l text-on-surface-variant">{ai.summary}</p>
+                    <p className="mt-3 max-w-[520px] text-body-l text-on-surface-variant">{ai.summary}</p>
+                    <div className="ai-flow mt-7 hidden sm:flex" aria-hidden="true">
+                      <span className="ai-flow-line" />
+                      {["Brief", "Prompt", "Build", "Iterate"].map((step, i) => (
+                        <span key={step} className="ai-flow-node">
+                          <span className="ai-flow-bead" style={{ animationDelay: `${i * 0.45}s` }} />
+                          <span className="ai-flow-label">{step}</span>
+                        </span>
+                      ))}
+                    </div>
                   </div>
                   <div className="grid gap-2.5">
                     {ai.items.map((it, idx) => (
-                      <div key={it} className={`flex items-start gap-3 rounded-xl px-3.5 py-2.5 md:py-3 ${SEED_CONTAINER_BG[ai.seed]} ${SEED_CONTAINER_TEXT[ai.seed]}`}>
-                        <span className={`grid h-7 w-7 shrink-0 place-items-center rounded-full ${SEED_BG[ai.seed]} ${SEED_ON[ai.seed]}`}>
-                          <IconSymbol name={AI_ITEM_ICONS[idx] ?? "task_alt"} size={16} filled />
+                      <div key={it} className="flex items-center gap-3.5 rounded-2xl border border-outline-variant bg-surface-container-low p-3.5 transition-colors hover:border-outline">
+                        <span className={`grid h-9 w-9 shrink-0 place-items-center rounded-xl ${SEED_BG[ai.seed]} ${SEED_ON[ai.seed]}`}>
+                          <IconSymbol name={AI_ITEM_ICONS[idx] ?? "task_alt"} size={18} filled />
                         </span>
-                        <span className="text-body-s">{it}</span>
+                        <span className="text-body-m text-on-surface">{it}</span>
                       </div>
                     ))}
                   </div>
