@@ -46,7 +46,7 @@ export function ProjectHeroMedia({
   return (
     <div ref={wrapRef} className="relative aspect-[4/3] overflow-hidden rounded-[24px] border border-outline-variant bg-surface-container-low elevation-4 md:aspect-[16/7]">
       <div ref={mediaRef} className="absolute inset-0 will-change-transform">
-        {project?.slug === "retail-production-dtp" ? (
+        {project ? (
           <ProjectCoverVisual project={project} priority sizes="(max-width:768px) 100vw, 1100px" variant="hero" />
         ) : cover ? (
           <>

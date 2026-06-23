@@ -56,7 +56,7 @@ function SystemCard({ card, index }: { card: (typeof SYSTEM_CARDS)[number]; inde
   return (
     <article className="system-node system-card-breathe hig-card flex min-h-[174px] flex-col rounded-[22px] p-4 md:p-5" style={{ animationDelay: `${index * 0.35}s` }}>
       <div className="relative z-10 flex items-start justify-between gap-3">
-        <div className={`grid h-11 w-11 shrink-0 place-items-center rounded-[16px] ${card.accent}`}>
+        <div className={`feature-icon grid h-11 w-11 shrink-0 place-items-center rounded-[16px] ${card.accent}`}>
           <IconSymbol name={card.icon} size={23} filled />
         </div>
         <span className={`rounded-full px-2.5 py-1 text-label-s ${card.text}`}>{card.label}</span>
@@ -168,7 +168,7 @@ export function CraftSystem({ site }: { site: SiteConfig }) {
                     <div className="text-label-s text-primary">Decision loop</div>
                     <h3 className="mt-1 text-title-s text-on-surface">From idea to useful system</h3>
                   </div>
-                  <div className="grid h-10 w-10 place-items-center rounded-[14px] bg-primary text-on-primary">
+                  <div className="feature-icon grid h-10 w-10 place-items-center rounded-[14px] bg-primary text-on-primary">
                     <IconSymbol name="hub" size={22} filled />
                   </div>
                 </div>

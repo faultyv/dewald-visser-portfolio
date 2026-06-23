@@ -1,7 +1,7 @@
 {
   "name": "Dewald Visser",
   "role": "Creative Systems Builder, Growth Marketer, Designer",
-  "location": "Hillcrest · Durban · ZA",
+  "location": "Hillcrest · Durban · South Africa",
   "languages": ["English", "Zulu", "Afrikaans", "German"],
   "email": "dewaldvisser94@gmail.com",
   "availability": "Available for select projects",
@@ -24,10 +24,10 @@
         "caption": "Hands-on web, content and operating systems."
       },
       {
-        "src": "/images/dewald/dewald-leading.png",
-        "alt": "Dewald Visser leading a table working session with laptops",
-        "label": "Lead",
-        "caption": "Briefs, production and team handoff in one room."
+        "src": "/images/dewald/dewald-training-room.png",
+        "alt": "Dewald Visser in a training room while a presenter shares a learning dashboard",
+        "label": "Teach",
+        "caption": "Learning content, room production and programme delivery."
       },
       {
         "src": "/images/dewald/dewald-team.png",

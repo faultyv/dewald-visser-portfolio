@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import { ButtonLink } from "./Button";
 import { IconSymbol } from "./IconSymbol";
+import { SouthAfricaFlag } from "./SouthAfricaFlag";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
 import type { SiteConfig } from "@/lib/content";
 
@@ -56,7 +57,10 @@ export function Hero({ site }: { site: SiteConfig }) {
             </span>
             {site.availability}
           </span>
-          <span className="text-label-m text-on-surface-variant">{site.location}</span>
+          <span className="inline-flex items-center gap-2 text-label-m text-on-surface-variant">
+            <SouthAfricaFlag className="h-3.5 w-5 rounded-[3px] shadow-[0_0_0_1px_var(--color-outline-variant)]" />
+            {site.location}
+          </span>
         </div>
 
         <h1 aria-label={`${site.name}.`} className="m-0 max-w-[900px] text-display-l text-on-surface lg:max-w-[980px] xl:max-w-[1080px]">

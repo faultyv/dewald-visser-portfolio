@@ -17,7 +17,7 @@ function MarqueeRow({ tags, reverse, opacity }: { tags: string[]; reverse?: bool
   return (
     <div className="overflow-hidden border-b border-outline-variant py-3 md:py-4">
       <div
-        className="flex w-max gap-0 whitespace-nowrap"
+        className="tools-marquee-track flex w-max gap-0 whitespace-nowrap"
         style={{
           animation: `${reverse ? "marqueeR" : "marquee"} ${reverse ? 40 : 34}s linear infinite`,
           opacity: opacity ?? 1,

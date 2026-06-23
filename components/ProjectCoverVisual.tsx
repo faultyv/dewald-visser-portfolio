@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { IconSymbol } from "./IconSymbol";
-import { COVER_BG, SEED_BG, SEED_ON } from "@/lib/seed-classes";
+import { COVER_BG, SEED_BG, SEED_ON, SEED_TEXT } from "@/lib/seed-classes";
 import type { Project } from "@/lib/content";
 
 type ProjectCoverVisualProps = {
@@ -10,10 +10,205 @@ type ProjectCoverVisualProps = {
   variant?: "card" | "hero";
 };
 
-function containBackdrop(project: Project): string {
+const HERO_COPY: Record<string, { eyebrow: string; headline: string; body: string; icon: string }> = {
+  "dreambook-cpm": {
+    eyebrow: "Brand · app · events",
+    headline: "A book ecosystem, not a flat website.",
+    body: "Identity, product path, app downloads and event activation held in one coherent ministry system.",
+    icon: "auto_stories",
+  },
+  "joseph-business-school": {
+    eyebrow: "Learning media system",
+    headline: "Live teaching turned into reusable demand.",
+    body: "Web, recorded content, funnels and public video proof working together around an entrepreneur school.",
+    icon: "school",
+  },
+  "dynamic-automation": {
+    eyebrow: "Manufacturer system",
+    headline: "Poultry-equipment content with quote intelligence behind it.",
+    body: "Website, brand and a CPQ prototype that translated complex spreadsheet logic into a clearer self-serve flow.",
+    icon: "precision_manufacturing",
+  },
+  "car-hire-booking-system": {
+    eyebrow: "Growth + booking ops",
+    headline: "Marketing demand connected to the booking engine.",
+    body: "Search, paid media, email and a WordPress booking/payments workflow replacing scattered admin.",
+    icon: "route",
+  },
+};
+
+const ICON_BY_CATEGORY: Record<string, string> = {
+  web: "language",
+  marketing: "campaign",
+  brand: "palette",
+};
+
+function fallbackCopy(project: Project) {
+  const first = project.categories[0] ?? "web";
+  return {
+    eyebrow: project.label,
+    headline: `${project.label} proof system.`,
+    body: project.outcome,
+    icon: ICON_BY_CATEGORY[first] ?? "work",
+  };
+}
+
+function coverBackdrop(project: Project): string {
   if (project.coverFit !== "contain") return "absolute inset-0";
   if (project.coverBg) return `absolute inset-0 ${COVER_BG[project.coverBg]}`;
   return `absolute inset-0 ${SEED_BG[project.seed]} opacity-10`;
+}
+
+function ProjectScreenshot({ project, priority, sizes }: { project: Project; priority?: boolean; sizes: string }) {
+  if (!project.cover) return <div className={`absolute inset-0 ${SEED_BG[project.seed]} opacity-20`} />;
+
+  return (
+    <Image
+      src={project.cover}
+      alt=""
+      fill
+      priority={priority}
+      className="evidence-screen-image object-cover"
+      style={project.coverPosition && project.coverFit !== "contain" ? { objectPosition: project.coverPosition } : undefined}
+      sizes={sizes}
+    />
+  );
+}
+
+function MetricStrip({ project, compact }: { project: Project; compact?: boolean }) {
+  const metrics = project.metrics.slice(0, compact ? 2 : 3);
+  return (
+    <div className="evidence-metric-row">
+      {metrics.map((metric) => (
+        <div key={metric.label} className="evidence-metric-card">
+          <span>{metric.value}</span>
+          <small>{metric.label}</small>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function StackStrip({ project }: { project: Project }) {
+  return (
+    <div className="evidence-stack-row">
+      {project.stack.slice(0, 4).map((tool) => (
+        <span key={tool}>{tool}</span>
+      ))}
+    </div>
+  );
+}
+
+function EvidenceCover({ project, priority, sizes, variant = "card" }: ProjectCoverVisualProps) {
+  const isHero = variant === "hero";
+  const copy = HERO_COPY[project.slug] ?? fallbackCopy(project);
+
+  return (
+    <div className={`evidence-cover-shell evidence-cover-${variant} absolute inset-0`}>
+      <div className="evidence-grid-line evidence-grid-line-a" aria-hidden="true" />
+      <div className="evidence-grid-line evidence-grid-line-b" aria-hidden="true" />
+      <div className="evidence-pulse evidence-pulse-a" aria-hidden="true" />
+      <div className="evidence-pulse evidence-pulse-b" aria-hidden="true" />
+
+      <div className="evidence-cover-inner">
+        <div className="evidence-copy">
+          <div className="mb-3 flex items-center gap-2">
+            <span className={`evidence-orbit-icon ${SEED_BG[project.seed]} ${SEED_ON[project.seed]}`}>
+              <IconSymbol name={copy.icon} size={isHero ? 26 : 21} filled />
+            </span>
+            <span className={`text-label-s ${SEED_TEXT[project.seed]}`}>{copy.eyebrow}</span>
+          </div>
+          <div className={isHero ? "evidence-headline evidence-headline-hero" : "evidence-headline"}>{copy.headline}</div>
+          {isHero ? <p className="evidence-body">{copy.body}</p> : null}
+          {isHero ? <StackStrip project={project} /> : null}
+        </div>
+
+        <div className="evidence-device" aria-hidden="true">
+          <div className="evidence-device-bar">
+            <span />
+            <span />
+            <span />
+            <strong>{project.categories.join(" / ")}</strong>
+          </div>
+          <div className="evidence-screen">
+            <ProjectScreenshot project={project} priority={priority} sizes={sizes} />
+            <span className="evidence-screen-shade" />
+            <span className="evidence-scanline" />
+          </div>
+        </div>
+
+        <MetricStrip project={project} compact={!isHero} />
+      </div>
+    </div>
+  );
+}
+
+function DreambookCover({ project, priority, sizes, variant = "card" }: ProjectCoverVisualProps) {
+  const isHero = variant === "hero";
+
+  return (
+    <div className={`evidence-cover-shell dreambook-cover evidence-cover-${variant} absolute inset-0`}>
+      <div className="evidence-pulse evidence-pulse-a" aria-hidden="true" />
+      <div className="evidence-pulse evidence-pulse-b" aria-hidden="true" />
+      <div className="dreambook-cover-inner">
+        <div className="dreambook-book-frame">
+          {project.cover ? (
+            <Image
+              src={project.cover}
+              alt=""
+              fill
+              priority={priority}
+              className="object-cover"
+              sizes={sizes}
+            />
+          ) : null}
+          <span className="dreambook-book-gloss" aria-hidden="true" />
+        </div>
+
+        <div className="dreambook-proof-stack">
+          <span className={`evidence-orbit-icon ${SEED_BG[project.seed]} ${SEED_ON[project.seed]}`}>
+            <IconSymbol name="auto_stories" size={isHero ? 26 : 21} filled />
+          </span>
+          <div className={isHero ? "evidence-headline evidence-headline-hero" : "evidence-headline"}>Book, app, event and web.</div>
+          {isHero ? <p className="evidence-body">The system carries two published works, a mobile app pathway and event activation without making the page feel like a screenshot wall.</p> : null}
+          <MetricStrip project={project} compact={!isHero} />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function LogoSystemCover({ project, priority, sizes, variant = "card" }: ProjectCoverVisualProps) {
+  const isHero = variant === "hero";
+  return (
+    <div className={`evidence-cover-shell logo-system-cover evidence-cover-${variant} absolute inset-0`}>
+      <div className={coverBackdrop(project)} />
+      <div className="logo-system-inner">
+        <div className="logo-system-mark">
+          {project.cover ? (
+            <Image
+              src={project.cover}
+              alt=""
+              fill
+              priority={priority}
+              className="object-contain p-6 md:p-9"
+              sizes={sizes}
+            />
+          ) : (
+            <IconSymbol name="work" size={42} filled className="text-on-surface-variant" />
+          )}
+        </div>
+        <div className="logo-system-copy">
+          <span className={`evidence-orbit-icon ${SEED_BG[project.seed]} ${SEED_ON[project.seed]}`}>
+            <IconSymbol name={ICON_BY_CATEGORY[project.categories[0] ?? "web"] ?? "work"} size={isHero ? 25 : 20} filled />
+          </span>
+          <div className={isHero ? "evidence-headline evidence-headline-hero" : "evidence-headline"}>{project.label} system.</div>
+          {isHero ? <p className="evidence-body">{project.outcome}</p> : null}
+          <MetricStrip project={project} compact={!isHero} />
+        </div>
+      </div>
+    </div>
+  );
 }
 
 function RetailProductionCover({ project, variant = "card" }: { project: Project; variant?: "card" | "hero" }) {
@@ -36,7 +231,7 @@ function RetailProductionCover({ project, variant = "card" }: { project: Project
             <IconSymbol name="inventory_2" size={17} filled />
             Production proof
           </div>
-          <div className="grid h-10 w-10 place-items-center rounded-2xl bg-tertiary text-on-tertiary elevation-1">
+          <div className="feature-icon grid h-10 w-10 place-items-center rounded-2xl bg-tertiary text-on-tertiary elevation-1">
             <IconSymbol name="palette" size={21} filled />
           </div>
         </div>
@@ -83,28 +278,7 @@ function RetailProductionCover({ project, variant = "card" }: { project: Project
 
 export function ProjectCoverVisual({ project, priority, sizes, variant = "card" }: ProjectCoverVisualProps) {
   if (project.slug === "retail-production-dtp") return <RetailProductionCover project={project} variant={variant} />;
-
-  if (project.cover) {
-    return (
-      <div className={containBackdrop(project)}>
-        <Image
-          src={project.cover}
-          alt={project.title}
-          fill
-          priority={priority}
-          className={`transition-transform duration-500 group-hover:scale-105 ${
-            project.coverFit === "contain" ? "object-contain p-8 md:p-10" : "object-cover"
-          }`}
-          style={project.coverPosition && project.coverFit !== "contain" ? { objectPosition: project.coverPosition } : undefined}
-          sizes={sizes}
-        />
-      </div>
-    );
-  }
-
-  return (
-    <div className={`absolute inset-0 grid place-items-center ${SEED_BG[project.seed]} ${SEED_ON[project.seed]}`}>
-      <IconSymbol name="work" size={42} filled className="opacity-70" />
-    </div>
-  );
+  if (project.slug === "dreambook-cpm") return <DreambookCover project={project} priority={priority} sizes={sizes} variant={variant} />;
+  if (project.coverFit === "contain") return <LogoSystemCover project={project} priority={priority} sizes={sizes} variant={variant} />;
+  return <EvidenceCover project={project} priority={priority} sizes={sizes} variant={variant} />;
 }

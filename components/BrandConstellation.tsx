@@ -102,7 +102,7 @@ function CompanyCard({ company, domain }: { company: CompanyEntry; domain: Domai
   const inner = (
     <article className="hig-card group relative flex h-full flex-col rounded-[20px] p-4 transition-[transform,box-shadow] duration-300 hover:-translate-y-1 md:p-4.5">
       <div className="flex items-start justify-between gap-3">
-        <span className={`grid h-11 w-11 shrink-0 place-items-center rounded-2xl ${SEED_BG[domain.seed]} ${SEED_ON[domain.seed]} elevation-1`}>
+        <span className={`feature-icon grid h-11 w-11 shrink-0 place-items-center rounded-2xl ${SEED_BG[domain.seed]} ${SEED_ON[domain.seed]} elevation-1`}>
           <IconSymbol name={icon} size={22} filled />
         </span>
         {company.url ? (
@@ -205,7 +205,7 @@ export function BrandConstellation({ companies }: { companies: CompanyEntry[] })
             <Reveal key={domain.id} delay={0.04}>
               <div>
                 <div className="mb-4 flex items-center gap-3">
-                  <span className={`grid h-10 w-10 shrink-0 place-items-center rounded-2xl ${SEED_CONTAINER_BG[domain.seed]} ${SEED_CONTAINER_TEXT[domain.seed]}`}>
+                  <span className={`feature-icon grid h-10 w-10 shrink-0 place-items-center rounded-2xl ${SEED_CONTAINER_BG[domain.seed]} ${SEED_CONTAINER_TEXT[domain.seed]}`}>
                     <IconSymbol name={domain.icon} size={20} filled />
                   </span>
                   <div>

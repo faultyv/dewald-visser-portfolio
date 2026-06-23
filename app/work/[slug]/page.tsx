@@ -6,6 +6,7 @@ import { ProjectHeroMedia } from "@/components/ProjectHeroMedia";
 import { ProjectMiniNav } from "@/components/ProjectMiniNav";
 import { ProjectGallery } from "@/components/ProjectGallery";
 import { ProjectVideo } from "@/components/ProjectVideo";
+import { ProjectProofLinks } from "@/components/ProjectProofLinks";
 import { ProjectPager } from "@/components/ProjectPager";
 import { RelatedWork } from "@/components/RelatedWork";
 import { ExternalLinks } from "@/components/ExternalLinks";
@@ -54,6 +55,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
   const { prev, next } = getAdjacentProjects(slug);
   const { content } = await compileMDX({ source: project.content, components: mdxComponents });
   const gallery = project.gallery.filter((item) => item.src);
+  const proofLinks = project.proofLinks ?? [];
 
   const projectUrl = `${SITE_URL}/work/${project.slug}`;
   const createdYear = project.period.match(/\b(?:19|20)\d{2}\b/)?.[0];
@@ -129,13 +131,21 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
       </article>
 
       <div id="overview" className="mx-auto max-w-[1140px] px-5 md:px-14">
-        <ProjectMiniNav hasGallery={gallery.length > 0} />
+        <ProjectMiniNav hasGallery={gallery.length > 0} hasProof={proofLinks.length > 0} />
       </div>
 
       <article className="relative mx-auto max-w-[1140px] px-5 md:px-14">
         <Reveal>
           <div className="mb-12">{content}</div>
         </Reveal>
+
+        {proofLinks.length > 0 && (
+          <div id="proof-media" className="scroll-mt-24">
+            <Reveal>
+              <ProjectProofLinks links={proofLinks} seed={project.seed} />
+            </Reveal>
+          </div>
+        )}
 
         {gallery.length > 0 && (
           <div id="gallery" className="scroll-mt-24">

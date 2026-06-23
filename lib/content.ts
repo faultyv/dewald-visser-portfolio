@@ -101,6 +101,12 @@ export type CertsData = {
 export type ProjectMetric = { value: string; label: string };
 export type GalleryItem = { id: string; label: string; src?: string };
 export type ProjectLink = { label: string; url: string };
+export type ProjectProofLink = {
+  label: string;
+  url: string;
+  platform?: "YouTube" | "Facebook" | "Behance" | "Website" | "Live site";
+  context?: string;
+};
 
 export type ProjectFrontmatter = {
   title: string;
@@ -121,6 +127,7 @@ export type ProjectFrontmatter = {
   gallery: GalleryItem[];
   video: string | null;
   links?: ProjectLink[];
+  proofLinks?: ProjectProofLink[];
   brands?: string[];
 };
 

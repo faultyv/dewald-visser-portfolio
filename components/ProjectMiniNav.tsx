@@ -4,16 +4,17 @@ import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import { fmTransition } from "@/lib/motion-tokens";
 
-export function ProjectMiniNav({ hasGallery }: { hasGallery: boolean }) {
+export function ProjectMiniNav({ hasGallery, hasProof }: { hasGallery: boolean; hasProof?: boolean }) {
   const items = [
     { id: "overview", label: "Overview" },
+    ...(hasProof ? [{ id: "proof-media", label: "Media proof" }] : []),
     ...(hasGallery ? [{ id: "gallery", label: "Gallery" }] : []),
     { id: "stack", label: "Stack" },
   ];
   const [active, setActive] = useState(items[0].id);
 
   useEffect(() => {
-    const ids = ["overview", ...(hasGallery ? ["gallery"] : []), "stack"];
+    const ids = ["overview", ...(hasProof ? ["proof-media"] : []), ...(hasGallery ? ["gallery"] : []), "stack"];
     let frame = 0;
     const update = () => {
       frame = 0;
@@ -35,7 +36,7 @@ export function ProjectMiniNav({ hasGallery }: { hasGallery: boolean }) {
       if (frame) window.cancelAnimationFrame(frame);
       window.removeEventListener("scroll", onScroll);
     };
-  }, [hasGallery]);
+  }, [hasGallery, hasProof]);
 
   const go = (id: string) => {
     const el = document.getElementById(id);

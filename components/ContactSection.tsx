@@ -7,6 +7,7 @@ import { Snackbar } from "./Snackbar";
 import { IconSymbol } from "./IconSymbol";
 import { WhatsAppIcon } from "./WhatsAppIcon";
 import { ButtonLink } from "./Button";
+import { SouthAfricaFlag } from "./SouthAfricaFlag";
 import { whatsappUrl } from "@/lib/whatsapp";
 import type { SiteConfig } from "@/lib/content";
 
@@ -77,7 +78,11 @@ export function ContactSection({ site }: { site: SiteConfig }) {
               {copied ? "Copied ✓" : site.email}
             </button>
             <div className="mt-3 text-body-s text-on-surface-variant">
-              {site.location} &nbsp;·&nbsp; {site.languages.map((l) => LANG_CODE[l] ?? l.slice(0, 2).toUpperCase()).join(" · ")}
+              <span className="inline-flex items-center gap-1.5">
+                <SouthAfricaFlag className="h-3.5 w-5 rounded-[3px] shadow-[0_0_0_1px_var(--color-outline-variant)]" />
+                {site.location}
+              </span>{" "}
+              &nbsp;·&nbsp; {site.languages.map((l) => LANG_CODE[l] ?? l.slice(0, 2).toUpperCase()).join(" · ")}
             </div>
             <div className="mt-5 flex flex-wrap gap-2.5">
               {wa ? (
