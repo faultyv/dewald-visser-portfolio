@@ -54,3 +54,8 @@ full-page.png
 
 # QA screenshot artifacts
 qa-headshot-refresh/
+
+# Claude Code skill tooling (local, not part of the site)
+/.claude/skills/
+/.agents/
+skills-lock.json

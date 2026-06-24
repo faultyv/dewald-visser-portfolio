@@ -21,9 +21,9 @@
     "name": "Mediatrade",
     "mark": "MT",
     "seed": "tertiary",
-    "relationship": "Production Designer",
+    "relationship": "Graphic Design Specialist",
     "discipline": "Retail production, POS, repro and print artworking",
-    "period": "2024-Jul 2025",
+    "period": "2023-2025",
     "url": "https://mediatrade.co.za/"
   },
   {
@@ -32,7 +32,7 @@
     "seed": "success",
     "relationship": "Multimedia Specialist",
     "discipline": "Web systems, learning and multimedia content",
-    "period": "2023/2024-Jul 2025",
+    "period": "2022-2025",
     "url": "https://jbsa.org.za/"
   },
   {
@@ -64,6 +64,15 @@
     "relationship": "Senior Graphic Designer",
     "discipline": "Brand, DTP, signage and front-end web",
     "period": "2021-2022",
+    "url": ""
+  },
+  {
+    "name": "Webmeta",
+    "mark": "WM",
+    "seed": "primary",
+    "relationship": "SEO Executive",
+    "discipline": "Organic search, on-page and technical SEO",
+    "period": "2022-2024",
     "url": ""
   },
   {
@@ -102,14 +111,14 @@
     "seed": "success",
     "relationship": "Web, brand & quote system via own agency",
     "discipline": "Website, branding, signage and a CPQ quote tool",
-    "period": "2021-2024",
+    "period": "2021-2026",
     "url": "/work/dynamic-automation"
   },
   {
     "name": "Cambridge University initiative",
     "mark": "CU",
     "seed": "accent",
-    "relationship": "Logo Designer",
+    "relationship": "Graphic Designer",
     "discipline": "Identity and mockup presentation",
     "period": "Mar-Jul 2021",
     "url": "https://www.behance.net/gallery/123143649/Logo-Design"
@@ -118,9 +127,9 @@
     "name": "Kirstenhof Car Hire",
     "mark": "KCH",
     "seed": "primary",
-    "relationship": "Marketing Designer",
+    "relationship": "Marketing Manager",
     "discipline": "Search, social, email and booking systems",
-    "period": "May 2021",
+    "period": "Mar-Jun 2021",
     "url": "https://kirstenhofcarhire.co.za/"
   },
   {
@@ -145,7 +154,7 @@
     "name": "Educor Holdings",
     "mark": "ED",
     "seed": "secondary",
-    "relationship": "Programme Advisor",
+    "relationship": "Programme Advisor & International Admissions",
     "discipline": "Campaign creative, admissions, analytics and AI readiness",
     "period": "Nov 2016-Dec 2019",
     "url": "https://educor.co.za/"
@@ -154,9 +163,9 @@
     "name": "The Unlimited",
     "mark": "TU",
     "seed": "warning",
-    "relationship": "Telemarketer",
+    "relationship": "Telemarketer & Trainer",
     "discipline": "Sales foundation and lead generation",
-    "period": "Jan-Sep 2016",
+    "period": "May-Aug 2016",
     "url": "https://theunlimited.co.za/"
   },
   {
@@ -165,14 +174,14 @@
     "seed": "success",
     "relationship": "Development Assistant",
     "discipline": "Self-taught web build and franchise rebrand (Welstand Agri)",
-    "period": "Oct 2014-Dec 2015",
+    "period": "2015-2016",
     "url": "https://www.oldmutual.co.za/"
   },
   {
     "name": "Investors Choice",
     "mark": "IC",
     "seed": "info",
-    "relationship": "Software Telemarketer",
+    "relationship": "Telesales Representative",
     "discipline": "Software sales conversation and lead handling",
     "period": "Jan-Sep 2014",
     "url": ""

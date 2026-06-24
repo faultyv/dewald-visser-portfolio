@@ -1,6 +1,6 @@
 [
   {
-    "date": "2026-Present",
+    "date": "2026 – Present",
     "role": "Founder",
     "org": "Sun Paper and Coatings",
     "brandMark": "SP",
@@ -22,89 +22,133 @@
     ]
   },
   {
-    "date": "Jul 2025-Mar 2026",
-    "role": "Creative and Communications Lead",
-    "org": "Olive Tree Church",
-    "brandMark": "OT",
-    "brandColor": "success",
-    "tags": ["Design", "Marketing", "Web"],
-    "detail": "Led creative arts and communications for the Florida Road flagship church — sermon-series design, social content, photography, videography and post-production, live production and equipment setup, and volunteer and intern training, all on Adobe-led, industry-standard media workflows.",
-    "software": ["Photoshop", "Illustrator", "InDesign", "After Effects", "Premiere Pro", "Lightroom"],
+    "date": "2026",
+    "role": "CPQ & Quote-System Builder",
+    "org": "Dynamic Automation",
+    "brandMark": "DA",
+    "brandColor": "info",
+    "tags": ["Web", "AI"],
+    "detail": "Took a manufacturer's tangled Excel quoting workbooks — broiler-house and chain-feeder templates — and rebuilt the logic as a web-based CPQ quote tool: structured product modules, pricing intelligence and a clean interface, shipped as a live Vercel prototype the client signed off on.",
+    "software": ["Next.js", "Vercel", "JavaScript", "Excel logic", "CPQ"],
     "proof": [
       {
-        "type": "Creative lead",
-        "title": "Flagship church communications",
-        "detail": "Owned sermon-series design, social content and the weekly visual language for a large, well-resourced ministry."
+        "type": "Systems",
+        "title": "Spreadsheet → web tool",
+        "detail": "Translated complex engineering quote workbooks into a modular web quoting system with built-in pricing logic."
       },
       {
-        "type": "Production",
-        "title": "Photo, video & live setup",
-        "detail": "Ran photography, videography, video editing, production and equipment setup to broadcast-standard quality."
-      },
-      {
-        "type": "People",
-        "title": "Volunteer & intern training",
-        "detail": "Trained volunteers and interns and held the team to Adobe-led, industry-standard production workflows."
+        "type": "Shipped",
+        "title": "Live Vercel prototype",
+        "detail": "Delivered a working demo the client approved — quoting that used to live in fragile spreadsheets, now a usable web product."
       }
     ]
   },
   {
-    "date": "2024-Jul 2025",
-    "role": "Production Designer",
+    "date": "Jul 2025 – Mar 2026",
+    "role": "Creative & Communications Lead",
+    "org": "Olive Tree Church",
+    "brandMark": "OT",
+    "brandColor": "success",
+    "tags": ["Design", "Marketing"],
+    "detail": "Full-service creative and communications for the Florida Road flagship campus — effectively agency work for the church. Owned sermon-series design, brand and social content, marketing campaigns and content creation, with photography, videography and video editing, live production and AV, and training across the creative team, all on Adobe-led, industry-standard workflows.",
+    "software": ["Photoshop", "Illustrator", "InDesign", "Premiere Pro", "After Effects", "Lightroom", "Canva"],
+    "proof": [
+      {
+        "type": "Creative lead",
+        "title": "Series design & content",
+        "detail": "Owned sermon-series design, brand, social and content creation — agency-style creative direction for the church."
+      },
+      {
+        "type": "Production",
+        "title": "Photo, video & live AV",
+        "detail": "Ran photography, videography, video editing and live production and AV to broadcast-standard quality."
+      },
+      {
+        "type": "People",
+        "title": "Marketing & team training",
+        "detail": "Drove marketing and social campaigns and trained volunteers across the creative and production team."
+      }
+    ]
+  },
+  {
+    "date": "2023 – 2025",
+    "role": "Graphic Design Specialist",
     "org": "Mediatrade",
     "brandMark": "MT",
     "brandColor": "tertiary",
     "tags": ["Design"],
-    "detail": "Brand and creative production across print and digital - identity, social creative, DTP and production artwork through the Adobe suite.",
-    "software": ["Photoshop", "Illustrator", "InDesign", "After Effects", "Canva"],
+    "detail": "Brand and packaging design across digital and print — labels, packaging, mockups and brand guidelines through the Adobe suite, plus print-ready retail and POS artwork. The production studio that absorbed and serviced my clicklocal client portfolio, and where I took on the Dreambook project full-time.",
+    "software": ["Photoshop", "Illustrator", "InDesign", "After Effects"],
     "proof": [
       {
-        "type": "Creative",
-        "title": "Print + digital production",
-        "detail": "Produced campaign-ready visual assets across brand, print, social and motion formats."
+        "type": "Packaging",
+        "title": "Labels, packaging & guidelines",
+        "detail": "Produced packaging, labels, mockups and brand guidelines for digital and print, working cross-functionally to deadline."
       },
       {
-        "type": "DTP",
-        "title": "Production artworking",
-        "detail": "Prepared retail and print assets with the precision needed for production and repro."
+        "type": "Retail",
+        "title": "Print-ready POS artwork",
+        "detail": "Delivered retail production artwork — shelf strips, wobblers and posters — at the precision needed for repro."
       }
     ]
   },
   {
-    "date": "2023/2024-Jul 2025",
+    "date": "2022 – 2025",
     "role": "Multimedia Specialist",
     "org": "Joseph Business School Africa",
     "brandMark": "JBS",
     "brandColor": "success",
     "tags": ["Design", "Web", "Marketing"],
-    "detail": "Multimedia, design, campaign and web delivery across multiple disciplines - from visual content and learning material to the systems that present, promote and support it.",
-    "software": ["Photoshop", "Illustrator", "InDesign", "After Effects", "WordPress", "Elementor", "Mailchimp", "Meta Ads", "Google Workspace", "CRM"],
+    "detail": "Multimedia, design, web and campaign delivery for an international business school — livestreaming masterclasses and events to audiences of 500-plus, producing learning and brand content, running the web and LMS systems behind the programmes, and operationalising Canva and ChatGPT across the team's content workflow.",
+    "software": ["Photoshop", "Illustrator", "After Effects", "Premiere Pro", "WordPress", "Canva", "ChatGPT", "Meta Ads"],
     "proof": [
       {
-        "type": "Campaigns",
-        "title": "Campaigns across channels",
-        "detail": "Worked across social, email, web and internal communication campaigns, connecting design assets with delivery channels and audience context."
+        "type": "Production",
+        "title": "Livestreams to 500+",
+        "detail": "Ran multimedia and live production for masterclasses and events reaching audiences of 500 and more."
+      },
+      {
+        "type": "AI rollout",
+        "title": "Canva + ChatGPT adoption",
+        "detail": "Introduced and operationalised Canva and ChatGPT into the content and marketing workflow."
       },
       {
         "type": "Systems",
-        "title": "Web and workflow systems",
-        "detail": "Built and supported digital systems that made programmes, content and operational information easier to present and maintain."
-      },
-      {
-        "type": "Multimedia",
-        "title": "Learning and brand content",
-        "detail": "Produced visual, motion and web assets for different audiences while keeping the brand language consistent."
+        "title": "Web, LMS & campaigns",
+        "detail": "Built and supported the web, LMS and campaign systems that present and promote programmes."
       }
     ]
   },
   {
-    "date": "2021 - 2024",
+    "date": "2022 – 2024",
+    "role": "SEO Executive",
+    "org": "Webmeta",
+    "brandMark": "WM",
+    "brandColor": "primary",
+    "tags": ["Marketing", "Web"],
+    "detail": "Organic-growth role helping businesses grow online — SEO strategy, on-page and technical optimisation, and the content and digital resources that move ranking and traffic.",
+    "software": ["SEO", "Google Analytics", "Search Console", "WordPress", "Content"],
+    "proof": [
+      {
+        "type": "Search",
+        "title": "Organic growth",
+        "detail": "Drove organic search and growth for client businesses through SEO strategy and content."
+      },
+      {
+        "type": "Technical",
+        "title": "On-page & technical SEO",
+        "detail": "Handled on-page and technical optimisation and the digital resources behind sustained ranking."
+      }
+    ]
+  },
+  {
+    "date": "2021 – 2024",
     "role": "Founder",
     "org": "clicklocal",
     "brandMark": "CL",
     "brandColor": "primary",
     "tags": ["Founder", "Web", "Design", "Marketing"],
-    "detail": "My own digital and design services agency for local businesses — brand, web, campaigns and production under one roof. Ran the client base behind Africa Paints, Solid Doors, Alif Doors, Natal Associated Chemicals and the Dynamic Automation quote system, until the portfolio was absorbed into a wider production and education business group.",
+    "detail": "My own digital and design services agency for local businesses — brand, web, campaigns and production under one roof. Ran the client base behind Africa Paints, Solid Doors, Alif Doors, Natal Associated Chemicals and the Dynamic Automation quote work, until the portfolio was absorbed into a wider production and education business group.",
     "software": ["WordPress", "Illustrator", "Photoshop", "SEO", "Meta Ads", "CRM"],
     "proof": [
       {
@@ -125,19 +169,19 @@
     ]
   },
   {
-    "date": "2021 - 2022",
+    "date": "2021 – 2022",
     "role": "Senior Graphic Designer",
     "org": "Thinklocal",
     "brandMark": "TL",
     "brandColor": "tertiary",
     "tags": ["Design", "Web"],
-    "detail": "Senior design role spanning brand strategy, DTP, signage and front-end — Illustrator, Photoshop and InDesign through to HTML5/CSS3 website development, social and video graphics.",
+    "detail": "Senior design across brand strategy, corporate identity, DTP and signage through to front-end — Illustrator, Photoshop and InDesign into HTML5/CSS3 website development and consultancy, plus social content, copy, photo retouching and video graphics.",
     "software": ["Illustrator", "Photoshop", "InDesign", "HTML/CSS", "WordPress", "After Effects"],
     "proof": [
       {
         "type": "Design",
         "title": "Brand, DTP & signage",
-        "detail": "Delivered brand strategy, print/DTP, signage and retouching across a senior design remit."
+        "detail": "Delivered brand strategy, corporate identity, print/DTP, signage and retouching across a senior design remit."
       },
       {
         "type": "Web",
@@ -147,13 +191,13 @@
     ]
   },
   {
-    "date": "Mar-Jul 2021",
-    "role": "Logo Designer",
+    "date": "Mar – Jul 2021",
+    "role": "Graphic Designer",
     "org": "Cambridge University initiative",
     "brandMark": "CU",
     "brandColor": "accent",
     "tags": ["Design"],
-    "detail": "Designed a logo and mockups for an international sustainable-development initiative.",
+    "detail": "Designed the logo and mockups for an international research initiative connecting water and global citizenship through education for sustainable development.",
     "software": ["Illustrator", "Photoshop", "InDesign"],
     "proof": [
       {
@@ -164,19 +208,19 @@
     ]
   },
   {
-    "date": "May 2021",
-    "role": "Marketing Designer",
+    "date": "Mar – Jun 2021",
+    "role": "Marketing Manager",
     "org": "Kirstenhof Car Hire",
     "brandMark": "KCH",
     "brandColor": "primary",
     "tags": ["Marketing", "Web", "Design"],
-    "detail": "Drove organic and sponsored search, social and email marketing that increased car rentals. Created animated video and image adverts, then built a WordPress appointment system for clients, payments, fines and maintenance.",
+    "detail": "Drove organic and sponsored search, social and email marketing that increased car rentals, created animated video and image adverts, then built a WordPress appointment system that handled clients, payments, fines, maintenance and debtors/quoting automation.",
     "software": ["WordPress", "Google Ads", "Meta Ads", "Mailchimp", "After Effects", "Photoshop", "CRM", "SEO"],
     "proof": [
       {
         "type": "System",
         "title": "Booking + admin workflow",
-        "detail": "Built a WordPress appointment system for clients, payments, fines and vehicle maintenance tracking."
+        "detail": "Built a WordPress appointment system for clients, payments, fines, maintenance and debtors/quoting automation."
       },
       {
         "type": "Marketing",
@@ -197,7 +241,7 @@
     "brandMark": "AD",
     "brandColor": "success",
     "tags": ["Web", "Design"],
-    "detail": "Built an online store, wrote the copy and sourced suppliers; redesigned the company logo in Illustrator and InDesign.",
+    "detail": "Built an online store end-to-end, wrote the copy and sourced suppliers, then redesigned the company logo in Illustrator and InDesign.",
     "software": ["WordPress", "Photoshop", "Illustrator", "InDesign", "SEO"],
     "proof": [
       {
@@ -213,13 +257,13 @@
     ]
   },
   {
-    "date": "Feb-Dec 2020",
+    "date": "Feb – Dec 2020",
     "role": "Design & Sales",
     "org": "Contours Design Studio / Faux Flora",
     "brandMark": "CDS",
     "brandColor": "warning",
     "tags": ["Design", "Web", "Marketing"],
-    "detail": "Bespoke design and installation support. Built a Shopify store and drop-ship model during hard lockdown to protect cash flow and jobs - product design and reporting included.",
+    "detail": "Sales, quoting and showroom support with Pastel purchase/sales orders, inventory, project scheduling and reporting — plus bespoke product and installation design. Built a Shopify store and drop-ship model during hard lockdown to protect cash flow and jobs.",
     "software": ["Shopify", "Photoshop", "Illustrator", "SketchUp", "Canva", "Sage Pastel"],
     "proof": [
       {
@@ -228,26 +272,26 @@
         "detail": "Built a Shopify store and drop-ship model under pressure to keep cash moving during lockdown."
       },
       {
-        "type": "Design",
-        "title": "Product + installation design",
-        "detail": "Handled bespoke product design, installation support and reporting for the studio."
+        "type": "Operations",
+        "title": "Quotes, Pastel & inventory",
+        "detail": "Ran quoting, showroom sales, Pastel orders, inventory and reporting alongside bespoke product and installation design."
       }
     ]
   },
   {
-    "date": "Nov 2016-Dec 2019",
-    "role": "Programme Advisor",
+    "date": "Nov 2016 – Dec 2019",
+    "role": "Programme Advisor & International Admissions",
     "org": "Educor Holdings",
     "brandMark": "ED",
     "brandColor": "secondary",
     "tags": ["Marketing", "Design", "AI"],
-    "detail": "Designed templates, booklets, animated video adverts and email campaign creative while working close to advising, sales and data analytics. Started on the launch team for Educor's online brands, then moved onto LCIBS and early AI-readiness work.",
-    "software": ["InDesign", "After Effects", "Photoshop", "Mailchimp", "CRM", "Canva"],
+    "detail": "Converted online and campaign enquiries into enrolments — CRM, student advising, reporting and analytics — while designing templates, booklets, email creative and animated adverts. Started on the launch team for Educor's online brands, then was promoted within ten months to an international admissions role on LCIBS, the group's first international brand, with early AI-readiness work under a former Apple executive.",
+    "software": ["InDesign", "After Effects", "Photoshop", "Mailchimp", "CRM", "SharePoint", "Canva"],
     "proof": [
       {
-        "type": "Campaigns",
-        "title": "Education campaign assets",
-        "detail": "Produced templates, booklets, email creative and animated adverts for sales campaigns."
+        "type": "Admissions",
+        "title": "Promoted within 10 months",
+        "detail": "Moved up inside ten months to international admissions on LCIBS, the group's first international brand, pairing creative work with sales context and data analysis."
       },
       {
         "type": "AI readiness",
@@ -255,65 +299,65 @@
         "detail": "Worked under a former Apple executive on AI-readiness thinking for education, industry change and practical training programmes."
       },
       {
-        "type": "Admissions",
-        "title": "Promoted within 10 months",
-        "detail": "Moved up inside ten months to an international admissions role on LCIBS, the group's first international brand, pairing creative work with admissions, sales context and data analysis."
+        "type": "Campaigns",
+        "title": "Education campaign assets",
+        "detail": "Produced templates, booklets, email creative and animated adverts that fed the enrolment funnel."
       }
     ]
   },
   {
-    "date": "Jan-Sep 2016",
-    "role": "Telemarketer",
+    "date": "May – Aug 2016",
+    "role": "Telemarketer & Trainer",
     "org": "The Unlimited",
     "brandMark": "TU",
     "brandColor": "warning",
     "tags": ["Foundations"],
-    "detail": "Hit sales targets on commission, then was promoted to train new hires — call-based commercial foundations before the later creative, marketing and systems work.",
+    "detail": "Hit sales targets on commission through high-volume cold calling, then was promoted to train new hires on products and process — call-based commercial foundations before the later creative, marketing and systems work.",
     "software": ["CRM", "Google Workspace"],
     "proof": [
       {
         "type": "Sales",
         "title": "Targets, then training",
-        "detail": "Built early commercial muscle through high-volume telemarketing, then earned a trainer role onboarding new staff on products and process."
+        "detail": "Built early commercial muscle through high-volume telemarketing, then earned a trainer role onboarding new staff."
       }
     ]
   },
   {
-    "date": "Oct 2014-Dec 2015",
+    "date": "2015 – 2016",
     "role": "Development Assistant",
     "org": "Old Mutual",
     "brandMark": "OM",
     "brandColor": "success",
     "tags": ["Foundations", "Web", "Design"],
-    "detail": "Supported development work at Old Mutual, including the Welstand Agri context where a self-taught website build and rebrand formed an early bridge into digital delivery.",
-    "software": ["CRM", "Google Workspace", "SEO"],
+    "detail": "Scheduled appointments, drove client acquisition and quoting, and supported the Old Mutual Franchise Division — including a self-taught Welstand Agri website build and rebrand that became an early bridge into digital delivery.",
+    "software": ["CRM", "Google Workspace", "WordPress", "SEO"],
     "proof": [
       {
         "type": "Web",
         "title": "Self-taught site build",
-        "detail": "Built online quotation and appointment-booking support while learning the web stack hands-on."
+        "detail": "Built the Welstand Agri website with quote, booking and policy-service workflows while learning the web stack hands-on."
       },
       {
         "type": "Brand",
         "title": "Welstand Agri rebrand",
-        "detail": "Supported a practical rebrand context that connected business development with visual and digital execution."
+        "detail": "Delivered the rebrand collateral that connected business development with visual and digital execution."
       }
     ]
   },
   {
-    "date": "Jan-Sep 2014",
-    "role": "Software Telemarketer",
+    "date": "Jan – Sep 2014",
+    "role": "Telesales Representative",
     "org": "Investors Choice",
     "brandMark": "IC",
     "brandColor": "info",
     "tags": ["Foundations"],
-    "detail": "Early software telemarketing role at 200-250 calls a day — product conversation, lead handling, data capture and the sales discipline everything later was built on.",
+    "detail": "Early software telesales at 200–250 calls a day — product conversation, lead handling, data capture, trading-software training and daily lead reports. The sales discipline everything later was built on.",
     "software": ["CRM", "Google Workspace"],
     "proof": [
       {
         "type": "Sales",
-        "title": "Software sales foundation",
-        "detail": "Built early experience translating software offers into customer conversations."
+        "title": "200–250 calls a day",
+        "detail": "Built the early discipline of high-volume outreach, data capture and daily reporting that underpins the rest of the career."
       }
     ]
   }
