@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { Reveal } from "./Reveal";
+import { motion } from "motion/react";
+import { Reveal, StaggerGroup } from "./Reveal";
 import { IconSymbol } from "./IconSymbol";
 import { tagSeed } from "@/lib/tag-seed";
 import { SEED_BG, SEED_ON, SEED_CONTAINER_BG, SEED_CONTAINER_TEXT } from "@/lib/seed-classes";
@@ -19,18 +20,19 @@ const ROLE_ICON: Record<string, string> = {
 const CHAPTERS = [
   {
     label: "01",
-    title: "Founder and operator",
-    summary: "The current proof: building owned ventures where brand, sales, stock, supplier relationships and operating rhythm all have to hold together.",
-    orgs: ["Sun Paper and Coatings", "clicklocal"],
+    title: "Founder & systems builder",
+    summary: "The current proof: owned ventures and the systems behind them — and turning real operational problems, like a tangle of quoting spreadsheets, into working software.",
+    orgs: ["Dynamic Automation", "clicklocal"],
   },
   {
     label: "02",
-    title: "Creative systems in public",
-    summary: "Roles where the work had to ship across real channels: church communications, learning media, production art, campaigns, web and client delivery.",
+    title: "Creative, media & web in production",
+    summary: "A decade of work that had to ship across real channels — church media, learning and livestream production, packaging and retail art, SEO, campaigns, websites and client delivery.",
     orgs: [
       "Olive Tree Church",
       "Mediatrade",
       "Joseph Business School Africa",
+      "Webmeta",
       "Thinklocal",
       "Cambridge University initiative",
       "Kirstenhof Car Hire",
@@ -41,7 +43,7 @@ const CHAPTERS = [
   {
     label: "03",
     title: "Commercial foundations",
-    summary: "The base layer: sales calls, advising, CRM discipline, data capture and the early digital work that made later creative and systems delivery practical.",
+    summary: "The base layer: sales calls, advising, CRM discipline, data capture and the early self-taught web work that made later creative and systems delivery practical.",
     orgs: ["Educor Holdings", "The Unlimited", "Old Mutual", "Investors Choice"],
   },
 ] as const;
@@ -62,13 +64,22 @@ function rolesForChapter(cv: CVEntry[], orgs: readonly string[]) {
   return orgs.map((org) => cv.find((entry) => entry.org === org)).filter(Boolean) as CVEntry[];
 }
 
+const CAREER_ROW_VARIANTS = {
+  hidden: { opacity: 0, y: 30 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { type: "spring" as const, stiffness: 170, damping: 24, opacity: { duration: 0.4 } },
+  },
+};
+
 function RoleRow({ entry }: { entry: CVEntry }) {
   const seed = tagSeed(entry.tags[0]);
   const brandSeed = entry.brandColor ?? seed;
   const proof = entry.proof?.slice(0, 2) ?? [];
 
   return (
-    <article className="career-story-row">
+    <motion.article className="career-story-row" variants={CAREER_ROW_VARIANTS}>
       <div className="career-story-date">
         <span>{entry.date}</span>
       </div>
@@ -104,7 +115,7 @@ function RoleRow({ entry }: { entry: CVEntry }) {
           </div>
         ) : null}
       </div>
-    </article>
+    </motion.article>
   );
 }
 
@@ -205,26 +216,24 @@ export function CareerExplorer({ cv }: { cv: CVEntry[] }) {
           {CHAPTERS.map((chapter, index) => {
             const roles = rolesForChapter(cv, chapter.orgs);
             return (
-              <Reveal key={chapter.title} delay={0.08 + index * 0.05}>
-                <section className="career-chapter">
-                  <div className="career-chapter-intro">
-                    <div className="career-chapter-index">{chapter.label}</div>
-                    <h3 className="text-headline-s text-on-surface">{chapter.title}</h3>
-                    <p className="text-body-m text-on-surface-variant">{chapter.summary}</p>
-                    {index === 1 && oliveTree && jbsa ? (
-                      <div className="career-chapter-note">
-                        <IconSymbol name="verified" size={17} filled />
-                        Recent proof spans church communications, learning media and public programme delivery.
-                      </div>
-                    ) : null}
-                  </div>
-                  <div className="career-story-list">
-                    {roles.map((entry) => (
-                      <RoleRow key={`${entry.org}-${entry.date}`} entry={entry} />
-                    ))}
-                  </div>
-                </section>
-              </Reveal>
+              <section key={chapter.title} className="career-chapter">
+                <Reveal className="career-chapter-intro">
+                  <div className="career-chapter-index">{chapter.label}</div>
+                  <h3 className="text-headline-s text-on-surface">{chapter.title}</h3>
+                  <p className="text-body-m text-on-surface-variant">{chapter.summary}</p>
+                  {index === 1 && oliveTree && jbsa ? (
+                    <div className="career-chapter-note">
+                      <IconSymbol name="verified" size={17} filled />
+                      Recent proof spans church communications, learning media and public programme delivery.
+                    </div>
+                  ) : null}
+                </Reveal>
+                <StaggerGroup className="career-story-list">
+                  {roles.map((entry) => (
+                    <RoleRow key={`${entry.org}-${entry.date}`} entry={entry} />
+                  ))}
+                </StaggerGroup>
+              </section>
             );
           })}
         </div>

@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { Reveal } from "./Reveal";
+import { CountUp } from "./CountUp";
 import { gsap } from "@/lib/gsap";
 import type { SiteConfig } from "@/lib/content";
 
@@ -55,8 +56,7 @@ export function About({ site }: { site: SiteConfig }) {
               {site.stats.map((stat) => (
                 <div key={stat.label} className="rounded-xl border border-outline-variant bg-surface-container-low p-3 sm:border-0 sm:bg-transparent sm:p-0">
                   <div className="text-display-s text-primary sm:text-[40px]">
-                    {stat.value}
-                    {stat.suffix}
+                    <CountUp value={stat.value} suffix={stat.suffix} />
                   </div>
                   <div className="text-body-s text-on-surface-variant mt-0.5">{stat.label}</div>
                 </div>

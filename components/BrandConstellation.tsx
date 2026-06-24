@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { motion } from "motion/react";
 import { Reveal } from "./Reveal";
 import { IconSymbol } from "./IconSymbol";
 import { SEED_BG, SEED_ON, SEED_TEXT, SEED_CONTAINER_BG, SEED_CONTAINER_TEXT } from "@/lib/seed-classes";
@@ -28,6 +29,7 @@ const COMPANY_DOMAINS: Record<string, string> = {
   clicklocal: "ventures",
   "Contours Design Studio / Faux Flora": "ventures",
   Thinklocal: "web",
+  Webmeta: "web",
   "The Dreambook Ministry": "ministry",
   "Joseph Business School Africa": "ministry",
   "Olive Tree Church": "ministry",
@@ -50,6 +52,7 @@ const ICON_BY_COMPANY: Record<string, string> = {
   clicklocal: "ads_click",
   "Contours Design Studio / Faux Flora": "local_florist",
   Thinklocal: "design_services",
+  Webmeta: "manage_search",
   "The Dreambook Ministry": "volunteer_activism",
   "Joseph Business School Africa": "school",
   "Olive Tree Church": "diversity_3",
@@ -169,25 +172,31 @@ export function BrandConstellation({ companies }: { companies: CompanyEntry[] })
         {/* Filters */}
         <Reveal delay={0.12}>
           <div className="mb-8 flex flex-wrap gap-2">
-            <button
+            <motion.button
               type="button"
               onClick={() => setFilter("all")}
               aria-pressed={filter === "all"}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.93 }}
+              transition={{ type: "spring", stiffness: 440, damping: 18 }}
               className={`state-layer cursor-pointer rounded-full border px-3.5 py-1.5 text-label-m transition-colors ${
                 filter === "all" ? "border-transparent bg-on-surface text-surface" : "border-outline-variant text-on-surface-variant hover:text-on-surface"
               }`}
             >
               All worlds <span className="ml-1 rounded-full border border-current/25 px-1.5 py-0.5 text-label-s leading-none opacity-80">{companies.length}</span>
-            </button>
+            </motion.button>
             {DOMAINS.map((domain) => {
               const on = filter === domain.id;
               const count = grouped.find((group) => group.id === domain.id)?.items.length ?? 0;
               return (
-                <button
+                <motion.button
                   key={domain.id}
                   type="button"
                   onClick={() => setFilter(on ? "all" : domain.id)}
                   aria-pressed={on}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.93 }}
+                  transition={{ type: "spring", stiffness: 440, damping: 18 }}
                   className={`state-layer inline-flex cursor-pointer items-center gap-2 rounded-full border px-3.5 py-1.5 text-label-m transition-colors ${
                     on ? `border-transparent ${SEED_CONTAINER_BG[domain.seed]} ${SEED_CONTAINER_TEXT[domain.seed]}` : "border-outline-variant text-on-surface-variant hover:text-on-surface"
                   }`}
@@ -195,7 +204,7 @@ export function BrandConstellation({ companies }: { companies: CompanyEntry[] })
                   <IconSymbol name={domain.icon} size={15} filled className={on ? undefined : SEED_TEXT[domain.seed]} />
                   {domain.label}
                   <span className="rounded-full border border-current/25 px-1.5 py-0.5 text-label-s leading-none opacity-80">{count}</span>
-                </button>
+                </motion.button>
               );
             })}
           </div>

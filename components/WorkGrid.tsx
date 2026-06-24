@@ -72,11 +72,14 @@ export function WorkGrid({ projects }: { projects: Project[] }) {
         {FILTERS.map((f) => {
           const active = f.id === filter;
           return (
-            <button
+            <motion.button
               key={f.id}
               type="button"
               onClick={() => setFilter(f.id)}
               aria-pressed={active}
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.93 }}
+              transition={{ type: "spring", stiffness: 440, damping: 18 }}
               className={`hig-control state-layer cursor-pointer rounded-full px-4.5 py-2.5 text-label-l transition-colors ${
                 active ? "border-primary bg-primary text-on-primary" : "border-outline text-on-surface-variant"
               }`}
@@ -85,7 +88,7 @@ export function WorkGrid({ projects }: { projects: Project[] }) {
                 {f.label}
                 <span className="rounded-full border border-current/25 px-1.5 py-0.5 text-label-s leading-none opacity-80">{counts[f.id]}</span>
               </span>
-            </button>
+            </motion.button>
           );
         })}
       </div>
