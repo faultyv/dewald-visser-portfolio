@@ -158,13 +158,13 @@ export function BrandConstellation({ companies }: { companies: CompanyEntry[] })
               <div className="text-label-l text-success mb-3.5">Operating map</div>
             </Reveal>
             <Reveal delay={0.05}>
-              <h2 className="text-headline-l text-on-surface">The organisations behind the work.</h2>
+              <h2 className="text-headline-l text-on-surface">The organisations <span className="text-gradient text-gradient-animated">behind the work.</span></h2>
             </Reveal>
           </div>
           <Reveal delay={0.1}>
             <p className="m-0 max-w-[440px] text-body-m text-on-surface-variant">
               {companies.length} organisations grouped by the kind of pressure they created: owned ventures, education and ministry, production,
-              web growth and commercial foundations.
+              <span className="text-mark"> web growth and commercial foundations.</span>
             </p>
           </Reveal>
         </div>

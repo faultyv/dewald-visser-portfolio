@@ -19,12 +19,12 @@ export function Method({ steps }: { steps: MethodStep[] }) {
             <h2 className="text-headline-l text-on-surface">
               How the work
               <br />
-              moves.
+              <span className="text-gradient text-gradient-animated">moves.</span>
             </h2>
           </Reveal>
           <Reveal delay={0.1}>
             <p className="mt-5 max-w-[460px] text-body-m text-on-surface-variant">
-              A compact loop for mixed creative and systems work: find the business problem, design the reusable language, ship the working surface and improve it from real response.
+              A compact loop for mixed creative and systems work: find the business problem, design the reusable language, ship the working surface and <span className="text-mark">improve it from real response.</span>
             </p>
           </Reveal>
           <Reveal delay={0.15}>

@@ -54,6 +54,7 @@ export type CVEntry = {
   detail: string;
   software?: string[];
   proof?: ProofItem[];
+  responsibilities?: string[];
 };
 
 export type MethodStep = {
@@ -129,6 +130,7 @@ export type ProjectFrontmatter = {
   links?: ProjectLink[];
   proofLinks?: ProjectProofLink[];
   brands?: string[];
+  responsibilities?: string[];
 };
 
 export type Project = ProjectFrontmatter & { slug: string; content: string };

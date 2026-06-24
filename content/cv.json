@@ -5,9 +5,17 @@
     "org": "Sun Paper and Coatings",
     "brandMark": "SP",
     "brandColor": "secondary",
-    "tags": ["Founder", "Marketing"],
+    "tags": [
+      "Founder",
+      "Marketing"
+    ],
     "detail": "My own venture, built from the ground up — supplier relationships, customer development, pricing, stock planning and the brand and sales systems behind a working paper, coatings and self-adhesive supply business.",
-    "software": ["CRM", "Google Workspace", "Canva", "WordPress"],
+    "software": [
+      "CRM",
+      "Google Workspace",
+      "Canva",
+      "WordPress"
+    ],
     "proof": [
       {
         "type": "Founder",
@@ -19,6 +27,18 @@
         "title": "Brand & sales engine",
         "detail": "Own the brand direction, sales process and operating systems that turn master-reel stock into delivered, customer-spec orders."
       }
+    ],
+    "responsibilities": [
+      "Supplier sourcing & relationships",
+      "Customer development & pipeline",
+      "Pricing & margin strategy",
+      "Stock planning & master reels",
+      "Brand direction & identity",
+      "Sales process & quoting",
+      "Order fulfilment to spec",
+      "Operating systems & admin",
+      "Cash flow & purchasing",
+      "Marketing & web presence"
     ]
   },
   {
@@ -27,9 +47,18 @@
     "org": "Dynamic Automation",
     "brandMark": "DA",
     "brandColor": "info",
-    "tags": ["Web", "AI"],
+    "tags": [
+      "Web",
+      "AI"
+    ],
     "detail": "Took a manufacturer's tangled Excel quoting workbooks — broiler-house and chain-feeder templates — and rebuilt the logic as a web-based CPQ quote tool: structured product modules, pricing intelligence and a clean interface, shipped as a live Vercel prototype the client signed off on.",
-    "software": ["Next.js", "Vercel", "JavaScript", "Excel logic", "CPQ"],
+    "software": [
+      "Next.js",
+      "Vercel",
+      "JavaScript",
+      "Excel logic",
+      "CPQ"
+    ],
     "proof": [
       {
         "type": "Systems",
@@ -41,6 +70,18 @@
         "title": "Live Vercel prototype",
         "detail": "Delivered a working demo the client approved — quoting that used to live in fragile spreadsheets, now a usable web product."
       }
+    ],
+    "responsibilities": [
+      "Excel quoting-logic analysis",
+      "CPQ data modelling",
+      "Web quoting interface",
+      "Product-module structuring",
+      "Pricing-rule engineering",
+      "Next.js build & deploy",
+      "Live Vercel prototype",
+      "Broiler & chain-feeder templates",
+      "Client demo & sign-off",
+      "Spreadsheet → web migration"
     ]
   },
   {
@@ -49,9 +90,20 @@
     "org": "Olive Tree Church",
     "brandMark": "OT",
     "brandColor": "success",
-    "tags": ["Design", "Marketing"],
+    "tags": [
+      "Design",
+      "Marketing"
+    ],
     "detail": "Full-service creative and communications for the Florida Road flagship campus — effectively agency work for the church. Owned sermon-series design, brand and social content, marketing campaigns and content creation, with photography, videography and video editing, live production and AV, and training across the creative team, all on Adobe-led, industry-standard workflows.",
-    "software": ["Photoshop", "Illustrator", "InDesign", "Premiere Pro", "After Effects", "Lightroom", "Canva"],
+    "software": [
+      "Photoshop",
+      "Illustrator",
+      "InDesign",
+      "Premiere Pro",
+      "After Effects",
+      "Lightroom",
+      "Canva"
+    ],
     "proof": [
       {
         "type": "Creative lead",
@@ -68,6 +120,18 @@
         "title": "Marketing & team training",
         "detail": "Drove marketing and social campaigns and trained volunteers across the creative and production team."
       }
+    ],
+    "responsibilities": [
+      "Sermon-series design",
+      "Brand & visual language",
+      "Social content & campaigns",
+      "Photography & shoots",
+      "Videography & editing",
+      "Live production & AV",
+      "Reels & short-form content",
+      "Content-creation pipeline",
+      "Volunteer & intern training",
+      "Adobe-led media workflows"
     ]
   },
   {
@@ -76,9 +140,16 @@
     "org": "Mediatrade",
     "brandMark": "MT",
     "brandColor": "tertiary",
-    "tags": ["Design"],
+    "tags": [
+      "Design"
+    ],
     "detail": "Brand and packaging design across digital and print — labels, packaging, mockups and brand guidelines through the Adobe suite, plus print-ready retail and POS artwork. The production studio that absorbed and serviced my clicklocal client portfolio, and where I took on the Dreambook project full-time.",
-    "software": ["Photoshop", "Illustrator", "InDesign", "After Effects"],
+    "software": [
+      "Photoshop",
+      "Illustrator",
+      "InDesign",
+      "After Effects"
+    ],
     "proof": [
       {
         "type": "Packaging",
@@ -90,6 +161,18 @@
         "title": "Print-ready POS artwork",
         "detail": "Delivered retail production artwork — shelf strips, wobblers and posters — at the precision needed for repro."
       }
+    ],
+    "responsibilities": [
+      "Packaging & label design",
+      "Brand guidelines",
+      "Retail POS artwork",
+      "Shelf strips & wobblers",
+      "Print-ready repro",
+      "Mockups & presentation",
+      "Dreambook project lead",
+      "Rimax retail artwork",
+      "Cross-functional delivery",
+      "Deadline-driven production"
     ]
   },
   {
@@ -98,9 +181,22 @@
     "org": "Joseph Business School Africa",
     "brandMark": "JBS",
     "brandColor": "success",
-    "tags": ["Design", "Web", "Marketing"],
+    "tags": [
+      "Design",
+      "Web",
+      "Marketing"
+    ],
     "detail": "Multimedia, design, web and campaign delivery for an international business school — livestreaming masterclasses and events to audiences of 500-plus, producing learning and brand content, running the web and LMS systems behind the programmes, and operationalising Canva and ChatGPT across the team's content workflow.",
-    "software": ["Photoshop", "Illustrator", "After Effects", "Premiere Pro", "WordPress", "Canva", "ChatGPT", "Meta Ads"],
+    "software": [
+      "Photoshop",
+      "Illustrator",
+      "After Effects",
+      "Premiere Pro",
+      "WordPress",
+      "Canva",
+      "ChatGPT",
+      "Meta Ads"
+    ],
     "proof": [
       {
         "type": "Production",
@@ -117,6 +213,18 @@
         "title": "Web, LMS & campaigns",
         "detail": "Built and supported the web, LMS and campaign systems that present and promote programmes."
       }
+    ],
+    "responsibilities": [
+      "Livestream production (500+)",
+      "Masterclass & event media",
+      "Learning & brand content",
+      "Web & LMS systems",
+      "Campaign delivery",
+      "Canva + ChatGPT rollout",
+      "Social & email creative",
+      "Motion & video assets",
+      "Programme promotion",
+      "Content-workflow systems"
     ]
   },
   {
@@ -125,9 +233,18 @@
     "org": "Webmeta",
     "brandMark": "WM",
     "brandColor": "primary",
-    "tags": ["Marketing", "Web"],
+    "tags": [
+      "Marketing",
+      "Web"
+    ],
     "detail": "Organic-growth role helping businesses grow online — SEO strategy, on-page and technical optimisation, and the content and digital resources that move ranking and traffic.",
-    "software": ["SEO", "Google Analytics", "Search Console", "WordPress", "Content"],
+    "software": [
+      "SEO",
+      "Google Analytics",
+      "Search Console",
+      "WordPress",
+      "Content"
+    ],
     "proof": [
       {
         "type": "Search",
@@ -139,6 +256,18 @@
         "title": "On-page & technical SEO",
         "detail": "Handled on-page and technical optimisation and the digital resources behind sustained ranking."
       }
+    ],
+    "responsibilities": [
+      "SEO strategy",
+      "On-page optimisation",
+      "Technical SEO",
+      "Keyword research",
+      "Content built to rank",
+      "Organic-growth programmes",
+      "Analytics & reporting",
+      "Search Console monitoring",
+      "Site audits",
+      "Digital-growth resources"
     ]
   },
   {
@@ -147,9 +276,21 @@
     "org": "clicklocal",
     "brandMark": "CL",
     "brandColor": "primary",
-    "tags": ["Founder", "Web", "Design", "Marketing"],
+    "tags": [
+      "Founder",
+      "Web",
+      "Design",
+      "Marketing"
+    ],
     "detail": "My own digital and design services agency for local businesses — brand, web, campaigns and production under one roof. Ran the client base behind Africa Paints, Solid Doors, Alif Doors, Natal Associated Chemicals and the Dynamic Automation quote work, until the portfolio was absorbed into a wider production and education business group.",
-    "software": ["WordPress", "Illustrator", "Photoshop", "SEO", "Meta Ads", "CRM"],
+    "software": [
+      "WordPress",
+      "Illustrator",
+      "Photoshop",
+      "SEO",
+      "Meta Ads",
+      "CRM"
+    ],
     "proof": [
       {
         "type": "Founder",
@@ -166,6 +307,18 @@
         "title": "Portfolio acquired",
         "detail": "The client portfolio was acquired and serviced through Mediatrade, creating the transition into wider production, education and ministry-aligned work."
       }
+    ],
+    "responsibilities": [
+      "Agency founding & ops",
+      "Client acquisition & management",
+      "Brand & identity design",
+      "WordPress websites",
+      "Campaigns & paid media",
+      "Production & print",
+      "Quoting & proposals",
+      "Africa Paints · Solid Doors · Alif",
+      "Portfolio handover to Mediatrade",
+      "Pricing & client billing"
     ]
   },
   {
@@ -174,9 +327,19 @@
     "org": "Thinklocal",
     "brandMark": "TL",
     "brandColor": "tertiary",
-    "tags": ["Design", "Web"],
+    "tags": [
+      "Design",
+      "Web"
+    ],
     "detail": "Senior design across brand strategy, corporate identity, DTP and signage through to front-end — Illustrator, Photoshop and InDesign into HTML5/CSS3 website development and consultancy, plus social content, copy, photo retouching and video graphics.",
-    "software": ["Illustrator", "Photoshop", "InDesign", "HTML/CSS", "WordPress", "After Effects"],
+    "software": [
+      "Illustrator",
+      "Photoshop",
+      "InDesign",
+      "HTML/CSS",
+      "WordPress",
+      "After Effects"
+    ],
     "proof": [
       {
         "type": "Design",
@@ -188,6 +351,18 @@
         "title": "Front-end build",
         "detail": "Built and styled websites in HTML5/CSS3 and WordPress, alongside social and video graphics."
       }
+    ],
+    "responsibilities": [
+      "Brand strategy",
+      "Corporate identity",
+      "DTP & print production",
+      "Signage design",
+      "HTML5/CSS3 front-end",
+      "Website dev & consultancy",
+      "Social content",
+      "Copywriting",
+      "Photo retouching",
+      "Video graphics"
     ]
   },
   {
@@ -196,15 +371,33 @@
     "org": "Cambridge University initiative",
     "brandMark": "CU",
     "brandColor": "accent",
-    "tags": ["Design"],
+    "tags": [
+      "Design"
+    ],
     "detail": "Designed the logo and mockups for an international research initiative connecting water and global citizenship through education for sustainable development.",
-    "software": ["Illustrator", "Photoshop", "InDesign"],
+    "software": [
+      "Illustrator",
+      "Photoshop",
+      "InDesign"
+    ],
     "proof": [
       {
         "type": "Identity",
         "title": "Sustainability logo system",
         "detail": "Created the logo direction and mockup presentation for an international initiative."
       }
+    ],
+    "responsibilities": [
+      "Logo concept exploration",
+      "Sustainability brand direction",
+      "Mark & typography",
+      "Colour system",
+      "Mockup presentation",
+      "ESD international brief",
+      "Stakeholder feedback rounds",
+      "Illustrator artwork",
+      "Brand-application mockups",
+      "Final files & handoff"
     ]
   },
   {
@@ -213,9 +406,22 @@
     "org": "Kirstenhof Car Hire",
     "brandMark": "KCH",
     "brandColor": "primary",
-    "tags": ["Marketing", "Web", "Design"],
+    "tags": [
+      "Marketing",
+      "Web",
+      "Design"
+    ],
     "detail": "Drove organic and sponsored search, social and email marketing that increased car rentals, created animated video and image adverts, then built a WordPress appointment system that handled clients, payments, fines, maintenance and debtors/quoting automation.",
-    "software": ["WordPress", "Google Ads", "Meta Ads", "Mailchimp", "After Effects", "Photoshop", "CRM", "SEO"],
+    "software": [
+      "WordPress",
+      "Google Ads",
+      "Meta Ads",
+      "Mailchimp",
+      "After Effects",
+      "Photoshop",
+      "CRM",
+      "SEO"
+    ],
     "proof": [
       {
         "type": "System",
@@ -232,6 +438,18 @@
         "title": "Advert creative",
         "detail": "Created animated video and image adverts to support campaign rollout."
       }
+    ],
+    "responsibilities": [
+      "Organic & paid search",
+      "Social-media management",
+      "Email marketing",
+      "Animated video adverts",
+      "Image ad creative",
+      "WordPress appointment system",
+      "Payments & fines tracking",
+      "Maintenance scheduling",
+      "Debtors & quoting automation",
+      "Rental-growth campaigns"
     ]
   },
   {
@@ -240,9 +458,18 @@
     "org": "Autodoc Diagnostics",
     "brandMark": "AD",
     "brandColor": "success",
-    "tags": ["Web", "Design"],
+    "tags": [
+      "Web",
+      "Design"
+    ],
     "detail": "Built an online store end-to-end, wrote the copy and sourced suppliers, then redesigned the company logo in Illustrator and InDesign.",
-    "software": ["WordPress", "Photoshop", "Illustrator", "InDesign", "SEO"],
+    "software": [
+      "WordPress",
+      "Photoshop",
+      "Illustrator",
+      "InDesign",
+      "SEO"
+    ],
     "proof": [
       {
         "type": "Web",
@@ -254,6 +481,18 @@
         "title": "Logo redesign",
         "detail": "Redesigned the company logo and supporting visual assets for a cleaner digital presence."
       }
+    ],
+    "responsibilities": [
+      "Online store build",
+      "Store structure & UX",
+      "Product copywriting",
+      "Supplier sourcing",
+      "Logo redesign",
+      "Illustrator & InDesign artwork",
+      "WordPress / WooCommerce",
+      "SEO foundations",
+      "Visual brand refresh",
+      "Launch & handover"
     ]
   },
   {
@@ -262,9 +501,20 @@
     "org": "Contours Design Studio / Faux Flora",
     "brandMark": "CDS",
     "brandColor": "warning",
-    "tags": ["Design", "Web", "Marketing"],
+    "tags": [
+      "Design",
+      "Web",
+      "Marketing"
+    ],
     "detail": "Sales, quoting and showroom support with Pastel purchase/sales orders, inventory, project scheduling and reporting — plus bespoke product and installation design. Built a Shopify store and drop-ship model during hard lockdown to protect cash flow and jobs.",
-    "software": ["Shopify", "Photoshop", "Illustrator", "SketchUp", "Canva", "Sage Pastel"],
+    "software": [
+      "Shopify",
+      "Photoshop",
+      "Illustrator",
+      "SketchUp",
+      "Canva",
+      "Sage Pastel"
+    ],
     "proof": [
       {
         "type": "E-commerce",
@@ -276,6 +526,18 @@
         "title": "Quotes, Pastel & inventory",
         "detail": "Ran quoting, showroom sales, Pastel orders, inventory and reporting alongside bespoke product and installation design."
       }
+    ],
+    "responsibilities": [
+      "Sales & showroom support",
+      "Quoting & proposals",
+      "Pastel purchase/sales orders",
+      "Inventory management",
+      "Project scheduling",
+      "Reporting",
+      "Bespoke product design",
+      "Installation support",
+      "Shopify lockdown store",
+      "Drop-ship model setup"
     ]
   },
   {
@@ -284,9 +546,21 @@
     "org": "Educor Holdings",
     "brandMark": "ED",
     "brandColor": "secondary",
-    "tags": ["Marketing", "Design", "AI"],
+    "tags": [
+      "Marketing",
+      "Design",
+      "AI"
+    ],
     "detail": "Converted online and campaign enquiries into enrolments — CRM, student advising, reporting and analytics — while designing templates, booklets, email creative and animated adverts. Started on the launch team for Educor's online brands, then was promoted within ten months to an international admissions role on LCIBS, the group's first international brand, with early AI-readiness work under a former Apple executive.",
-    "software": ["InDesign", "After Effects", "Photoshop", "Mailchimp", "CRM", "SharePoint", "Canva"],
+    "software": [
+      "InDesign",
+      "After Effects",
+      "Photoshop",
+      "Mailchimp",
+      "CRM",
+      "SharePoint",
+      "Canva"
+    ],
     "proof": [
       {
         "type": "Admissions",
@@ -303,6 +577,18 @@
         "title": "Education campaign assets",
         "detail": "Produced templates, booklets, email creative and animated adverts that fed the enrolment funnel."
       }
+    ],
+    "responsibilities": [
+      "Enquiry-to-enrolment conversion",
+      "CRM management",
+      "Student advising",
+      "Reporting & analytics",
+      "Template & booklet design",
+      "Email campaign creative",
+      "Animated advert production",
+      "LCIBS international admissions",
+      "Early AI-readiness work",
+      "SharePoint & sales context"
     ]
   },
   {
@@ -311,15 +597,32 @@
     "org": "The Unlimited",
     "brandMark": "TU",
     "brandColor": "warning",
-    "tags": ["Foundations"],
+    "tags": [
+      "Foundations"
+    ],
     "detail": "Hit sales targets on commission through high-volume cold calling, then was promoted to train new hires on products and process — call-based commercial foundations before the later creative, marketing and systems work.",
-    "software": ["CRM", "Google Workspace"],
+    "software": [
+      "CRM",
+      "Google Workspace"
+    ],
     "proof": [
       {
         "type": "Sales",
         "title": "Targets, then training",
         "detail": "Built early commercial muscle through high-volume telemarketing, then earned a trainer role onboarding new staff."
       }
+    ],
+    "responsibilities": [
+      "High-volume cold calling",
+      "Targets on commission",
+      "Product pitching",
+      "Objection handling",
+      "Lead qualification",
+      "New-hire training",
+      "Process onboarding",
+      "Script & product coaching",
+      "CRM capture",
+      "Sales-floor discipline"
     ]
   },
   {
@@ -328,9 +631,18 @@
     "org": "Old Mutual",
     "brandMark": "OM",
     "brandColor": "success",
-    "tags": ["Foundations", "Web", "Design"],
+    "tags": [
+      "Foundations",
+      "Web",
+      "Design"
+    ],
     "detail": "Scheduled appointments, drove client acquisition and quoting, and supported the Old Mutual Franchise Division — including a self-taught Welstand Agri website build and rebrand that became an early bridge into digital delivery.",
-    "software": ["CRM", "Google Workspace", "WordPress", "SEO"],
+    "software": [
+      "CRM",
+      "Google Workspace",
+      "WordPress",
+      "SEO"
+    ],
     "proof": [
       {
         "type": "Web",
@@ -342,6 +654,18 @@
         "title": "Welstand Agri rebrand",
         "detail": "Delivered the rebrand collateral that connected business development with visual and digital execution."
       }
+    ],
+    "responsibilities": [
+      "Appointment scheduling",
+      "Client acquisition",
+      "Quoting & sales admin",
+      "Welstand Agri website build",
+      "Franchise rebrand collateral",
+      "Brand templates",
+      "Advisor & agent coordination",
+      "Policy-service workflows",
+      "Self-taught web stack",
+      "Booking & enquiry systems"
     ]
   },
   {
@@ -350,15 +674,32 @@
     "org": "Investors Choice",
     "brandMark": "IC",
     "brandColor": "info",
-    "tags": ["Foundations"],
+    "tags": [
+      "Foundations"
+    ],
     "detail": "Early software telesales at 200–250 calls a day — product conversation, lead handling, data capture, trading-software training and daily lead reports. The sales discipline everything later was built on.",
-    "software": ["CRM", "Google Workspace"],
+    "software": [
+      "CRM",
+      "Google Workspace"
+    ],
     "proof": [
       {
         "type": "Sales",
         "title": "200–250 calls a day",
         "detail": "Built the early discipline of high-volume outreach, data capture and daily reporting that underpins the rest of the career."
       }
+    ],
+    "responsibilities": [
+      "200–250 calls a day",
+      "Software product pitching",
+      "Lead handling",
+      "Data capture",
+      "Trading-software training",
+      "Daily lead reports",
+      "Pipeline qualification",
+      "Customer conversations at volume",
+      "CRM hygiene",
+      "Target discipline"
     ]
   }
 ]

@@ -21,11 +21,11 @@ export function Credentials({ certs, site }: { certs: CertsData; site: SiteConfi
             <div className="text-label-l text-accent mb-4">Credentials</div>
           </Reveal>
           <Reveal delay={0.05}>
-            <h2 className="text-headline-l text-on-surface">Certified & verified.</h2>
+            <h2 className="text-headline-l text-on-surface">Certified & <span className="text-gradient text-gradient-animated">verified.</span></h2>
           </Reveal>
         </div>
         <Reveal delay={0.1}>
-          <p className="max-w-[330px] text-body-m text-on-surface-variant">Real, verified credentials — issued and dated by the platforms behind them.</p>
+          <p className="max-w-[330px] text-body-m text-on-surface-variant">Real, verified credentials — <span className="text-mark">issued and dated</span> by the platforms behind them.</p>
         </Reveal>
         <Reveal delay={0.12}>
           <div className="section-proof-strip">

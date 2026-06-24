@@ -21,11 +21,11 @@ export function WorkTeaser({ projects }: { projects: Project[] }) {
             <div className="text-label-l text-success mb-4">Selected Work</div>
           </Reveal>
           <Reveal delay={0.05}>
-            <h2 className="text-headline-l text-on-surface">Proof, not portfolio filler.</h2>
+            <h2 className="text-headline-l text-on-surface"><span className="text-gradient text-gradient-animated">Proof</span>, not portfolio filler.</h2>
           </Reveal>
           <Reveal delay={0.08}>
             <p className="mt-4 max-w-[560px] text-body-m text-on-surface-variant">
-              Three proof routes: a flagship brand ecosystem, a live learning platform and production work with commercial pressure behind it.
+              Three proof routes: a flagship brand ecosystem, a live learning platform and production work with <span className="text-mark">commercial pressure</span> behind it.
             </p>
           </Reveal>
         </div>

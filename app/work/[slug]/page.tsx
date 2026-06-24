@@ -12,7 +12,8 @@ import { RelatedWork } from "@/components/RelatedWork";
 import { ExternalLinks } from "@/components/ExternalLinks";
 import { Footer } from "@/components/Footer";
 import { mdxComponents } from "@/components/MdxComponents";
-import { SEED_TEXT, SEED_CONTAINER_BG, SEED_CONTAINER_TEXT } from "@/lib/seed-classes";
+import { RollingList } from "@/components/RollingList";
+import { SEED_BG, SEED_TEXT, SEED_CONTAINER_BG, SEED_CONTAINER_TEXT } from "@/lib/seed-classes";
 import { getAllProjects, getProjectBySlug, getAdjacentProjects, getSiteConfig } from "@/lib/content";
 import { SITE_URL } from "@/lib/site-url";
 
@@ -125,6 +126,23 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                   <div className="text-body-s text-on-surface-variant mt-1">{m.label}</div>
                 </div>
               ))}
+            </div>
+          </Reveal>
+        )}
+
+        {project.responsibilities && project.responsibilities.length > 0 && (
+          <Reveal delay={0.12}>
+            <div className="project-roll hig-card mb-10 rounded-[22px] p-5 md:mb-12 md:p-6">
+              <div className="mb-2.5 flex items-center gap-2 text-label-m text-on-surface-variant">
+                <span className={`project-roll-dot ${SEED_BG[project.seed]}`} aria-hidden="true" />
+                Roles &amp; responsibilities
+              </div>
+              <RollingList
+                items={project.responsibilities}
+                className="project-roll-list"
+                itemClassName={`project-roll-item ${SEED_TEXT[project.seed]}`}
+                height="1.7em"
+              />
             </div>
           </Reveal>
         )}

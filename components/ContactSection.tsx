@@ -44,7 +44,7 @@ export function ContactSection({ site }: { site: SiteConfig }) {
         <h2 className="m-0 text-display-m text-on-surface md:text-display-l">
           Let&apos;s build
           <br />
-          something <span className="text-primary">that lasts.</span>
+          something <span className="text-gradient text-gradient-animated">that lasts.</span>
         </h2>
       </Reveal>
 

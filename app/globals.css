@@ -2582,3 +2582,105 @@ body {
   50% { transform: scale(1.05); }
 }
 .feature-glyph { display: inline-block; }
+
+/* ---------- Career rolling responsibilities ---------- */
+.career-roll {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 12px;
+}
+.career-roll-dot {
+  width: 7px;
+  height: 7px;
+  flex: none;
+  border-radius: 999px;
+  animation: careerRollDot 2.3s ease-in-out infinite;
+}
+@keyframes careerRollDot {
+  0%, 100% { transform: scale(0.82); opacity: 0.65; }
+  50% { transform: scale(1.12); opacity: 1; }
+}
+.career-roll-list {
+  position: relative;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.career-roll-item {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ---------- Project rolling responsibilities ---------- */
+.project-roll-dot {
+  width: 8px;
+  height: 8px;
+  flex: none;
+  display: inline-block;
+  border-radius: 999px;
+  animation: careerRollDot 2.3s ease-in-out infinite;
+}
+.project-roll-list {
+  position: relative;
+  display: block;
+}
+.project-roll-item {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(21px, 3.2vw, 30px);
+  line-height: 1.22;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ---------- Clever text treatments ---------- */
+.text-gradient {
+  color: var(--color-primary);
+  background-image: linear-gradient(100deg,
+    var(--color-primary) 0%,
+    var(--color-tertiary) 48%,
+    var(--color-secondary) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+.text-gradient-animated {
+  background-size: 220% 100%;
+  animation: textGradientShift 9s ease-in-out infinite;
+}
+@keyframes textGradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+/* Marker-style highlight behind a key phrase */
+.text-mark {
+  background-image: linear-gradient(transparent 62%, color-mix(in srgb, var(--color-highlight) 38%, transparent) 0);
+  padding-inline: 0.06em;
+  border-radius: 2px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+@supports not ((background-clip: text) or (-webkit-background-clip: text)) {
+  .text-gradient {
+    background-image: none;
+    color: var(--color-primary);
+    -webkit-text-fill-color: currentColor;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .text-gradient-animated,
+  .career-roll-dot,
+  .project-roll-dot {
+    animation: none;
+  }
+}

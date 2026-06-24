@@ -17,6 +17,7 @@ const TAG_TINT: Record<string, string> = {
 
 export function Hero({ site }: { site: SiteConfig }) {
   const innerRef = useRef<HTMLDivElement>(null);
+  const heroPositionParts = site.heroPosition.split("usable systems");
 
   useEffect(() => {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -66,9 +67,9 @@ export function Hero({ site }: { site: SiteConfig }) {
         <h1 aria-label={`${site.name}.`} className="m-0 max-w-[900px] text-display-l text-on-surface lg:max-w-[980px] xl:max-w-[1080px]">
           {site.name.split(" ").map((word, i) => (
             <span key={i} className="hero-mask block overflow-hidden pb-[0.04em]">
-              <span className="hero-inner-line block">
+              <span className={`hero-inner-line block ${i === site.name.split(" ").length - 1 ? "text-gradient text-gradient-animated" : ""}`}>
                 {word}
-                {i === site.name.split(" ").length - 1 ? <span className="text-primary">.</span> : null}
+                {i === site.name.split(" ").length - 1 ? "." : null}
               </span>
             </span>
           ))}
@@ -83,7 +84,15 @@ export function Hero({ site }: { site: SiteConfig }) {
         </div>
 
         <p className="hero-pos mt-7 max-w-[680px] text-body-l text-on-surface-variant md:mt-8 md:text-title-l">
-          {site.heroPosition}
+          {heroPositionParts.length === 2 ? (
+            <>
+              {heroPositionParts[0]}
+              <span className="text-mark">usable systems</span>
+              {heroPositionParts[1]}
+            </>
+          ) : (
+            site.heroPosition
+          )}
         </p>
 
         <div className="mt-8 flex flex-wrap gap-3 md:mt-10 md:gap-3.5">

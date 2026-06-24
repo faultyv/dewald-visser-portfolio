@@ -70,13 +70,13 @@ export function Pillars() {
               <h2 className="text-headline-l text-on-surface">
                 Connected disciplines,
                 <br />
-                one operator.
+                <span className="text-gradient text-gradient-animated">one operator.</span>
               </h2>
             </Reveal>
           </div>
           <Reveal delay={0.1}>
             <p className="max-w-[390px] text-body-m text-on-surface-variant">
-              The advantage is the handoff between them: strategy shapes the offer, design carries the message, web systems make it usable and AI tightens the workflow.
+              The advantage is the handoff between them: strategy shapes the offer, design carries the message, web systems make it usable and <span className="text-mark">AI tightens the workflow.</span>
             </p>
           </Reveal>
         </div>

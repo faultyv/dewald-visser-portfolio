@@ -26,11 +26,11 @@ export default function WorkPage() {
           <div className="text-label-l text-success mb-4">Selected Work</div>
         </Reveal>
         <Reveal delay={0.05}>
-          <h1 className="text-display-s text-on-surface max-w-[820px]">Work that proves the range.</h1>
+          <h1 className="text-display-s text-on-surface max-w-[820px]">Work that proves <span className="text-gradient text-gradient-animated">the range.</span></h1>
         </Reveal>
         <Reveal delay={0.1}>
           <p className="text-body-l text-on-surface-variant max-w-[620px] mt-5">
-            {projects.length} projects across marketing, web, brand and systems. Filter by discipline, then dive into the evidence behind each result.
+            {projects.length} projects across marketing, web, brand and systems. Filter by discipline, then dive into the <span className="text-mark">evidence behind each result.</span>
           </p>
         </Reveal>
       </section>

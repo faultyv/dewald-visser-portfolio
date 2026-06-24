@@ -4,8 +4,9 @@ import Image from "next/image";
 import { motion } from "motion/react";
 import { Reveal, StaggerGroup } from "./Reveal";
 import { IconSymbol } from "./IconSymbol";
+import { RollingList } from "./RollingList";
 import { tagSeed } from "@/lib/tag-seed";
-import { SEED_BG, SEED_ON, SEED_CONTAINER_BG, SEED_CONTAINER_TEXT } from "@/lib/seed-classes";
+import { SEED_BG, SEED_ON, SEED_TEXT, SEED_CONTAINER_BG, SEED_CONTAINER_TEXT } from "@/lib/seed-classes";
 import type { CVEntry } from "@/lib/content";
 
 const ROLE_ICON: Record<string, string> = {
@@ -94,6 +95,17 @@ function RoleRow({ entry }: { entry: CVEntry }) {
           </div>
         </div>
 
+        {entry.responsibilities?.length ? (
+          <div className="career-roll">
+            <span className={`career-roll-dot ${SEED_BG[brandSeed]}`} aria-hidden="true" />
+            <RollingList
+              items={entry.responsibilities}
+              className="career-roll-list"
+              itemClassName={`career-roll-item ${SEED_TEXT[brandSeed]}`}
+            />
+          </div>
+        ) : null}
+
         <p className="career-story-copy text-body-m text-on-surface-variant">{entry.detail}</p>
 
         {proof.length ? (
@@ -132,7 +144,7 @@ export function CareerExplorer({ cv }: { cv: CVEntry[] }) {
             <div className="text-label-l text-tertiary">Career evidence</div>
           </Reveal>
           <Reveal delay={0.05}>
-            <h2 className="text-headline-l text-on-surface">A career arc built around ownership.</h2>
+            <h2 className="text-headline-l text-on-surface">A career arc built around <span className="text-gradient text-gradient-animated">ownership.</span></h2>
           </Reveal>
           <Reveal delay={0.1}>
             <p className="m-0 max-w-[620px] text-body-l text-on-surface-variant">
@@ -147,8 +159,8 @@ export function CareerExplorer({ cv }: { cv: CVEntry[] }) {
               <div className="text-label-l text-primary">Operating progression</div>
               <h3 className="mt-4 text-display-s text-on-surface">Sales floor to systems owner.</h3>
               <p className="mt-5 max-w-[680px] text-body-l text-on-surface-variant">
-                The roles move from customer conversations and CRM discipline into Adobe-led production, then into websites, campaigns, operational tooling and venture ownership. The portfolio makes sense when it is read as that progression.
-              </p>
+              The roles move from customer conversations and CRM discipline into Adobe-led production, then into websites, campaigns, operational tooling and venture ownership. The portfolio makes sense when it is read as <span className="text-mark">that progression.</span>
+            </p>
               <div className="career-signal-ledger">
                 {SIGNALS.map((signal) => (
                   <div key={signal.label} className="career-ledger-item">
