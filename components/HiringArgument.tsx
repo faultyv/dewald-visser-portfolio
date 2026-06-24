@@ -179,7 +179,7 @@ export function HiringArgument({
                   </div>
                 ))}
               </div>
-              <div className={`mt-5 rounded-2xl p-3 text-body-s ${SEED_CONTAINER_BG[lane.seed]} ${SEED_CONTAINER_TEXT[lane.seed]}`}>
+              <div className={`hire-proof-trail mt-5 p-3 text-body-s ${SEED_CONTAINER_BG[lane.seed]} ${SEED_CONTAINER_TEXT[lane.seed]}`}>
                 <strong className="mb-1 block text-label-s">Proof trail</strong>
                 {lane.proof}
               </div>

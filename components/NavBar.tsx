@@ -42,14 +42,26 @@ export function NavBar({ name = "Dewald Visser" }: { name?: string }) {
 
     const updateActive = () => {
       frame = 0;
-      const anchor = Math.min(190, window.innerHeight * 0.3);
+      const viewportHeight = window.innerHeight;
+      const focusLine = Math.min(360, viewportHeight * 0.42);
+      const visibleTop = Math.min(124, viewportHeight * 0.18);
+      const visibleBottom = viewportHeight * 0.78;
       let current = "hero";
+      let bestScore = Number.NEGATIVE_INFINITY;
 
       for (const id of ids) {
         const node = document.getElementById(id);
         if (!node) continue;
         const rect = node.getBoundingClientRect();
-        if (rect.top <= anchor) current = id;
+        const overlap = Math.max(0, Math.min(rect.bottom, visibleBottom) - Math.max(rect.top, visibleTop));
+        const ownsFocusLine = rect.top <= focusLine && rect.bottom >= focusLine;
+        const distancePenalty = Math.abs(rect.top - focusLine) * 0.02;
+        const score = overlap + (ownsFocusLine ? 420 : 0) - distancePenalty;
+
+        if (score > bestScore) {
+          bestScore = score;
+          current = id;
+        }
       }
 
       setActive(current);
@@ -69,7 +81,7 @@ export function NavBar({ name = "Dewald Visser" }: { name?: string }) {
       window.removeEventListener("scroll", scheduleUpdate);
       window.removeEventListener("resize", scheduleUpdate);
     };
-  }, []);
+  }, [pathname]);
 
   return (
     <nav className="hig-glass !overflow-visible fixed left-3 right-3 top-3 z-[80] flex items-center justify-between rounded-[24px] px-3.5 py-2.5 sm:left-5 sm:right-5 sm:px-4 xl:left-8 xl:right-8 xl:py-3">

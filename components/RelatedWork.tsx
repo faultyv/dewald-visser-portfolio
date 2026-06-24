@@ -33,20 +33,26 @@ export function RelatedWork({ current, all }: { current: Project; all: Project[]
   if (!items.length) return null;
 
   return (
-    <div className="mt-16 border-t border-outline-variant pt-10">
-      <div className="mb-1.5 flex items-center gap-2 text-label-l text-on-surface-variant">
-        <IconSymbol name="hub" size={16} className="text-primary" />
-        Related work
+    <section className="related-work-section">
+      <div className="related-work-head">
+        <div>
+          <div className="mb-1.5 flex items-center gap-2 text-label-l text-on-surface-variant">
+            <IconSymbol name="hub" size={16} className="text-primary" />
+            Related work
+          </div>
+          <h2 className="m-0 text-headline-s text-on-surface">Follow the connected proof.</h2>
+        </div>
+        <p className="m-0 text-body-m text-on-surface-variant">{label}</p>
       </div>
-      <div className="mb-6 max-w-[640px] text-body-m text-on-surface">{label}</div>
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+
+      <div className="related-work-grid">
         {items.map((p) => (
           <Link key={p.slug} href={`/work/${p.slug}`} className="group block no-underline">
-            <div className="hig-card overflow-hidden rounded-[20px]">
-              <div className="relative aspect-[16/10]">
+            <div className="related-work-card hig-card overflow-hidden">
+              <div className="relative aspect-[4/3]">
                 <ProjectCoverVisual project={p} sizes="(max-width:768px) 90vw, 360px" />
               </div>
-              <div className="flex items-center justify-between gap-3 p-4">
+              <div className="flex items-center justify-between gap-3 p-4.5">
                 <div className="min-w-0">
                   <div className="truncate text-title-s text-on-surface">{p.title}</div>
                   <div className="mt-0.5 truncate text-label-s text-on-surface-variant">{p.label} · {p.period}</div>
@@ -56,7 +62,18 @@ export function RelatedWork({ current, all }: { current: Project; all: Project[]
             </div>
           </Link>
         ))}
+        <div className="related-work-logic hig-glass">
+          <div className="text-label-s text-primary">Connection logic</div>
+          <p>
+            This is not random browsing. These pieces share the same operating thread: strategy becoming visible assets, media, web systems and production work that can actually be shipped.
+          </p>
+          <div>
+            {current.categories.map((category) => (
+              <span key={category}>{category}</span>
+            ))}
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }

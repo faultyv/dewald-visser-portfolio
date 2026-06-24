@@ -97,7 +97,7 @@ export function ProjectGallery({ gallery }: { gallery: GalleryItem[] }) {
             data-gallery-index={i}
             onPointerDown={() => setOpenIdx(i)}
             onClick={() => setOpenIdx(i)}
-            className={`group relative min-h-0 cursor-pointer overflow-hidden rounded-lg border border-outline-variant bg-surface-container-low p-0 text-left elevation-1 state-layer aspect-[1.42/1] sm:aspect-square md:aspect-auto md:h-full ${tileClass(i, media.length)}`}
+            className={`project-gallery-tile group relative min-h-0 cursor-pointer overflow-hidden border border-outline-variant bg-surface-container-low p-0 text-left elevation-1 state-layer aspect-[1.42/1] sm:aspect-square md:aspect-auto md:h-full ${tileClass(i, media.length)}`}
           >
             <Image
               src={g.src!}
@@ -139,7 +139,7 @@ export function ProjectGallery({ gallery }: { gallery: GalleryItem[] }) {
                   className="fixed inset-0 z-[121] flex items-center justify-center p-3 md:p-6"
                 >
                   <Dialog.Title className="sr-only">{selected.label}</Dialog.Title>
-                  <div className="relative grid h-[min(84vh,760px)] w-full max-w-6xl grid-rows-[1fr_auto] overflow-hidden rounded-lg border border-outline bg-surface-container-high elevation-4">
+                  <div className="project-gallery-dialog relative grid h-[min(84vh,760px)] w-full max-w-6xl grid-rows-[1fr_auto] overflow-hidden border border-outline bg-surface-container-high elevation-4">
                     <div className="relative min-h-0 bg-scrim">
                       <AnimatePresence mode="wait">
                         <motion.div

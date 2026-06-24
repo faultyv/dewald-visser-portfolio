@@ -4,10 +4,12 @@ import type { Project } from "@/lib/content";
 
 export function ProjectPager({ prev, next }: { prev: Project | null; next: Project | null }) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5 mt-4">
+    <nav className="project-pager-grid" aria-label="Project navigation">
       {prev && (
-        <Link href={`/work/${prev.slug}`} className="state-layer no-underline rounded-xl border border-outline bg-surface-container p-5 flex items-center gap-3">
-          <IconSymbol name="arrow_back" size={20} className="text-on-surface-variant" />
+        <Link href={`/work/${prev.slug}`} className="project-pager-card state-layer">
+          <span className="project-pager-icon">
+            <IconSymbol name="arrow_back" size={21} />
+          </span>
           <div>
             <div className="text-label-m text-on-surface-variant">Previous</div>
             <div className="text-title-m text-on-surface">{prev.title}</div>
@@ -15,14 +17,16 @@ export function ProjectPager({ prev, next }: { prev: Project | null; next: Proje
         </Link>
       )}
       {next && (
-        <Link href={`/work/${next.slug}`} className="state-layer no-underline rounded-xl border border-outline bg-surface-container p-5 flex items-center justify-end gap-3 text-right">
+        <Link href={`/work/${next.slug}`} className="project-pager-card state-layer is-next">
           <div>
             <div className="text-label-m text-on-surface-variant">Next</div>
             <div className="text-title-m text-on-surface">{next.title}</div>
           </div>
-          <IconSymbol name="arrow_forward" size={20} className="text-on-surface-variant" />
+          <span className="project-pager-icon">
+            <IconSymbol name="arrow_forward" size={21} />
+          </span>
         </Link>
       )}
-    </div>
+    </nav>
   );
 }
