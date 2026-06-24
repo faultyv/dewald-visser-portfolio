@@ -70,6 +70,22 @@
   --font-symbols: "Material Symbols Rounded";
 }
 
+span.font-symbols {
+  display: inline-block;
+  font-family: "Material Symbols Rounded" !important;
+  font-feature-settings: "liga";
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: normal;
+  line-height: 1;
+  text-transform: none;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
+}
+
 :root,
 html[data-theme="light"] {
   color-scheme: light;
@@ -2510,6 +2526,73 @@ body {
   font: 650 13px/1.35 var(--font-body);
 }
 
+.project-media-runway {
+  display: grid;
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.project-media-runway-item {
+  position: relative;
+  min-height: 260px;
+  overflow: hidden;
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--shape-squircle-lg);
+  background: var(--color-surface-container-high);
+  box-shadow: 0 22px 60px -42px var(--m3-shadow);
+  isolation: isolate;
+}
+
+.project-media-runway-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(180deg, transparent 44%, rgba(0, 0, 0, 0.68)),
+    radial-gradient(circle at 18% 16%, rgba(255, 255, 255, 0.24), transparent 32%);
+  pointer-events: none;
+}
+
+.project-media-runway-item img {
+  transition: transform 1.1s cubic-bezier(0.2, 0, 0, 1);
+}
+
+.project-media-runway-item:hover img {
+  transform: scale(1.035);
+}
+
+.project-media-runway-item figcaption {
+  position: absolute;
+  inset-inline: 14px;
+  bottom: 14px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: calc(100% - 28px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--shape-squircle-md);
+  background: rgba(12, 16, 31, 0.58);
+  padding: 10px 12px;
+  color: #fff;
+  font: 750 13px/1.25 var(--font-body);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.project-media-runway.is-duo .project-media-runway-item:not(.is-feature) {
+  min-height: 360px;
+}
+
+.project-media-runway.is-solo {
+  grid-template-columns: 1fr;
+}
+
+.project-media-runway.is-solo .project-media-runway-item.is-feature {
+  min-height: 430px;
+}
+
 .related-work-section {
   margin-top: 64px;
   border-top: 1px solid var(--color-outline-variant);
@@ -2639,6 +2722,30 @@ body {
 
   .project-editorial-thumbs {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .project-media-runway {
+    grid-template-columns: minmax(0, 1.32fr) minmax(280px, 0.68fr);
+    grid-auto-rows: 250px;
+  }
+
+  .project-media-runway-item.is-feature {
+    grid-row: span 2;
+    min-height: 514px;
+  }
+
+  .project-media-runway.is-solo {
+    grid-template-columns: 1fr;
+  }
+
+  .project-media-runway.is-solo .project-media-runway-item.is-feature {
+    grid-row: auto;
+    min-height: 500px;
+  }
+
+  .project-media-runway.is-duo .project-media-runway-item:not(.is-feature) {
+    grid-row: span 2;
+    min-height: 514px;
   }
 
   .related-work-grid {
@@ -3350,6 +3457,7 @@ body {
 .project-editorial-responsibilities,
 .project-editorial-thumbs figure,
 .project-editorial-metric,
+.project-media-runway-item,
 .related-work-card,
 .related-work-logic,
 .project-pager-card,

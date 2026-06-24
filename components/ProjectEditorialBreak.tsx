@@ -12,6 +12,7 @@ export function ProjectEditorialBreak({ project }: ProjectEditorialBreakProps) {
   const media = project.gallery.filter((item) => item.src).slice(0, 3);
   const hero = media[0];
   const secondary = media.slice(1);
+  const runway = project.gallery.filter((item) => item.src).slice(3, 7);
   const responsibilities = project.responsibilities?.slice(0, 5) ?? [];
 
   if (!hero && !project.cover && !responsibilities.length) return null;
@@ -97,6 +98,31 @@ export function ProjectEditorialBreak({ project }: ProjectEditorialBreakProps) {
           </div>
         </aside>
       </div>
+
+      {runway.length ? (
+        <div
+          className={`project-media-runway ${runway.length === 1 ? "is-solo" : runway.length === 2 ? "is-duo" : ""}`}
+          aria-label={`${project.title} visual proof`}
+        >
+          {runway.map((item, index) => (
+            <figure key={item.id} className={`project-media-runway-item m-0 ${index === 0 ? "is-feature" : ""}`}>
+              <Image
+                src={item.src!}
+                alt={item.label}
+                fill
+                className="object-cover"
+                sizes={index === 0 ? "(max-width: 768px) 92vw, 720px" : "(max-width: 768px) 92vw, 380px"}
+              />
+              <figcaption>
+                <span className={`project-editorial-icon ${SEED_BG[project.seed]} ${SEED_ON[project.seed]}`}>
+                  <IconSymbol name={index === 0 ? "fullscreen" : "auto_awesome"} size={18} filled />
+                </span>
+                <span>{item.label}</span>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      ) : null}
     </section>
   );
 }
