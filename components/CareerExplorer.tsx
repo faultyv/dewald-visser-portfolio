@@ -59,7 +59,7 @@ const CAREER_INTEL = [
   {
     label: "AI adoption proof",
     value: "LCIBS",
-    body: "Early AI programme-launch and change-readiness work under former Apple executive Brent Kilpatrick.",
+    body: "Early AI programme-launch and change-readiness work under Brett Kilpatrick, a former Apple executive.",
   },
   {
     label: "Promotion signal",
@@ -67,9 +67,14 @@ const CAREER_INTEL = [
     body: "Moved from online education launch support into LCIBS international admissions as the brand expanded.",
   },
   {
-    label: "Production scale",
-    value: "500+ live",
-    body: "Business-school live production, learning media, campaign support and LMS/web systems under public delivery pressure.",
+    label: "Global programme proof",
+    value: "JBSA",
+    body: "American entrepreneurship-school programme turned into an Africa growth engine through campaigns, media, funnels and LMS/web systems.",
+  },
+  {
+    label: "Commercial model",
+    value: "Self-run",
+    body: "Masterclass demand, recorded content and sales enablement shaped into a more self-sustaining business-school model.",
   },
   {
     label: "Systems proof",
@@ -182,7 +187,7 @@ export function CareerExplorer({ cv }: { cv: CVEntry[] }) {
               <div className="text-label-l text-primary">Operating progression</div>
               <h3 className="mt-4 text-display-s text-on-surface">Education brands to systems owner.</h3>
               <p className="mt-5 max-w-[680px] text-body-l text-on-surface-variant">
-              The roles move from software sales, Damelin Online launch work and LCIBS international admissions into Adobe-led production, then into websites, campaigns, operational tooling and venture ownership. The portfolio makes sense when it is read as <span className="text-mark">that progression.</span>
+              The roles move from software sales, Damelin Online launch work and LCIBS international admissions into early AI-readiness, Adobe-led production, global business-school programme work, websites, campaigns, operational tooling and venture ownership. The portfolio makes sense when it is read as <span className="text-mark">that progression.</span>
             </p>
               <div className="career-signal-ledger">
                 {SIGNALS.map((signal) => (

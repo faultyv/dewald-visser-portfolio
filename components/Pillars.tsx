@@ -49,7 +49,7 @@ const PILLARS: { n: string; seed: SeedName; icon: string; title: string; proof: 
     title: "Practical AI Enablement",
     proof: "Workflow layer",
     summary: "AI treated as adoption work: launch the idea, train the humans, create the review loop and turn the logic into tools people can actually use.",
-    items: ["Early LCIBS AI-programme launch work under former Apple executive direction", "Operationalised Canva + ChatGPT inside a live content workflow", "Converted tangled spreadsheet logic into a web-based CPQ tool"],
+    items: ["Early LCIBS AI-readiness work under Brett Kilpatrick", "Operationalised Canva + ChatGPT inside the JBSA content engine", "Converted tangled spreadsheet logic into a web-based CPQ tool"],
   },
 ];
 
@@ -123,7 +123,7 @@ export function Pillars() {
                         </div>
                       </div>
                       <div className="ai-console-output">
-                        <span>former Apple exec</span>
+                        <span>Brett Kilpatrick</span>
                         <span>HR readiness</span>
                         <span>workflow tools</span>
                       </div>
@@ -139,7 +139,7 @@ export function Pillars() {
                       />
                       <figcaption>
                         <strong>Before AI was normal office language.</strong>
-                        LCIBS programme-launch proof: AI adoption, training context and human readiness.
+                        LCIBS programme-launch proof: AI readiness, training context and human adoption before the market caught up.
                       </figcaption>
                     </figure>
                     <div className="grid gap-2.5">

@@ -67,9 +67,9 @@ export function OperatingSpine({
   const hasEducationBrands = cv.some((entry) => entry.org === "Damelin Online / LCIBS");
 
   const proofSignals = [
-    { value: "LCIBS", label: "early AI adoption", body: "programme-launch and readiness work under former Apple executive direction" },
+    { value: "LCIBS", label: "early AI readiness", body: "programme-launch and readiness work under Brett Kilpatrick" },
     { value: hasEducationBrands ? "10 mo" : "CRM", label: "promotion signal", body: "Damelin Online launch support into international admissions" },
-    { value: "500+", label: "live audience", body: "business-school programme production" },
+    { value: "JBSA", label: "global programme", body: "US-founded school, Africa sales and content engine" },
     { value: `${responsibilityCount}+`, label: "mapped moves", body: "responsibilities made visible across career and projects" },
   ];
 

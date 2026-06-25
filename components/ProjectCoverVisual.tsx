@@ -18,9 +18,9 @@ const HERO_COPY: Record<string, { eyebrow: string; headline: string; body: strin
     icon: "auto_stories",
   },
   "joseph-business-school": {
-    eyebrow: "Learning media system",
-    headline: "Live teaching turned into reusable demand.",
-    body: "Web, recorded content, funnels and public video proof working together around an entrepreneur school.",
+    eyebrow: "US programme · Africa growth",
+    headline: "A business school turned into a demand engine.",
+    body: "Masterclasses, livestreams, funnels, learning media and web/LMS systems working together around entrepreneur education.",
     icon: "school",
   },
   "dynamic-automation": {
@@ -44,7 +44,7 @@ const HERO_COPY: Record<string, { eyebrow: string; headline: string; body: strin
   "campaign-creative": {
     eyebrow: "Damelin Online · LCIBS",
     headline: "Education campaigns with early AI readiness.",
-    body: "Admissions, CRM, creative assets and AI-programme launch proof under former Apple executive direction.",
+    body: "Admissions, CRM, creative assets and AI-readiness proof under Brett Kilpatrick during the LCIBS period.",
     icon: "psychology_alt",
   },
 };

@@ -54,8 +54,10 @@ export function NavBar({ name = "Dewald Visser" }: { name?: string }) {
   };
 
   useEffect(() => {
+    const bridgeIds = ["spine", "hire-case", "global-proof"];
     const ids = [
       "hero",
+      ...bridgeIds,
       ...LINKS.map((link) => (link.href === "/work" ? "work" : link.href.split("#")[1])).filter(Boolean),
     ];
     let frame = 0;

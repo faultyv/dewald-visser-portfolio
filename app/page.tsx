@@ -2,6 +2,7 @@ import { Hero } from "@/components/Hero";
 import { About } from "@/components/About";
 import { OperatingSpine } from "@/components/OperatingSpine";
 import { HiringArgument } from "@/components/HiringArgument";
+import { GlobalProofArc } from "@/components/GlobalProofArc";
 import { CraftSystem } from "@/components/CraftSystem";
 import { Pillars } from "@/components/Pillars";
 import { Method } from "@/components/Method";
@@ -30,6 +31,7 @@ export default function Home() {
       <About site={site} />
       <OperatingSpine cv={cv} projects={projects} companies={companies} />
       <HiringArgument cv={cv} projects={projects} companies={companies} />
+      <GlobalProofArc />
       <CraftSystem site={site} />
       <WorkTeaser projects={projects} />
       <Pillars />

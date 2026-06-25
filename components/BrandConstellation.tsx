@@ -18,7 +18,7 @@ type Domain = {
 
 const DOMAINS: Domain[] = [
   { id: "ventures", label: "Ventures", seed: "secondary", icon: "storefront", note: "Founder-led offers and owned systems" },
-  { id: "ministry", label: "Education & Ministry", seed: "success", icon: "school", note: "Learning, media and mission work" },
+  { id: "ministry", label: "Education & Mission", seed: "success", icon: "school", note: "Learning, programmes, media and mission work" },
   { id: "retail", label: "Retail & Production", seed: "tertiary", icon: "inventory_2", note: "DTP, POS, repro and house brands" },
   { id: "web", label: "Web, Brand & Growth", seed: "primary", icon: "language", note: "Campaigns, sites and operational tooling" },
   { id: "foundations", label: "Commercial Foundations", seed: "warning", icon: "workspace_premium", note: "Software sales, business development and lead discipline" },
@@ -72,10 +72,10 @@ const ICON_BY_COMPANY: Record<string, string> = {
 
 const THREADS: { label: string; seed: SeedName; icon: string; body: string }[] = [
   {
-    label: "Ministry, education & production group",
+    label: "Education, mission & production group",
     seed: "highlight",
     icon: "hub",
-    body: "The Dreambook ministry work, Joseph Business School Africa and Mediatrade — connected work across ministry, education and production.",
+    body: "The Dreambook, Joseph Business School Africa and Mediatrade - connected work across mission-led brands, programme education and production.",
   },
   {
     label: "clicklocal agency",
@@ -163,7 +163,7 @@ export function BrandConstellation({ companies }: { companies: CompanyEntry[] })
           </div>
           <Reveal delay={0.1}>
             <p className="m-0 max-w-[440px] text-body-m text-on-surface-variant">
-              {companies.length} organisations grouped by the kind of pressure they created: owned ventures, education and ministry, production,
+              {companies.length} organisations grouped by the kind of pressure they created: owned ventures, education and mission work, production,
               <span className="text-mark"> web growth and professional commercial foundations.</span>
             </p>
           </Reveal>

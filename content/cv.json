@@ -177,7 +177,7 @@
   },
   {
     "date": "2022 – 2025",
-    "role": "Multimedia Specialist",
+    "role": "Business Programme & Growth Systems Specialist",
     "org": "Joseph Business School Africa",
     "brandMark": "JBS",
     "brandColor": "success",
@@ -186,7 +186,7 @@
       "Web",
       "Marketing"
     ],
-    "detail": "Multimedia, design, web and campaign delivery for an international business school — livestreaming masterclasses and events to audiences of 500-plus, producing learning and brand content, running the web and LMS systems behind the programmes, and operationalising Canva and ChatGPT across the team's content workflow.",
+    "detail": "Business-programme, multimedia, web and campaign delivery for Joseph Business School Africa, the African hub of a US-founded entrepreneurship programme. Built the marketing and content engine around masterclasses, livestreams, funnels, LMS/web systems, recorded learning media and Canva plus ChatGPT-enabled production. The work helped the Africa operation become one of the strongest-performing JBS locations globally, with high sales performance and a more self-sustaining programme model.",
     "software": [
       "Photoshop",
       "Illustrator",
@@ -204,19 +204,26 @@
         "detail": "Ran multimedia and live production for masterclasses and events reaching audiences of 500 and more."
       },
       {
+        "type": "Growth",
+        "title": "Global JBS benchmark",
+        "detail": "Supported the Africa programme engine with campaigns, funnels, learning media and operating rhythm strong enough to compete with global flagship teams."
+      },
+      {
         "type": "AI rollout",
         "title": "Canva + ChatGPT adoption",
         "detail": "Introduced and operationalised Canva and ChatGPT into the content and marketing workflow."
       },
       {
         "type": "Systems",
-        "title": "Web, LMS & campaigns",
-        "detail": "Built and supported the web, LMS and campaign systems that present and promote programmes."
+        "title": "Self-sustaining programme model",
+        "detail": "Connected masterclass demand, recorded content, web/LMS surfaces and campaign assets into a repeatable programme growth system."
       }
     ],
     "responsibilities": [
       "Livestream production (500+)",
       "Masterclass & event media",
+      "Business-programme support",
+      "Sales-funnel strategy",
       "Learning & brand content",
       "Web & LMS systems",
       "Campaign delivery",
@@ -224,6 +231,7 @@
       "Social & email creative",
       "Motion & video assets",
       "Programme promotion",
+      "Self-sustaining model",
       "Content-workflow systems"
     ]
   },
@@ -551,7 +559,7 @@
       "Design",
       "AI"
     ],
-    "detail": "Worked across Damelin Online launch activity and LCIBS international admissions: enquiry-to-enrolment conversion, CRM discipline, student advising, reporting and analytics, plus templates, booklets, email creative and animated adverts. The LCIBS period also included early AI adoption work under former Apple executive Brent Kilpatrick, including programme-launch and HR/industry-change readiness before AI became mainstream workplace language.",
+    "detail": "Worked across Damelin Online launch activity and LCIBS international admissions: enquiry-to-enrolment conversion, CRM discipline, student advising, reporting and analytics, plus templates, booklets, email creative and animated adverts. The LCIBS period also included early AI-readiness work under Brett Kilpatrick, a former Apple executive, including programme-launch, HR/executive audience positioning and industry-change readiness before AI became mainstream workplace language.",
     "software": [
       "InDesign",
       "After Effects",
@@ -569,8 +577,8 @@
       },
       {
         "type": "AI readiness",
-        "title": "LCIBS early AI adoption",
-        "detail": "Worked under former Apple executive Brent Kilpatrick on AI-readiness thinking for education, industry change and practical training programmes."
+        "title": "AI-readiness under Brett Kilpatrick",
+        "detail": "Worked under Brett Kilpatrick, a former Apple executive, on AI-readiness thinking for education, industry change and practical training programmes."
       },
       {
         "type": "Campaigns",

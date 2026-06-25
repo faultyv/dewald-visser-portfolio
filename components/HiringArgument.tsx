@@ -33,8 +33,8 @@ const VALUE_LANES = [
     icon: "auto_awesome",
     title: "Practical AI adoption",
     pressure: "AI only helps when it becomes adoption: people understand the change, teams trust the workflow, and the output survives human review.",
-    owns: ["LCIBS AI readiness and launch proof", "Canva + ChatGPT rollout", "Spreadsheet logic translated into CPQ tools"],
-    proof: "LCIBS early AI-programme work under former Apple executive Brent Kilpatrick, JBSA adoption work and the CPQ build show AI as change adoption and systems design.",
+    owns: ["LCIBS AI readiness under Brett Kilpatrick", "JBSA Canva + ChatGPT rollout", "Spreadsheet logic translated into CPQ tools"],
+    proof: "LCIBS early AI-readiness work under Brett Kilpatrick, JBSA adoption work and the CPQ build show AI as change adoption, commercial workflow and systems design.",
   },
 ] as const;
 
@@ -90,7 +90,7 @@ export function HiringArgument({
     { value: `${responsibilityCount}+`, label: "mapped responsibilities", detail: "career and project scope made visible" },
     { value: `${companies.length}`, label: "organisations", detail: "ventures, clients, education, production and commercial work" },
     { value: `${projects.length}`, label: "projects", detail: "brand, web, production, campaign and system proof" },
-    { value: "500+", label: "live audience", detail: "business-school programme production" },
+    { value: "JBS", label: "global benchmark", detail: "American programme network, Africa growth engine" },
   ];
 
   return (
@@ -126,7 +126,7 @@ export function HiringArgument({
             </span>
             </div>
             <p className="m-0 text-body-m text-on-surface-variant">
-              This is not a portfolio of disconnected jobs. It is a progression from software sales, Damelin Online and LCIBS admissions into Adobe production, then into web builds, live content systems, organic growth, AI adoption and founder-level ownership. The value is the handoff: fewer gaps between idea, asset, campaign, website and operating system.
+              This is not a portfolio of disconnected jobs. It is a progression from software sales, Damelin Online and LCIBS admissions into Adobe production, then into web builds, live content systems, organic growth, AI adoption and founder-level ownership. The value is the handoff: fewer gaps between idea, asset, campaign, website, sales flow and operating system.
             </p>
 
             <div className="hire-proof-stat-grid mt-6">
