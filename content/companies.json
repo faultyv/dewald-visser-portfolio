@@ -70,8 +70,8 @@
     "name": "Webmeta",
     "mark": "WM",
     "seed": "primary",
-    "relationship": "SEO Executive",
-    "discipline": "Organic search, on-page and technical SEO",
+    "relationship": "Organic Growth Specialist",
+    "discipline": "Search visibility, content performance and technical site health",
     "period": "2022-2024",
     "url": ""
   },
@@ -151,11 +151,11 @@
     "url": ""
   },
   {
-    "name": "Educor Holdings",
-    "mark": "ED",
+    "name": "Damelin Online / LCIBS",
+    "mark": "LC",
     "seed": "secondary",
     "relationship": "Programme Advisor & International Admissions",
-    "discipline": "Campaign creative, admissions, analytics and AI readiness",
+    "discipline": "Damelin Online launch work, LCIBS admissions, analytics and early AI adoption",
     "period": "Nov 2016-Dec 2019",
     "url": "https://educor.co.za/"
   },
@@ -163,8 +163,8 @@
     "name": "The Unlimited",
     "mark": "TU",
     "seed": "warning",
-    "relationship": "Telemarketer & Trainer",
-    "discipline": "Sales foundation and lead generation",
+    "relationship": "Direct Sales & Training Specialist",
+    "discipline": "Direct sales foundation, lead qualification and training",
     "period": "May-Aug 2016",
     "url": "https://theunlimited.co.za/"
   },
@@ -181,8 +181,8 @@
     "name": "Investors Choice",
     "mark": "IC",
     "seed": "info",
-    "relationship": "Telesales Representative",
-    "discipline": "Software sales conversation and lead handling",
+    "relationship": "Software Sales Representative",
+    "discipline": "Software sales conversations, lead handling and reporting",
     "period": "Jan-Sep 2014",
     "url": ""
   }

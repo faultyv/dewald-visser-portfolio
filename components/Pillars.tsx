@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Reveal, StaggerGroup, StaggerItem } from "./Reveal";
 import { TiltCard } from "./TiltCard";
 import { IconSymbol } from "./IconSymbol";
@@ -18,10 +19,10 @@ const PILLARS: { n: string; seed: SeedName; icon: string; title: string; proof: 
     n: "02",
     seed: "primary",
     icon: "bar_chart",
-    title: "Marketing",
+    title: "Growth Marketing",
     proof: "Growth channels",
-    summary: "Campaign strategy tied to acquisition, lead generation and measurable demand.",
-    items: ["SEO and paid media across Meta, Google and YouTube", "Email automation and lead generation", "Campaign planning, budget control and brand strategy"],
+    summary: "Campaign strategy tied to demand, content performance, paid channels and measurable lead flow.",
+    items: ["Organic growth and paid media across Meta, Google and YouTube", "Email automation and lead generation", "Campaign planning, budget control and brand strategy"],
   },
   {
     n: "03",
@@ -47,8 +48,8 @@ const PILLARS: { n: string; seed: SeedName; icon: string; title: string; proof: 
     icon: "auto_awesome",
     title: "Practical AI Enablement",
     proof: "Workflow layer",
-    summary: "Turning AI from a novelty into prompt systems, review habits, training and business tools that reduce real workflow drag.",
-    items: ["Operationalised Canva + ChatGPT inside a live content workflow", "Converted tangled spreadsheet logic into a web-based CPQ tool", "Connected AI readiness to training, adoption and human review"],
+    summary: "AI treated as adoption work: launch the idea, train the humans, create the review loop and turn the logic into tools people can actually use.",
+    items: ["Early LCIBS AI-programme launch work under former Apple executive direction", "Operationalised Canva + ChatGPT inside a live content workflow", "Converted tangled spreadsheet logic into a web-based CPQ tool"],
   },
 ];
 
@@ -108,25 +109,39 @@ export function Pillars() {
                   <div className="ai-evidence-column">
                     <div className="ai-console-visual" aria-hidden="true">
                       <div className="ai-console-topline">
-                        <span>workflow intelligence</span>
-                        <strong>human in the loop</strong>
+                        <span>education AI proof</span>
+                        <strong>LCIBS</strong>
                       </div>
                       <div className="ai-console-core">
                         <span className="ai-console-grid" />
-                        <div className="ai-console-token ai-console-token-a">Prompt</div>
-                        <div className="ai-console-token ai-console-token-b">Rules</div>
-                        <div className="ai-console-token ai-console-token-c">Review</div>
+                        <div className="ai-console-token ai-console-token-a">Launch</div>
+                        <div className="ai-console-token ai-console-token-b">Train</div>
+                        <div className="ai-console-token ai-console-token-c">Adopt</div>
                         <div className="ai-console-chip">
                           <IconSymbol name="auto_awesome" size={24} filled />
-                          AI layer
+                          AI proof
                         </div>
                       </div>
                       <div className="ai-console-output">
-                        <span>CPQ logic</span>
-                        <span>content workflow</span>
-                        <span>team adoption</span>
+                        <span>former Apple exec</span>
+                        <span>HR readiness</span>
+                        <span>workflow tools</span>
                       </div>
                     </div>
+                    <figure className="ai-proof-photo m-0">
+                      <Image
+                        src="/images/education-ai/lcibs-ai-robot-launch.jpg"
+                        alt="Dewald Visser dressed as an AI robot for an LCIBS AI programme launch"
+                        fill
+                        unoptimized
+                        className="object-cover"
+                        sizes="(max-width: 900px) 100vw, 420px"
+                      />
+                      <figcaption>
+                        <strong>Before AI was normal office language.</strong>
+                        LCIBS programme-launch proof: AI adoption, training context and human readiness.
+                      </figcaption>
+                    </figure>
                     <div className="grid gap-2.5">
                       {ai.items.map((it, idx) => (
                         <div key={it} className="flex items-center gap-3.5 rounded-2xl border border-outline-variant bg-surface-container-low p-3.5 transition-colors hover:border-outline">

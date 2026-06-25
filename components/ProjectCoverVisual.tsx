@@ -41,6 +41,12 @@ const HERO_COPY: Record<string, { eyebrow: string; headline: string; body: strin
     body: "Search, paid media, email and a WordPress booking/payments workflow replacing scattered admin.",
     icon: "route",
   },
+  "campaign-creative": {
+    eyebrow: "Damelin Online · LCIBS",
+    headline: "Education campaigns with early AI readiness.",
+    body: "Admissions, CRM, creative assets and AI-programme launch proof under former Apple executive direction.",
+    icon: "psychology_alt",
+  },
 };
 
 const ICON_BY_CATEGORY: Record<string, string> = {

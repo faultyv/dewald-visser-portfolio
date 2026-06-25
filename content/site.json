@@ -8,7 +8,7 @@
   "tags": ["Entrepreneur", "Marketing", "Graphic Design", "Web Design", "AI Enablement"],
   "heroPosition": "I turn commercial context, brand, marketing, web and practical AI into usable systems: campaigns that ship, websites that convert and workflows teams can actually run.",
   "aboutHeadline": "A founder-operator across brand, marketing, web and AI enablement - built for teams that need judgement, craft and delivery in one place.",
-  "aboutBody": "Founder of Sun Paper and Coatings, with a background that runs through high-pressure sales, Adobe-led production, WordPress and Shopify builds, education campaigns, live multimedia, CRM discipline and practical AI adoption. I connect strategy, design and operations so ideas become useful systems, not loose assets.",
+  "aboutBody": "Founder of Sun Paper and Coatings, with a background that runs through software sales, Damelin Online and LCIBS admissions, Adobe-led production, WordPress and Shopify builds, education campaigns, live multimedia, CRM discipline and practical AI adoption. I connect strategy, design and operations so ideas become useful systems, not loose assets.",
   "media": {
     "aboutImage": "/images/dewald/dewald-about-centered.png",
     "aboutImageAlt": "Dewald Visser seated with a laptop in a professional workspace",
@@ -38,7 +38,7 @@
     ]
   },
   "stats": [
-    { "value": 10, "suffix": "+", "label": "Years across sales, creative, web and growth" },
+    { "value": 10, "suffix": "+", "label": "Years across commercial, creative, web and growth" },
     { "value": 5, "suffix": "", "label": "Core disciplines connected" },
     { "value": 4, "suffix": "", "label": "Languages EN·ZU·AF·DE" }
   ],

@@ -15,7 +15,7 @@ const SPINE_STEPS: {
   {
     label: "Signal",
     title: "Read the business pressure",
-    body: "Sales floors, admissions funnels and founder work sharpen the instinct for audience, offer, pricing and urgency before creative starts.",
+    body: "Software sales, admissions funnels and founder work sharpen the instinct for audience, offer, pricing and urgency before creative starts.",
     icon: "query_stats",
     seed: "primary",
     proof: "pipeline, targets, CRM",
@@ -64,11 +64,11 @@ export function OperatingSpine({
 }) {
   const responsibilityCount = countResponsibilities(cv, projects);
   const hasDynamic = cv.some((entry) => entry.org === "Dynamic Automation");
-  const hasEducor = cv.some((entry) => entry.org === "Educor Holdings");
+  const hasEducationBrands = cv.some((entry) => entry.org === "Damelin Online / LCIBS");
 
   const proofSignals = [
-    { value: "200-250", label: "calls/day", body: "early sales discipline and lead handling" },
-    { value: hasEducor ? "10 mo" : "CRM", label: "promotion signal", body: "enquiry, admissions and reporting pressure" },
+    { value: "LCIBS", label: "early AI adoption", body: "programme-launch and readiness work under former Apple executive direction" },
+    { value: hasEducationBrands ? "10 mo" : "CRM", label: "promotion signal", body: "Damelin Online launch support into international admissions" },
     { value: "500+", label: "live audience", body: "business-school programme production" },
     { value: `${responsibilityCount}+`, label: "mapped moves", body: "responsibilities made visible across career and projects" },
   ];
@@ -121,7 +121,7 @@ export function OperatingSpine({
               <div className="text-label-s text-success">Hiring logic</div>
               <h3>One profile, fewer handoff gaps.</h3>
               <p>
-                The value is not that the work spans many lanes. The value is that those lanes connect: sales pressure informs the offer, design carries the message, web turns it into a usable flow, and AI removes repeated manual drag.
+                The value is not that the work spans many lanes. The value is that those lanes connect: commercial pressure informs the offer, design carries the message, web turns it into a usable flow, and AI removes repeated manual drag.
               </p>
             </div>
             <div className="spine-proof-stats">

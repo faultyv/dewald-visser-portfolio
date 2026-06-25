@@ -36,7 +36,7 @@ const HERO_PROOF = [
   },
 ] as const;
 
-const HIRE_STACK = ["Strategy", "Creative", "Web", "Campaigns", "AI workflows"];
+const HIRE_STACK = ["Strategy", "Creative", "Web", "Campaigns", "AI adoption"];
 
 export function Hero({ site }: { site: SiteConfig }) {
   const innerRef = useRef<HTMLDivElement>(null);

@@ -21,7 +21,7 @@ const DOMAINS: Domain[] = [
   { id: "ministry", label: "Education & Ministry", seed: "success", icon: "school", note: "Learning, media and mission work" },
   { id: "retail", label: "Retail & Production", seed: "tertiary", icon: "inventory_2", note: "DTP, POS, repro and house brands" },
   { id: "web", label: "Web, Brand & Growth", seed: "primary", icon: "language", note: "Campaigns, sites and operational tooling" },
-  { id: "foundations", label: "Sales Foundations", seed: "warning", icon: "support_agent", note: "Commercial reps and lead discipline" },
+  { id: "foundations", label: "Commercial Foundations", seed: "warning", icon: "workspace_premium", note: "Software sales, business development and lead discipline" },
 ];
 
 const COMPANY_DOMAINS: Record<string, string> = {
@@ -33,7 +33,7 @@ const COMPANY_DOMAINS: Record<string, string> = {
   "The Dreambook Ministry": "ministry",
   "Joseph Business School Africa": "ministry",
   "Olive Tree Church": "ministry",
-  "Educor Holdings": "ministry",
+  "Damelin Online / LCIBS": "ministry",
   Mediatrade: "retail",
   "Africa Paints": "retail",
   "Solid Doors": "retail",
@@ -56,7 +56,7 @@ const ICON_BY_COMPANY: Record<string, string> = {
   "The Dreambook Ministry": "volunteer_activism",
   "Joseph Business School Africa": "school",
   "Olive Tree Church": "diversity_3",
-  "Educor Holdings": "workspace_premium",
+  "Damelin Online / LCIBS": "psychology_alt",
   Mediatrade: "print",
   "Africa Paints": "format_paint",
   "Solid Doors": "door_front",
@@ -65,7 +65,7 @@ const ICON_BY_COMPANY: Record<string, string> = {
   "Kirstenhof Car Hire": "directions_car",
   "Autodoc Diagnostics": "car_repair",
   "Dynamic Automation": "precision_manufacturing",
-  "The Unlimited": "headset_mic",
+  "The Unlimited": "group_add",
   "Old Mutual": "account_balance",
   "Investors Choice": "monitoring",
 };
@@ -164,7 +164,7 @@ export function BrandConstellation({ companies }: { companies: CompanyEntry[] })
           <Reveal delay={0.1}>
             <p className="m-0 max-w-[440px] text-body-m text-on-surface-variant">
               {companies.length} organisations grouped by the kind of pressure they created: owned ventures, education and ministry, production,
-              <span className="text-mark"> web growth and commercial foundations.</span>
+              <span className="text-mark"> web growth and professional commercial foundations.</span>
             </p>
           </Reveal>
         </div>

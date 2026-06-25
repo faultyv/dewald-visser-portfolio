@@ -28,7 +28,7 @@ const CHAPTERS = [
   {
     label: "02",
     title: "Creative, media & web in production",
-    summary: "A decade of work that had to ship across real channels — church media, learning and livestream production, packaging and retail art, SEO, campaigns, websites and client delivery.",
+    summary: "A decade of work that had to ship across real channels — church media, learning and livestream production, packaging and retail art, organic growth, campaigns, websites and client delivery.",
     orgs: [
       "Olive Tree Church",
       "Mediatrade",
@@ -43,28 +43,28 @@ const CHAPTERS = [
   },
   {
     label: "03",
-    title: "Commercial foundations",
-    summary: "The base layer: sales calls, advising, CRM discipline, data capture and the early self-taught web work that made later creative and systems delivery practical.",
-    orgs: ["Educor Holdings", "The Unlimited", "Old Mutual", "Investors Choice"],
+    title: "Education brands & commercial foundations",
+    summary: "The base layer: Damelin Online launch work, LCIBS international admissions, CRM discipline, software sales, development support and the early self-taught web work that made later creative and systems delivery practical.",
+    orgs: ["Damelin Online / LCIBS", "Old Mutual", "Investors Choice", "The Unlimited"],
   },
 ] as const;
 
 const SIGNALS = [
-  { icon: "sell", label: "Commercial instinct", value: "sales, advising, pipeline" },
+  { icon: "school", label: "Education-brand proof", value: "Damelin Online, LCIBS, admissions" },
   { icon: "design_services", label: "Creative production", value: "Adobe, media, DTP, campaigns" },
   { icon: "hub", label: "Systems ownership", value: "web, CRM, CPQ, workflow" },
 ];
 
 const CAREER_INTEL = [
   {
-    label: "Commercial base",
-    value: "200-250 calls/day",
-    body: "Software telesales, lead handling, product conversation and daily reporting built the pressure tolerance.",
+    label: "AI adoption proof",
+    value: "LCIBS",
+    body: "Early AI programme-launch and change-readiness work under former Apple executive Brent Kilpatrick.",
   },
   {
     label: "Promotion signal",
     value: "10 months",
-    body: "Moved from national student advising into international admissions after the online-brand launch expanded.",
+    body: "Moved from online education launch support into LCIBS international admissions as the brand expanded.",
   },
   {
     label: "Production scale",
@@ -180,9 +180,9 @@ export function CareerExplorer({ cv }: { cv: CVEntry[] }) {
           <div className="career-command-deck">
             <div className="career-command-copy">
               <div className="text-label-l text-primary">Operating progression</div>
-              <h3 className="mt-4 text-display-s text-on-surface">Sales floor to systems owner.</h3>
+              <h3 className="mt-4 text-display-s text-on-surface">Education brands to systems owner.</h3>
               <p className="mt-5 max-w-[680px] text-body-l text-on-surface-variant">
-              The roles move from customer conversations and CRM discipline into Adobe-led production, then into websites, campaigns, operational tooling and venture ownership. The portfolio makes sense when it is read as <span className="text-mark">that progression.</span>
+              The roles move from software sales, Damelin Online launch work and LCIBS international admissions into Adobe-led production, then into websites, campaigns, operational tooling and venture ownership. The portfolio makes sense when it is read as <span className="text-mark">that progression.</span>
             </p>
               <div className="career-signal-ledger">
                 {SIGNALS.map((signal) => (

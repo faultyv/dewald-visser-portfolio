@@ -7,7 +7,7 @@
   {
     "title": "Marketing",
     "seed": "primary",
-    "items": ["SEO & organic growth", "Google / Meta / YouTube Ads", "Email & lead generation", "Content marketing"]
+    "items": ["Organic growth strategy", "Google / Meta / YouTube Ads", "Email & lead generation", "Content marketing"]
   },
   {
     "title": "Graphic Design",
@@ -22,6 +22,6 @@
   {
     "title": "AI Enablement",
     "seed": "highlight",
-    "items": ["Canva + ChatGPT rollout", "Prompt & content systems", "Spreadsheet → web automation", "Business analysis & process"]
+    "items": ["LCIBS early AI adoption", "Canva + ChatGPT rollout", "Prompt & content systems", "Spreadsheet → web automation"]
   }
 ]

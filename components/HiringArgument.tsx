@@ -7,10 +7,10 @@ const VALUE_LANES = [
   {
     seed: "primary" as const,
     icon: "query_stats",
-    title: "Growth and offer clarity",
+    title: "Commercial and offer clarity",
     pressure: "Teams need someone who can understand the market, offer, pipeline and friction before deciding what should be made.",
-    owns: ["SEO and paid campaigns", "Pricing and pipeline thinking", "Email, CRM and lead generation"],
-    proof: "Webmeta, Educor, Old Mutual, The Unlimited and Sun Paper shaped the commercial base.",
+    owns: ["Organic growth and paid campaigns", "Pricing and pipeline thinking", "Email, CRM and lead generation"],
+    proof: "Damelin Online / LCIBS, Webmeta, Old Mutual, Investors Choice and Sun Paper shaped the commercial base.",
   },
   {
     seed: "tertiary" as const,
@@ -32,9 +32,9 @@ const VALUE_LANES = [
     seed: "highlight" as const,
     icon: "auto_awesome",
     title: "Practical AI adoption",
-    pressure: "AI only helps when it becomes a repeatable workflow: prompts, guardrails, review habits, tooling, training and human judgement.",
-    owns: ["Prompt and review systems", "Canva + ChatGPT rollout", "Spreadsheet logic translated into tools"],
-    proof: "JBSA adoption work, education readiness and the CPQ build show AI used as workflow, not theatre.",
+    pressure: "AI only helps when it becomes adoption: people understand the change, teams trust the workflow, and the output survives human review.",
+    owns: ["LCIBS AI readiness and launch proof", "Canva + ChatGPT rollout", "Spreadsheet logic translated into CPQ tools"],
+    proof: "LCIBS early AI-programme work under former Apple executive Brent Kilpatrick, JBSA adoption work and the CPQ build show AI as change adoption and systems design.",
   },
 ] as const;
 
@@ -88,7 +88,7 @@ export function HiringArgument({
 
   const proofStats = [
     { value: `${responsibilityCount}+`, label: "mapped responsibilities", detail: "career and project scope made visible" },
-    { value: `${companies.length}`, label: "organisations", detail: "ventures, clients, education, production and sales" },
+    { value: `${companies.length}`, label: "organisations", detail: "ventures, clients, education, production and commercial work" },
     { value: `${projects.length}`, label: "projects", detail: "brand, web, production, campaign and system proof" },
     { value: "500+", label: "live audience", detail: "business-school programme production" },
   ];
@@ -126,7 +126,7 @@ export function HiringArgument({
             </span>
             </div>
             <p className="m-0 text-body-m text-on-surface-variant">
-              This is not a portfolio of disconnected jobs. It is a progression from sales discipline into Adobe production, then into web builds, live content systems, SEO, AI-assisted workflows and founder-level ownership. The value is the handoff: fewer gaps between idea, asset, campaign, website and operating system.
+              This is not a portfolio of disconnected jobs. It is a progression from software sales, Damelin Online and LCIBS admissions into Adobe production, then into web builds, live content systems, organic growth, AI adoption and founder-level ownership. The value is the handoff: fewer gaps between idea, asset, campaign, website and operating system.
             </p>
 
             <div className="hire-proof-stat-grid mt-6">
