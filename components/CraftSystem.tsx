@@ -89,7 +89,7 @@ export function CraftSystem({ site }: { site: SiteConfig }) {
         </Reveal>
         <Reveal delay={0.1}>
           <p className="mx-auto mt-5 max-w-[620px] text-body-l text-on-surface-variant">
-            The section shows the repeatable operating shape behind the portfolio: diagnose the problem, make the language, build the surface and <span className="text-mark">tighten the loop from real use.</span>
+            The repeatable shape behind the work: diagnose the problem, make the language, build the working surface and <span className="text-mark">tighten the loop from real use.</span>
           </p>
         </Reveal>
         <Reveal delay={0.14}>

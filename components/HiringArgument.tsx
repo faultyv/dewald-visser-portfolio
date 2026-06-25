@@ -8,7 +8,7 @@ const VALUE_LANES = [
     seed: "primary" as const,
     icon: "query_stats",
     title: "Growth and offer clarity",
-    pressure: "Teams need someone who can understand the market, the offer, the pipeline and the friction before making pretty things.",
+    pressure: "Teams need someone who can understand the market, offer, pipeline and friction before deciding what should be made.",
     owns: ["SEO and paid campaigns", "Pricing and pipeline thinking", "Email, CRM and lead generation"],
     proof: "Webmeta, Educor, Old Mutual, The Unlimited and Sun Paper shaped the commercial base.",
   },
@@ -16,7 +16,7 @@ const VALUE_LANES = [
     seed: "tertiary" as const,
     icon: "palette",
     title: "Creative that ships",
-    pressure: "Brands do not move because a designer made a nice static asset. They move when the campaign, media and production work lands.",
+    pressure: "Brands move when campaign language, media, production and distribution are built as one practical system.",
     owns: ["Adobe-led design systems", "Packaging, POS and campaign creative", "Photo, video, motion and live production"],
     proof: "Mediatrade, Olive Tree Church and Joseph Business School Africa prove real production under deadline pressure.",
   },
@@ -32,7 +32,7 @@ const VALUE_LANES = [
     seed: "highlight" as const,
     icon: "auto_awesome",
     title: "Practical AI adoption",
-    pressure: "AI only helps when it becomes a repeatable workflow: prompts, review habits, tooling, training and human judgement.",
+    pressure: "AI only helps when it becomes a repeatable workflow: prompts, guardrails, review habits, tooling, training and human judgement.",
     owns: ["Prompt and review systems", "Canva + ChatGPT rollout", "Spreadsheet logic translated into tools"],
     proof: "JBSA adoption work, education readiness and the CPQ build show AI used as workflow, not theatre.",
   },
@@ -126,7 +126,7 @@ export function HiringArgument({
             </span>
             </div>
             <p className="m-0 text-body-m text-on-surface-variant">
-              This is not a portfolio of disconnected jobs. It is a progression from sales discipline into Adobe production, then into web builds, live content systems, SEO, AI workflows and founder-level ownership. The value is the handoff: fewer gaps between idea, asset, campaign, website and operating system.
+              This is not a portfolio of disconnected jobs. It is a progression from sales discipline into Adobe production, then into web builds, live content systems, SEO, AI-assisted workflows and founder-level ownership. The value is the handoff: fewer gaps between idea, asset, campaign, website and operating system.
             </p>
 
             <div className="hire-proof-stat-grid mt-6">

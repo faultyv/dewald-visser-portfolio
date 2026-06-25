@@ -55,6 +55,29 @@ const SIGNALS = [
   { icon: "hub", label: "Systems ownership", value: "web, CRM, CPQ, workflow" },
 ];
 
+const CAREER_INTEL = [
+  {
+    label: "Commercial base",
+    value: "200-250 calls/day",
+    body: "Software telesales, lead handling, product conversation and daily reporting built the pressure tolerance.",
+  },
+  {
+    label: "Promotion signal",
+    value: "10 months",
+    body: "Moved from national student advising into international admissions after the online-brand launch expanded.",
+  },
+  {
+    label: "Production scale",
+    value: "500+ live",
+    body: "Business-school live production, learning media, campaign support and LMS/web systems under public delivery pressure.",
+  },
+  {
+    label: "Systems proof",
+    value: "Excel -> CPQ",
+    body: "Complex quoting logic rebuilt into a live web prototype with structured modules and pricing rules.",
+  },
+];
+
 function roleIcon(entry: CVEntry) {
   const priority = ["AI", "Founder", "Web", "Marketing", "Design", "Foundations"];
   const match = priority.find((tag) => entry.tags.includes(tag));
@@ -191,6 +214,18 @@ export function CareerExplorer({ cv }: { cv: CVEntry[] }) {
                 Work that happens with people, constraints and delivery pressure in the room.
               </figcaption>
             </figure>
+          </div>
+        </Reveal>
+
+        <Reveal delay={0.14}>
+          <div className="career-proof-matrix">
+            {CAREER_INTEL.map((item) => (
+              <article key={item.label}>
+                <span>{item.label}</span>
+                <strong>{item.value}</strong>
+                <p>{item.body}</p>
+              </article>
+            ))}
           </div>
         </Reveal>
 

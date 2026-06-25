@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import type { MouseEvent } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "motion/react";
@@ -32,6 +33,25 @@ export function NavBar({ name = "Dewald Visser" }: { name?: string }) {
   const [active, setActive] = useState("hero");
   const pathname = usePathname();
   const { theme, setTheme, label } = useTheme();
+
+  const navigateHash = (href: string) => (event: MouseEvent<HTMLAnchorElement>) => {
+    if (!href.startsWith("/#") || pathname !== "/") return;
+    const id = href.slice(2);
+    const target = document.getElementById(id);
+    if (!target) return;
+
+    event.preventDefault();
+    setOpen(false);
+    window.history.pushState(null, "", href);
+
+    const offset = window.innerWidth < 768 ? -92 : -118;
+    const top = target.getBoundingClientRect().top + window.scrollY + offset;
+    if (window.__lenis) {
+      window.__lenis.scrollTo(top);
+    } else {
+      window.scrollTo({ top, behavior: "smooth" });
+    }
+  };
 
   useEffect(() => {
     const ids = [
@@ -85,7 +105,7 @@ export function NavBar({ name = "Dewald Visser" }: { name?: string }) {
 
   return (
     <nav className="hig-glass !overflow-visible fixed left-3 right-3 top-3 z-[80] flex items-center justify-between rounded-[24px] px-3.5 py-2.5 sm:left-5 sm:right-5 sm:px-4 xl:left-8 xl:right-8 xl:py-3">
-      <Link href="/#hero" className="state-layer flex min-w-0 items-center gap-2.5 rounded-full px-2 py-1.5 no-underline text-title-m text-on-surface sm:text-title-l">
+      <Link href="/#hero" onClick={navigateHash("/#hero")} className="state-layer flex min-w-0 items-center gap-2.5 rounded-full px-2 py-1.5 no-underline text-title-m text-on-surface sm:text-title-l">
         <span className="relative inline-block h-2.5 w-2.5 rounded-full bg-primary shadow-[0_0_18px_var(--color-primary)]" />
         <span className="truncate">{name}</span>
       </Link>
@@ -98,6 +118,7 @@ export function NavBar({ name = "Dewald Visser" }: { name?: string }) {
           <Link
             key={l.href}
             href={l.href}
+            onClick={navigateHash(l.href)}
             aria-current={on ? "page" : undefined}
             className={`relative state-layer rounded-full px-3.5 py-2 no-underline transition-colors ${
               on ? "text-on-primary" : "text-on-surface-variant hover:text-on-surface"
@@ -180,7 +201,7 @@ export function NavBar({ name = "Dewald Visser" }: { name?: string }) {
               <Link
                 key={l.href}
                 href={l.href}
-                onClick={() => setOpen(false)}
+                onClick={navigateHash(l.href)}
                 className="state-layer rounded-2xl px-3.5 py-3 text-title-m text-on-surface no-underline"
               >
                 {l.label}

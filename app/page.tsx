@@ -1,5 +1,6 @@
 import { Hero } from "@/components/Hero";
 import { About } from "@/components/About";
+import { OperatingSpine } from "@/components/OperatingSpine";
 import { HiringArgument } from "@/components/HiringArgument";
 import { CraftSystem } from "@/components/CraftSystem";
 import { Pillars } from "@/components/Pillars";
@@ -27,6 +28,7 @@ export default function Home() {
     <>
       <Hero site={site} />
       <About site={site} />
+      <OperatingSpine cv={cv} projects={projects} companies={companies} />
       <HiringArgument cv={cv} projects={projects} companies={companies} />
       <CraftSystem site={site} />
       <WorkTeaser projects={projects} />

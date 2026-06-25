@@ -47,8 +47,8 @@ const PILLARS: { n: string; seed: SeedName; icon: string; title: string; proof: 
     icon: "auto_awesome",
     title: "Practical AI Enablement",
     proof: "Workflow layer",
-    summary: "Turning AI from a buzzword into trained teams, working prompt systems and useful business tooling.",
-    items: ["Rolled out Canva + ChatGPT workflows inside a live business", "Built a web-based CPQ quote tool from tangled spreadsheet logic", "Worked on education-sector AI readiness and change conversations"],
+    summary: "Turning AI from a novelty into prompt systems, review habits, training and business tools that reduce real workflow drag.",
+    items: ["Operationalised Canva + ChatGPT inside a live content workflow", "Converted tangled spreadsheet logic into a web-based CPQ tool", "Connected AI readiness to training, adoption and human review"],
   },
 ];
 
@@ -86,14 +86,6 @@ export function Pillars() {
             <TiltCard>
               <article className="ai-feature-card group hig-glass relative overflow-hidden rounded-[24px] p-5 md:rounded-[28px] md:p-8">
                 <span className="ai-glow hidden sm:block" aria-hidden="true" />
-                <span className="ai-loop hidden md:block" aria-hidden="true">
-                  <span className="ai-loop-ring ai-loop-ring-a" />
-                  <span className="ai-loop-ring ai-loop-ring-b" />
-                  <span className="ai-loop-node ai-loop-node-a" />
-                  <span className="ai-loop-node ai-loop-node-b" />
-                  <span className="ai-loop-node ai-loop-node-c" />
-                  <span className="ai-loop-core">AI</span>
-                </span>
                 <div className="relative z-10 grid gap-7 md:grid-cols-[1.05fr_1fr] md:items-center md:gap-10">
                   <div>
                     <div className="mb-5 flex flex-wrap items-center gap-3">
@@ -107,25 +99,44 @@ export function Pillars() {
                     </div>
                     <h3 className="m-0 text-headline-l text-on-surface md:text-display-s">{ai.title}</h3>
                     <p className="mt-3 max-w-[520px] text-body-l text-on-surface-variant">{ai.summary}</p>
-                    <div className="ai-flow mt-7 hidden sm:flex" aria-hidden="true">
-                      <span className="ai-flow-line" />
-                      {["Brief", "Prompt", "Build", "Iterate"].map((step, i) => (
-                        <span key={step} className="ai-flow-node">
-                          <span className="ai-flow-bead" style={{ animationDelay: `${i * 0.45}s` }} />
-                          <span className="ai-flow-label">{step}</span>
-                        </span>
+                    <div className="ai-protocol-strip mt-7" aria-label="AI workflow protocol">
+                      {["Brief", "Prompt", "Guardrail", "Review", "Ship"].map((step) => (
+                        <span key={step}>{step}</span>
                       ))}
                     </div>
                   </div>
-                  <div className="grid gap-2.5">
-                    {ai.items.map((it, idx) => (
-                      <div key={it} className="flex items-center gap-3.5 rounded-2xl border border-outline-variant bg-surface-container-low p-3.5 transition-colors hover:border-outline">
-                        <span className={`grid h-9 w-9 shrink-0 place-items-center rounded-xl ${SEED_BG[ai.seed]} ${SEED_ON[ai.seed]}`}>
-                          <IconSymbol name={AI_ITEM_ICONS[idx] ?? "task_alt"} size={18} filled />
-                        </span>
-                        <span className="text-body-m text-on-surface">{it}</span>
+                  <div className="ai-evidence-column">
+                    <div className="ai-console-visual" aria-hidden="true">
+                      <div className="ai-console-topline">
+                        <span>workflow intelligence</span>
+                        <strong>human in the loop</strong>
                       </div>
-                    ))}
+                      <div className="ai-console-core">
+                        <span className="ai-console-grid" />
+                        <div className="ai-console-token ai-console-token-a">Prompt</div>
+                        <div className="ai-console-token ai-console-token-b">Rules</div>
+                        <div className="ai-console-token ai-console-token-c">Review</div>
+                        <div className="ai-console-chip">
+                          <IconSymbol name="auto_awesome" size={24} filled />
+                          AI layer
+                        </div>
+                      </div>
+                      <div className="ai-console-output">
+                        <span>CPQ logic</span>
+                        <span>content workflow</span>
+                        <span>team adoption</span>
+                      </div>
+                    </div>
+                    <div className="grid gap-2.5">
+                      {ai.items.map((it, idx) => (
+                        <div key={it} className="flex items-center gap-3.5 rounded-2xl border border-outline-variant bg-surface-container-low p-3.5 transition-colors hover:border-outline">
+                          <span className={`grid h-9 w-9 shrink-0 place-items-center rounded-xl ${SEED_BG[ai.seed]} ${SEED_ON[ai.seed]}`}>
+                            <IconSymbol name={AI_ITEM_ICONS[idx] ?? "task_alt"} size={18} filled />
+                          </span>
+                          <span className="text-body-m text-on-surface">{it}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </article>
