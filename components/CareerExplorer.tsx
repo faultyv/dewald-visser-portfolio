@@ -1,294 +1,236 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "motion/react";
-import { Reveal, StaggerGroup } from "./Reveal";
-import { IconSymbol } from "./IconSymbol";
-import { RollingList } from "./RollingList";
-import { tagSeed } from "@/lib/tag-seed";
-import { SEED_BG, SEED_ON, SEED_TEXT, SEED_CONTAINER_BG, SEED_CONTAINER_TEXT } from "@/lib/seed-classes";
+import { useMemo, useState } from "react";
+import { Reveal } from "./Reveal";
+import { SEED_BG, SEED_TEXT, SEED_CONTAINER_BG, SEED_CONTAINER_TEXT } from "@/lib/seed-classes";
 import type { CVEntry } from "@/lib/content";
+import type { SeedName } from "@/lib/m3-theme";
 
-const ROLE_ICON: Record<string, string> = {
-  Founder: "rocket_launch",
-  Marketing: "campaign",
-  Design: "palette",
-  Web: "language",
-  Foundations: "support_agent",
-  AI: "auto_awesome",
+type CareerPhase = {
+  id: string;
+  index: string;
+  range: string;
+  seed: SeedName;
+  title: string;
+  short: string;
+  summary: string;
+  orgs: string[];
+  evidence: string[];
 };
 
-const CHAPTERS = [
+const CAREER_PHASES: CareerPhase[] = [
   {
-    label: "01",
-    title: "Founder & systems builder",
-    summary: "The current proof: owned ventures and the systems behind them — and turning real operational problems, like a tangle of quoting spreadsheets, into working software.",
-    orgs: ["Dynamic Automation", "clicklocal"],
+    id: "commercial-base",
+    index: "01",
+    range: "2014-2016",
+    seed: "info",
+    title: "Commercial foundations",
+    short: "Software sales, client conversations and pipeline discipline.",
+    summary: "The early layer was not glamorous, but it matters: software sales, business-development support, CRM hygiene, client conversations, reporting and the first self-taught web build.",
+    orgs: ["Investors Choice", "Old Mutual", "The Unlimited"],
+    evidence: ["Software-sales conversations", "CRM and lead reporting", "Self-taught website and rebrand work"],
   },
   {
-    label: "02",
-    title: "Creative, media & web in production",
-    summary: "A decade of work that had to ship across real channels — church media, learning and livestream production, packaging and retail art, organic growth, campaigns, websites and client delivery.",
-    orgs: [
-      "Olive Tree Church",
-      "Mediatrade",
-      "Joseph Business School Africa",
-      "Webmeta",
-      "Thinklocal",
-      "Cambridge University initiative",
-      "Kirstenhof Car Hire",
-      "Autodoc Diagnostics",
-      "Contours Design Studio / Faux Flora",
-    ],
+    id: "education-ai",
+    index: "02",
+    range: "2016-2019",
+    seed: "secondary",
+    title: "Education brands and early AI readiness",
+    short: "Damelin Online, LCIBS admissions and AI-readiness work.",
+    summary: "Damelin Online and LCIBS joined commercial pressure with education-brand delivery: enrolment conversion, reporting, campaign assets and early AI-readiness work under Brett Kilpatrick before AI was ordinary office language.",
+    orgs: ["Damelin Online / LCIBS"],
+    evidence: ["Promoted into international admissions", "AI-readiness context under Brett Kilpatrick", "Templates, booklets, email and animated campaign assets"],
   },
   {
-    label: "03",
-    title: "Education brands & commercial foundations",
-    summary: "The base layer: Damelin Online launch work, LCIBS international admissions, CRM discipline, software sales, development support and the early self-taught web work that made later creative and systems delivery practical.",
-    orgs: ["Damelin Online / LCIBS", "Old Mutual", "Investors Choice", "The Unlimited"],
-  },
-] as const;
-
-const SIGNALS = [
-  { icon: "school", label: "Education-brand proof", value: "Damelin Online, LCIBS, admissions" },
-  { icon: "design_services", label: "Creative production", value: "Adobe, media, DTP, campaigns" },
-  { icon: "hub", label: "Systems ownership", value: "web, CRM, CPQ, workflow" },
-];
-
-const CAREER_INTEL = [
-  {
-    label: "AI adoption proof",
-    value: "LCIBS",
-    body: "Early AI programme-launch and change-readiness work under Brett Kilpatrick, a former Apple executive.",
+    id: "creative-web",
+    index: "03",
+    range: "2020-2024",
+    seed: "tertiary",
+    title: "Creative, web and production range",
+    short: "Brand, DTP, Shopify, WordPress, campaigns and agency delivery.",
+    summary: "The middle layer expanded the toolset: Shopify during lockdown, senior brand and DTP, WordPress builds, organic growth, paid campaigns, local-business clients and production-ready artwork.",
+    orgs: ["Contours Design Studio / Faux Flora", "Thinklocal", "Webmeta", "clicklocal", "Kirstenhof Car Hire", "Autodoc Diagnostics", "Cambridge University initiative"],
+    evidence: ["Shopify lockdown pivot", "Senior Adobe-led production", "Search, email, booking and website systems"],
   },
   {
-    label: "Promotion signal",
-    value: "10 months",
-    body: "Moved from online education launch support into LCIBS international admissions as the brand expanded.",
+    id: "programme-engine",
+    index: "04",
+    range: "2022-2025",
+    seed: "success",
+    title: "Programme growth engine",
+    short: "JBSA, Dreambook, media systems and masterclass demand.",
+    summary: "Joseph Business School Africa turned the range into an engine: campaigns, livestreams, learning media, funnels, LMS/web support and Canva plus ChatGPT workflows for a US-founded entrepreneurship programme in Africa.",
+    orgs: ["Joseph Business School Africa", "Mediatrade", "Olive Tree Church"],
+    evidence: ["Livestreams to 500+", "Global JBS benchmark proof", "Media, campaigns and team training"],
   },
   {
-    label: "Global programme proof",
-    value: "JBSA",
-    body: "American entrepreneurship-school programme turned into an Africa growth engine through campaigns, media, funnels and LMS/web systems.",
-  },
-  {
-    label: "Commercial model",
-    value: "Self-run",
-    body: "Masterclass demand, recorded content and sales enablement shaped into a more self-sustaining business-school model.",
-  },
-  {
-    label: "Systems proof",
-    value: "Excel -> CPQ",
-    body: "Complex quoting logic rebuilt into a live web prototype with structured modules and pricing rules.",
+    id: "founder-systems",
+    index: "05",
+    range: "2026-now",
+    seed: "highlight",
+    title: "Founder systems ownership",
+    short: "Sun Paper plus CPQ systems: offer, brand, pricing and operations.",
+    summary: "The current layer is ownership: a physical supply business with brand, sales and operating systems, plus CPQ work that translated fragile Excel quoting logic into a usable web prototype.",
+    orgs: ["Sun Paper and Coatings", "Dynamic Automation"],
+    evidence: ["Supplier and customer pipeline", "Pricing and stock planning", "Excel logic rebuilt as a web CPQ prototype"],
   },
 ];
 
-function roleIcon(entry: CVEntry) {
-  const priority = ["AI", "Founder", "Web", "Marketing", "Design", "Foundations"];
-  const match = priority.find((tag) => entry.tags.includes(tag));
-  return match ? ROLE_ICON[match] : "work_history";
+const CAREER_SIGNALS = [
+  { label: "Early AI signal", value: "LCIBS", body: "AI-readiness work before AI became normal workplace language." },
+  { label: "Programme scale", value: "500+", body: "Livestream audience and masterclass production context at JBSA." },
+  { label: "System proof", value: "CPQ", body: "Spreadsheet quoting logic turned into a live web prototype." },
+  { label: "Current ownership", value: "Founder", body: "Sun Paper brand, sales, suppliers, pricing and operations." },
+];
+
+function entriesForPhase(cv: CVEntry[], phase: CareerPhase) {
+  return phase.orgs.map((org) => cv.find((entry) => entry.org === org)).filter(Boolean) as CVEntry[];
 }
 
-function rolesForChapter(cv: CVEntry[], orgs: readonly string[]) {
-  return orgs.map((org) => cv.find((entry) => entry.org === org)).filter(Boolean) as CVEntry[];
-}
-
-const CAREER_ROW_VARIANTS = {
-  hidden: { opacity: 0, y: 30 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { type: "spring" as const, stiffness: 170, damping: 24, opacity: { duration: 0.4 } },
-  },
-};
-
-function RoleRow({ entry }: { entry: CVEntry }) {
-  const seed = tagSeed(entry.tags[0]);
-  const brandSeed = entry.brandColor ?? seed;
-  const proof = entry.proof?.slice(0, 2) ?? [];
-
-  return (
-    <motion.article className="career-story-row" variants={CAREER_ROW_VARIANTS}>
-      <div className="career-story-date">
-        <span>{entry.date}</span>
-      </div>
-      <div className="career-story-body">
-        <div className="career-story-titleline">
-          <span className={`career-story-icon ${SEED_BG[brandSeed]} ${SEED_ON[brandSeed]}`}>
-            <IconSymbol name={roleIcon(entry)} size={22} filled />
-          </span>
-          <div className="min-w-0">
-            <h4 className="text-title-l text-on-surface">{entry.role}</h4>
-            <div className="mt-1 text-label-l text-on-surface-variant">{entry.org}</div>
-          </div>
-        </div>
-
-        {entry.responsibilities?.length ? (
-          <div className="career-roll">
-            <span className={`career-roll-dot ${SEED_BG[brandSeed]}`} aria-hidden="true" />
-            <RollingList
-              items={entry.responsibilities}
-              className="career-roll-list"
-              itemClassName={`career-roll-item ${SEED_TEXT[brandSeed]}`}
-            />
-          </div>
-        ) : null}
-
-        <p className="career-story-copy text-body-m text-on-surface-variant">{entry.detail}</p>
-
-        {proof.length ? (
-          <div className="career-proof-ribbons">
-            {proof.map((item) => (
-              <span key={`${entry.org}-${item.title}`} className={`career-proof-ribbon ${SEED_CONTAINER_BG[seed]} ${SEED_CONTAINER_TEXT[seed]}`}>
-                <strong>{item.type}</strong>
-                {item.title}
-              </span>
-            ))}
-          </div>
-        ) : null}
-
-        {entry.software?.length ? (
-          <div className="career-stack-line">
-            {entry.software.slice(0, 6).map((tool) => (
-              <span key={`${entry.org}-${tool}`}>{tool}</span>
-            ))}
-          </div>
-        ) : null}
-      </div>
-    </motion.article>
-  );
+function uniqueList(items: string[], limit: number) {
+  return [...new Set(items.filter(Boolean))].slice(0, limit);
 }
 
 export function CareerExplorer({ cv }: { cv: CVEntry[] }) {
-  const current = cv.find((entry) => entry.org === "Sun Paper and Coatings") ?? cv[0];
-  const oliveTree = cv.find((entry) => entry.org === "Olive Tree Church");
-  const jbsa = cv.find((entry) => entry.org === "Joseph Business School Africa");
+  const [phaseId, setPhaseId] = useState("education-ai");
+  const selectedPhase = CAREER_PHASES.find((phase) => phase.id === phaseId) ?? CAREER_PHASES[1];
+  const selectedEntries = useMemo(() => entriesForPhase(cv, selectedPhase), [cv, selectedPhase]);
+  const selectedProof = uniqueList(selectedEntries.flatMap((entry) => entry.proof?.map((item) => `${item.type}: ${item.title}`) ?? []), 4);
+  const selectedStack = uniqueList(selectedEntries.flatMap((entry) => entry.software ?? []), 8);
 
   return (
-    <section id="cv" className="career-editorial section-pad relative">
+    <section id="cv" className="career-editorial section-pad-tight relative">
       <div className="content-shell-wide">
-        <div className="career-editorial-head">
+        <div className="career-clean-head">
           <Reveal>
-            <div className="text-label-l text-tertiary">Career evidence</div>
+            <div className="text-label-l text-primary">Career logic</div>
           </Reveal>
           <Reveal delay={0.05}>
-            <h2 className="text-headline-l text-on-surface">A career arc built around <span className="text-gradient text-gradient-animated">ownership.</span></h2>
+            <h2 className="text-headline-l text-on-surface">
+              A career arc that compounds into <span className="text-gradient text-gradient-animated">operator range.</span>
+            </h2>
           </Reveal>
           <Reveal delay={0.1}>
-            <p className="m-0 max-w-[620px] text-body-l text-on-surface-variant">
-              The through-line is not a job list. It is commercial pressure, creative output and systems responsibility compounding into a founder/operator profile.
+            <p className="m-0 max-w-[680px] text-body-l text-on-surface-variant">
+              Read it as a progression, not a job list: commercial foundations, education-brand systems, creative production, growth infrastructure and founder ownership.
             </p>
           </Reveal>
         </div>
 
         <Reveal delay={0.12}>
-          <div className="career-command-deck">
-            <div className="career-command-copy">
-              <div className="text-label-l text-primary">Operating progression</div>
-              <h3 className="mt-4 text-display-s text-on-surface">Education brands to systems owner.</h3>
-              <p className="mt-5 max-w-[680px] text-body-l text-on-surface-variant">
-              The roles move from software sales, Damelin Online launch work and LCIBS international admissions into early AI-readiness, Adobe-led production, global business-school programme work, websites, campaigns, operational tooling and venture ownership. The portfolio makes sense when it is read as <span className="text-mark">that progression.</span>
-            </p>
-              <div className="career-signal-ledger">
-                {SIGNALS.map((signal) => (
-                  <div key={signal.label} className="career-ledger-item">
-                    <span className="feature-icon grid h-10 w-10 place-items-center rounded-2xl bg-primary-container text-on-primary-container">
-                      <IconSymbol name={signal.icon} size={21} filled />
-                    </span>
-                    <span>
-                      <strong>{signal.label}</strong>
-                      <small>{signal.value}</small>
-                    </span>
-                  </div>
-                ))}
+          <div className="career-clean-board hig-glass">
+            <div className="career-phase-column">
+              <div className="career-phase-tabs" role="tablist" aria-label="Career phase selector">
+                {CAREER_PHASES.map((phase) => {
+                  const active = phase.id === selectedPhase.id;
+                  return (
+                    <button
+                      key={phase.id}
+                      type="button"
+                      role="tab"
+                      aria-selected={active}
+                      onClick={() => setPhaseId(phase.id)}
+                      className={`career-phase-tab state-layer ${active ? "is-active" : ""}`}
+                    >
+                      <span className={`career-phase-index ${active ? `${SEED_CONTAINER_BG[phase.seed]} ${SEED_CONTAINER_TEXT[phase.seed]}` : ""}`}>{phase.index}</span>
+                      <strong>{phase.title}</strong>
+                      <small>{phase.range}</small>
+                    </button>
+                  );
+                })}
               </div>
             </div>
 
-            <figure className="career-context-frame">
+            <article className="career-selected-panel">
+              <div className="career-selected-kicker">
+                <span className={SEED_TEXT[selectedPhase.seed]}>{selectedPhase.range}</span>
+                <span>{selectedEntries.length} role{selectedEntries.length === 1 ? "" : "s"}</span>
+              </div>
+              <h3>{selectedPhase.title}</h3>
+              <p>{selectedPhase.summary}</p>
+
+              <div className="career-evidence-list">
+                {selectedPhase.evidence.map((item) => (
+                  <span key={item}>
+                    <i className={SEED_BG[selectedPhase.seed]} aria-hidden="true" />
+                    {item}
+                  </span>
+                ))}
+              </div>
+
+              {selectedProof.length ? (
+                <div className="career-proof-list" aria-label="Selected proof points">
+                  {selectedProof.map((item) => (
+                    <span key={item}>{item}</span>
+                  ))}
+                </div>
+              ) : null}
+            </article>
+
+            <figure className="career-clean-photo">
               <Image
                 src="/images/dewald/dewald-career-overhead.png"
                 alt="Dewald Visser working with people around laptops in a professional workspace"
                 fill
                 unoptimized
                 className="object-cover"
-                sizes="(max-width: 900px) 100vw, 520px"
+                sizes="(max-width: 900px) 100vw, 430px"
               />
-              <span className="career-context-shade" aria-hidden="true" />
-              <figcaption>
-                <span className="h-2 w-2 rounded-full bg-success shadow-[0_0_0_6px_rgba(0,200,120,0.16)]" />
-                Work that happens with people, constraints and delivery pressure in the room.
-              </figcaption>
+              <figcaption>Hands-on delivery with people, constraints and decisions in the room.</figcaption>
             </figure>
           </div>
         </Reveal>
 
         <Reveal delay={0.14}>
-          <div className="career-proof-matrix">
-            {CAREER_INTEL.map((item) => (
-              <article key={item.label}>
-                <span>{item.label}</span>
-                <strong>{item.value}</strong>
-                <p>{item.body}</p>
+          <div className="career-signal-strip">
+            {CAREER_SIGNALS.map((signal) => (
+              <article key={signal.label}>
+                <span>{signal.label}</span>
+                <strong>{signal.value}</strong>
+                <p>{signal.body}</p>
               </article>
             ))}
           </div>
         </Reveal>
 
-        {current ? (
-          <Reveal delay={0.16}>
-            <div className="career-current-founder">
-              <div className="career-founder-logo">
-                <Image
-                  src="/images/work/sun-paper/logo-trimmed.png"
-                  alt="Sun Paper and Coatings logo"
-                  fill
-                  unoptimized
-                  className="object-contain"
-                  sizes="220px"
-                />
+        <Reveal delay={0.16}>
+          <div className="career-role-panel">
+            <div className="career-role-head">
+              <div>
+                <div className={`text-label-l ${SEED_TEXT[selectedPhase.seed]}`}>Selected evidence</div>
+                <h3 className="mt-1 text-headline-s text-on-surface">{selectedPhase.short}</h3>
               </div>
-              <div className="min-w-0">
-                <div className="text-label-l text-secondary">Now building</div>
-                <h3 className="mt-1 text-headline-s text-on-surface">{current.org}</h3>
-                <p className="mt-3 max-w-[760px] text-body-m text-on-surface-variant">{current.detail}</p>
-              </div>
-              <div className="career-founder-proof">
-                {current.proof?.slice(0, 2).map((item) => (
-                  <span key={item.title}>
-                    <strong>{item.type}</strong>
-                    {item.title}
-                  </span>
-                ))}
-              </div>
+              {selectedStack.length ? (
+                <div className="career-stack-compact" aria-label="Tools and systems used in this phase">
+                  {selectedStack.map((tool) => (
+                    <span key={tool}>{tool}</span>
+                  ))}
+                </div>
+              ) : null}
             </div>
-          </Reveal>
-        ) : null}
 
-        <div className="career-chapter-stack">
-          {CHAPTERS.map((chapter, index) => {
-            const roles = rolesForChapter(cv, chapter.orgs);
-            return (
-              <section key={chapter.title} className="career-chapter">
-                <Reveal className="career-chapter-intro">
-                  <div className="career-chapter-index">{chapter.label}</div>
-                  <h3 className="text-headline-s text-on-surface">{chapter.title}</h3>
-                  <p className="text-body-m text-on-surface-variant">{chapter.summary}</p>
-                  {index === 1 && oliveTree && jbsa ? (
-                    <div className="career-chapter-note">
-                      <IconSymbol name="verified" size={17} filled />
-                      Recent proof spans church communications, learning media and public programme delivery.
+            <div className="career-role-grid">
+              {selectedEntries.map((entry) => (
+                <article key={`${entry.org}-${entry.date}`} className="career-role-card hig-card">
+                  <div className="career-role-meta">
+                    <span>{entry.date}</span>
+                    <span className={SEED_TEXT[entry.brandColor ?? selectedPhase.seed]}>{entry.org}</span>
+                  </div>
+                  <h4>{entry.role}</h4>
+                  <p>{entry.detail}</p>
+                  {entry.proof?.length ? (
+                    <div className="career-role-proof">
+                      {entry.proof.slice(0, 2).map((proof) => (
+                        <span key={proof.title}>{proof.title}</span>
+                      ))}
                     </div>
                   ) : null}
-                </Reveal>
-                <StaggerGroup className="career-story-list">
-                  {roles.map((entry) => (
-                    <RoleRow key={`${entry.org}-${entry.date}`} entry={entry} />
-                  ))}
-                </StaggerGroup>
-              </section>
-            );
-          })}
-        </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   );
