@@ -1,15 +1,15 @@
 import { tone, withAlpha } from "./color";
 
-/** Brand seed hues — kept from the original site, now driving a real M3 tonal-role system. */
+/** Brand seed hues — restrained for a cleaner, more executive portfolio system. */
 export const SEEDS = {
-  primary: "#0073EA", // blue
-  secondary: "#6C6CFF", // purple
-  tertiary: "#E2445C", // pink
-  success: "#00C875", // green
-  warning: "#FDAB3D", // orange
-  info: "#579BFC", // light blue
-  accent: "#A25DDC", // violet
-  highlight: "#FF158A", // magenta
+  primary: "#2563EB", // blue
+  secondary: "#5B5CE2", // indigo
+  tertiary: "#607089", // steel
+  success: "#22A86B", // green
+  warning: "#D98A20", // amber
+  info: "#3B82F6", // light blue
+  accent: "#4F46E5", // deep violet
+  highlight: "#0891B2", // cyan
 } as const;
 
 export type SeedName = keyof typeof SEEDS;

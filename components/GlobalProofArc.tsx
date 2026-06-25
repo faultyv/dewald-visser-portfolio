@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { Reveal, StaggerGroup, StaggerItem } from "./Reveal";
-import { IconSymbol } from "./IconSymbol";
 
 const ARC_STEPS = [
   {
@@ -96,7 +95,6 @@ export function GlobalProofArc() {
 
           <div className="global-proof-story">
             <div className="global-proof-story-label">
-              <IconSymbol name="hub" size={18} filled />
               Career logic, not loose claims
             </div>
             <h3>From change-readiness to growth infrastructure.</h3>

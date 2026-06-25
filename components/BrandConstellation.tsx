@@ -3,8 +3,7 @@
 import { useMemo, useState } from "react";
 import { motion } from "motion/react";
 import { Reveal } from "./Reveal";
-import { IconSymbol } from "./IconSymbol";
-import { SEED_BG, SEED_ON, SEED_TEXT, SEED_CONTAINER_BG, SEED_CONTAINER_TEXT } from "@/lib/seed-classes";
+import { SEED_TEXT, SEED_CONTAINER_BG, SEED_CONTAINER_TEXT } from "@/lib/seed-classes";
 import type { SeedName } from "@/lib/m3-theme";
 import type { CompanyEntry } from "@/lib/content";
 
@@ -12,16 +11,15 @@ type Domain = {
   id: string;
   label: string;
   seed: SeedName;
-  icon: string;
   note: string;
 };
 
 const DOMAINS: Domain[] = [
-  { id: "ventures", label: "Ventures", seed: "secondary", icon: "storefront", note: "Founder-led offers and owned systems" },
-  { id: "ministry", label: "Education & Mission", seed: "success", icon: "school", note: "Learning, programmes, media and mission work" },
-  { id: "retail", label: "Retail & Production", seed: "tertiary", icon: "inventory_2", note: "DTP, POS, repro and house brands" },
-  { id: "web", label: "Web, Brand & Growth", seed: "primary", icon: "language", note: "Campaigns, sites and operational tooling" },
-  { id: "foundations", label: "Commercial Foundations", seed: "warning", icon: "workspace_premium", note: "Software sales, business development and lead discipline" },
+  { id: "ventures", label: "Ventures", seed: "secondary", note: "Founder-led offers and owned systems" },
+  { id: "ministry", label: "Education & Mission", seed: "success", note: "Learning, programmes, media and mission work" },
+  { id: "retail", label: "Retail & Production", seed: "tertiary", note: "DTP, POS, repro and house brands" },
+  { id: "web", label: "Web, Brand & Growth", seed: "primary", note: "Campaigns, sites and operational tooling" },
+  { id: "foundations", label: "Commercial Foundations", seed: "warning", note: "Software sales, business development and lead discipline" },
 ];
 
 const COMPANY_DOMAINS: Record<string, string> = {
@@ -47,46 +45,20 @@ const COMPANY_DOMAINS: Record<string, string> = {
   "Investors Choice": "foundations",
 };
 
-const ICON_BY_COMPANY: Record<string, string> = {
-  "Sun Paper and Coatings": "storefront",
-  clicklocal: "ads_click",
-  "Contours Design Studio / Faux Flora": "local_florist",
-  Thinklocal: "design_services",
-  Webmeta: "manage_search",
-  "The Dreambook Ministry": "volunteer_activism",
-  "Joseph Business School Africa": "school",
-  "Olive Tree Church": "diversity_3",
-  "Damelin Online / LCIBS": "psychology_alt",
-  Mediatrade: "print",
-  "Africa Paints": "format_paint",
-  "Solid Doors": "door_front",
-  "Alif Doors": "door_sliding",
-  "Cambridge University initiative": "history_edu",
-  "Kirstenhof Car Hire": "directions_car",
-  "Autodoc Diagnostics": "car_repair",
-  "Dynamic Automation": "precision_manufacturing",
-  "The Unlimited": "group_add",
-  "Old Mutual": "account_balance",
-  "Investors Choice": "monitoring",
-};
-
-const THREADS: { label: string; seed: SeedName; icon: string; body: string }[] = [
+const THREADS: { label: string; seed: SeedName; body: string }[] = [
   {
     label: "Education, mission & production group",
     seed: "highlight",
-    icon: "hub",
     body: "The Dreambook, Joseph Business School Africa and Mediatrade - connected work across mission-led brands, programme education and production.",
   },
   {
     label: "clicklocal agency",
     seed: "tertiary",
-    icon: "route",
     body: "My own agency and the client work that ran through it — Africa Paints, Solid Doors, Alif Doors and Dynamic Automation.",
   },
   {
     label: "Founder path",
     seed: "secondary",
-    icon: "rocket_launch",
     body: "Owned ventures where strategy, offer, brand and operating system all sat together — Sun Paper, clicklocal and Faux Flora.",
   },
 ];
@@ -101,20 +73,13 @@ function isExternalUrl(url?: string) {
 }
 
 function CompanyCard({ company, domain }: { company: CompanyEntry; domain: Domain }) {
-  const icon = ICON_BY_COMPANY[company.name] ?? domain.icon;
   const inner = (
     <article className="hig-card group relative flex h-full flex-col rounded-[20px] p-4 transition-[transform,box-shadow] duration-300 hover:-translate-y-1 md:p-4.5">
       <div className="flex items-start justify-between gap-3">
-        <span className={`feature-icon grid h-11 w-11 shrink-0 place-items-center rounded-2xl ${SEED_BG[domain.seed]} ${SEED_ON[domain.seed]} elevation-1`}>
-          <IconSymbol name={icon} size={22} filled />
+        <span className={`company-domain-mark ${SEED_CONTAINER_BG[domain.seed]} ${SEED_CONTAINER_TEXT[domain.seed]}`}>
+          {domain.label}
         </span>
-        {company.url ? (
-          <IconSymbol
-            name={isExternalUrl(company.url) ? "open_in_new" : "arrow_outward"}
-            size={16}
-            className="mt-1 text-on-surface-variant opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-          />
-        ) : null}
+        {company.url ? <span className="company-link-cue" aria-hidden="true">Open</span> : null}
       </div>
       <div className="mt-3.5 text-title-s text-on-surface">{company.name}</div>
       <div className={`mt-1 text-label-m ${SEED_TEXT[domain.seed]}`}>{company.relationship}</div>
@@ -201,7 +166,6 @@ export function BrandConstellation({ companies }: { companies: CompanyEntry[] })
                     on ? `border-transparent ${SEED_CONTAINER_BG[domain.seed]} ${SEED_CONTAINER_TEXT[domain.seed]}` : "border-outline-variant text-on-surface-variant hover:text-on-surface"
                   }`}
                 >
-                  <IconSymbol name={domain.icon} size={15} filled className={on ? undefined : SEED_TEXT[domain.seed]} />
                   {domain.label}
                   <span className="rounded-full border border-current/25 px-1.5 py-0.5 text-label-s leading-none opacity-80">{count}</span>
                 </motion.button>
@@ -216,9 +180,6 @@ export function BrandConstellation({ companies }: { companies: CompanyEntry[] })
             <Reveal key={domain.id} delay={0.04}>
               <div>
                 <div className="mb-4 flex items-center gap-3">
-                  <span className={`feature-icon grid h-10 w-10 shrink-0 place-items-center rounded-2xl ${SEED_CONTAINER_BG[domain.seed]} ${SEED_CONTAINER_TEXT[domain.seed]}`}>
-                    <IconSymbol name={domain.icon} size={20} filled />
-                  </span>
                   <div>
                     <div className="text-title-m text-on-surface">{domain.label}</div>
                     <div className="text-label-s text-on-surface-variant">{domain.note}</div>
@@ -240,14 +201,12 @@ export function BrandConstellation({ companies }: { companies: CompanyEntry[] })
           <Reveal delay={0.1}>
             <div className="mt-12 border-t border-outline-variant pt-9">
               <div className="mb-4 flex items-center gap-2 text-label-l text-on-surface-variant">
-                <IconSymbol name="hub" size={16} className="text-highlight" />
                 The threads that connect them
               </div>
               <div className="grid gap-3 md:grid-cols-3">
                 {THREADS.map((thread) => (
                   <div key={thread.label} className="hig-card rounded-[20px] p-4.5">
                     <div className={`flex items-center gap-2 text-title-s ${SEED_TEXT[thread.seed]}`}>
-                      <IconSymbol name={thread.icon} size={18} filled />
                       {thread.label}
                     </div>
                     <p className="mt-2 text-body-s text-on-surface-variant">{thread.body}</p>

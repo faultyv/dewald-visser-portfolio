@@ -161,7 +161,7 @@ section[id],
   width: min(calc(100vw - 40px), 1300px);
   height: 1px;
   border-radius: 999px;
-  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary), var(--color-tertiary), transparent);
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary), var(--color-highlight), transparent);
   opacity: 0;
   pointer-events: none;
   transform: scaleX(var(--section-progress, 0));
@@ -272,7 +272,7 @@ body {
 }
 
 main section[id] {
-  scroll-margin-top: 136px;
+  scroll-margin-top: 0;
 }
 
 /*
@@ -1002,6 +1002,18 @@ main section[id] {
   box-shadow: 0 24px 54px -30px var(--m3-shadow);
 }
 
+.system-card-index {
+  color: var(--color-on-surface);
+  background: color-mix(in srgb, var(--color-surface-container-high) 78%, transparent);
+}
+
+.system-chain-separator {
+  width: 18px;
+  height: 1px;
+  background: var(--color-outline);
+  opacity: 0.8;
+}
+
 .system-card-breathe {
   animation: systemBreath 6.8s ease-in-out infinite;
   will-change: transform;
@@ -1093,6 +1105,16 @@ main section[id] {
   transform: rotate(-28deg);
 }
 
+.system-cursor-pointer {
+  width: 12px;
+  height: 12px;
+  border-top: 10px solid currentColor;
+  border-right: 6px solid transparent;
+  border-left: 6px solid transparent;
+  transform: rotate(-28deg);
+  filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.22));
+}
+
 .system-cursor-a {
   left: 14%;
   top: 16%;
@@ -1163,8 +1185,8 @@ main section[id] {
 .ai-feature-card {
   isolation: isolate;
   background:
-    radial-gradient(130% 150% at 14% 0%, color-mix(in srgb, var(--color-highlight) 15%, transparent), transparent 46%),
-    radial-gradient(120% 150% at 100% 100%, color-mix(in srgb, var(--color-primary) 12%, transparent), transparent 52%),
+    radial-gradient(130% 150% at 14% 0%, color-mix(in srgb, var(--color-highlight) 8%, transparent), transparent 48%),
+    radial-gradient(120% 150% at 100% 100%, color-mix(in srgb, var(--color-primary) 8%, transparent), transparent 54%),
     var(--hig-glass);
 }
 
@@ -1174,9 +1196,9 @@ main section[id] {
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background-image: radial-gradient(color-mix(in srgb, var(--color-highlight) 24%, transparent) 1px, transparent 1.4px);
+  background-image: radial-gradient(color-mix(in srgb, var(--color-primary) 18%, transparent) 1px, transparent 1.4px);
   background-size: 22px 22px;
-  opacity: 0.12;
+  opacity: 0.07;
   -webkit-mask-image: radial-gradient(130% 110% at 82% 26%, #000, transparent 66%);
   mask-image: radial-gradient(130% 110% at 82% 26%, #000, transparent 66%);
 }
@@ -1186,40 +1208,77 @@ main section[id] {
   position: absolute;
   inset: 16px;
   z-index: 0;
-  border: 1px solid color-mix(in srgb, var(--color-highlight) 18%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-outline) 36%, transparent);
   border-radius: 22px;
-  opacity: 0.44;
+  opacity: 0.34;
   pointer-events: none;
-}
-
-.ai-mark {
-  box-shadow: 0 0 0 6px color-mix(in srgb, var(--color-highlight) 12%, transparent), 0 16px 28px -18px var(--color-highlight);
-  animation: aiMarkPulse 4.8s ease-in-out infinite;
-}
-
-.ai-glow {
-  position: absolute;
-  z-index: 0;
-  right: -8%;
-  top: 50%;
-  width: clamp(220px, 28vw, 380px);
-  height: clamp(220px, 28vw, 380px);
-  transform: translateY(-50%);
-  border-radius: 999px;
-  pointer-events: none;
-  background: radial-gradient(circle, color-mix(in srgb, var(--color-highlight) 30%, transparent), transparent 62%);
-  filter: blur(6px);
-  animation: aiGlowPulse 5.6s ease-in-out infinite;
-}
-
-@keyframes aiGlowPulse {
-  0%, 100% { opacity: 0.5; transform: translateY(-50%) scale(1); }
-  50% { opacity: 0.85; transform: translateY(-50%) scale(1.08); }
 }
 
 .ai-evidence-column {
   display: grid;
   gap: 14px;
+}
+
+.ai-signal-panel {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--color-outline-variant);
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--color-primary) 7%, transparent), transparent 44%),
+    color-mix(in srgb, var(--color-surface-container-low) 88%, transparent);
+  padding: 16px;
+  box-shadow: 0 22px 58px -44px var(--m3-shadow), 0 1px 0 var(--hig-specular) inset;
+}
+
+.ai-signal-panel::before {
+  content: "";
+  position: absolute;
+  inset-inline: 16px;
+  top: 54px;
+  height: 1px;
+  background: linear-gradient(90deg, color-mix(in srgb, var(--color-primary) 42%, transparent), transparent);
+  opacity: 0.55;
+}
+
+.ai-signal-panel-head {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 14px;
+  margin-bottom: 18px;
+}
+
+.ai-signal-panel-head span,
+.ai-signal-rows span {
+  color: var(--color-highlight);
+  font: 800 11px/1.2 var(--font-body);
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+}
+
+.ai-signal-panel-head strong {
+  color: var(--color-on-surface);
+  font: 800 12px/1.2 var(--font-body);
+}
+
+.ai-signal-rows {
+  display: grid;
+  gap: 10px;
+}
+
+.ai-signal-rows div {
+  border: 1px solid var(--color-outline-variant);
+  background: color-mix(in srgb, var(--color-surface-container) 72%, transparent);
+  padding: 13px 14px;
+}
+
+.ai-signal-rows strong {
+  display: block;
+  margin-top: 5px;
+  color: var(--color-on-surface);
+  font: 750 14px/1.35 var(--font-body);
 }
 
 .ai-protocol-strip {
@@ -1230,10 +1289,10 @@ main section[id] {
 }
 
 .ai-protocol-strip span {
-  border: 1px solid color-mix(in srgb, var(--color-highlight) 22%, var(--color-outline-variant));
+  border: 1px solid var(--color-outline-variant);
   border-radius: 999px;
-  background: color-mix(in srgb, var(--color-highlight-container) 40%, transparent);
-  color: var(--color-on-highlight-container);
+  background: color-mix(in srgb, var(--color-surface-container-low) 82%, transparent);
+  color: var(--color-on-surface);
   padding: 7px 10px;
   font-size: 11px;
   font-weight: 800;
@@ -1242,147 +1301,11 @@ main section[id] {
   text-transform: uppercase;
 }
 
-.ai-console-visual {
-  position: relative;
-  min-height: 250px;
-  overflow: hidden;
-  border: 1px solid color-mix(in srgb, var(--color-highlight) 24%, var(--color-outline-variant));
-  border-radius: 26px;
-  background:
-    radial-gradient(circle at 18% 14%, color-mix(in srgb, var(--color-highlight) 22%, transparent), transparent 34%),
-    radial-gradient(circle at 84% 76%, color-mix(in srgb, var(--color-primary) 20%, transparent), transparent 36%),
-    linear-gradient(180deg, color-mix(in srgb, var(--color-surface-container-high) 78%, transparent), color-mix(in srgb, var(--color-surface-container-low) 84%, transparent));
-  box-shadow: 0 28px 70px -44px var(--m3-shadow), 0 1px 0 var(--hig-specular) inset;
-}
-
-.ai-console-visual::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: linear-gradient(105deg, transparent 30%, rgba(255, 255, 255, 0.22) 46%, transparent 60%);
-  mix-blend-mode: screen;
-  transform: translateX(-120%);
-  animation: aiConsoleSweep 7.2s ease-in-out infinite;
-}
-
-.ai-console-topline {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 14px 15px 0;
-  color: var(--color-on-surface-variant);
-  font-size: 10.5px;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  line-height: 1.2;
-  text-transform: uppercase;
-}
-
-.ai-console-topline strong {
-  color: var(--color-highlight);
-}
-
-.ai-console-core {
-  position: relative;
-  min-height: 156px;
-  margin: 10px 14px;
-  overflow: hidden;
-  border: 1px solid color-mix(in srgb, var(--color-outline) 40%, transparent);
-  border-radius: 22px;
-  background: color-mix(in srgb, var(--color-surface-container) 58%, transparent);
-}
-
-.ai-console-grid {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(color-mix(in srgb, var(--color-highlight) 20%, transparent) 1px, transparent 1px),
-    linear-gradient(90deg, color-mix(in srgb, var(--color-primary) 18%, transparent) 1px, transparent 1px);
-  background-size: 28px 28px;
-  mask-image: radial-gradient(circle at 50% 48%, #000, transparent 72%);
-  opacity: 0.62;
-  animation: aiGridDrift 12s linear infinite;
-}
-
-.ai-console-token {
-  position: absolute;
-  z-index: 2;
-  border: 1px solid color-mix(in srgb, var(--color-highlight) 26%, var(--color-outline-variant));
-  border-radius: 999px;
-  background: color-mix(in srgb, var(--color-surface-container-high) 86%, transparent);
-  color: var(--color-on-surface);
-  padding: 7px 10px;
-  font-size: 11px;
-  font-weight: 800;
-  box-shadow: 0 14px 34px -28px var(--m3-shadow);
-}
-
-.ai-console-token-a {
-  left: 9%;
-  top: 24%;
-}
-
-.ai-console-token-b {
-  right: 9%;
-  top: 18%;
-}
-
-.ai-console-token-c {
-  bottom: 18%;
-  left: 12%;
-}
-
-.ai-console-chip {
-  position: absolute;
-  left: 50%;
-  top: 52%;
-  z-index: 3;
-  display: grid;
-  width: 96px;
-  height: 78px;
-  place-items: center;
-  transform: translate(-50%, -50%);
-  border: 1px solid color-mix(in srgb, var(--color-highlight) 38%, transparent);
-  border-radius: 24px;
-  background:
-    linear-gradient(180deg, var(--color-highlight), color-mix(in srgb, var(--color-highlight) 72%, var(--color-primary)));
-  color: var(--color-on-highlight);
-  font-family: var(--font-display);
-  font-size: 13px;
-  font-weight: 800;
-  box-shadow: 0 20px 52px -28px var(--color-highlight);
-}
-
-.ai-console-output {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  padding: 0 14px 14px;
-}
-
-.ai-console-output span {
-  flex: 1 1 120px;
-  border: 1px solid var(--color-outline-variant);
-  border-radius: 16px;
-  background: color-mix(in srgb, var(--color-surface-container) 76%, transparent);
-  color: var(--color-on-surface);
-  padding: 9px 10px;
-  font-size: 12px;
-  font-weight: 750;
-  text-align: center;
-}
-
 .ai-proof-photo {
   position: relative;
   min-height: 180px;
   overflow: hidden;
-  border: 1px solid color-mix(in srgb, var(--color-highlight) 24%, var(--color-outline-variant));
+  border: 1px solid var(--color-outline-variant);
   border-radius: 26px;
   background: var(--color-surface-container-low);
   box-shadow: 0 24px 68px -44px var(--m3-shadow);
@@ -1425,58 +1348,6 @@ main section[id] {
   margin-bottom: 3px;
   color: #fff;
   font: 800 13px/1.2 var(--font-body);
-}
-
-.ai-flow {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  max-width: 440px;
-}
-
-.ai-flow-line {
-  position: absolute;
-  left: 8px;
-  right: 8px;
-  top: 6px;
-  height: 2px;
-  border-radius: 2px;
-  background: linear-gradient(90deg,
-    color-mix(in srgb, var(--color-highlight) 55%, transparent),
-    color-mix(in srgb, var(--color-primary) 55%, transparent));
-}
-
-.ai-flow-node {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 9px;
-}
-
-.ai-flow-bead {
-  width: 14px;
-  height: 14px;
-  border-radius: 999px;
-  background: var(--color-highlight);
-  box-shadow:
-    0 0 0 4px color-mix(in srgb, var(--color-highlight) 16%, transparent),
-    0 0 16px color-mix(in srgb, var(--color-highlight) 60%, transparent);
-  animation: aiBeadPulse 2.8s ease-in-out infinite;
-}
-
-@keyframes aiBeadPulse {
-  0%, 100% { transform: scale(0.78); opacity: 0.7; }
-  50% { transform: scale(1.18); opacity: 1; }
-}
-
-.ai-flow-label {
-  font-size: 10.5px;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: var(--color-on-surface-variant);
-  white-space: nowrap;
 }
 
 .project-cover-board {
@@ -1684,13 +1555,7 @@ main section[id] {
 .evidence-orbit-icon::before,
 .proof-link-icon::before,
 .feature-icon::before {
-  content: "";
-  position: absolute;
-  inset: -6px;
-  border: 1px solid currentColor;
-  border-radius: inherit;
-  opacity: 0.22;
-  animation: kineticOrbit 4.6s cubic-bezier(0.2, 0, 0, 1) infinite;
+  display: none;
 }
 
 .evidence-device {
@@ -3365,14 +3230,14 @@ main section[id] {
   z-index: 4;
 }
 
-/* ---------- Animated feature icons (capability badges) ---------- */
+/* ---------- Restrained feature icons ---------- */
 .feature-icon {
-  animation: featureBadgeBreathe 4.2s ease-in-out infinite;
-  transition: box-shadow 0.3s ease;
-  will-change: transform;
+  animation: none;
+  transition: border-color 0.24s ease, background-color 0.24s ease;
+  will-change: auto;
 }
 .group:hover .feature-icon {
-  box-shadow: 0 16px 34px -16px var(--m3-shadow);
+  box-shadow: none;
 }
 @keyframes featureBadgeBreathe {
   0%, 100% { transform: scale(1); }
@@ -3444,8 +3309,8 @@ main section[id] {
   color: var(--color-primary);
   background-image: linear-gradient(100deg,
     var(--color-primary) 0%,
-    var(--color-tertiary) 48%,
-    var(--color-secondary) 100%);
+    var(--color-secondary) 50%,
+    var(--color-highlight) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -3604,6 +3469,39 @@ main section[id] {
   display: flex;
   flex-direction: column;
 }
+.hire-lane-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.hire-lane-number,
+.pillar-card-index,
+.ai-item-index,
+.system-card-index {
+  display: inline-grid;
+  min-width: 42px;
+  height: 34px;
+  place-items: center;
+  border: 1px solid var(--color-outline-variant);
+  font: 800 12px/1 var(--font-body);
+}
+.hire-lane-label,
+.system-card-label {
+  color: var(--color-on-surface-variant);
+  font: 800 11px/1.2 var(--font-body);
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+}
+.pillar-card-top {
+  display: flex;
+  align-items: center;
+}
+.ai-item-index {
+  min-width: 38px;
+  height: 32px;
+  flex: none;
+}
 .hire-own-row {
   display: flex;
   align-items: center;
@@ -3752,9 +3650,9 @@ main section[id] {
   z-index: 0;
   pointer-events: none;
   background:
-    radial-gradient(circle at 10% 10%, color-mix(in srgb, var(--color-highlight) 18%, transparent), transparent 34%),
-    radial-gradient(circle at 92% 82%, color-mix(in srgb, var(--color-success) 16%, transparent), transparent 36%),
-    linear-gradient(118deg, transparent 0 45%, color-mix(in srgb, var(--color-outline) 18%, transparent) 45.2%, transparent 45.5% 100%);
+    radial-gradient(circle at 10% 10%, color-mix(in srgb, var(--color-primary) 9%, transparent), transparent 34%),
+    radial-gradient(circle at 92% 82%, color-mix(in srgb, var(--color-success) 10%, transparent), transparent 36%),
+    linear-gradient(118deg, transparent 0 45%, color-mix(in srgb, var(--color-outline) 14%, transparent) 45.2%, transparent 45.5% 100%);
 }
 
 .global-proof-board > * {
@@ -3772,7 +3670,7 @@ main section[id] {
   min-height: clamp(360px, 46vw, 620px);
   margin: 0;
   overflow: hidden;
-  border: 1px solid color-mix(in srgb, var(--color-highlight) 24%, var(--color-outline-variant));
+  border: 1px solid var(--color-outline-variant);
   background: var(--color-surface-container-low);
   box-shadow: 0 26px 70px -44px var(--m3-shadow), 0 1px 0 var(--hig-specular) inset;
 }
@@ -3873,10 +3771,10 @@ main section[id] {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  border: 1px solid color-mix(in srgb, var(--color-highlight) 22%, var(--color-outline-variant));
+  border: 1px solid var(--color-outline-variant);
   border-radius: 999px;
-  background: color-mix(in srgb, var(--color-highlight-container) 34%, transparent);
-  color: var(--color-on-highlight-container);
+  background: color-mix(in srgb, var(--color-surface-container-low) 82%, transparent);
+  color: var(--color-on-surface-variant);
   padding: 7px 10px;
   font: 800 11px/1.2 var(--font-body);
   letter-spacing: 0.04em;
@@ -4011,6 +3909,28 @@ main section[id] {
   font-size: 25px;
 }
 
+.company-domain-mark {
+  display: inline-flex;
+  min-height: 30px;
+  align-items: center;
+  border: 1px solid var(--color-outline-variant);
+  padding: 0 10px;
+  font: 800 10.5px/1.1 var(--font-body);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.company-link-cue {
+  color: var(--color-on-surface-variant);
+  font: 750 11px/1.2 var(--font-body);
+  opacity: 0;
+  transition: opacity 0.24s ease;
+}
+
+.group:hover .company-link-cue {
+  opacity: 0.82;
+}
+
 @media (min-width: 768px) {
   .spine-head {
     grid-template-columns: minmax(0, 1fr) minmax(360px, 0.48fr);
@@ -4133,6 +4053,8 @@ main section[id] {
 .career-current-founder,
 .career-proof-matrix article,
 .ai-proof-photo,
+.ai-signal-panel,
+.ai-signal-rows div,
 .career-story-body,
 .proof-link-deck,
 .proof-link-card,
@@ -4170,7 +4092,6 @@ main section[id] {
 .spine-proof-chip,
 .spine-proof-route span,
 .ai-protocol-strip span,
-.ai-console-output span,
 .global-proof-hero-photo figcaption,
 .global-proof-mini-grid figcaption,
 .global-proof-story-label,
@@ -4178,6 +4099,7 @@ main section[id] {
 .global-proof-step > strong,
 .hire-proof-trail,
 .career-proof-ribbon,
+.company-domain-mark,
 .ai-proof-photo figcaption,
 .section-proof-strip,
 .contact-route-strip,
@@ -4189,9 +4111,6 @@ main section[id] {
 .hire-thesis-panel > .hig-glass,
 .hire-fit-panel > .hig-card,
 .career-context-frame,
-.ai-console-visual,
-.ai-console-core,
-.ai-console-chip,
 .contact-route-strip,
 .credential-trust-strip {
   border-radius: var(--shape-squircle-xl) !important;

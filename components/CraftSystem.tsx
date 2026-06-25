@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { Reveal } from "./Reveal";
-import { IconSymbol } from "./IconSymbol";
 import type { SiteConfig } from "@/lib/content";
 
 const SYSTEM_CARDS = [
@@ -8,32 +7,24 @@ const SYSTEM_CARDS = [
     label: "Signal",
     title: "Brief clarity",
     body: "Audience, offer, constraints and success criteria are mapped before creative starts.",
-    icon: "travel_explore",
-    accent: "bg-primary text-on-primary",
     text: "text-primary",
   },
   {
     label: "Creative",
     title: "Campaign language",
     body: "Design, copy and content decisions become a reusable language the team can keep using.",
-    icon: "palette",
-    accent: "bg-tertiary text-on-tertiary",
     text: "text-tertiary",
   },
   {
     label: "System",
     title: "Working surface",
     body: "Pages, forms, content paths and production tools turn the idea into a working flow.",
-    icon: "web",
-    accent: "bg-success text-on-success",
     text: "text-success",
   },
   {
     label: "Loop",
     title: "AI-assisted iteration",
     body: "Prompt systems, review habits and data points make the next move faster and sharper.",
-    icon: "auto_awesome",
-    accent: "bg-highlight text-on-highlight",
     text: "text-highlight",
   },
 ] as const;
@@ -62,10 +53,8 @@ function SystemCard({ card, index }: { card: (typeof SYSTEM_CARDS)[number]; inde
   return (
     <article className="system-node system-card-breathe hig-card flex min-h-[174px] flex-col rounded-[22px] p-4 md:p-5" style={{ animationDelay: `${index * 0.35}s` }}>
       <div className="relative z-10 flex items-start justify-between gap-3">
-        <div className={`feature-icon grid h-11 w-11 shrink-0 place-items-center rounded-[16px] ${card.accent}`}>
-          <IconSymbol name={card.icon} size={23} filled />
-        </div>
-        <span className={`rounded-full px-2.5 py-1 text-label-s ${card.text}`}>{card.label}</span>
+        <span className="system-card-index">{String(index + 1).padStart(2, "0")}</span>
+        <span className={`system-card-label ${card.text}`}>{card.label}</span>
       </div>
       <div className="relative z-10 mt-auto pt-6">
         <h3 className="m-0 text-title-m text-on-surface">{card.title}</h3>
@@ -113,11 +102,11 @@ export function CraftSystem({ site }: { site: SiteConfig }) {
             </div>
             <div className="flex flex-wrap items-center gap-1.5 text-label-s text-on-surface-variant">
               <span>Signal</span>
-              <IconSymbol name="arrow_forward" size={14} />
+              <span className="system-chain-separator" />
               <span>Creative</span>
-              <IconSymbol name="arrow_forward" size={14} />
+              <span className="system-chain-separator" />
               <span>Build</span>
-              <IconSymbol name="arrow_forward" size={14} />
+              <span className="system-chain-separator" />
               <span>Learn</span>
             </div>
           </div>
@@ -129,7 +118,7 @@ export function CraftSystem({ site }: { site: SiteConfig }) {
 
           {CURSORS.map((cursor) => (
             <div key={cursor.label} className={`system-cursor hidden sm:flex ${cursor.className}`} aria-hidden="true">
-              <IconSymbol name="near_me" size={23} filled className="system-cursor-arrow" />
+              <span className="system-cursor-pointer" />
               <span className={`rounded-full px-2.5 py-1 text-label-m shadow-lg ${cursor.tone}`}>{cursor.label}</span>
             </div>
           ))}
@@ -183,9 +172,6 @@ export function CraftSystem({ site }: { site: SiteConfig }) {
                   <div>
                     <div className="text-label-s text-primary">Decision loop</div>
                     <h3 className="mt-1 text-title-s text-on-surface">From idea to useful system</h3>
-                  </div>
-                  <div className="feature-icon grid h-10 w-10 place-items-center rounded-[14px] bg-primary text-on-primary">
-                    <IconSymbol name="hub" size={22} filled />
                   </div>
                 </div>
                 <div className="space-y-3">

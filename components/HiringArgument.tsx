@@ -1,12 +1,11 @@
 import { Reveal, StaggerGroup, StaggerItem } from "./Reveal";
-import { IconSymbol } from "./IconSymbol";
-import { SEED_BG, SEED_CONTAINER_BG, SEED_CONTAINER_TEXT, SEED_ON } from "@/lib/seed-classes";
+import { SEED_BG, SEED_CONTAINER_BG, SEED_CONTAINER_TEXT } from "@/lib/seed-classes";
 import type { CVEntry, CompanyEntry, Project } from "@/lib/content";
 
 const VALUE_LANES = [
   {
     seed: "primary" as const,
-    icon: "query_stats",
+    label: "Commercial",
     title: "Commercial and offer clarity",
     pressure: "Teams need someone who can understand the market, offer, pipeline and friction before deciding what should be made.",
     owns: ["Organic growth and paid campaigns", "Pricing and pipeline thinking", "Email, CRM and lead generation"],
@@ -14,7 +13,7 @@ const VALUE_LANES = [
   },
   {
     seed: "tertiary" as const,
-    icon: "palette",
+    label: "Creative",
     title: "Creative that ships",
     pressure: "Brands move when campaign language, media, production and distribution are built as one practical system.",
     owns: ["Adobe-led design systems", "Packaging, POS and campaign creative", "Photo, video, motion and live production"],
@@ -22,7 +21,7 @@ const VALUE_LANES = [
   },
   {
     seed: "success" as const,
-    icon: "web",
+    label: "Systems",
     title: "Web and operating systems",
     pressure: "A website is only useful when the content path, conversion flow, admin process and business logic actually work together.",
     owns: ["WordPress, Shopify and front-end builds", "Booking, LMS, CRM and quote flows", "Content architecture and launch systems"],
@@ -30,7 +29,7 @@ const VALUE_LANES = [
   },
   {
     seed: "highlight" as const,
-    icon: "auto_awesome",
+    label: "AI adoption",
     title: "Practical AI adoption",
     pressure: "AI only helps when it becomes adoption: people understand the change, teams trust the workflow, and the output survives human review.",
     owns: ["LCIBS AI readiness under Brett Kilpatrick", "JBSA Canva + ChatGPT rollout", "Spreadsheet logic translated into CPQ tools"],
@@ -116,14 +115,11 @@ export function HiringArgument({
       <div className="hire-thesis-grid">
         <Reveal delay={0.12} className="hire-thesis-panel">
           <div className="hig-glass h-full rounded-[28px] p-5 md:p-6">
-            <div className="mb-4 flex items-start justify-between gap-4">
+            <div className="mb-4">
               <div>
                 <div className="text-label-s text-primary">The executive summary</div>
-              <h3 className="mt-1 text-headline-s text-on-surface">A high-leverage operator for small teams, founders and growth environments.</h3>
-            </div>
-            <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-primary text-on-primary">
-              <IconSymbol name="workspace_premium" size={24} filled />
-            </span>
+                <h3 className="mt-1 text-headline-s text-on-surface">A high-leverage operator for small teams, founders and growth environments.</h3>
+              </div>
             </div>
             <p className="m-0 text-body-m text-on-surface-variant">
               This is not a portfolio of disconnected jobs. It is a progression from software sales, Damelin Online and LCIBS admissions into Adobe production, then into web builds, live content systems, organic growth, AI adoption and founder-level ownership. The value is the handoff: fewer gaps between idea, asset, campaign, website, sales flow and operating system.
@@ -143,7 +139,7 @@ export function HiringArgument({
 
         <Reveal delay={0.16} className="hire-fit-panel">
           <div className="hig-card h-full rounded-[28px] p-5 md:p-6">
-            <div className="mb-4 text-label-s text-tertiary">Best-fit brief</div>
+            <div className="mb-4 text-label-s text-on-surface-variant">Best-fit brief</div>
             <h3 className="text-headline-s text-on-surface">Use Dewald when the job crosses lanes.</h3>
             <div className="mt-5 flex flex-col gap-3">
               {FIT_SIGNALS.map((signal, index) => (
@@ -158,15 +154,15 @@ export function HiringArgument({
       </div>
 
       <StaggerGroup className="hire-lane-grid">
-        {VALUE_LANES.map((lane) => (
+        {VALUE_LANES.map((lane, index) => (
           <StaggerItem key={lane.title}>
             <article className="hire-lane-card hig-card h-full rounded-[24px] p-5">
-              <div className="mb-5 flex items-start justify-between gap-3">
-                <span className={`grid h-11 w-11 place-items-center rounded-2xl ${SEED_BG[lane.seed]} ${SEED_ON[lane.seed]}`}>
-                  <IconSymbol name={lane.icon} size={23} filled />
+              <div className="hire-lane-top mb-5">
+                <span className={`hire-lane-number ${SEED_CONTAINER_BG[lane.seed]} ${SEED_CONTAINER_TEXT[lane.seed]}`}>
+                  {String(index + 1).padStart(2, "0")}
                 </span>
-                <span className={`rounded-full px-2.5 py-1 text-label-s ${SEED_CONTAINER_BG[lane.seed]} ${SEED_CONTAINER_TEXT[lane.seed]}`}>
-                  Owns the lane
+                <span className="hire-lane-label">
+                  {lane.label}
                 </span>
               </div>
               <h3 className="text-title-l text-on-surface">{lane.title}</h3>
@@ -200,7 +196,7 @@ export function HiringArgument({
             </p>
           </div>
           <div className="hire-impact-steps">
-            {IMPACT_MAP.map((step, index) => (
+            {IMPACT_MAP.map((step) => (
               <article key={step.window} className="hire-impact-step">
                 <div className="hire-impact-window">{step.window}</div>
                 <div className="hire-impact-copy">
@@ -212,7 +208,6 @@ export function HiringArgument({
                     ))}
                   </div>
                 </div>
-                {index < IMPACT_MAP.length - 1 ? <IconSymbol name="arrow_forward" size={18} className="hire-impact-arrow" /> : null}
               </article>
             ))}
           </div>

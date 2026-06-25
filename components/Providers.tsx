@@ -15,7 +15,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
       <MotionConfig reducedMotion="user">
         <AtmosphereCanvas />
         <CustomCursor />
-        <div id="scrollbar" className="fixed top-0 left-0 h-[3px] w-0 z-[85] rounded-r-[3px]" style={{ background: "linear-gradient(90deg,var(--color-primary),var(--color-secondary) 40%,var(--color-tertiary) 70%,var(--color-success))" }} />
+        <div id="scrollbar" className="fixed top-0 left-0 h-[3px] w-0 z-[85] rounded-r-[3px]" style={{ background: "linear-gradient(90deg,var(--color-primary),var(--color-secondary) 46%,var(--color-highlight) 78%,var(--color-success))" }} />
         <NavBar />
         <MotionRoot />
         <main className="relative z-10">{children}</main>

@@ -1,15 +1,13 @@
 import Image from "next/image";
 import { Reveal, StaggerGroup, StaggerItem } from "./Reveal";
 import { TiltCard } from "./TiltCard";
-import { IconSymbol } from "./IconSymbol";
-import { SEED_BG, SEED_ON, SEED_TEXT, SEED_CONTAINER_BG, SEED_CONTAINER_TEXT } from "@/lib/seed-classes";
+import { SEED_BG, SEED_TEXT, SEED_CONTAINER_BG, SEED_CONTAINER_TEXT } from "@/lib/seed-classes";
 import type { SeedName } from "@/lib/m3-theme";
 
-const PILLARS: { n: string; seed: SeedName; icon: string; title: string; proof: string; summary: string; items: string[] }[] = [
+const PILLARS: { n: string; seed: SeedName; title: string; proof: string; summary: string; items: string[] }[] = [
   {
     n: "01",
     seed: "secondary",
-    icon: "rocket_launch",
     title: "Entrepreneurship and Strategy",
     proof: "Founder / operator",
     summary: "Building ventures, offers and operating systems from the ground up.",
@@ -18,7 +16,6 @@ const PILLARS: { n: string; seed: SeedName; icon: string; title: string; proof: 
   {
     n: "02",
     seed: "primary",
-    icon: "bar_chart",
     title: "Growth Marketing",
     proof: "Growth channels",
     summary: "Campaign strategy tied to demand, content performance, paid channels and measurable lead flow.",
@@ -27,7 +24,6 @@ const PILLARS: { n: string; seed: SeedName; icon: string; title: string; proof: 
   {
     n: "03",
     seed: "tertiary",
-    icon: "palette",
     title: "Graphic Design",
     proof: "Adobe-led creative",
     summary: "Visual systems that carry a brand across print, social, motion and web.",
@@ -36,7 +32,6 @@ const PILLARS: { n: string; seed: SeedName; icon: string; title: string; proof: 
   {
     n: "04",
     seed: "success",
-    icon: "code",
     title: "Web and Front-End",
     proof: "Systems that ship",
     summary: "Websites, stores and quote/automation tools designed around real operational needs.",
@@ -45,15 +40,12 @@ const PILLARS: { n: string; seed: SeedName; icon: string; title: string; proof: 
   {
     n: "05",
     seed: "highlight",
-    icon: "auto_awesome",
     title: "Practical AI Enablement",
     proof: "Workflow layer",
     summary: "AI treated as adoption work: launch the idea, train the humans, create the review loop and turn the logic into tools people can actually use.",
     items: ["Early LCIBS AI-readiness work under Brett Kilpatrick", "Operationalised Canva + ChatGPT inside the JBSA content engine", "Converted tangled spreadsheet logic into a web-based CPQ tool"],
   },
 ];
-
-const AI_ITEM_ICONS = ["model_training", "account_tree", "verified"];
 
 export function Pillars() {
   const ai = PILLARS[PILLARS.length - 1];
@@ -86,13 +78,9 @@ export function Pillars() {
           <StaggerItem>
             <TiltCard>
               <article className="ai-feature-card group hig-glass relative overflow-hidden rounded-[24px] p-5 md:rounded-[28px] md:p-8">
-                <span className="ai-glow hidden sm:block" aria-hidden="true" />
                 <div className="relative z-10 grid gap-7 md:grid-cols-[1.05fr_1fr] md:items-center md:gap-10">
                   <div>
                     <div className="mb-5 flex flex-wrap items-center gap-3">
-                      <div className={`ai-mark grid h-14 w-14 place-items-center rounded-2xl ${SEED_BG[ai.seed]}`}>
-                        <IconSymbol name={ai.icon} size={28} filled className={`${SEED_ON[ai.seed]} feature-glyph transition-transform duration-300 group-hover:scale-110`} />
-                      </div>
                       <div>
                         <div className={`text-label-s ${SEED_TEXT[ai.seed]}`}>Featured · The AI workflow layer</div>
                         <div className="text-label-s text-on-surface-variant">{ai.proof}</div>
@@ -107,25 +95,24 @@ export function Pillars() {
                     </div>
                   </div>
                   <div className="ai-evidence-column">
-                    <div className="ai-console-visual" aria-hidden="true">
-                      <div className="ai-console-topline">
-                        <span>education AI proof</span>
-                        <strong>LCIBS</strong>
+                    <div className="ai-signal-panel" aria-label="AI adoption proof">
+                      <div className="ai-signal-panel-head">
+                        <span>AI adoption proof</span>
+                        <strong>LCIBS to JBSA to CPQ</strong>
                       </div>
-                      <div className="ai-console-core">
-                        <span className="ai-console-grid" />
-                        <div className="ai-console-token ai-console-token-a">Launch</div>
-                        <div className="ai-console-token ai-console-token-b">Train</div>
-                        <div className="ai-console-token ai-console-token-c">Adopt</div>
-                        <div className="ai-console-chip">
-                          <IconSymbol name="auto_awesome" size={24} filled />
-                          AI proof
+                      <div className="ai-signal-rows">
+                        <div>
+                          <span>Exposure</span>
+                          <strong>Brett Kilpatrick mentorship context</strong>
                         </div>
-                      </div>
-                      <div className="ai-console-output">
-                        <span>Brett Kilpatrick</span>
-                        <span>HR readiness</span>
-                        <span>workflow tools</span>
+                        <div>
+                          <span>Adoption</span>
+                          <strong>Canva + ChatGPT rolled into real programme work</strong>
+                        </div>
+                        <div>
+                          <span>Systems</span>
+                          <strong>Spreadsheet logic translated into usable tools</strong>
+                        </div>
                       </div>
                     </div>
                     <figure className="ai-proof-photo m-0">
@@ -145,8 +132,8 @@ export function Pillars() {
                     <div className="grid gap-2.5">
                       {ai.items.map((it, idx) => (
                         <div key={it} className="flex items-center gap-3.5 rounded-2xl border border-outline-variant bg-surface-container-low p-3.5 transition-colors hover:border-outline">
-                          <span className={`grid h-9 w-9 shrink-0 place-items-center rounded-xl ${SEED_BG[ai.seed]} ${SEED_ON[ai.seed]}`}>
-                            <IconSymbol name={AI_ITEM_ICONS[idx] ?? "task_alt"} size={18} filled />
+                          <span className={`ai-item-index ${SEED_CONTAINER_BG[ai.seed]} ${SEED_CONTAINER_TEXT[ai.seed]}`}>
+                            {String(idx + 1).padStart(2, "0")}
                           </span>
                           <span className="text-body-m text-on-surface">{it}</span>
                         </div>
@@ -159,15 +146,14 @@ export function Pillars() {
           </StaggerItem>
 
           <div className="mobile-strip no-scrollbar -mx-5 flex gap-3.5 px-5 pb-3 sm:mx-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 sm:pb-0 md:gap-4.5 xl:grid-cols-4">
-            {core.map((p, i) => (
+            {core.map((p) => (
               <StaggerItem key={p.n} className="min-w-[78vw] max-w-[78vw] sm:min-w-0 sm:max-w-none">
                 <TiltCard className="h-full">
                   <article className="group hig-card flex h-full flex-col rounded-[22px] p-5 md:min-h-[280px] md:p-6">
-                    <div className={`feature-icon grid place-items-center rounded-2xl ${SEED_BG[p.seed]}`} style={{ width: 52, height: 52, animationDelay: `${i * 0.55}s` }}>
-                      <IconSymbol name={p.icon} size={26} filled className={`${SEED_ON[p.seed]} feature-glyph transition-transform duration-300 group-hover:scale-110`} />
+                    <div className="pillar-card-top">
+                      <span className={`pillar-card-index ${SEED_CONTAINER_BG[p.seed]} ${SEED_CONTAINER_TEXT[p.seed]}`}>Pillar {p.n}</span>
                     </div>
-                    <div className={`text-label-m mt-6 mb-2 ${SEED_TEXT[p.seed]}`}>Pillar {p.n}</div>
-                    <div className={`mb-3 w-max max-w-full rounded-full px-2.5 py-1 text-label-s ${SEED_CONTAINER_BG[p.seed]} ${SEED_CONTAINER_TEXT[p.seed]}`}>{p.proof}</div>
+                    <div className={`text-label-m mt-6 mb-2 ${SEED_TEXT[p.seed]}`}>{p.proof}</div>
                     <h3 className="mb-2 text-title-l text-on-surface">
                       {p.title}
                     </h3>
