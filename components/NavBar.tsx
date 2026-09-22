@@ -12,14 +12,10 @@ import { whatsappLink } from "@/lib/whatsapp";
 import { fmTransition } from "@/lib/motion-tokens";
 
 const LINKS = [
-  { href: "/#about", label: "About" },
-  { href: "/#system", label: "System" },
+  { href: "/#cv", label: "Experience" },
   { href: "/work", label: "Work" },
-  { href: "/#pillars", label: "Pillars" },
-  { href: "/#cv", label: "Career" },
-  { href: "/#companies", label: "Companies" },
-  { href: "/#method", label: "Method" },
-  { href: "/#credentials", label: "Certs" },
+  { href: "/#skills", label: "Skills" },
+  { href: "/#credentials", label: "Credentials" },
   { href: "/#contact", label: "Contact" },
 ];
 
@@ -35,6 +31,7 @@ export function NavBar({ name = "Dewald Visser" }: { name?: string }) {
   const { theme, setTheme, label } = useTheme();
 
   const navigateHash = (href: string) => (event: MouseEvent<HTMLAnchorElement>) => {
+    setOpen(false);
     if (!href.startsWith("/#") || pathname !== "/") return;
     const id = href.slice(2);
     const target = document.getElementById(id);
@@ -54,7 +51,7 @@ export function NavBar({ name = "Dewald Visser" }: { name?: string }) {
   };
 
   useEffect(() => {
-    const bridgeIds = ["spine", "hire-case", "global-proof"];
+    const bridgeIds = ["about"];
     const ids = [
       "hero",
       ...bridgeIds,
@@ -109,7 +106,7 @@ export function NavBar({ name = "Dewald Visser" }: { name?: string }) {
     <nav className="hig-glass !overflow-visible fixed left-3 right-3 top-3 z-[80] flex items-center justify-between rounded-[24px] px-3.5 py-2.5 sm:left-5 sm:right-5 sm:px-4 xl:left-8 xl:right-8 xl:py-3">
       <Link href="/#hero" onClick={navigateHash("/#hero")} className="state-layer flex min-w-0 items-center gap-2.5 rounded-full px-2 py-1.5 no-underline text-title-m text-on-surface sm:text-title-l">
         <span className="relative inline-block h-2.5 w-2.5 rounded-full bg-primary shadow-[0_0_18px_var(--color-primary)]" />
-        <span className="truncate">{name}</span>
+        <span className="whitespace-nowrap">{name}</span>
       </Link>
 
       <div className="hidden items-center gap-1 rounded-full border border-outline-variant/70 bg-surface-container/38 p-1 text-label-l xl:flex">

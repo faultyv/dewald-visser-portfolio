@@ -21,7 +21,7 @@ export function WorkTeaser({ projects }: { projects: Project[] }) {
             <div className="text-label-l text-success mb-4">Selected Work</div>
           </Reveal>
           <Reveal delay={0.05}>
-            <h2 className="text-headline-l text-on-surface"><span className="text-gradient text-gradient-animated">Proof</span>, not portfolio filler.</h2>
+            <h2 className="text-headline-l text-on-surface">Selected <span className="text-gradient text-gradient-animated">projects.</span></h2>
           </Reveal>
           <Reveal delay={0.08}>
             <p className="mt-4 max-w-[560px] text-body-m text-on-surface-variant">
@@ -42,7 +42,7 @@ export function WorkTeaser({ projects }: { projects: Project[] }) {
           </ButtonLink>
         </Reveal>
         <Reveal delay={0.15}>
-          <div className="snap-hint md:hidden">Swipe work</div>
+          <div className="snap-hint md:hidden">Explore the case studies</div>
         </Reveal>
       </div>
 

@@ -52,7 +52,6 @@ export function Hero({ site }: { site: SiteConfig }) {
       .from(".hero-tag > *", { opacity: 0, y: 16, scale: 0.9, duration: 0.55, stagger: 0.07, ease: "back.out(1.6)" }, "-=0.45")
       .from(".hero-pos", { opacity: 0, y: 16, duration: 0.6 }, "-=0.4")
       .from(".hero-cta", { opacity: 0, y: 16, duration: 0.6, stagger: 0.1, ease: "back.out(1.5)" }, "-=0.45")
-      .from(".hero-tools", { opacity: 0, y: 16, duration: 0.6 }, "-=0.4")
       .from(".hero-proof-board", { opacity: 0, x: 28, duration: 0.7, ease: "power3.out" }, "-=0.55")
       .from(".hero-scroll", { opacity: 0, duration: 0.5 }, "-=0.2");
 
@@ -100,13 +99,7 @@ export function Hero({ site }: { site: SiteConfig }) {
             ))}
           </h1>
 
-          <div className="hero-tag mt-6 flex max-w-[820px] flex-wrap gap-2 text-label-l md:mt-7 md:gap-2.5">
-            {site.tags.map((tag) => (
-              <span key={tag} className={`hig-control rounded-full px-3 py-1.5 sm:px-4 sm:py-2 ${TAG_TINT[tag] ?? "bg-surface-container text-on-surface"}`}>
-                {tag}
-              </span>
-            ))}
-          </div>
+          <p className="mt-5 text-title-l text-on-surface">{site.role}</p>
 
           <p className="hero-pos mt-7 max-w-[680px] text-body-l text-on-surface-variant md:mt-8 md:text-title-l">
             {heroPositionParts.length === 2 ? (
@@ -122,26 +115,24 @@ export function Hero({ site }: { site: SiteConfig }) {
 
           <div className="mt-8 flex flex-wrap gap-3 md:mt-10 md:gap-3.5">
             <span className="hero-cta">
-              <ButtonLink href="/work" variant="filled" magnetic>
-                View work <IconSymbol name="arrow_forward" size={18} />
+              <ButtonLink href="/#cv" variant="filled" magnetic>
+                View experience <IconSymbol name="arrow_forward" size={18} />
               </ButtonLink>
             </span>
             <span className="hero-cta">
-              <ButtonLink href={site.socials.linkedin} variant="outlined" external magnetic>
-                LinkedIn <IconSymbol name="open_in_new" size={17} />
+              <ButtonLink href="/cv" variant="outlined" magnetic>
+                View / print CV <IconSymbol name="description" size={17} />
               </ButtonLink>
             </span>
+            <span className="hero-cta"><ButtonLink href="/work" variant="text">View work <IconSymbol name="arrow_forward" size={18} /></ButtonLink></span>
           </div>
 
-          <div className="hero-tools mt-8 flex max-w-[980px] flex-wrap items-center gap-3 md:mt-10 md:gap-4.5">
-            <span className="text-label-m text-on-surface-variant">Building with</span>
-            <div className="flex gap-2.5 flex-wrap text-label-l text-on-surface">
-              {site.buildingWith.map((tool) => (
-                <span key={tool} className="hig-control rounded-full px-3 py-1.5">
-                  {tool}
-                </span>
-              ))}
-            </div>
+          <div className="hero-tag mt-6 flex max-w-[820px] flex-wrap gap-2 text-label-l md:mt-7 md:gap-2.5">
+            {site.tags.map((tag) => (
+              <span key={tag} className={`hig-control rounded-full px-3 py-1.5 sm:px-4 sm:py-2 ${TAG_TINT[tag] ?? "bg-surface-container text-on-surface"}`}>
+                {tag}
+              </span>
+            ))}
           </div>
         </div>
 
