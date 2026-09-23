@@ -1,92 +1,59 @@
 [
   {
-    "date": "2026 – Present",
-    "role": "Founder",
-    "org": "Sun Paper and Coatings",
+    "date": "Apr 2026 – Present",
+    "role": "Non-Executive Director & Brand Strategist",
+    "org": "Sun Paper PTY LTD",
     "brandMark": "SP",
     "brandColor": "secondary",
     "tags": [
-      "Founder",
+      "Design",
       "Marketing"
     ],
-    "detail": "My own venture, built from the ground up — supplier relationships, customer development, pricing, stock planning and the brand and sales systems behind a working paper, coatings and self-adhesive supply business.",
-    "software": [
-      "CRM",
-      "Google Workspace",
-      "Canva",
-      "WordPress"
-    ],
-    "proof": [
-      {
-        "type": "Founder",
-        "title": "Built from zero",
-        "detail": "Set up suppliers, the customer pipeline, pricing and stock planning for a new paper, coatings and self-adhesive supply business."
-      },
-      {
-        "type": "Systems",
-        "title": "Brand & sales engine",
-        "detail": "Own the brand direction, sales process and operating systems that turn master-reel stock into delivered, customer-spec orders."
-      }
-    ],
+    "detail": "Created the visual identity and branding for a stock supply business. Hold a 51% majority stake as a non-executive partner and positioned the brand for long-term scalability in the supply sector.",
     "responsibilities": [
-      "Supplier sourcing & relationships",
-      "Customer development & pipeline",
-      "Pricing & margin strategy",
-      "Stock planning & master reels",
-      "Brand direction & identity",
-      "Sales process & quoting",
-      "Order fulfilment to spec",
-      "Operating systems & admin",
-      "Cash flow & purchasing",
-      "Marketing & web presence"
+      "Visual identity & branding",
+      "Non-executive strategic ownership",
+      "Brand positioning"
     ]
   },
   {
-    "date": "2026",
-    "role": "CPQ & Quote-System Builder",
-    "org": "Dynamic Automation",
-    "brandMark": "DA",
-    "brandColor": "info",
+    "brandMark": "BTS",
+    "brandColor": "primary",
     "tags": [
       "Web",
-      "AI"
+      "Design",
+      "Marketing"
     ],
-    "detail": "Took a manufacturer's tangled Excel quoting workbooks — broiler-house and chain-feeder templates — and rebuilt the logic as a web-based CPQ quote tool: structured product modules, pricing intelligence and a clean interface, shipped as a live Vercel prototype the client signed off on.",
+    "detail": "Developed the brand, website and digital business systems for a refrigerated human-remains transport business serving KwaZulu-Natal. Delivered corporate identity, vehicle branding, AI-assisted web development, local SEO, lead generation, a custom CRM, quotation and pricing tools, and accounting workflows.",
     "software": [
-      "Next.js",
-      "Vercel",
-      "JavaScript",
-      "Excel logic",
-      "CPQ"
+      "Google Business Profile",
+      "CRM",
+      "AI-assisted development"
     ],
-    "proof": [
-      {
-        "type": "Systems",
-        "title": "Spreadsheet → web tool",
-        "detail": "Translated complex engineering quote workbooks into a modular web quoting system with built-in pricing logic."
-      },
-      {
-        "type": "Shipped",
-        "title": "Live Vercel prototype",
-        "detail": "Delivered a working demo the client approved — quoting that used to live in fragile spreadsheets, now a usable web product."
-      }
-    ],
-    "responsibilities": [
-      "Excel quoting-logic analysis",
-      "CPQ data modelling",
-      "Web quoting interface",
-      "Product-module structuring",
-      "Pricing-rule engineering",
-      "Next.js build & deploy",
-      "Live Vercel prototype",
-      "Broiler & chain-feeder templates",
-      "Client demo & sign-off",
-      "Spreadsheet → web migration"
-    ]
+    "org": "Body Transport Solutions",
+    "role": "Web Design Specialist",
+    "date": "Mar 2026 – Aug 2026"
   },
   {
-    "date": "Jul 2025 – Mar 2026",
-    "role": "Creative & Communications Lead",
+    "brandMark": "SR",
+    "brandColor": "secondary",
+    "tags": [
+      "Web",
+      "Design"
+    ],
+    "detail": "Designed and developed a responsive restaurant website for Sitara Indian Cuisine in Morningside, Durban. Digitised a menu of 290+ dishes, built WhatsApp ordering and table-booking journeys, and created catering, events and gallery experiences. Managed content, testing and deployment through Vercel.",
+    "software": [
+      "Vercel",
+      "WhatsApp",
+      "Google Maps"
+    ],
+    "org": "Sitara Restaurant",
+    "role": "Web Designer",
+    "date": "Jan 2026 – Feb 2026"
+  },
+  {
+    "date": "Apr 2025 – Dec 2025",
+    "role": "Creative and Communications",
     "org": "Olive Tree Church",
     "brandMark": "OT",
     "brandColor": "success",
@@ -135,7 +102,7 @@
     ]
   },
   {
-    "date": "2023 – 2025",
+    "date": "Jun 2023 – Mar 2025",
     "role": "Graphic Design Specialist",
     "org": "Mediatrade",
     "brandMark": "MT",
@@ -176,8 +143,8 @@
     ]
   },
   {
-    "date": "2022 – 2025",
-    "role": "Business Programme & Growth Systems Specialist",
+    "date": "Jun 2022 – Mar 2025",
+    "role": "Multimedia Specialist",
     "org": "Joseph Business School Africa",
     "brandMark": "JBS",
     "brandColor": "success",
@@ -236,9 +203,20 @@
     ]
   },
   {
-    "date": "2022 – 2024",
-    "role": "Organic Growth Specialist",
-    "org": "Webmeta",
+    "brandMark": "B",
+    "brandColor": "tertiary",
+    "tags": [
+      "Design"
+    ],
+    "detail": "Designed branded environmental graphics for BEAPO’s office, including entrance door branding and frosted glass graphics across conference room panels. Created a consistent brand presence while keeping the workspace clean and functional.",
+    "org": "Beapo",
+    "role": "Graphic Designer",
+    "date": "Oct 2024 – Nov 2024"
+  },
+  {
+    "date": "Jun 2022 – Apr 2024",
+    "role": "Search Engine Optimization Executive",
+    "org": "Webmeta (Pty) Ltd",
     "brandMark": "WM",
     "brandColor": "primary",
     "tags": [
@@ -279,9 +257,9 @@
     ]
   },
   {
-    "date": "2021 – 2024",
-    "role": "Founder",
-    "org": "clicklocal",
+    "date": "Dec 2021 – Nov 2023",
+    "role": "Director",
+    "org": "clicklocal.co.za",
     "brandMark": "CL",
     "brandColor": "primary",
     "tags": [
@@ -330,7 +308,7 @@
     ]
   },
   {
-    "date": "2021 – 2022",
+    "date": "Aug 2021 – Jun 2022",
     "role": "Senior Graphic Designer",
     "org": "Thinklocal",
     "brandMark": "TL",
@@ -374,9 +352,9 @@
     ]
   },
   {
-    "date": "Mar – Jul 2021",
+    "date": "Mar 2021 – Jul 2021",
     "role": "Graphic Designer",
-    "org": "Cambridge University initiative",
+    "org": "University of Cambridge",
     "brandMark": "CU",
     "brandColor": "accent",
     "tags": [
@@ -409,7 +387,7 @@
     ]
   },
   {
-    "date": "Mar – Jun 2021",
+    "date": "Mar 2021 – Jun 2021",
     "role": "Marketing Manager",
     "org": "Kirstenhof Car Hire",
     "brandMark": "KCH",
@@ -462,8 +440,8 @@
   },
   {
     "date": "May 2021",
-    "role": "Front-End Web Designer",
-    "org": "Autodoc Diagnostics",
+    "role": "Freelance Web Designer",
+    "org": "The AutoDoc",
     "brandMark": "AD",
     "brandColor": "success",
     "tags": [
@@ -504,9 +482,9 @@
     ]
   },
   {
-    "date": "Feb – Dec 2020",
-    "role": "Design & Sales",
-    "org": "Contours Design Studio / Faux Flora",
+    "date": "Feb 2020 – Dec 2020",
+    "role": "Sales Assistant",
+    "org": "Contours Design Studio CDS",
     "brandMark": "CDS",
     "brandColor": "warning",
     "tags": [
@@ -550,8 +528,8 @@
   },
   {
     "date": "Nov 2016 – Dec 2019",
-    "role": "Programme Advisor & International Admissions",
-    "org": "Damelin Online / LCIBS",
+    "role": "Programme Advisor",
+    "org": "London College of International Business studies",
     "brandMark": "LC",
     "brandColor": "secondary",
     "tags": [
@@ -602,8 +580,8 @@
     ]
   },
   {
-    "date": "May – Aug 2016",
-    "role": "Direct Sales & Training Specialist",
+    "date": "Jan 2016 – Oct 2016",
+    "role": "Sales Representative",
     "org": "The Unlimited",
     "brandMark": "TU",
     "brandColor": "warning",
@@ -636,9 +614,9 @@
     ]
   },
   {
-    "date": "2015 – 2016",
+    "date": "Oct 2014 – Dec 2015",
     "role": "Development Assistant",
-    "org": "Old Mutual",
+    "org": "Old Mutual South Africa, Welstand Agri",
     "brandMark": "OM",
     "brandColor": "success",
     "tags": [
@@ -679,8 +657,8 @@
     ]
   },
   {
-    "date": "Jan – Sep 2014",
-    "role": "Software Sales Representative",
+    "date": "Jan 2014 – Sep 2014",
+    "role": "Telesales Representative",
     "org": "Investors Choice",
     "brandMark": "IC",
     "brandColor": "info",

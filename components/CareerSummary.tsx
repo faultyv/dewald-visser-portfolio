@@ -26,13 +26,13 @@ export function CareerRows({ entries, compact = false }: { entries: CVEntry[]; c
 export function CareerSummary({ cv }: { cv: CVEntry[] }) {
   return <section id="cv" className="section-pad-tight content-shell-wide relative" aria-labelledby="career-heading">
     <div className="section-command mb-7 md:mb-9">
-      <div><div className="text-label-l text-primary mb-4">Career</div><h2 id="career-heading" className="text-headline-l text-on-surface">Experience, <span className="text-gradient text-gradient-animated">at a glance.</span></h2><p className="mt-4 text-body-m text-on-surface-variant">Recent roles and projects, followed by my earlier career.</p></div>
+      <div><div className="text-label-l text-primary mb-4">Career</div><h2 id="career-heading" className="text-headline-l text-on-surface">Experience, <span className="text-gradient text-gradient-animated">at a glance.</span></h2><p className="mt-4 text-body-m text-on-surface-variant">Recent experience, followed by my earlier career.</p></div>
       <ButtonLink href="/cv" variant="tonal"><IconSymbol name="description" size={18} /> View / print CV</ButtonLink>
     </div>
     <div className="hig-glass rounded-[28px] p-5 md:p-8">
       <CareerRows entries={cv.slice(0, 5)} />
       <details className="cv-earlier border-t border-outline-variant pt-5">
-        <summary className="text-title-m text-on-surface">Earlier experience <span className="ml-2 text-body-s text-on-surface-variant">2014–2024 · {cv.length - 5} roles</span></summary>
+        <summary className="text-title-m text-on-surface">Earlier experience <span className="ml-2 text-body-s text-on-surface-variant">{cv.length - 5} roles</span></summary>
         <CareerRows entries={cv.slice(5)} />
       </details>
     </div>

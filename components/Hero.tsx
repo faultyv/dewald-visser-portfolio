@@ -19,8 +19,8 @@ const HERO_PROOF = [
   {
     icon: "storefront",
     label: "Current proof",
-    value: "Founder at Sun Paper",
-    detail: "Owning offer, supplier relationships, pricing, customer development and brand system.",
+    value: "Non-Executive Director",
+    detail: "Sun Paper PTY LTD · Brand strategy and visual identity, with a 51% non-executive stake.",
   },
   {
     icon: "podcasts",
