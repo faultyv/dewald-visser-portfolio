@@ -13,12 +13,13 @@ export function Providers({ children }: { children: React.ReactNode }) {
       {/* reducedMotion="user" keeps gentle opacity fades but drops transform/scale
           motion for visitors who request reduced motion — matches the GSAP/Lenis layer. */}
       <MotionConfig reducedMotion="user">
+        <a href="#main-content" className="cv-skip-link">Skip to content</a>
         <AtmosphereCanvas />
         <CustomCursor />
         <div id="scrollbar" className="fixed top-0 left-0 h-[3px] w-0 z-[85] rounded-r-[3px]" style={{ background: "linear-gradient(90deg,var(--color-primary),var(--color-secondary) 46%,var(--color-highlight) 78%,var(--color-success))" }} />
         <NavBar />
         <MotionRoot />
-        <main className="relative z-10">{children}</main>
+        <main id="main-content" tabIndex={-1} className="relative z-10">{children}</main>
       </MotionConfig>
     </ThemeProvider>
   );

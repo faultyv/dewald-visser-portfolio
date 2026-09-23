@@ -37,14 +37,14 @@ function MarqueeRow({ tags, reverse, opacity }: { tags: string[]; reverse?: bool
   );
 }
 
-export function SkillsMarquee({ tags, skills }: { tags: string[]; skills: SkillColumn[] }) {
+export function SkillsMarquee({ tags, skills, compact = false }: { tags: string[]; skills: SkillColumn[]; compact?: boolean }) {
   return (
     <section id="skills" className="section-pad-tight relative">
       <div className="content-shell-wide">
         <div className="section-command mb-7 md:mb-9">
           <div>
             <Reveal>
-              <div className="text-label-l text-warning mb-4">Tools and Fluency</div>
+              <div className="text-label-l text-warning mb-4">Skills &amp; tools</div>
             </Reveal>
             <Reveal delay={0.05}>
               <h2 className="text-headline-l text-on-surface">A practical operating stack.</h2>
@@ -83,12 +83,12 @@ export function SkillsMarquee({ tags, skills }: { tags: string[]; skills: SkillC
           ))}
         </StaggerGroup>
 
-        <Reveal delay={0.16}>
+        {!compact && <Reveal delay={0.16}>
           <div className="tools-marquee mt-8 overflow-hidden rounded-[24px] border border-outline-variant bg-surface-container-low">
             <MarqueeRow tags={tags} />
             <MarqueeRow tags={tags} reverse opacity={0.52} />
           </div>
-        </Reveal>
+        </Reveal>}
       </div>
     </section>
   );

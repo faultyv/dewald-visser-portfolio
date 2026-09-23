@@ -1,47 +1,23 @@
 import { Hero } from "@/components/Hero";
 import { About } from "@/components/About";
-import { OperatingSpine } from "@/components/OperatingSpine";
-import { HiringArgument } from "@/components/HiringArgument";
-import { GlobalProofArc } from "@/components/GlobalProofArc";
-import { CraftSystem } from "@/components/CraftSystem";
-import { Pillars } from "@/components/Pillars";
-import { Method } from "@/components/Method";
-import { CareerExplorer } from "@/components/CareerExplorer";
-import { BrandConstellation } from "@/components/BrandConstellation";
+import { CareerSummary } from "@/components/CareerSummary";
 import { WorkTeaser } from "@/components/WorkTeaser";
-import { ProofSnapshots } from "@/components/ProofSnapshots";
 import { SkillsMarquee } from "@/components/SkillsMarquee";
 import { Credentials } from "@/components/Credentials";
 import { ContactSection } from "@/components/ContactSection";
-import { getSiteConfig, getCV, getSkills, getCerts, getMarqueeTags, getAllProjects, getMethod, getCompanies } from "@/lib/content";
+import { getSiteConfig, getCV, getSkills, getCerts, getMarqueeTags, getAllProjects } from "@/lib/content";
 
 export default function Home() {
   const site = getSiteConfig();
-  const cv = getCV();
-  const skills = getSkills();
-  const certs = getCerts();
-  const marqueeTags = getMarqueeTags();
-  const projects = getAllProjects();
-  const method = getMethod();
-  const companies = getCompanies();
-
   return (
-    <>
+    <div className="recruitment-home">
       <Hero site={site} />
+      <CareerSummary cv={getCV()} />
+      <WorkTeaser projects={getAllProjects()} />
       <About site={site} />
-      <OperatingSpine cv={cv} projects={projects} companies={companies} />
-      <HiringArgument cv={cv} projects={projects} companies={companies} />
-      <GlobalProofArc />
-      <CraftSystem site={site} />
-      <WorkTeaser projects={projects} />
-      <Pillars />
-      <CareerExplorer cv={cv} />
-      <ProofSnapshots site={site} />
-      <BrandConstellation companies={companies} />
-      <Method steps={method} />
-      <SkillsMarquee tags={marqueeTags} skills={skills} />
-      <Credentials certs={certs} site={site} />
+      <SkillsMarquee tags={getMarqueeTags()} skills={getSkills()} compact />
+      <Credentials certs={getCerts()} site={site} />
       <ContactSection site={site} />
-    </>
+    </div>
   );
 }

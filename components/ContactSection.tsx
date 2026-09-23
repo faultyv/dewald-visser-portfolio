@@ -14,8 +14,8 @@ import type { SiteConfig } from "@/lib/content";
 const LANG_CODE: Record<string, string> = { English: "EN", Zulu: "ZU", Afrikaans: "AF", German: "DE" };
 
 const CONTACT_ROUTES = [
-  { label: "Fastest route", value: "WhatsApp project fit" },
-  { label: "Best for briefs", value: "Email scope and links" },
+  { label: "Fastest route", value: "WhatsApp or LinkedIn" },
+  { label: "Recruitment enquiries", value: "Email role details" },
   { label: "Based in", value: "Durban, South Africa" },
 ];
 
@@ -92,12 +92,12 @@ export function ContactSection({ site }: { site: SiteConfig }) {
             </div>
             <div className="mt-5 flex flex-wrap gap-2.5">
               {wa ? (
-                <ButtonLink href={wa} external variant="filled">
+                <ButtonLink href={wa} external variant="tonal">
                   <WhatsAppIcon size={18} /> Chat with me
                 </ButtonLink>
               ) : null}
-              <ButtonLink href={`mailto:${site.email}`} external variant="tonal">
-                <IconSymbol name="mail" size={18} /> Email me
+              <ButtonLink href={`mailto:${site.email}?subject=Recruitment%20enquiry`} variant="filled">
+                <IconSymbol name="mail" size={18} /> Discuss a role
               </ButtonLink>
             </div>
             <div className="contact-route-strip mt-6">

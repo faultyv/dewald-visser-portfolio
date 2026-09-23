@@ -106,3 +106,11 @@ The admin app lives in:
 The current setup uses Sveltia CMS with the GitHub backend. The admin is hidden
 from search engines via `noindex` and `robots.txt`, but security comes from
 GitHub write access: only someone with a valid token for the repo can save.
+
+## Career source of truth
+
+Role titles, organisations, dates and ordering in `cv.json` were verified against
+https://www.linkedin.com/in/dewaldvisser/details/experience/ on 23 September 2026,
+with the supplied LinkedIn Profile.pdf as a cross-check. LinkedIn takes precedence.
+The homepage and printable `/cv` share this file. Dynamic Automation remains a
+portfolio project rather than a separate employment entry.

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ButtonLink } from "./Button";
 import { IconSymbol } from "./IconSymbol";
 import { SouthAfricaFlag } from "./SouthAfricaFlag";
@@ -15,30 +15,15 @@ const TAG_TINT: Record<string, string> = {
   "AI Enablement": "bg-highlight-container text-on-highlight-container",
 };
 
-const HERO_PROOF = [
-  {
-    icon: "storefront",
-    label: "Current proof",
-    value: "Founder at Sun Paper",
-    detail: "Owning offer, supplier relationships, pricing, customer development and brand system.",
-  },
-  {
-    icon: "podcasts",
-    label: "Delivery proof",
-    value: "500+ live audience",
-    detail: "Produced business-school livestreams, masterclasses, campaigns, LMS and learning media.",
-  },
-  {
-    icon: "account_tree",
-    label: "Systems proof",
-    value: "Excel to CPQ web tool",
-    detail: "Translated tangled quoting logic into a live Vercel prototype for a manufacturer.",
-  },
+const SPOTLIGHTS = [
+  { label: "Web", icon: "language", title: "A complete digital experience.", project: "The Dreambook", detail: "Website and brand identity connecting published works, resources and a ministry community.", metric: "2", unit: "connected brands", href: "/work/dreambook-cpm", tags: ["Web design", "Brand identity", "Content structure"] },
+  { label: "Brand", icon: "palette", title: "Design that holds up in the real world.", project: "Retail Production & Repro", detail: "Packaging and point-of-sale artwork prepared for production across major South African house brands.", metric: "Print", unit: "ready production", href: "/work/retail-production-dtp", tags: ["Packaging", "Adobe Suite", "Production"] },
+  { label: "Systems", icon: "account_tree", title: "From spreadsheet to working product.", project: "Dynamic Automation", detail: "Complex engineering quote logic translated into a guided web-based configuration and pricing tool.", metric: "CPQ", unit: "web quote tool", href: "/work/dynamic-automation", tags: ["Web development", "Pricing logic", "Workflow design"] },
 ] as const;
 
-const HIRE_STACK = ["Strategy", "Creative", "Web", "Campaigns", "AI adoption"];
-
 export function Hero({ site }: { site: SiteConfig }) {
+  const [spotlightIndex, setSpotlightIndex] = useState(0);
+  const spotlight = SPOTLIGHTS[spotlightIndex];
   const innerRef = useRef<HTMLDivElement>(null);
   const heroPositionParts = site.heroPosition.split("usable systems");
 
@@ -52,7 +37,6 @@ export function Hero({ site }: { site: SiteConfig }) {
       .from(".hero-tag > *", { opacity: 0, y: 16, scale: 0.9, duration: 0.55, stagger: 0.07, ease: "back.out(1.6)" }, "-=0.45")
       .from(".hero-pos", { opacity: 0, y: 16, duration: 0.6 }, "-=0.4")
       .from(".hero-cta", { opacity: 0, y: 16, duration: 0.6, stagger: 0.1, ease: "back.out(1.5)" }, "-=0.45")
-      .from(".hero-tools", { opacity: 0, y: 16, duration: 0.6 }, "-=0.4")
       .from(".hero-proof-board", { opacity: 0, x: 28, duration: 0.7, ease: "power3.out" }, "-=0.55")
       .from(".hero-scroll", { opacity: 0, duration: 0.5 }, "-=0.2");
 
@@ -72,8 +56,8 @@ export function Hero({ site }: { site: SiteConfig }) {
   }, []);
 
   return (
-    <section id="hero" className="relative flex min-h-[88svh] items-center overflow-hidden px-5 pb-14 pt-28 sm:min-h-[90svh] sm:pt-32 md:px-14 md:pb-16 md:pt-32 xl:min-h-[92svh]">
-      <div ref={innerRef} className="relative z-10 mx-auto grid w-full max-w-[1300px] gap-9 xl:grid-cols-[minmax(0,0.9fr)_minmax(360px,0.52fr)] xl:items-center">
+    <section id="hero" className="hero-elevated relative flex min-h-[88svh] items-center overflow-hidden px-5 pb-14 pt-28 sm:min-h-[90svh] sm:pt-32 md:px-14 md:pb-16 md:pt-32 xl:min-h-[92svh]">
+      <div ref={innerRef} className="relative z-10 mx-auto grid w-full max-w-[1300px] gap-9 lg:grid-cols-[minmax(0,1fr)_minmax(320px,0.72fr)] lg:items-center">
         <div className="min-w-0">
           <div className="hero-eyebrow mb-5 flex flex-wrap items-center gap-3 md:mb-6">
             <span className="hig-control inline-flex items-center gap-2 rounded-full px-4 py-2 text-label-l text-on-surface">
@@ -100,13 +84,7 @@ export function Hero({ site }: { site: SiteConfig }) {
             ))}
           </h1>
 
-          <div className="hero-tag mt-6 flex max-w-[820px] flex-wrap gap-2 text-label-l md:mt-7 md:gap-2.5">
-            {site.tags.map((tag) => (
-              <span key={tag} className={`hig-control rounded-full px-3 py-1.5 sm:px-4 sm:py-2 ${TAG_TINT[tag] ?? "bg-surface-container text-on-surface"}`}>
-                {tag}
-              </span>
-            ))}
-          </div>
+          <p className="hero-role mt-5 text-title-l text-on-surface">Web &amp; Graphic Designer<span className="block text-primary mt-1">Digital Marketing &amp; AI Specialist</span></p>
 
           <p className="hero-pos mt-7 max-w-[680px] text-body-l text-on-surface-variant md:mt-8 md:text-title-l">
             {heroPositionParts.length === 2 ? (
@@ -122,67 +100,39 @@ export function Hero({ site }: { site: SiteConfig }) {
 
           <div className="mt-8 flex flex-wrap gap-3 md:mt-10 md:gap-3.5">
             <span className="hero-cta">
-              <ButtonLink href="/work" variant="filled" magnetic>
-                View work <IconSymbol name="arrow_forward" size={18} />
+              <ButtonLink href="/#cv" variant="filled" magnetic>
+                View experience <IconSymbol name="arrow_forward" size={18} />
               </ButtonLink>
             </span>
             <span className="hero-cta">
-              <ButtonLink href={site.socials.linkedin} variant="outlined" external magnetic>
-                LinkedIn <IconSymbol name="open_in_new" size={17} />
+              <ButtonLink href="/cv" variant="outlined" magnetic>
+                View / print CV <IconSymbol name="description" size={17} />
               </ButtonLink>
             </span>
+            <span className="hero-cta"><ButtonLink href="/work" variant="text">View work <IconSymbol name="arrow_forward" size={18} /></ButtonLink></span>
           </div>
 
-          <div className="hero-tools mt-8 flex max-w-[980px] flex-wrap items-center gap-3 md:mt-10 md:gap-4.5">
-            <span className="text-label-m text-on-surface-variant">Building with</span>
-            <div className="flex gap-2.5 flex-wrap text-label-l text-on-surface">
-              {site.buildingWith.map((tool) => (
-                <span key={tool} className="hig-control rounded-full px-3 py-1.5">
-                  {tool}
-                </span>
-              ))}
-            </div>
+          <div className="hero-tag mt-6 flex max-w-[820px] flex-wrap gap-2 text-label-l md:mt-7 md:gap-2.5">
+            {site.tags.map((tag) => (
+              <span key={tag} className={`hig-control rounded-full px-3 py-1.5 sm:px-4 sm:py-2 ${TAG_TINT[tag] ?? "bg-surface-container text-on-surface"}`}>
+                {tag}
+              </span>
+            ))}
           </div>
         </div>
 
-        <aside className="hero-proof-board hidden xl:block" aria-label="Dewald Visser proof summary">
-          <div className="hero-proof-panel hig-glass rounded-[28px] p-5 elevation-4">
-            <div className="mb-4 flex items-start justify-between gap-4">
-              <div>
-                <div className="text-label-s text-primary">Why this profile matters</div>
-                <h2 className="mt-1 text-headline-s text-on-surface">One operator across the messy middle.</h2>
-              </div>
-              <div className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-primary text-on-primary">
-                <IconSymbol name="hub" size={25} filled />
-              </div>
-            </div>
-
-            <div className="hero-proof-list">
-              {HERO_PROOF.map((item) => (
-                <div key={item.value} className="hero-proof-item">
-                  <span className="hero-proof-icon">
-                    <IconSymbol name={item.icon} size={19} filled />
-                  </span>
-                  <span>
-                    <span className="block text-label-s text-on-surface-variant">{item.label}</span>
-                    <strong className="block text-title-s text-on-surface">{item.value}</strong>
-                    <span className="mt-1 block text-body-s text-on-surface-variant">{item.detail}</span>
-                  </span>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-5 border-t border-outline-variant pt-4">
-              <div className="mb-2 text-label-s text-on-surface-variant">Can own the handoff between</div>
-              <div className="flex flex-wrap gap-2">
-                {HIRE_STACK.map((item) => (
-                  <span key={item} className="rounded-full border border-outline-variant bg-surface-container/72 px-2.5 py-1 text-label-m text-on-surface">
-                    {item}
-                  </span>
-                ))}
-              </div>
+        <aside className="hero-proof-board hero-spotlight" aria-label="Explore selected work">
+          <div className="hero-spotlight-top"><span className="text-label-s text-primary">A closer look at my work</span><span className="text-label-s text-on-surface-variant">0{spotlightIndex + 1} / 03</span></div>
+          <div className="hero-spotlight-switch" role="group" aria-label="Project discipline">
+            {SPOTLIGHTS.map((item, index) => <button key={item.label} type="button" aria-pressed={index === spotlightIndex} aria-controls="hero-spotlight-content" onClick={() => setSpotlightIndex(index)}><IconSymbol name={item.icon} size={18} />{item.label}</button>)}
+          </div>
+          <div id="hero-spotlight-content" aria-live="polite" aria-atomic="true">
+            <div key={spotlight.label} className="hero-spotlight-content">
+              <div className="hero-spotlight-art" aria-hidden="true"><div className="hero-orbit hero-orbit-one" /><div className="hero-orbit hero-orbit-two" /><IconSymbol name={spotlight.icon} size={66} /><div className="hero-spotlight-metric"><strong>{spotlight.metric}</strong><span>{spotlight.unit}</span></div></div>
+              <div className="hero-spotlight-copy"><p className="text-label-s text-primary">{spotlight.project}</p><h2 className="text-headline-s text-on-surface mt-3">{spotlight.title}</h2><p className="text-body-m text-on-surface-variant mt-3">{spotlight.detail}</p><div className="flex flex-wrap gap-2 mt-5">{spotlight.tags.map(tag => <span className="text-label-s text-on-surface-variant" key={tag}>{tag}</span>)}</div><ButtonLink href={spotlight.href} variant="text">Explore case study <IconSymbol name="arrow_forward" size={18} /></ButtonLink></div>
             </div>
           </div>
+          <div className="hero-spotlight-footer"><IconSymbol name="touch_app" size={17} /><span>Choose a discipline. See the work behind it.</span></div>
         </aside>
       </div>
 
