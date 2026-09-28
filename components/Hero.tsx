@@ -1,47 +1,32 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { useEffect, useRef } from "react";
 import { ButtonLink } from "./Button";
 import { IconSymbol } from "./IconSymbol";
-import { SouthAfricaFlag } from "./SouthAfricaFlag";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
 import type { SiteConfig } from "@/lib/content";
 
-const TAG_TINT: Record<string, string> = {
-  Entrepreneur: "bg-secondary-container text-on-secondary-container",
-  Marketing: "bg-primary-container text-on-primary-container",
-  "Graphic Design": "bg-tertiary-container text-on-tertiary-container",
-  "Web Design": "bg-success-container text-on-success-container",
-  "AI Enablement": "bg-highlight-container text-on-highlight-container",
-};
-
-const SPOTLIGHTS = [
-  { label: "Web", icon: "language", title: "A complete digital experience.", project: "The Dreambook", detail: "Website and brand identity connecting published works, resources and a ministry community.", metric: "2", unit: "connected brands", href: "/work/dreambook-cpm", tags: ["Web design", "Brand identity", "Content structure"] },
-  { label: "Brand", icon: "palette", title: "Design that holds up in the real world.", project: "Retail Production & Repro", detail: "Packaging and point-of-sale artwork prepared for production across major South African house brands.", metric: "Print", unit: "ready production", href: "/work/retail-production-dtp", tags: ["Packaging", "Adobe Suite", "Production"] },
-  { label: "Systems", icon: "account_tree", title: "From spreadsheet to working product.", project: "Dynamic Automation", detail: "Complex engineering quote logic translated into a guided web-based configuration and pricing tool.", metric: "CPQ", unit: "web quote tool", href: "/work/dynamic-automation", tags: ["Web development", "Pricing logic", "Workflow design"] },
-] as const;
-
 export function Hero({ site }: { site: SiteConfig }) {
-  const [spotlightIndex, setSpotlightIndex] = useState(0);
-  const spotlight = SPOTLIGHTS[spotlightIndex];
   const innerRef = useRef<HTMLDivElement>(null);
-  const heroPositionParts = site.heroPosition.split("usable systems");
 
   useEffect(() => {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduced) return;
 
     const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
-    tl.from(".hero-inner-line", { yPercent: 115, duration: 1.0, stagger: 0.1, ease: "power4.out" })
-      .from(".hero-eyebrow", { opacity: 0, y: 16, duration: 0.6 }, "-=0.7")
-      .from(".hero-tag > *", { opacity: 0, y: 16, scale: 0.9, duration: 0.55, stagger: 0.07, ease: "back.out(1.6)" }, "-=0.45")
-      .from(".hero-pos", { opacity: 0, y: 16, duration: 0.6 }, "-=0.4")
-      .from(".hero-cta", { opacity: 0, y: 16, duration: 0.6, stagger: 0.1, ease: "back.out(1.5)" }, "-=0.45")
-      .from(".hero-proof-board", { opacity: 0, x: 28, duration: 0.7, ease: "power3.out" }, "-=0.55")
-      .from(".hero-scroll", { opacity: 0, duration: 0.5 }, "-=0.2");
+    tl.from(".hero-inner-line", { yPercent: 115, duration: 1, stagger: 0.1, ease: "power4.out" })
+      .from(".hero-status", { opacity: 0, y: 14, duration: 0.55 }, "-=0.72")
+      .from(".hero-role", { opacity: 0, y: 16, duration: 0.58 }, "-=0.48")
+      .from(".hero-pos", { opacity: 0, y: 16, duration: 0.58 }, "-=0.44")
+      .from(".hero-cta", { opacity: 0, y: 14, duration: 0.55, stagger: 0.08 }, "-=0.4")
+      .from(".hero-portrait", { opacity: 0, x: 26, duration: 0.8, ease: "power3.out" }, "-=0.62")
+      .from(".hero-project-card", { opacity: 0, y: 22, duration: 0.65, ease: "back.out(1.2)" }, "-=0.4")
+      .from(".hero-scroll", { opacity: 0, duration: 0.45 }, "-=0.2");
 
     const st = gsap.to(innerRef.current, {
-      y: -50,
+      y: -42,
       opacity: 0,
       ease: "none",
       scrollTrigger: { trigger: "#hero", start: "top top", end: "bottom top", scrub: true },
@@ -56,93 +41,96 @@ export function Hero({ site }: { site: SiteConfig }) {
   }, []);
 
   return (
-    <section id="hero" className="hero-elevated relative flex min-h-[88svh] items-center overflow-hidden px-5 pb-14 pt-28 sm:min-h-[90svh] sm:pt-32 md:px-14 md:pb-16 md:pt-32 xl:min-h-[92svh]">
-      <div ref={innerRef} className="relative z-10 mx-auto grid w-full max-w-[1300px] gap-9 lg:grid-cols-[minmax(0,1fr)_minmax(320px,0.72fr)] lg:items-center">
-        <div className="min-w-0">
-          <div className="hero-eyebrow mb-5 flex flex-wrap items-center gap-3 md:mb-6">
-            <span className="hig-control inline-flex items-center gap-2 rounded-full px-4 py-2 text-label-l text-on-surface">
-              <span className="relative w-2.5 h-2.5 inline-block">
-                <span className="absolute inset-0 rounded-full bg-success" />
-                <span className="absolute inset-0 rounded-full bg-success animate-[pingDot_1.8s_cubic-bezier(0,0,0.2,1)_infinite]" />
-              </span>
-              {site.availability}
+    <section id="hero" className="hero-elevated relative flex min-h-[92svh] items-center overflow-hidden px-5 pb-14 pt-28 sm:pt-32 md:px-14 md:pb-16 xl:min-h-[94svh]">
+      <div ref={innerRef} className="relative z-10 mx-auto grid w-full max-w-[1360px] gap-11 lg:grid-cols-[minmax(0,0.94fr)_minmax(440px,0.86fr)] lg:items-center xl:gap-16">
+        <div className="hero-copy min-w-0">
+          <div className="hero-status mb-6 flex items-center gap-3 text-label-m text-on-surface-variant">
+            <span className="relative inline-block h-2.5 w-2.5" aria-hidden="true">
+              <span className="absolute inset-0 rounded-full bg-success" />
+              <span className="absolute inset-0 animate-[pingDot_1.8s_cubic-bezier(0,0,0.2,1)_infinite] rounded-full bg-success" />
             </span>
-            <span className="inline-flex items-center gap-2 text-label-m text-on-surface-variant">
-              <SouthAfricaFlag className="h-3.5 w-5 rounded-[3px] shadow-[0_0_0_1px_var(--color-outline-variant)]" />
-              {site.location}
-            </span>
+            <span>{site.availability}</span>
+            <span aria-hidden="true">·</span>
+            <span>{site.location}</span>
           </div>
 
-          <h1 aria-label={`${site.name}.`} className="m-0 max-w-[900px] text-display-l text-on-surface lg:max-w-[980px] xl:max-w-[1080px]">
-            {site.name.split(" ").map((word, i) => (
-              <span key={i} className="hero-mask block overflow-hidden pb-[0.04em]">
-                <span className={`hero-inner-line block ${i === site.name.split(" ").length - 1 ? "text-gradient text-gradient-animated" : ""}`}>
-                  {word}
-                  {i === site.name.split(" ").length - 1 ? "." : null}
+          <h1 aria-label={`${site.name}.`} className="m-0 text-display-l text-on-surface">
+            {site.name.split(" ").map((word, index) => (
+              <span key={word} className="hero-mask block overflow-hidden pb-[0.04em]">
+                <span className={`hero-inner-line block ${index === site.name.split(" ").length - 1 ? "text-primary" : ""}`}>
+                  {word}{index === site.name.split(" ").length - 1 ? "." : null}
                 </span>
               </span>
             ))}
           </h1>
 
-          <p className="hero-role mt-5 text-title-l text-on-surface">
-            Web &amp; Graphic Designer
-            <span className="block text-primary mt-1">Digital Marketing | Brand Strategy &amp; AI Workflows</span>
+          <div className="hero-role mt-6">
+            <p className="text-title-l text-on-surface">Web &amp; Graphic Designer</p>
+            <p className="mt-1 text-title-m text-primary">Digital Marketing | Brand Strategy &amp; AI Workflows</p>
+          </div>
+
+          <p className="hero-pos mt-7 max-w-[650px] text-body-l text-on-surface-variant">
+            {site.heroPosition}
           </p>
 
-          <p className="hero-pos mt-7 max-w-[680px] text-body-l text-on-surface-variant md:mt-8 md:text-title-l">
-            {heroPositionParts.length === 2 ? (
-              <>
-                {heroPositionParts[0]}
-                <span className="text-mark">usable systems</span>
-                {heroPositionParts[1]}
-              </>
-            ) : (
-              site.heroPosition
-            )}
-          </p>
-
-          <div className="mt-8 flex flex-wrap gap-3 md:mt-10 md:gap-3.5">
+          <div className="mt-8 flex flex-wrap gap-3 md:mt-9">
             <span className="hero-cta">
-              <ButtonLink href="/#cv" variant="filled" magnetic>
-                View experience <IconSymbol name="arrow_forward" size={18} />
+              <ButtonLink href="/work" variant="filled" magnetic>
+                View selected work <IconSymbol name="arrow_forward" size={18} />
               </ButtonLink>
             </span>
             <span className="hero-cta">
               <ButtonLink href="/cv" variant="outlined" magnetic>
-                View / print CV <IconSymbol name="description" size={17} />
+                View CV <IconSymbol name="description" size={17} />
               </ButtonLink>
             </span>
-            <span className="hero-cta"><ButtonLink href="/work" variant="text">View work <IconSymbol name="arrow_forward" size={18} /></ButtonLink></span>
-          </div>
-
-          <div className="hero-tag mt-6 flex max-w-[820px] flex-wrap gap-2 text-label-l md:mt-7 md:gap-2.5">
-            {site.tags.map((tag) => (
-              <span key={tag} className={`hig-control rounded-full px-3 py-1.5 sm:px-4 sm:py-2 ${TAG_TINT[tag] ?? "bg-surface-container text-on-surface"}`}>
-                {tag}
-              </span>
-            ))}
           </div>
         </div>
 
-        <aside className="hero-proof-board hero-spotlight" aria-label="Explore selected work">
-          <div className="hero-spotlight-top"><span className="text-label-s text-primary">A closer look at my work</span><span className="text-label-s text-on-surface-variant">0{spotlightIndex + 1} / 03</span></div>
-          <div className="hero-spotlight-switch" role="group" aria-label="Project discipline">
-            {SPOTLIGHTS.map((item, index) => <button key={item.label} type="button" aria-pressed={index === spotlightIndex} aria-controls="hero-spotlight-content" onClick={() => setSpotlightIndex(index)}><IconSymbol name={item.icon} size={18} />{item.label}</button>)}
+        <div className="hero-visual relative min-h-[590px] lg:min-h-[640px]">
+          <div className="hero-blue-panel" aria-hidden="true">
+            <span>Design</span><span>Build</span><span>Market</span><span>Automate</span>
           </div>
-          <div id="hero-spotlight-content" aria-live="polite" aria-atomic="true">
-            <div key={spotlight.label} className="hero-spotlight-content">
-              <div className="hero-spotlight-art" aria-hidden="true"><div className="hero-orbit hero-orbit-one" /><div className="hero-orbit hero-orbit-two" /><IconSymbol name={spotlight.icon} size={66} /><div className="hero-spotlight-metric"><strong>{spotlight.metric}</strong><span>{spotlight.unit}</span></div></div>
-              <div className="hero-spotlight-copy"><p className="text-label-s text-primary">{spotlight.project}</p><h2 className="text-headline-s text-on-surface mt-3">{spotlight.title}</h2><p className="text-body-m text-on-surface-variant mt-3">{spotlight.detail}</p><div className="flex flex-wrap gap-2 mt-5">{spotlight.tags.map(tag => <span className="text-label-s text-on-surface-variant" key={tag}>{tag}</span>)}</div><ButtonLink href={spotlight.href} variant="text">Explore case study <IconSymbol name="arrow_forward" size={18} /></ButtonLink></div>
+
+          <div className="hero-portrait absolute inset-y-0 left-0 right-[58px] overflow-hidden rounded-[34px]">
+            <Image
+              src="/images/dewald/dewald-about-centered.png"
+              alt="Dewald Visser in a professional working environment"
+              fill
+              priority
+              sizes="(max-width: 1023px) 100vw, 50vw"
+              className="object-cover object-[58%_center]"
+            />
+          </div>
+
+          <Link href="/work/dreambook-cpm" className="hero-project-card group" aria-label="View The Dreambook case study">
+            <div className="hero-project-image">
+              <Image
+                src="/images/work/dreambook-cpm/mockup-cover-hands.png"
+                alt="The Dreambook cover design"
+                fill
+                sizes="(max-width: 640px) 78vw, 360px"
+                className="object-cover transition-transform duration-500 group-hover:scale-[1.035]"
+              />
             </div>
-          </div>
-          <div className="hero-spotlight-footer"><IconSymbol name="touch_app" size={17} /><span>Choose a discipline. See the work behind it.</span></div>
-        </aside>
+            <div className="hero-project-copy">
+              <p className="text-label-s text-primary">Selected project</p>
+              <div className="mt-2 flex items-start justify-between gap-4">
+                <div>
+                  <h2 className="text-title-m text-on-surface">The Dreambook</h2>
+                  <p className="mt-1 text-body-s text-on-surface-variant">Brand identity · Web design · Content systems</p>
+                </div>
+                <span className="hero-project-arrow" aria-hidden="true"><IconSymbol name="arrow_forward" size={18} /></span>
+              </div>
+            </div>
+          </Link>
+        </div>
       </div>
 
-      <div className="hero-scroll absolute bottom-8 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2.5 text-label-m text-on-surface-variant sm:flex">
-        Scroll
-        <span className="w-0.5 h-8 rounded-sm animate-[scrollPulse_1.8s_ease-in-out_infinite]" style={{ background: "linear-gradient(var(--color-primary),transparent)" }} />
-      </div>
+      <a href="#work" className="hero-scroll absolute bottom-7 left-5 hidden items-center gap-3 text-label-m text-on-surface-variant md:left-14 lg:flex">
+        <span className="flex h-10 w-10 items-center justify-center rounded-full border border-outline-variant text-primary"><IconSymbol name="south" size={18} /></span>
+        Explore selected work
+      </a>
     </section>
   );
 }

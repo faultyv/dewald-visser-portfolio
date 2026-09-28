@@ -4267,30 +4267,26 @@ a:hover .company-row-card,
   .printable-cv header { margin-bottom: 18px; }
 }
 
-/* Interactive hero: existing palette and typography, stronger proof hierarchy. */
-.hero-elevated::before { content: ""; position: absolute; width: 680px; height: 680px; right: -240px; top: -160px; background: radial-gradient(circle, color-mix(in srgb, var(--color-primary) 12%, transparent), transparent 68%); pointer-events: none; }
-.hero-elevated .text-display-l { font-size: clamp(72px, 9vw, 132px); }
-.hero-elevated .hero-pos { font-size: 18px; line-height: 1.6; max-width: 550px; margin-top: 22px; }
-.hero-spotlight { border: 1px solid var(--color-outline-variant); border-radius: 30px; background: color-mix(in srgb, var(--color-surface-container-low) 88%, transparent); box-shadow: 0 24px 80px -38px color-mix(in srgb, var(--color-primary) 38%, transparent); overflow: hidden; backdrop-filter: blur(22px); }
-.hero-spotlight-top { display: flex; justify-content: space-between; padding: 23px 26px 18px; }
-.hero-spotlight-switch { display: flex; gap: 5px; margin: 0 22px; padding: 5px; border-radius: 18px; background: var(--color-surface-container); }
-.hero-spotlight-switch button { display: flex; align-items: center; justify-content: center; gap: 7px; flex: 1; min-height: 44px; border-radius: 13px; color: var(--color-on-surface-variant); font: 600 13px var(--font-body); cursor: pointer; transition: background .2s, color .2s; }
-.hero-spotlight-switch button[aria-pressed="true"] { background: var(--color-primary); color: var(--color-on-primary); box-shadow: 0 4px 14px -7px var(--color-primary); }
-.hero-spotlight-switch button:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 3px; }
-.hero-spotlight-art { height: 190px; margin: 22px 22px 0; border-radius: 20px; position: relative; overflow: hidden; display: flex; align-items: center; padding: 28px; gap: 25px; color: var(--color-primary); background: linear-gradient(135deg, var(--color-primary-container), var(--color-surface-container-low)); }
-.hero-spotlight-art > .material-symbols-rounded, .hero-spotlight-metric { position: relative; z-index: 1; }
-.hero-spotlight-metric { display: grid; gap: 8px; }
-.hero-spotlight-metric strong { font: 800 48px/1 var(--font-display); letter-spacing: -.04em; }
-.hero-spotlight-metric span { font: 600 12px var(--font-body); color: var(--color-on-surface-variant); }
-.hero-orbit { position: absolute; width: 260px; height: 260px; border: 1px solid color-mix(in srgb, var(--color-primary) 17%, transparent); border-radius: 50%; right: -60px; top: -60px; }
-.hero-orbit-two { width: 340px; height: 340px; right: -100px; top: -100px; }
-.hero-spotlight-copy { padding: 25px 28px 20px; min-height: 295px; }
-.hero-spotlight-copy h2 { font-size: 29px; line-height: 1.16; min-height: 68px; }
-.hero-spotlight-copy .flex span + span::before { content: "·"; margin-right: 8px; }
-.hero-spotlight-copy a { margin-top: 18px; }
-.hero-spotlight-footer { border-top: 1px solid var(--color-outline-variant); display: flex; gap: 8px; align-items: center; padding: 15px 26px; font-size: 11px; color: var(--color-on-surface-variant); }
-.hero-spotlight-content { animation: spotlightIn .28s ease-out; }
-@keyframes spotlightIn { from { opacity: .4; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
-@media (max-width: 1023px) { .hero-spotlight { max-width: 620px; width: 100%; } .hero-elevated .hero-scroll { display: none; } }
-@media (max-width: 600px) { .hero-elevated .text-display-l { font-size: clamp(64px, 18vw, 100px); } .hero-spotlight-art { height: 150px; } .hero-spotlight-copy { min-height: 0; padding: 23px; } .hero-role { font-size: 20px; } }
-@media (prefers-reduced-motion: reduce) { .hero-spotlight-content { animation: none; } }
+/* Editorial hero: a human introduction with one focused proof point. */
+.hero-elevated::before { content: ""; position: absolute; inset: 0; pointer-events: none; background-image: linear-gradient(color-mix(in srgb, var(--color-outline-variant) 35%, transparent) 1px, transparent 1px), linear-gradient(90deg, color-mix(in srgb, var(--color-outline-variant) 35%, transparent) 1px, transparent 1px); background-size: 96px 96px; mask-image: linear-gradient(to bottom, transparent, black 24%, transparent 86%); opacity: .22; }
+.hero-elevated::after { content: ""; position: absolute; width: 400px; height: 2px; left: -180px; top: 31%; background: var(--color-primary); transform: rotate(90deg); opacity: .9; pointer-events: none; }
+.hero-elevated .text-display-l { font-size: clamp(76px, 8.3vw, 128px); line-height: .78; letter-spacing: -.075em; }
+.hero-elevated .hero-pos { font-size: 18px; line-height: 1.62; }
+.hero-status { min-height: 24px; }
+.hero-visual { isolation: isolate; }
+.hero-portrait { background: var(--color-surface-container); box-shadow: 0 38px 90px -52px color-mix(in srgb, var(--color-on-surface) 58%, transparent); }
+.hero-portrait::after { content: ""; position: absolute; inset: 0; box-shadow: inset 0 0 0 1px color-mix(in srgb, white 28%, transparent); border-radius: inherit; pointer-events: none; }
+.hero-blue-panel { position: absolute; z-index: -1; inset: 40px 0 40px auto; width: 130px; border-radius: 0 30px 30px 0; background: var(--color-primary); color: color-mix(in srgb, var(--color-on-primary) 58%, transparent); display: flex; flex-direction: column; gap: 13px; padding: 70px 22px; font: 600 10px/1 var(--font-body); letter-spacing: .27em; text-transform: uppercase; }
+.hero-project-card { position: absolute; z-index: 2; right: 0; bottom: 32px; width: min(370px, 72%); padding: 10px; border: 1px solid color-mix(in srgb, var(--color-outline-variant) 72%, white); border-radius: 22px; background: color-mix(in srgb, var(--color-surface) 93%, transparent); box-shadow: 0 26px 70px -32px color-mix(in srgb, var(--color-on-surface) 52%, transparent); backdrop-filter: blur(18px); transition: transform .25s ease, box-shadow .25s ease; }
+.hero-project-card:hover { transform: translateY(-5px); box-shadow: 0 32px 76px -30px color-mix(in srgb, var(--color-primary) 35%, transparent); }
+.hero-project-card:focus-visible { outline: 3px solid color-mix(in srgb, var(--color-primary) 55%, transparent); outline-offset: 5px; }
+.hero-project-image { position: relative; height: 178px; overflow: hidden; border-radius: 14px; background: var(--color-surface-container); }
+.hero-project-copy { padding: 15px 10px 11px; }
+.hero-project-arrow { flex: 0 0 auto; width: 36px; height: 36px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; background: var(--color-primary); color: var(--color-on-primary); transition: transform .22s ease; }
+.hero-project-card:hover .hero-project-arrow { transform: translateX(3px); }
+.hero-scroll { transition: color .2s ease; }
+.hero-scroll:hover { color: var(--color-primary); }
+@media (max-width: 1180px) { .hero-elevated .text-display-l { font-size: clamp(70px, 8.2vw, 102px); } .hero-blue-panel { width: 108px; } }
+@media (max-width: 1023px) { .hero-elevated { padding-bottom: 64px; } .hero-elevated .text-display-l { font-size: clamp(72px, 14vw, 116px); } .hero-copy { max-width: 760px; } .hero-visual { min-height: 650px; max-width: 760px; width: 100%; } .hero-scroll { display: none !important; } }
+@media (max-width: 640px) { .hero-elevated { min-height: 0; padding-top: 110px; } .hero-elevated::after { left: -202px; top: 250px; } .hero-elevated .text-display-l { font-size: clamp(62px, 19vw, 90px); line-height: .82; } .hero-status { align-items: flex-start; flex-wrap: wrap; column-gap: 9px; row-gap: 4px; font-size: 12px; } .hero-role .text-title-l { font-size: 22px; } .hero-role .text-title-m { font-size: 16px; line-height: 1.45; } .hero-elevated .hero-pos { font-size: 16px; line-height: 1.58; } .hero-visual { min-height: 520px; margin-top: 4px; } .hero-portrait { right: 26px; border-radius: 25px; } .hero-blue-panel { inset: 26px 0 26px auto; width: 72px; border-radius: 0 22px 22px 0; padding: 40px 13px; gap: 10px; font-size: 8px; } .hero-project-card { right: 0; bottom: 18px; width: 82%; } .hero-project-image { height: 128px; } .hero-project-copy { padding: 12px 8px 8px; } .hero-project-copy .text-body-s { font-size: 11px; line-height: 1.45; } }
+@media (prefers-reduced-motion: reduce) { .hero-project-card, .hero-project-arrow, .hero-project-image img { transition: none; } }
