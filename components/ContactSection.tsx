@@ -51,7 +51,7 @@ export function ContactSection({ site }: { site: SiteConfig }) {
       <div className="hig-glass mt-12 grid overflow-hidden rounded-[28px] lg:grid-cols-[0.82fr_1.18fr]">
         <div className="relative min-h-[230px] lg:min-h-[380px]">
           <Image
-            src="/images/dewald/dewald-portrait-lounge.png"
+            src="/images/dewald/dewald-contact-clean.png"
             alt="Dewald Visser, ready to talk through a project"
             fill
             className="object-cover"
