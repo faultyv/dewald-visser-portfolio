@@ -7,9 +7,9 @@ import { SITE_URL } from "@/lib/site-url";
 import "./globals.css";
 
 const NAME = "Dewald Visser";
-const TAGLINE = "Founder, Growth Marketer, Designer, Systems Builder";
+const TAGLINE = "Web & Graphic Designer | Digital Marketing | Brand Strategy & AI Workflows";
 const DESCRIPTION =
-  "Founder-operator across brand, growth marketing, web systems and practical AI enablement — strategy, design and code under one roof.";
+  "Dewald Visser connects brand, graphic design, digital marketing, web development and practical AI workflows.";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -26,8 +26,8 @@ const figtree = Figtree({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `${NAME} — ${TAGLINE}`,
-    template: `%s — ${NAME}`,
+    default: `${NAME} - ${TAGLINE}`,
+    template: `%s - ${NAME}`,
   },
   description: DESCRIPTION,
   applicationName: `${NAME} Portfolio`,
@@ -35,11 +35,11 @@ export const metadata: Metadata = {
   creator: NAME,
   keywords: [
     "Dewald Visser",
-    "founder",
-    "growth marketing",
+    "digital marketing",
+    "brand strategy",
     "graphic design",
     "web design",
-    "AI enablement",
+    "AI workflows",
     "brand",
     "Durban",
     "South Africa",
@@ -53,14 +53,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: `${NAME} Portfolio`,
-    title: `${NAME} — ${TAGLINE}`,
+    title: `${NAME} - ${TAGLINE}`,
     description: DESCRIPTION,
     url: SITE_URL,
     locale: "en_ZA",
   },
   twitter: {
     card: "summary_large_image",
-    title: `${NAME} — ${TAGLINE}`,
+    title: `${NAME} - ${TAGLINE}`,
     description: DESCRIPTION,
     creator: "@TheBBQhunter",
   },

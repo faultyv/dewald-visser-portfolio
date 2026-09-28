@@ -12,7 +12,7 @@ export function CareerRows({ entries, compact = false }: { entries: CVEntry[]; c
           <span aria-hidden="true" className={`cv-brand-mark ${SEED_CONTAINER_BG[entry.brandColor ?? "primary"]} ${SEED_CONTAINER_TEXT[entry.brandColor ?? "primary"]}`}>{entry.brandMark}</span>
           <div><h3 className="text-title-l text-on-surface">{entry.role}</h3><p className="mt-1 text-body-m text-primary">{entry.org}</p></div>
         </div>
-        <p className="mt-3 text-body-m text-on-surface-variant">{entry.proof?.[0]?.detail ?? entry.detail}</p>
+        <p className="mt-3 text-body-m text-on-surface-variant">{entry.detail}</p>
         {!compact && <details className="cv-role-details mt-3">
           <summary className="text-label-l text-primary">Role details &amp; tools</summary>
           <p className="mt-3 text-body-m text-on-surface-variant">{entry.detail}</p>

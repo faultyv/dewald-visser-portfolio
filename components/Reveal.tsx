@@ -12,9 +12,9 @@ const OFFSETS: Record<Dir, Record<string, number>> = {
   scale: { scale: 0.93 },
 };
 
-/** Premium settle spring for section/element reveals — soft, confident, minimal overshoot.
+/** Premium settle spring for section/element reveals - soft, confident, minimal overshoot.
  *  Transforms ride the spring; opacity gets a quick emphasized-decelerate tween so it never
- *  flickers. Note: no filter/blur on purpose — a lingering filter would break the many
+ *  flickers. Note: no filter/blur on purpose - a lingering filter would break the many
  *  backdrop-filter glass surfaces nested inside these wrappers. */
 const REVEAL_SPRING = { type: "spring" as const, stiffness: 168, damping: 24, mass: 1 } as const;
 const FADE = { duration: 0.45, ease: [0.05, 0.7, 0.1, 1] as [number, number, number, number] };

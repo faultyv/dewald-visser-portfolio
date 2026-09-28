@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Dewald Visser — Founder, Growth Marketer, Designer, Systems Builder";
+export const alt = "Dewald Visser - Web & Graphic Designer, Digital Marketing, Brand Strategy and AI Workflows";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -40,7 +40,7 @@ export default function OpengraphImage() {
             Dewald Visser<span style={{ color: "#2563EB" }}>.</span>
           </div>
           <div style={{ fontSize: 34, color: "#C7CBE4", maxWidth: 920, lineHeight: 1.3, display: "flex" }}>
-            Strategy, design and code under one roof — brand, growth marketing, web systems and practical AI.
+            Brand, design, digital marketing, web development and practical AI workflows.
           </div>
         </div>
 

@@ -1,15 +1,15 @@
 [
   {
-    "date": "Apr 2026 – Present",
+    "date": "Apr 2026 - Present",
     "role": "Non-Executive Director & Brand Strategist",
-    "org": "Sun Paper PTY LTD",
+    "org": "Sun Paper (Pty) Ltd",
     "brandMark": "SP",
     "brandColor": "secondary",
     "tags": [
       "Design",
       "Marketing"
     ],
-    "detail": "Created the visual identity and branding for a stock supply business. Hold a 51% majority stake as a non-executive partner and positioned the brand for long-term scalability in the supply sector.",
+    "detail": "Holds a 51% majority stake as a non-executive partner in a stock-supply business. Created the branding and visual identity, and supports brand strategy and long-term commercial positioning.",
     "responsibilities": [
       "Visual identity & branding",
       "Non-executive strategic ownership",
@@ -24,7 +24,7 @@
       "Design",
       "Marketing"
     ],
-    "detail": "Developed the brand, website and digital business systems for a refrigerated human-remains transport business serving KwaZulu-Natal. Delivered corporate identity, vehicle branding, AI-assisted web development, local SEO, lead generation, a custom CRM, quotation and pricing tools, and accounting workflows.",
+    "detail": "Delivered corporate identity, vehicle branding and an AI-assisted website for a transport business. Improved SEO and Google Business Profile/local visibility. Built CRM, quotation/pricing systems and accounting/financial workflows. Managed hosting, domains, email and DNS. Supported B2B lead generation and WhatsApp/email outreach. Produced compliance-informed content.",
     "software": [
       "Google Business Profile",
       "CRM",
@@ -32,7 +32,7 @@
     ],
     "org": "Body Transport Solutions",
     "role": "Web Design Specialist",
-    "date": "Mar 2026 – Aug 2026"
+    "date": "Mar 2026 - Aug 2026"
   },
   {
     "brandMark": "SR",
@@ -41,7 +41,7 @@
       "Web",
       "Design"
     ],
-    "detail": "Designed and developed a responsive restaurant website for Sitara Indian Cuisine in Morningside, Durban. Digitised a menu of 290+ dishes, built WhatsApp ordering and table-booking journeys, and created catering, events and gallery experiences. Managed content, testing and deployment through Vercel.",
+    "detail": "Built a premium mobile-first website with a 290+ dish menu. Integrated WhatsApp ordering and booking, catering/events enquiries, a gallery, maps and contact details. Developed the responsive front-end and deployed the website on Vercel.",
     "software": [
       "Vercel",
       "WhatsApp",
@@ -49,10 +49,10 @@
     ],
     "org": "Sitara Restaurant",
     "role": "Web Designer",
-    "date": "Jan 2026 – Feb 2026"
+    "date": "Jan 2026 - Feb 2026"
   },
   {
-    "date": "Apr 2025 – Dec 2025",
+    "date": "Apr 2025 - Dec 2025",
     "role": "Creative and Communications",
     "org": "Olive Tree Church",
     "brandMark": "OT",
@@ -61,7 +61,7 @@
       "Design",
       "Marketing"
     ],
-    "detail": "Full-service creative and communications for the Florida Road flagship campus — effectively agency work for the church. Owned sermon-series design, brand and social content, marketing campaigns and content creation, with photography, videography and video editing, live production and AV, and training across the creative team, all on Adobe-led, industry-standard workflows.",
+    "detail": "Led creative production and communications for the Florida Road flagship campus, connecting brand, marketing campaigns, social media and live content delivery. Owned sermon-series design, brand assets, social content and campaign creative across digital channels. Produced photography, videography and edited video content using Adobe workflows. Delivered live production and audiovisual support. Trained the creative team and supported consistent production workflows across design, content and media.",
     "software": [
       "Photoshop",
       "Illustrator",
@@ -75,7 +75,7 @@
       {
         "type": "Creative lead",
         "title": "Series design & content",
-        "detail": "Owned sermon-series design, brand, social and content creation — agency-style creative direction for the church."
+        "detail": "Owned sermon-series design, brand, social and content creation - agency-style creative direction for the church."
       },
       {
         "type": "Production",
@@ -102,7 +102,7 @@
     ]
   },
   {
-    "date": "Jun 2023 – Mar 2025",
+    "date": "Jun 2023 - Mar 2025",
     "role": "Graphic Design Specialist",
     "org": "Mediatrade",
     "brandMark": "MT",
@@ -110,7 +110,7 @@
     "tags": [
       "Design"
     ],
-    "detail": "Brand and packaging design across digital and print — labels, packaging, mockups and brand guidelines through the Adobe suite, plus print-ready retail and POS artwork. The production studio that absorbed and serviced my clicklocal client portfolio, and where I took on the Dreambook project full-time.",
+    "detail": "Worked two days per week at Mediatrade alongside three days per week at Joseph Business School Africa. These were concurrent roles. Produced brand, packaging and campaign design across digital and print for retail and commercial clients. Created social media content, marketing collateral, presentations, labels, packaging and product mockups using Adobe design tools. Developed brand guidelines and maintained a consistent visual identity across channels. Prepared print-ready retail and point-of-sale artwork, including DTP, repro, layout and nesting. Collaborated with cross-functional teams and managed concurrent projects against production deadlines. Serviced the client portfolio transferred from Clicklocal and worked on The Dreambook brand and web project.",
     "software": [
       "Photoshop",
       "Illustrator",
@@ -126,7 +126,7 @@
       {
         "type": "Retail",
         "title": "Print-ready POS artwork",
-        "detail": "Delivered retail production artwork — shelf strips, wobblers and posters — at the precision needed for repro."
+        "detail": "Delivered retail production artwork - shelf strips, wobblers and posters - at the precision needed for repro."
       }
     ],
     "responsibilities": [
@@ -143,7 +143,7 @@
     ]
   },
   {
-    "date": "Jun 2022 – Mar 2025",
+    "date": "Jun 2022 - Mar 2025",
     "role": "Multimedia Specialist",
     "org": "Joseph Business School Africa",
     "brandMark": "JBS",
@@ -153,7 +153,7 @@
       "Web",
       "Marketing"
     ],
-    "detail": "Business-programme, multimedia, web and campaign delivery for Joseph Business School Africa, the African hub of a US-founded entrepreneurship programme. Built the marketing and content engine around masterclasses, livestreams, funnels, LMS/web systems, recorded learning media and Canva plus ChatGPT-enabled production. The work helped the Africa operation become one of the strongest-performing JBS locations globally, with high sales performance and a more self-sustaining programme model.",
+    "detail": "Worked three days per week at JBSA alongside two days per week at Mediatrade during the overlapping period. These were concurrent roles. Delivered multimedia, digital marketing and web systems for the African hub of a US-founded entrepreneurship programme. Built campaign assets, masterclass promotions, sales funnels and recorded learning content to support programme demand and enrolment. Produced livestreams reaching audiences of 500+ and edited promotional and learning videos using Adobe Premiere Pro and After Effects. Supported WordPress websites and learning management systems, connecting content, campaigns and programme delivery. Introduced Canva and ChatGPT workflows into content production and supported team adoption. Helped develop a repeatable marketing and content operation supporting a more self-sustaining programme model.",
     "software": [
       "Photoshop",
       "Illustrator",
@@ -208,13 +208,13 @@
     "tags": [
       "Design"
     ],
-    "detail": "Designed branded environmental graphics for BEAPO’s office, including entrance door branding and frosted glass graphics across conference room panels. Created a consistent brand presence while keeping the workspace clean and functional.",
+    "detail": "Designed branded office-environment graphics, including entrance-door branding and frosted conference-room glass, to create a consistent and professional workplace identity.",
     "org": "Beapo",
     "role": "Graphic Designer",
-    "date": "Oct 2024 – Nov 2024"
+    "date": "Oct 2024 - Nov 2024"
   },
   {
-    "date": "Jun 2022 – Apr 2024",
+    "date": "Jun 2022 - Apr 2024",
     "role": "Search Engine Optimization Executive",
     "org": "Webmeta (Pty) Ltd",
     "brandMark": "WM",
@@ -223,7 +223,7 @@
       "Marketing",
       "Web"
     ],
-    "detail": "Organic-growth role helping businesses improve search visibility, website structure, content performance and the digital resources that turn interest into qualified traffic.",
+    "detail": "Supported business growth through search engine optimization, organic marketing and digital presence development. Worked across SEO, social media marketing and business development to connect brands with relevant audiences. Helped businesses use digital resources and online channels to improve visibility and participation. Contributed within an agency offering email marketing, paid media, website development and e-commerce services.",
     "software": [
       "Organic Growth",
       "Google Analytics",
@@ -257,7 +257,7 @@
     ]
   },
   {
-    "date": "Dec 2021 – Nov 2023",
+    "date": "Dec 2021 - Nov 2023",
     "role": "Director",
     "org": "clicklocal.co.za",
     "brandMark": "CL",
@@ -268,7 +268,7 @@
       "Design",
       "Marketing"
     ],
-    "detail": "My own digital and design services agency for local businesses — brand, web, campaigns and production under one roof. Ran the client base behind Africa Paints, Solid Doors, Alif Doors, Natal Associated Chemicals and the Dynamic Automation quote work, until the portfolio was absorbed into a wider production and education business group.",
+    "detail": "Founded and owned a creative agency, managing client relationships, creative briefs, graphic design and website delivery. The business ceased operating after Mediatrade acquired its client portfolio; continued servicing the transferred clients at Mediatrade.",
     "software": [
       "WordPress",
       "Illustrator",
@@ -308,7 +308,7 @@
     ]
   },
   {
-    "date": "Aug 2021 – Jun 2022",
+    "date": "Aug 2021 - Jun 2022",
     "role": "Senior Graphic Designer",
     "org": "Thinklocal",
     "brandMark": "TL",
@@ -317,7 +317,7 @@
       "Design",
       "Web"
     ],
-    "detail": "Senior design across brand strategy, corporate identity, DTP and signage through to front-end — Illustrator, Photoshop and InDesign into HTML5/CSS3 website development and consultancy, plus social content, copy, photo retouching and video graphics.",
+    "detail": "Delivered brand strategy, graphic design and web content across print and digital channels. Developed corporate identity, social media creative, advertorial and editorial layouts, signage and promotional materials. Directed digital and print design, desktop publishing and visual communication. Provided website consultancy and development using HTML and CSS. Wrote, edited and proofread campaign copy for blogs, email, web and social media. Retouched photography and produced video graphics to support content and social media strategy.",
     "software": [
       "Illustrator",
       "Photoshop",
@@ -352,7 +352,7 @@
     ]
   },
   {
-    "date": "Mar 2021 – Jul 2021",
+    "date": "Mar 2021 - Jul 2021",
     "role": "Graphic Designer",
     "org": "University of Cambridge",
     "brandMark": "CU",
@@ -360,7 +360,7 @@
     "tags": [
       "Design"
     ],
-    "detail": "Designed the logo and mockups for an international research initiative connecting water and global citizenship through education for sustainable development.",
+    "detail": "Designed the logo and supporting visual mockups for the international research project Connecting Water to Global Citizenship through Education for Sustainable Development. Used Adobe Photoshop, Illustrator and InDesign to create the project identity and presentation assets.",
     "software": [
       "Illustrator",
       "Photoshop",
@@ -387,7 +387,7 @@
     ]
   },
   {
-    "date": "Mar 2021 – Jun 2021",
+    "date": "Mar 2021 - Jun 2021",
     "role": "Marketing Manager",
     "org": "Kirstenhof Car Hire",
     "brandMark": "KCH",
@@ -397,7 +397,7 @@
       "Web",
       "Design"
     ],
-    "detail": "Drove organic and sponsored search, social and email marketing that increased car rentals, created animated video and image adverts, then built a WordPress appointment system that handled clients, payments, fines, maintenance and debtors/quoting automation.",
+    "detail": "Connected digital marketing, creative production and operational web systems for a car-rental business. Delivered organic and paid search, social media marketing and email campaigns to support rental demand. Created animated video and image advertisements for digital and print channels, plus rebranding and promotional assets. Built a WordPress booking and administration system covering clients, payments, fines and scheduled maintenance. Linked email marketing with website data and automated quotation, invoicing and debtor-management processes.",
     "software": [
       "WordPress",
       "Google Ads",
@@ -448,7 +448,7 @@
       "Web",
       "Design"
     ],
-    "detail": "Built an online store end-to-end, wrote the copy and sourced suppliers, then redesigned the company logo in Illustrator and InDesign.",
+    "detail": "Built an online store for an autobody repair and diagnostics business, prepared website copy and researched suppliers for emergency equipment and automotive accessories. Refreshed the corporate logo using Adobe Illustrator and InDesign and created supporting branded website graphics.",
     "software": [
       "WordPress",
       "Photoshop",
@@ -482,7 +482,7 @@
     ]
   },
   {
-    "date": "Feb 2020 – Dec 2020",
+    "date": "Feb 2020 - Dec 2020",
     "role": "Sales Assistant",
     "org": "Contours Design Studio CDS",
     "brandMark": "CDS",
@@ -492,7 +492,7 @@
       "Web",
       "Marketing"
     ],
-    "detail": "Sales, quoting and showroom support with Pastel purchase/sales orders, inventory, project scheduling and reporting — plus bespoke product and installation design. Built a Shopify store and drop-ship model during hard lockdown to protect cash flow and jobs.",
+    "detail": "Combined customer service, showroom operations and e-commerce delivery. Built a Shopify online store and supplier dropshipping workflow during lockdown to support continued trading. Managed client enquiries, quotations, supplier coordination and showroom customers. Processed purchase orders, sales orders and invoices using Sage Pastel, and maintained stock records. Supported project scheduling, installation teams, product catalogues and client presentations. Prepared Excel reports and coordinated event and display work.",
     "software": [
       "Shopify",
       "Photoshop",
@@ -527,9 +527,9 @@
     ]
   },
   {
-    "date": "Nov 2016 – Dec 2019",
+    "date": "Nov 2016 - Dec 2019",
     "role": "Programme Advisor",
-    "org": "London College of International Business studies",
+    "org": "London College of International Business Studies",
     "brandMark": "LC",
     "brandColor": "secondary",
     "tags": [
@@ -537,7 +537,7 @@
       "Design",
       "AI"
     ],
-    "detail": "Worked across Damelin Online launch activity and LCIBS international admissions: enquiry-to-enrolment conversion, CRM discipline, student advising, reporting and analytics, plus templates, booklets, email creative and animated adverts. The LCIBS period also included early AI-readiness work under Brett Kilpatrick, a former Apple executive, including programme-launch, HR/executive audience positioning and industry-change readiness before AI became mainstream workplace language.",
+    "detail": "Supported Damelin Online launch activity and LCIBS international admissions, connecting student recruitment, sales pipeline management and education marketing. Managed enquiry-to-enrolment conversion, student advising, CRM records, reporting and analytics. Produced campaign assets including templates, booklets, email creative and animated adverts using Adobe tools and Mailchimp. Promoted into international admissions within 10 months. Contributed to early AI-readiness and programme-launch work under Brett Kilpatrick, including communications for HR and executive audiences around technology and industry change.",
     "software": [
       "InDesign",
       "After Effects",
@@ -580,7 +580,7 @@
     ]
   },
   {
-    "date": "Jan 2016 – Oct 2016",
+    "date": "Jan 2016 - Oct 2016",
     "role": "Sales Representative",
     "org": "The Unlimited",
     "brandMark": "TU",
@@ -588,7 +588,7 @@
     "tags": [
       "Foundations"
     ],
-    "detail": "Performance-based direct-sales role that built early commercial discipline: lead qualification, product conversations, objection handling, CRM capture and new-hire training before the later creative, marketing and systems work.",
+    "detail": "Developed sales, lead generation and customer communication skills in a high-volume telesales environment. Explained products and pricing, handled customer questions and worked toward monthly sales targets. Generated and qualified prospective customer leads. Trained new hires and supported a small telemarketing team under the team leader's supervision.",
     "software": [
       "CRM",
       "Google Workspace"
@@ -614,7 +614,7 @@
     ]
   },
   {
-    "date": "Oct 2014 – Dec 2015",
+    "date": "Oct 2014 - Dec 2015",
     "role": "Development Assistant",
     "org": "Old Mutual South Africa, Welstand Agri",
     "brandMark": "OM",
@@ -624,7 +624,7 @@
       "Web",
       "Design"
     ],
-    "detail": "Scheduled appointments, drove client acquisition and quoting, and supported the Old Mutual Franchise Division — including a self-taught Welstand Agri website build and rebrand that became an early bridge into digital delivery.",
+    "detail": "Supported business development, sales administration, brand design and web delivery for the Welstand Agri franchise. Coordinated prospect appointments, adviser diaries and travel planning. Prepared insurance quotations under financial-adviser supervision. Developed a website supporting online quotation requests, appointments and routing of client service requests. Worked with the franchise owner on rebranding, including logo, email and document templates, brochures and signage.",
     "software": [
       "CRM",
       "Google Workspace",
@@ -657,7 +657,7 @@
     ]
   },
   {
-    "date": "Jan 2014 – Sep 2014",
+    "date": "Jan 2014 - Sep 2014",
     "role": "Telesales Representative",
     "org": "Investors Choice",
     "brandMark": "IC",
@@ -665,7 +665,7 @@
     "tags": [
       "Foundations"
     ],
-    "detail": "Early software-sales role around trading-software conversations, lead handling, product explanation, data capture, training support and daily lead reporting. It became the professional commercial base for later growth, creative and systems work.",
+    "detail": "Worked in a high-volume outbound sales environment, averaging 200-250 calls per day. Qualified leads, captured customer and order information, completed daily lead-qualification reports and received training on online trading software and markets.",
     "software": [
       "CRM",
       "Google Workspace"

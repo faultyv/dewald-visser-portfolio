@@ -42,7 +42,7 @@ export function TiltCard({ children, className = "" }: { children: React.ReactNo
     if (!canTiltRef.current) return;
     gsap.to(ref.current, { rotateX: 0, rotateY: 0, y: 0, duration: 0.5, ease: "power3.out", boxShadow: "0 4px 16px -4px var(--m3-shadow)" });
   };
-  // Spring-like press feedback — a quick scale dip that settles back with a touch of overshoot.
+  // Spring-like press feedback - a quick scale dip that settles back with a touch of overshoot.
   const onDown = () => {
     if (!canPressRef.current) return;
     gsap.to(ref.current, { scale: 0.978, duration: 0.16, ease: "power2.out" });

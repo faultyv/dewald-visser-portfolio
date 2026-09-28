@@ -2,7 +2,7 @@ import type { SiteConfig } from "./content";
 
 /** Business WhatsApp number (international format, no +). Kept here so client components
  * like the NavBar can build a wa.me link without threading server-loaded site config. */
-export const WHATSAPP_NUMBER = "27678952710";
+export const WHATSAPP_NUMBER = "27645233069";
 const DEFAULT_WA_MESSAGE = "Hi Dewald, I saw your portfolio and would like to chat about a project.";
 
 export function whatsappLink(message: string = DEFAULT_WA_MESSAGE): string {

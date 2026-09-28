@@ -25,7 +25,7 @@ export function Credentials({ certs, site }: { certs: CertsData; site: SiteConfi
           </Reveal>
         </div>
         <Reveal delay={0.1}>
-          <p className="max-w-[330px] text-body-m text-on-surface-variant">Real, verified credentials — <span className="text-mark">issued and dated</span> by the platforms behind them.</p>
+          <p className="max-w-[330px] text-body-m text-on-surface-variant">Real, verified credentials - <span className="text-mark">issued and dated</span> by the platforms behind them.</p>
         </Reveal>
         <Reveal delay={0.12}>
           <div className="section-proof-strip">
@@ -120,7 +120,7 @@ export function Credentials({ certs, site }: { certs: CertsData; site: SiteConfi
             {certs.additional.map((c) => (
               <div key={c.title} className="hig-control inline-flex items-start gap-1.5 rounded-xl px-3 py-2 text-body-s text-on-surface-variant">
                 <IconSymbol name="verified" size={15} className="text-success" />
-                <span className="text-on-surface font-medium">{c.title}</span> — {c.issuer}
+                <span className="text-on-surface font-medium">{c.title}</span> - {c.issuer}
               </div>
             ))}
           </div>
@@ -134,14 +134,14 @@ export function Credentials({ certs, site }: { certs: CertsData; site: SiteConfi
             <span className={`mr-2 inline-grid h-8 w-8 place-items-center rounded-xl ${SEED_CONTAINER_BG.success} ${SEED_CONTAINER_TEXT.success}`}>
               <IconSymbol name="school" size={18} filled />
             </span>
-            <span className="font-semibold">{site.education.split(" — ")[0]}</span>{" "}
-            <span className="text-on-surface-variant">— {site.education.split(" — ")[1]}</span>
+            <span className="font-semibold">{site.education.split(" - ")[0]}</span>{" "}
+            <span className="text-on-surface-variant">- {site.education.split(" - ")[1]}</span>
           </div>
           <div className="text-body-m text-on-surface">
             <span className={`mr-2 inline-grid h-8 w-8 place-items-center rounded-xl ${SEED_BG.primary} ${SEED_ON.primary}`}>
               <IconSymbol name="translate" size={18} filled />
             </span>
-            <span className="font-semibold">Languages</span> <span className="text-on-surface-variant">— {site.languages.join(" · ")}</span>
+            <span className="font-semibold">Languages</span> <span className="text-on-surface-variant">- {site.languages.join(" · ")}</span>
           </div>
         </div>
       </Reveal>

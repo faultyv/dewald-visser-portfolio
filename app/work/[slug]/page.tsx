@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     description: project.outcome,
     alternates: { canonical: url },
     openGraph: {
-      title: `${project.title} — Dewald Visser`,
+      title: `${project.title} - Dewald Visser`,
       description: project.outcome,
       url,
       type: "article",
@@ -40,7 +40,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     },
     twitter: {
       card: "summary_large_image",
-      title: `${project.title} — Dewald Visser`,
+      title: `${project.title} - Dewald Visser`,
       description: project.outcome,
       images: project.cover ? [project.cover] : undefined,
     },

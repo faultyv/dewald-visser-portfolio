@@ -3,7 +3,7 @@ import { IconSymbol } from "./IconSymbol";
 import { ProjectCoverVisual } from "./ProjectCoverVisual";
 import type { Project } from "@/lib/content";
 
-/** Curated connections — the non-obvious threads, mirroring the brand-map intelligence. */
+/** Curated connections - the non-obvious threads, mirroring the brand-map intelligence. */
 const CLUSTERS: { slugs: string[]; label: string }[] = [
   {
     slugs: ["dreambook-cpm", "joseph-business-school", "retail-production-dtp"],

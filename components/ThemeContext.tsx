@@ -18,7 +18,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   // Deliberately deferred to an effect (not a lazy useState initializer): the server
   // always renders "light" since it has no access to localStorage/data-theme, so syncing
-  // here — after hydration matches that same default — avoids a hydration text mismatch.
+  // here - after hydration matches that same default - avoids a hydration text mismatch.
   // The actual page colors are already correct pre-hydration via the blocking inline
   // script in app/layout.tsx; only this label/highlight state needs the one-time catch-up.
   useEffect(() => {

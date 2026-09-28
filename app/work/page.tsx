@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: "Selected projects across marketing, web, brand and systems - the proof behind the pillars.",
   alternates: { canonical: "/work" },
   openGraph: {
-    title: "Work — Dewald Visser",
+    title: "Work - Dewald Visser",
     description: "Selected projects across marketing, web, brand and systems - the proof behind the pillars.",
     url: "/work",
   },

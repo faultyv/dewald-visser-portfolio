@@ -11,7 +11,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
   return (
     <ThemeProvider>
       {/* reducedMotion="user" keeps gentle opacity fades but drops transform/scale
-          motion for visitors who request reduced motion — matches the GSAP/Lenis layer. */}
+          motion for visitors who request reduced motion - matches the GSAP/Lenis layer. */}
       <MotionConfig reducedMotion="user">
         <a href="#main-content" className="cv-skip-link">Skip to content</a>
         <AtmosphereCanvas />

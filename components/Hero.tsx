@@ -84,7 +84,10 @@ export function Hero({ site }: { site: SiteConfig }) {
             ))}
           </h1>
 
-          <p className="hero-role mt-5 text-title-l text-on-surface">Web &amp; Graphic Designer<span className="block text-primary mt-1">Digital Marketing &amp; AI Specialist</span></p>
+          <p className="hero-role mt-5 text-title-l text-on-surface">
+            Web &amp; Graphic Designer
+            <span className="block text-primary mt-1">Digital Marketing | Brand Strategy &amp; AI Workflows</span>
+          </p>
 
           <p className="hero-pos mt-7 max-w-[680px] text-body-l text-on-surface-variant md:mt-8 md:text-title-l">
             {heroPositionParts.length === 2 ? (
