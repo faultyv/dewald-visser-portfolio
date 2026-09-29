@@ -27,7 +27,7 @@ function tileClass(index: number, total: number) {
     if (index === 1) return "md:[grid-column:9/14] md:[grid-row:1/3]";
     return "md:[grid-column:9/14] md:[grid-row:3/5]";
   }
-  return TILE_PATTERN[index % TILE_PATTERN.length];
+  return index < TILE_PATTERN.length ? TILE_PATTERN[index] : "md:col-span-6 md:row-span-3";
 }
 
 function tileSizes(index: number, total: number) {

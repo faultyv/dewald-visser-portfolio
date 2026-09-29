@@ -7,10 +7,11 @@ import { ProjectCoverVisual } from "./ProjectCoverVisual";
 import { SEED_BG, SEED_ON } from "@/lib/seed-classes";
 import type { Project } from "@/lib/content";
 
-const FEATURED_META = ["Signature build", "Live learning system", "Production proof"];
+const FEATURED_META = ["Brand & publishing", "Business & systems", "Restaurant experience"];
 
 export function WorkTeaser({ projects }: { projects: Project[] }) {
-  const featured = projects.slice(0, 3);
+  const featured = ["dreambook-cpm", "body-transport-solutions", "sitara-restaurant"]
+    .flatMap((slug) => projects.find((project) => project.slug === slug) ?? []);
   const categoryCount = new Set(projects.flatMap((project) => project.categories)).size;
 
   return (
@@ -25,7 +26,7 @@ export function WorkTeaser({ projects }: { projects: Project[] }) {
           </Reveal>
           <Reveal delay={0.08}>
             <p className="mt-4 max-w-[560px] text-body-m text-on-surface-variant">
-              Three proof routes: a flagship brand ecosystem, a live learning platform and production work with <span className="text-mark">commercial pressure</span> behind it.
+              A brand and publishing system, a transport business built for digital enquiries, and a restaurant experience — with <span className="text-mark">real work to explore</span>.
             </p>
           </Reveal>
         </div>
