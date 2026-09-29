@@ -2751,6 +2751,7 @@ main section[id] {
 }
 
 .related-work-grid {
+  grid-template-columns: minmax(0, 1fr);
   display: grid;
   gap: 14px;
 }
@@ -4290,3 +4291,22 @@ a:hover .company-row-card,
 @media (max-width: 1023px) { .hero-elevated { padding-bottom: 64px; } .hero-elevated .text-display-l { font-size: clamp(72px, 14vw, 116px); } .hero-copy { max-width: 760px; } .hero-visual { min-height: 650px; max-width: 760px; width: 100%; } .hero-scroll { display: none !important; } }
 @media (max-width: 640px) { .hero-elevated { min-height: 0; padding-top: 110px; } .hero-elevated::after { left: -202px; top: 250px; } .hero-elevated .text-display-l { font-size: clamp(62px, 19vw, 90px); line-height: .82; } .hero-status { align-items: flex-start; flex-wrap: wrap; column-gap: 9px; row-gap: 4px; font-size: 12px; } .hero-role .text-title-l { font-size: 22px; } .hero-role .text-title-m { font-size: 16px; line-height: 1.45; } .hero-elevated .hero-pos { font-size: 16px; line-height: 1.58; } .hero-visual { min-height: 520px; margin-top: 4px; } .hero-portrait { right: 26px; border-radius: 25px; } .hero-blue-panel { inset: 26px 0 26px auto; width: 72px; border-radius: 0 22px 22px 0; padding: 40px 13px; gap: 10px; font-size: 8px; } .hero-project-card { right: 0; bottom: 18px; width: 82%; } .hero-project-image { height: 128px; } .hero-project-copy { padding: 12px 8px 8px; } .hero-project-copy .text-body-s { font-size: 11px; line-height: 1.45; } }
 @media (prefers-reduced-motion: reduce) { .hero-project-card, .hero-project-arrow, .hero-project-image img { transition: none; } }
+
+/* Artwork-led portfolio: native proportions, separate captions, no image overlays. */
+.artwork-cover, .artwork-hero { width: 100%; background: var(--color-surface-container-low); }
+.artwork-cover .artwork-image, .artwork-hero .artwork-image { display: block; border-radius: 0; object-fit: contain; }
+.artwork-hero { max-width: 1028px; margin: 0 auto; }
+.artwork-gallery { columns: 2; column-gap: 24px; margin: 24px 0 64px; }
+.artwork-tile { display: block; width: 100%; break-inside: avoid; margin: 0 0 24px; padding: 0; border: 1px solid var(--color-outline-variant); border-radius: 8px; background: var(--color-surface-container-low); cursor: zoom-in; text-align: left; overflow: hidden; }
+.artwork-tile:focus-visible { outline: 3px solid var(--color-primary); outline-offset: 4px; }
+.artwork-caption { display: flex; align-items: center; gap: 12px; padding: 14px 16px; background: var(--color-surface); color: var(--color-on-surface); font-size: 13px; line-height: 1.5; }
+.artwork-caption > span:first-child { color: var(--color-on-surface-variant); font-size: 11px; }
+.artwork-caption > span:nth-child(2) { flex: 1; }
+.portfolio-work-columns { columns: 3; column-gap: 22px; }
+.portfolio-work-item { break-inside: avoid; margin-bottom: 24px; }
+.work-featured-item.is-primary .work-proof-media, .work-featured-item.is-secondary .work-proof-media, .work-proof-media { aspect-ratio: auto !important; min-height: 0 !important; }
+.project-gallery-dialog { background: var(--color-surface) !important; }
+@media (max-width:1100px) { .portfolio-work-columns { columns: 2; } }
+@media (max-width:640px) { .artwork-gallery, .portfolio-work-columns { columns: 1; } }
+
+.hero-project-image { height: auto; aspect-ratio: 3500 / 2300; }

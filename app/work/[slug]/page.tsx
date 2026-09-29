@@ -7,7 +7,6 @@ import { ProjectMiniNav } from "@/components/ProjectMiniNav";
 import { ProjectGallery } from "@/components/ProjectGallery";
 import { ProjectVideo } from "@/components/ProjectVideo";
 import { ProjectProofLinks } from "@/components/ProjectProofLinks";
-import { ProjectEditorialBreak } from "@/components/ProjectEditorialBreak";
 import { ProjectPager } from "@/components/ProjectPager";
 import { RelatedWork } from "@/components/RelatedWork";
 import { ExternalLinks } from "@/components/ExternalLinks";
@@ -158,9 +157,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           <div className="mb-12">{content}</div>
         </Reveal>
 
-        <Reveal>
-          <ProjectEditorialBreak project={project} />
-        </Reveal>
+
 
         {proofLinks.length > 0 && (
           <div id="proof-media" className="scroll-mt-24">

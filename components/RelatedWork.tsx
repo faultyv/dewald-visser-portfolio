@@ -49,7 +49,7 @@ export function RelatedWork({ current, all }: { current: Project; all: Project[]
         {items.map((p) => (
           <Link key={p.slug} href={`/work/${p.slug}`} className="group block no-underline">
             <div className="related-work-card hig-card overflow-hidden">
-              <div className="relative aspect-[4/3]">
+              <div className="relative">
                 <ProjectCoverVisual project={p} sizes="(max-width:768px) 90vw, 360px" />
               </div>
               <div className="flex items-center justify-between gap-3 p-4.5">

@@ -4,13 +4,14 @@ import { TiltCard } from "./TiltCard";
 import { ButtonLink } from "./Button";
 import { IconSymbol } from "./IconSymbol";
 import { ProjectCoverVisual } from "./ProjectCoverVisual";
-import { SEED_BG, SEED_ON } from "@/lib/seed-classes";
+
 import type { Project } from "@/lib/content";
 
-const FEATURED_META = ["Signature build", "Live learning system", "Production proof"];
+const FEATURED_META = ["Brand & publishing", "Business & systems", "Restaurant experience"];
 
 export function WorkTeaser({ projects }: { projects: Project[] }) {
-  const featured = projects.slice(0, 3);
+  const featured = ["dreambook-cpm", "body-transport-solutions", "sitara-restaurant"]
+    .flatMap((slug) => projects.find((project) => project.slug === slug) ?? []);
   const categoryCount = new Set(projects.flatMap((project) => project.categories)).size;
 
   return (
@@ -25,7 +26,7 @@ export function WorkTeaser({ projects }: { projects: Project[] }) {
           </Reveal>
           <Reveal delay={0.08}>
             <p className="mt-4 max-w-[560px] text-body-m text-on-surface-variant">
-              Three proof routes: a flagship brand ecosystem, a live learning platform and production work with <span className="text-mark">commercial pressure</span> behind it.
+              A brand and publishing system, a transport business built for digital enquiries, and a restaurant experience — with <span className="text-mark">real work to explore</span>.
             </p>
           </Reveal>
         </div>
@@ -52,12 +53,9 @@ export function WorkTeaser({ projects }: { projects: Project[] }) {
             <TiltCard>
               <Link href={`/work/${project.slug}`} className="block no-underline group">
                 <div className="work-proof-card hig-card overflow-hidden rounded-[24px]">
-                  <div className="work-proof-media relative" style={{ aspectRatio: "4/3" }}>
+                  <div className="work-proof-media relative">
                     <ProjectCoverVisual project={project} sizes="(max-width:768px) 90vw, 420px" />
-                    <span className={`absolute top-3.5 left-3.5 z-[2] text-label-m px-3 py-1.5 rounded-full ${SEED_BG[project.seed]} ${SEED_ON[project.seed]}`}>
-                      {project.label}
-                    </span>
-                    <span className="work-proof-number">0{index + 1}</span>
+
                   </div>
                   <div className="work-proof-body p-5">
                     <div className="mb-3 flex items-center justify-between gap-3 text-label-s text-on-surface-variant">

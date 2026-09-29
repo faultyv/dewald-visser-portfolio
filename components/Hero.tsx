@@ -94,7 +94,7 @@ export function Hero({ site }: { site: SiteConfig }) {
 
           <div className="hero-portrait absolute inset-y-0 left-0 right-[58px] overflow-hidden rounded-[34px]">
             <Image
-              src="/images/dewald/dewald-about-centered.png"
+              src="/images/dewald/dewald-about-centered-clean.png"
               alt="Dewald Visser in a professional working environment"
               fill
               priority
@@ -110,7 +110,8 @@ export function Hero({ site }: { site: SiteConfig }) {
                 alt="The Dreambook cover design"
                 fill
                 sizes="(max-width: 640px) 78vw, 360px"
-                className="object-cover transition-transform duration-500 group-hover:scale-[1.035]"
+                className="object-contain"
+                quality={90}
               />
             </div>
             <div className="hero-project-copy">

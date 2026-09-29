@@ -6,7 +6,7 @@ import { motion } from "motion/react";
 import { TiltCard } from "./TiltCard";
 import { IconSymbol } from "./IconSymbol";
 import { ProjectCoverVisual } from "./ProjectCoverVisual";
-import { SEED_BG, SEED_ON } from "@/lib/seed-classes";
+
 import { fmTransition } from "@/lib/motion-tokens";
 import type { Project } from "@/lib/content";
 
@@ -23,17 +23,16 @@ function ProjectCard({ project, large }: { project: Project; large?: boolean }) 
       <TiltCard>
         <Link href={`/work/${project.slug}`} className="block no-underline group">
           <div className="hig-card overflow-hidden rounded-[24px]">
-            <div className="relative" style={{ aspectRatio: large ? "16/9" : "4/3" }}>
+            <div className="relative">
               <ProjectCoverVisual
                 project={project}
                 priority={large}
                 sizes={large ? "(max-width:768px) 95vw, 800px" : "(max-width:768px) 90vw, 420px"}
               />
-              <span className={`absolute top-4 left-4 z-[2] text-label-m px-3 py-1.5 rounded-full ${SEED_BG[project.seed]} ${SEED_ON[project.seed]}`}>
-                {project.label}
-              </span>
+
             </div>
             <div className="p-5 md:p-6">
+              <p className="mb-2 text-label-s text-primary">{project.label}</p>
               <div className={large ? "text-headline-s text-on-surface" : "text-title-l text-on-surface"}>{project.title}</div>
               <div className="text-label-m text-on-surface-variant mt-1.5 mb-2.5">
                 {project.org} · {project.tools}
@@ -93,10 +92,10 @@ export function WorkGrid({ projects }: { projects: Project[] }) {
         })}
       </div>
 
-      <motion.div layout className="grid gap-4.5" style={{ gridTemplateColumns: "repeat(auto-fill,minmax(320px,1fr))" }}>
-        {filtered.map((project, i) => (
-          <div key={project.slug} className={i === 0 ? "md:col-span-2" : ""}>
-            <ProjectCard project={project} large={i === 0} />
+      <motion.div layout className="portfolio-work-columns">
+        {filtered.map((project) => (
+          <div key={project.slug} className="portfolio-work-item">
+            <ProjectCard project={project}  />
           </div>
         ))}
       </motion.div>

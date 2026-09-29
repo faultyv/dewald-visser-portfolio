@@ -2,40 +2,12 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import { ArtworkImage } from "./ArtworkImage";
 import * as Dialog from "@radix-ui/react-dialog";
 import { motion, AnimatePresence } from "motion/react";
 import { IconSymbol } from "./IconSymbol";
 import { fmTransition } from "@/lib/motion-tokens";
 import type { GalleryItem } from "@/lib/content";
-
-const TILE_PATTERN = [
-  "md:[grid-column:1/9] md:[grid-row:1/5]",
-  "md:[grid-column:9/14] md:[grid-row:1/3]",
-  "md:[grid-column:9/12] md:[grid-row:3/5]",
-  "md:[grid-column:12/14] md:[grid-row:3/5]",
-  "md:[grid-column:1/8] md:[grid-row:5/7]",
-  "md:[grid-column:8/14] md:[grid-row:5/7]",
-  "md:col-span-4 md:row-span-2",
-  "md:col-span-5 md:row-span-2",
-];
-
-function tileClass(index: number, total: number) {
-  if (total === 1) return "md:[grid-column:1/14] md:[grid-row:1/5]";
-  if (total === 2) return index === 0 ? "md:[grid-column:1/9] md:[grid-row:1/5]" : "md:[grid-column:9/14] md:[grid-row:1/5]";
-  if (total === 3) {
-    if (index === 0) return "md:[grid-column:1/9] md:[grid-row:1/5]";
-    if (index === 1) return "md:[grid-column:9/14] md:[grid-row:1/3]";
-    return "md:[grid-column:9/14] md:[grid-row:3/5]";
-  }
-  return TILE_PATTERN[index % TILE_PATTERN.length];
-}
-
-function tileSizes(index: number, total: number) {
-  if (total === 1) return "(max-width:768px) 92vw, 1050px";
-  if (index === 0) return "(max-width:768px) 92vw, 680px";
-  if (index === 1) return "(max-width:768px) 92vw, 420px";
-  return "(max-width:768px) 92vw, 300px";
-}
 
 export function ProjectGallery({ gallery }: { gallery: GalleryItem[] }) {
   const [openIdx, setOpenIdx] = useState<number | null>(null);
@@ -65,54 +37,22 @@ export function ProjectGallery({ gallery }: { gallery: GalleryItem[] }) {
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [goTo, openIdx]);
 
-  useEffect(() => {
-    const buttons = Array.from(galleryRef.current?.querySelectorAll<HTMLButtonElement>("[data-gallery-index]") ?? []);
-    const listeners = buttons.map((button) => {
-      const open = () => {
-        const index = Number(button.dataset.galleryIndex);
-        if (Number.isInteger(index)) setOpenIdx(index);
-      };
-      button.addEventListener("click", open);
-      button.addEventListener("pointerdown", open);
-      return [button, open] as const;
-    });
-
-    return () => {
-      listeners.forEach(([button, open]) => {
-        button.removeEventListener("click", open);
-        button.removeEventListener("pointerdown", open);
-      });
-    };
-  }, [media.length]);
-
   if (!media.length) return null;
 
   return (
     <Dialog.Root open={openIdx !== null} onOpenChange={(o) => !o && setOpenIdx(null)}>
-      <div ref={galleryRef} className="mb-10 grid grid-cols-1 gap-4 sm:grid-cols-2 md:[grid-auto-rows:minmax(88px,8vw)] md:[grid-template-columns:repeat(13,minmax(0,1fr))] lg:[grid-auto-rows:minmax(96px,7vw)]">
+      <div ref={galleryRef} className="artwork-gallery">
         {media.map((g, i) => (
           <button
             key={g.id}
             type="button"
             data-gallery-index={i}
-            onPointerDown={() => setOpenIdx(i)}
             onClick={() => setOpenIdx(i)}
-            className={`project-gallery-tile group relative min-h-0 cursor-pointer overflow-hidden border border-outline-variant bg-surface-container-low p-0 text-left elevation-1 state-layer aspect-[1.42/1] sm:aspect-square md:aspect-auto md:h-full ${tileClass(i, media.length)}`}
+            className="artwork-tile"
+            aria-label={`View ${g.label}`}
           >
-            <Image
-              src={g.src!}
-              alt={g.label}
-              fill
-              className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.035]"
-              sizes={tileSizes(i, media.length)}
-            />
-            <span className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-black/15" />
-            <span className="absolute left-3 top-3 rounded-full bg-black/45 px-2 py-1 text-label-s text-white backdrop-blur-md">
-              {String(i + 1).padStart(2, "0")}
-            </span>
-            <span className="absolute inset-x-0 bottom-0 p-3 md:p-4">
-              <span className="block max-w-[30ch] text-label-m text-white drop-shadow-sm">{g.label}</span>
-            </span>
+            <ArtworkImage src={g.src!} alt={g.label} sizes="(max-width:640px) 92vw, (max-width:1000px) 46vw, 500px" />
+            <span className="artwork-caption"><span>{String(i + 1).padStart(2, "0")}</span><span>{g.label}</span><IconSymbol name="open_in_full" size={16} /></span>
           </button>
         ))}
       </div>
@@ -138,6 +78,7 @@ export function ProjectGallery({ gallery }: { gallery: GalleryItem[] }) {
                   transition={fmTransition.emphasized}
                   className="fixed inset-0 z-[121] flex items-center justify-center p-3 md:p-6"
                 >
+                  <Dialog.Description className="sr-only">Complete artwork. Use the arrow keys to browse, or open the original file.</Dialog.Description>
                   <Dialog.Title className="sr-only">{selected.label}</Dialog.Title>
                   <div className="project-gallery-dialog relative grid h-[min(84vh,760px)] w-full max-w-6xl grid-rows-[1fr_auto] overflow-hidden border border-outline bg-surface-container-high elevation-4">
                     <div className="relative min-h-0 bg-scrim">
@@ -150,7 +91,7 @@ export function ProjectGallery({ gallery }: { gallery: GalleryItem[] }) {
                           transition={fmTransition.standard}
                           className="absolute inset-0"
                         >
-                          <Image src={selected.src!} alt={selected.label} fill className="object-contain" sizes="92vw" />
+                          <Image src={selected.src!} alt={selected.label} fill className="object-scale-down" sizes="92vw" unoptimized />
                         </motion.div>
                       </AnimatePresence>
                     </div>
@@ -165,6 +106,7 @@ export function ProjectGallery({ gallery }: { gallery: GalleryItem[] }) {
 
                       {media.length > 1 && (
                         <div className="flex items-center gap-2">
+                          <a href={selected.src!} target="_blank" rel="noreferrer" className="text-label-m text-primary px-3">Open original</a>
                           <button
                             type="button"
                             onClick={() => goTo(-1)}
