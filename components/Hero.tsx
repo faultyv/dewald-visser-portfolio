@@ -94,7 +94,7 @@ export function Hero({ site }: { site: SiteConfig }) {
 
           <div className="hero-portrait absolute inset-y-0 left-0 right-[58px] overflow-hidden rounded-[34px]">
             <Image
-              src="/images/dewald/dewald-about-centered.png"
+              src="/images/dewald/dewald-about-centered-clean.png"
               alt="Dewald Visser in a professional working environment"
               fill
               priority
