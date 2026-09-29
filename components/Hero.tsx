@@ -110,7 +110,8 @@ export function Hero({ site }: { site: SiteConfig }) {
                 alt="The Dreambook cover design"
                 fill
                 sizes="(max-width: 640px) 78vw, 360px"
-                className="object-cover transition-transform duration-500 group-hover:scale-[1.035]"
+                className="object-contain"
+                quality={90}
               />
             </div>
             <div className="hero-project-copy">

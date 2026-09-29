@@ -4,7 +4,7 @@ import { TiltCard } from "./TiltCard";
 import { ButtonLink } from "./Button";
 import { IconSymbol } from "./IconSymbol";
 import { ProjectCoverVisual } from "./ProjectCoverVisual";
-import { SEED_BG, SEED_ON } from "@/lib/seed-classes";
+
 import type { Project } from "@/lib/content";
 
 const FEATURED_META = ["Brand & publishing", "Business & systems", "Restaurant experience"];
@@ -53,12 +53,9 @@ export function WorkTeaser({ projects }: { projects: Project[] }) {
             <TiltCard>
               <Link href={`/work/${project.slug}`} className="block no-underline group">
                 <div className="work-proof-card hig-card overflow-hidden rounded-[24px]">
-                  <div className="work-proof-media relative" style={{ aspectRatio: "4/3" }}>
+                  <div className="work-proof-media relative">
                     <ProjectCoverVisual project={project} sizes="(max-width:768px) 90vw, 420px" />
-                    <span className={`absolute top-3.5 left-3.5 z-[2] text-label-m px-3 py-1.5 rounded-full ${SEED_BG[project.seed]} ${SEED_ON[project.seed]}`}>
-                      {project.label}
-                    </span>
-                    <span className="work-proof-number">0{index + 1}</span>
+
                   </div>
                   <div className="work-proof-body p-5">
                     <div className="mb-3 flex items-center justify-between gap-3 text-label-s text-on-surface-variant">
