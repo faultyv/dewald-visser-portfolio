@@ -1,23 +1,48 @@
 {
   "featured": [
     {
+      "id": "canva-ai-essentials-2026",
+      "title": "AI Essentials 2026",
+      "issuer": "Canva Design School \u00b7 29 September 2026",
+      "image": "/images/certs/canva-ai-essentials-2026.png",
+      "document": "/certificates/canva-ai-essentials-2026.pdf",
+      "seed": "primary"
+    },
+    {
+      "id": "canva-graphic-design-essentials",
+      "title": "Graphic Design Essentials",
+      "issuer": "Canva Design School \u00b7 29 September 2026",
+      "image": "/images/certs/canva-graphic-design-essentials.png",
+      "document": "/certificates/canva-graphic-design-essentials.pdf",
+      "seed": "secondary"
+    },
+    {
+      "id": "saylor-operating-systems",
+      "title": "CS401: Operating Systems",
+      "issuer": "Saylor University \u00b7 29 September 2026",
+      "image": "/images/certs/saylor-operating-systems.png",
+      "document": "/certificates/saylor-operating-systems.pdf",
+      "seed": "success",
+      "verify": "https://learn.saylor.org/admin/tool/certificate/index.php?code=2446170109DV"
+    },
+    {
       "id": "google-digital-marketing",
       "title": "Fundamentals of Digital Marketing",
-      "issuer": "Google Digital Garage · 2021",
+      "issuer": "Google Digital Garage \u00b7 2021",
       "image": "/images/certs/google-digital-marketing.png",
       "seed": "primary"
     },
     {
       "id": "hubspot-content-marketing",
       "title": "Content Marketing Certified",
-      "issuer": "HubSpot Academy · Issued 2024 · Expired June 2026",
+      "issuer": "HubSpot Academy \u00b7 Issued 2024 \u00b7 Expired June 2026",
       "image": "/images/certs/hubspot-content-marketing.jpg",
       "seed": "success"
     },
     {
       "id": "coursera-chatfuel",
       "title": "Lead Generation Messenger Chatbot with Chatfuel",
-      "issuer": "Coursera · 2024",
+      "issuer": "Coursera \u00b7 2024",
       "image": "/images/certs/coursera-chatfuel-lead-gen.jpg",
       "seed": "secondary",
       "verify": "https://coursera.org/verify/89YNLT53BWLL"
@@ -25,7 +50,7 @@
     {
       "id": "coursera-wordpress",
       "title": "Build a Website with WordPress",
-      "issuer": "Coursera · 2024",
+      "issuer": "Coursera \u00b7 2024",
       "image": "/images/certs/coursera-wordpress-website.jpg",
       "seed": "tertiary",
       "verify": "https://coursera.org/verify/ET7C7XXSK3VJ"
@@ -33,18 +58,41 @@
     {
       "id": "coursera-business-analysis",
       "title": "Business Analysis & Process Management",
-      "issuer": "Coursera · 2024",
+      "issuer": "Coursera \u00b7 2024",
       "image": "/images/certs/coursera-business-analysis.jpg",
       "seed": "warning",
-      "verify": "https://coursera.org/verify/4BQ7T29S3VFB"
+      "verify": "https://coursera.org/verify/4BQ7T29S3VFB",
+      "document": "/certificates/coursera-business-analysis.pdf"
     }
   ],
   "additional": [
-    { "title": "Operations Management Certificate", "issuer": "Damelin College" },
-    { "title": "Email and Telephone Etiquette", "issuer": "Education Group Staff Development · 2018" },
-    { "title": "Meeting Procedure and Protocol", "issuer": "Education Group Staff Development · 2018" },
-    { "title": "Microsoft Office Word 2016", "issuer": "Education Group Staff Development · 2018" },
-    { "title": "Basic Computer Skills", "issuer": "Education Group Staff Development · 2018" },
-    { "title": "Basic Tutorial in PowerPoint 2016", "issuer": "Education Group Staff Development · 2018" }
+    {
+      "title": "Operations Management Certificate",
+      "issuer": "Damelin College"
+    },
+    {
+      "title": "Email and Telephone Etiquette",
+      "issuer": "Education Group Staff Development \u00b7 2018",
+      "document": "/certificates/email-telephone-etiquette.pdf"
+    },
+    {
+      "title": "Meeting Procedure and Protocol",
+      "issuer": "Education Group Staff Development \u00b7 2018"
+    },
+    {
+      "title": "Microsoft Office Word 2016",
+      "issuer": "Education Group Staff Development \u00b7 2018",
+      "document": "/certificates/microsoft-word-2016.pdf"
+    },
+    {
+      "title": "Basic Computer Skills",
+      "issuer": "Education Group Staff Development \u00b7 2018",
+      "document": "/certificates/basic-computer-skills.pdf"
+    },
+    {
+      "title": "Basic Tutorial in PowerPoint 2016",
+      "issuer": "Education Group Staff Development \u00b7 2018",
+      "document": "/certificates/powerpoint-2016.pdf"
+    }
   ]
 }

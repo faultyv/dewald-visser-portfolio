@@ -1,4 +1,12 @@
 {
+  "/images/certs/canva-ai-essentials-2026.png": {
+    "width": 1200,
+    "height": 849
+  },
+  "/images/certs/canva-graphic-design-essentials.png": {
+    "width": 1200,
+    "height": 849
+  },
   "/images/certs/coursera-business-analysis.jpg": {
     "width": 1772,
     "height": 928
@@ -18,6 +26,10 @@
   "/images/certs/hubspot-content-marketing.jpg": {
     "width": 1140,
     "height": 880
+  },
+  "/images/certs/saylor-operating-systems.png": {
+    "width": 1200,
+    "height": 930
   },
   "/images/dewald/dewald-about-centered-clean.png": {
     "width": 1536,
@@ -106,6 +118,18 @@
   "/images/education-ai/lcibs-human-resource-executives.jpg": {
     "width": 2030,
     "height": 1354
+  },
+  "/images/education-ai/lcibs-learning-audience.jpg": {
+    "width": 2048,
+    "height": 1365
+  },
+  "/images/education-ai/lcibs-speaker-session.jpg": {
+    "width": 2048,
+    "height": 1365
+  },
+  "/images/education-ai/lcibs-training-room.jpg": {
+    "width": 2048,
+    "height": 1365
   },
   "/images/uploads/ChatGPT Image Jun 22, 2026, 03_39_00 PM.png": {
     "width": 1448,
@@ -383,9 +407,17 @@
     "width": 2048,
     "height": 1365
   },
+  "/images/work/joseph-business-school/corporate-presentation.jpg": {
+    "width": 1800,
+    "height": 1013
+  },
   "/images/work/joseph-business-school/cover.png": {
     "width": 500,
     "height": 149
+  },
+  "/images/work/joseph-business-school/dominion-magazine.jpg": {
+    "width": 1272,
+    "height": 1800
   },
   "/images/work/joseph-business-school/gallery-home.jpg": {
     "width": 1440,
@@ -398,6 +430,10 @@
   "/images/work/joseph-business-school/learning-audience.jpg": {
     "width": 2048,
     "height": 1365
+  },
+  "/images/work/joseph-business-school/quarterly-january-2025.jpg": {
+    "width": 1272,
+    "height": 1800
   },
   "/images/work/joseph-business-school/speaker-session.jpg": {
     "width": 2048,
