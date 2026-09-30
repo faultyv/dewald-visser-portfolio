@@ -90,9 +90,10 @@ export type FeaturedCert = {
   image: string;
   seed: SeedName;
   verify?: string;
+  document?: string;
 };
 
-export type AdditionalCert = { title: string; issuer: string };
+export type AdditionalCert = { title: string; issuer: string; document?: string };
 
 export type CertsData = {
   featured: FeaturedCert[];
