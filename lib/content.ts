@@ -103,6 +103,7 @@ export type CertsData = {
 export type ProjectMetric = { value: string; label: string };
 export type GalleryItem = { id: string; label: string; src?: string };
 export type ProjectLink = { label: string; url: string };
+export type ProjectDocument = { title: string; url: string; preview: string; pages: number; size: string };
 export type ProjectProofLink = {
   label: string;
   url: string;
@@ -130,6 +131,7 @@ export type ProjectFrontmatter = {
   video: string | null;
   links?: ProjectLink[];
   proofLinks?: ProjectProofLink[];
+  documents?: ProjectDocument[];
   brands?: string[];
   responsibilities?: string[];
 };

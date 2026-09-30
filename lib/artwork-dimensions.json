@@ -11,17 +11,33 @@
     "width": 1772,
     "height": 928
   },
+  "/images/certs/coursera-business-analysis.png": {
+    "width": 1800,
+    "height": 1391
+  },
   "/images/certs/coursera-chatfuel-lead-gen.jpg": {
     "width": 1772,
     "height": 928
+  },
+  "/images/certs/coursera-chatfuel.png": {
+    "width": 1800,
+    "height": 1391
   },
   "/images/certs/coursera-wordpress-website.jpg": {
     "width": 1772,
     "height": 928
   },
+  "/images/certs/coursera-wordpress.png": {
+    "width": 1800,
+    "height": 1391
+  },
   "/images/certs/google-digital-marketing.png": {
     "width": 1286,
     "height": 909
+  },
+  "/images/certs/hp-strategic-planning-ai.png": {
+    "width": 1800,
+    "height": 1273
   },
   "/images/certs/hubspot-content-marketing.jpg": {
     "width": 1140,
@@ -30,6 +46,10 @@
   "/images/certs/saylor-operating-systems.png": {
     "width": 1200,
     "height": 930
+  },
+  "/images/certs/saylor-software-engineering.png": {
+    "width": 1800,
+    "height": 1394
   },
   "/images/dewald/dewald-about-centered-clean.png": {
     "width": 1536,
@@ -106,6 +126,34 @@
   "/images/dewald/dewald-working-wide.png": {
     "width": 1448,
     "height": 1086
+  },
+  "/images/documents/corporate-presentation.png": {
+    "width": 1800,
+    "height": 1013
+  },
+  "/images/documents/dominion-magazine.png": {
+    "width": 1272,
+    "height": 1800
+  },
+  "/images/documents/fourth-dimension.png": {
+    "width": 1273,
+    "height": 1800
+  },
+  "/images/documents/quarterly-january-2025.png": {
+    "width": 1272,
+    "height": 1800
+  },
+  "/images/documents/sitara-menu.png": {
+    "width": 1273,
+    "height": 1800
+  },
+  "/images/documents/solid-doors-catalogue-2025.png": {
+    "width": 1273,
+    "height": 1800
+  },
+  "/images/documents/sun-paper-brochure.png": {
+    "width": 1273,
+    "height": 1800
   },
   "/images/education-ai/lcibs-ai-robot-launch.jpg": {
     "width": 2048,
@@ -227,6 +275,18 @@
     "width": 1440,
     "height": 1080
   },
+  "/images/work/body-transport-solutions/expanded-17.jpg": {
+    "width": 1672,
+    "height": 941
+  },
+  "/images/work/body-transport-solutions/expanded-20.jpg": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/images/work/body-transport-solutions/expanded-22.jpg": {
+    "width": 1092,
+    "height": 1440
+  },
   "/images/work/body-transport-solutions/portfolio-01.png": {
     "width": 1280,
     "height": 1280
@@ -266,6 +326,54 @@
   "/images/work/car-hire-booking-system/gallery-specials.jpg": {
     "width": 1440,
     "height": 900
+  },
+  "/images/work/clicklocal-brand/expanded-43.jpeg": {
+    "width": 2048,
+    "height": 2048
+  },
+  "/images/work/clicklocal-brand/expanded-44.png": {
+    "width": 3318,
+    "height": 1263
+  },
+  "/images/work/clicklocal-brand/expanded-45.jpg": {
+    "width": 1280,
+    "height": 768
+  },
+  "/images/work/clicklocal-brand/expanded-46.jpg": {
+    "width": 2048,
+    "height": 1365
+  },
+  "/images/work/clicklocal-brand/expanded-47.jpg": {
+    "width": 2048,
+    "height": 1365
+  },
+  "/images/work/clicklocal-brand/expanded-48.jpg": {
+    "width": 2048,
+    "height": 1362
+  },
+  "/images/work/clicklocal-brand/expanded-49.jpg": {
+    "width": 2048,
+    "height": 1434
+  },
+  "/images/work/clicklocal-brand/expanded-50.jpg": {
+    "width": 2000,
+    "height": 1500
+  },
+  "/images/work/clicklocal-brand/expanded-51.jpg": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/images/work/clicklocal-brand/expanded-52.jpg": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/images/work/clicklocal-brand/expanded-53.jpg": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/images/work/clicklocal-brand/expanded-54.jpg": {
+    "width": 1610,
+    "height": 2048
   },
   "/images/work/dreambook-cpm/camp-orchards-aerial.jpg": {
     "width": 2048,
@@ -419,6 +527,42 @@
     "width": 1272,
     "height": 1800
   },
+  "/images/work/joseph-business-school/expanded-01.jpeg": {
+    "width": 1920,
+    "height": 1080
+  },
+  "/images/work/joseph-business-school/expanded-02.jpg": {
+    "width": 2048,
+    "height": 1153
+  },
+  "/images/work/joseph-business-school/expanded-03.jpg": {
+    "width": 2048,
+    "height": 1356
+  },
+  "/images/work/joseph-business-school/expanded-04.jpg": {
+    "width": 2025,
+    "height": 2025
+  },
+  "/images/work/joseph-business-school/expanded-05.jpg": {
+    "width": 800,
+    "height": 800
+  },
+  "/images/work/joseph-business-school/expanded-09.jpg": {
+    "width": 2048,
+    "height": 2048
+  },
+  "/images/work/joseph-business-school/expanded-10.jpg": {
+    "width": 704,
+    "height": 704
+  },
+  "/images/work/joseph-business-school/expanded-11.jpg": {
+    "width": 900,
+    "height": 1600
+  },
+  "/images/work/joseph-business-school/expanded-15.jpg": {
+    "width": 1638,
+    "height": 2048
+  },
   "/images/work/joseph-business-school/gallery-home.jpg": {
     "width": 1440,
     "height": 900
@@ -495,6 +639,58 @@
     "width": 1829,
     "height": 1742
   },
+  "/images/work/retail-production-dtp/expanded-25.jpeg": {
+    "width": 515,
+    "height": 515
+  },
+  "/images/work/retail-production-dtp/expanded-27.jpeg": {
+    "width": 515,
+    "height": 515
+  },
+  "/images/work/retail-production-dtp/expanded-29.jpeg": {
+    "width": 515,
+    "height": 515
+  },
+  "/images/work/retail-production-dtp/expanded-31.jpeg": {
+    "width": 515,
+    "height": 515
+  },
+  "/images/work/retail-production-dtp/expanded-34.jpeg": {
+    "width": 515,
+    "height": 515
+  },
+  "/images/work/retail-production-dtp/expanded-35.jpeg": {
+    "width": 515,
+    "height": 515
+  },
+  "/images/work/retail-production-dtp/expanded-36.jpeg": {
+    "width": 515,
+    "height": 515
+  },
+  "/images/work/retail-production-dtp/expanded-37.jpeg": {
+    "width": 515,
+    "height": 515
+  },
+  "/images/work/retail-production-dtp/expanded-38.jpeg": {
+    "width": 515,
+    "height": 515
+  },
+  "/images/work/retail-production-dtp/expanded-39.jpeg": {
+    "width": 515,
+    "height": 515
+  },
+  "/images/work/retail-production-dtp/expanded-40.jpeg": {
+    "width": 515,
+    "height": 515
+  },
+  "/images/work/retail-production-dtp/expanded-41.jpeg": {
+    "width": 515,
+    "height": 515
+  },
+  "/images/work/retail-production-dtp/expanded-42.jpeg": {
+    "width": 515,
+    "height": 515
+  },
   "/images/work/sitara-restaurant/portfolio-01.png": {
     "width": 1254,
     "height": 1254
@@ -506,6 +702,10 @@
   "/images/work/sitara-restaurant/portfolio-03.png": {
     "width": 1280,
     "height": 1280
+  },
+  "/images/work/solid-doors/expanded-55.png": {
+    "width": 1536,
+    "height": 1024
   },
   "/images/work/solid-doors/portfolio-01.jpg": {
     "width": 2048,

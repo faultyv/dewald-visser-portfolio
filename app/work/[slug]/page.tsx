@@ -5,6 +5,7 @@ import { Reveal } from "@/components/Reveal";
 import { ProjectHeroMedia } from "@/components/ProjectHeroMedia";
 import { ProjectMiniNav } from "@/components/ProjectMiniNav";
 import { ProjectGallery } from "@/components/ProjectGallery";
+import { ProjectDocuments } from "@/components/ProjectDocuments";
 import { ProjectVideo } from "@/components/ProjectVideo";
 import { ProjectProofLinks } from "@/components/ProjectProofLinks";
 import { ProjectPager } from "@/components/ProjectPager";
@@ -113,6 +114,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           </p>
 
           {project.links && <ExternalLinks links={project.links} seed={project.seed} />}
+          {!!project.documents?.length && <a href="#documents" className="mt-4 inline-flex rounded-full border border-outline-variant px-5 py-3 text-label-l text-primary">View {project.documents.length} portfolio PDFs ↓</a>}
         </Reveal>
 
         {project.metrics.length > 0 && (
@@ -149,13 +151,14 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
       </article>
 
       <div id="overview" className="mx-auto max-w-[1140px] px-5 md:px-14">
-        <ProjectMiniNav hasGallery={gallery.length > 0} hasProof={proofLinks.length > 0} />
+        <ProjectMiniNav hasGallery={gallery.length > 0} hasProof={proofLinks.length > 0} hasDocuments={!!project.documents?.length} />
       </div>
 
       <article className="relative mx-auto max-w-[1140px] px-5 md:px-14">
         <Reveal>
           <div className="mb-12">{content}</div>
         </Reveal>
+        {!!project.documents?.length && <ProjectDocuments documents={project.documents} />}
 
 
 

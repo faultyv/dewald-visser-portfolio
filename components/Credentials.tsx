@@ -9,7 +9,7 @@ export function Credentials({ certs, site }: { certs: CertsData; site: SiteConfi
   const verifiedCount = certs.featured.filter((cert) => cert.verify).length;
   const trustSignals = [
     { label: "Verified links", value: `${verifiedCount}/${certs.featured.length}` },
-    { label: "Issued record", value: "Canva · Saylor · Coursera · Google · HubSpot" },
+    { label: "Issued record", value: "Canva · Saylor · HP LIFE · Coursera · Google · HubSpot" },
     { label: "Extra proof", value: `${certs.additional.length} additional certificates` },
   ];
 
@@ -34,9 +34,6 @@ export function Credentials({ certs, site }: { certs: CertsData; site: SiteConfi
             <span><strong>{certs.additional.length}</strong> additional</span>
           </div>
         </Reveal>
-        <Reveal delay={0.15}>
-          <div className="snap-hint md:hidden">Swipe credentials</div>
-        </Reveal>
       </div>
 
       <Reveal delay={0.16}>
@@ -50,7 +47,7 @@ export function Credentials({ certs, site }: { certs: CertsData; site: SiteConfi
         </div>
       </Reveal>
 
-      <StaggerGroup className="mobile-strip no-scrollbar -mx-5 flex gap-3.5 px-5 pb-3 md:mx-0 md:grid md:grid-cols-2 md:gap-4.5 md:overflow-visible md:px-0 md:pb-0 lg:grid-cols-3">
+      <StaggerGroup className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
         {certs.featured.map((cert) => {
           const [issuerName, ...issuerDetails] = cert.issuer.split(" · ");
           const issuerDate = issuerDetails.join(" · ");
@@ -94,8 +91,8 @@ export function Credentials({ certs, site }: { certs: CertsData; site: SiteConfi
             </div>
           );
           return (
-            <StaggerItem key={cert.id} className="min-w-[82vw] max-w-[82vw] md:min-w-0 md:max-w-none">
-              <TiltCard className="h-full">
+            <StaggerItem key={cert.id} className="flex min-w-0 flex-col">
+              <TiltCard className="flex-1">
                 {cert.verify || cert.document || cert.image ? (
                   <a href={cert.verify ?? cert.document ?? cert.image} target="_blank" rel="noopener noreferrer" aria-label={`${cert.verify ? "Verify" : "View"} ${cert.title}`} className="block h-full no-underline">
                     {inner}
@@ -104,7 +101,7 @@ export function Credentials({ certs, site }: { certs: CertsData; site: SiteConfi
                   inner
                 )}
               </TiltCard>
-              {cert.verify && cert.document ? <a href={cert.document} target="_blank" rel="noopener noreferrer" className="mt-3 inline-flex text-label-m text-primary">View certificate PDF <IconSymbol name="open_in_new" size={14} /></a> : null}
+              {cert.document ? <div className="mt-3 flex flex-wrap gap-3"><a href={cert.document} target="_blank" rel="noopener noreferrer" aria-label={`View ${cert.title} PDF`} className="inline-flex items-center gap-1 rounded-full border border-outline-variant px-4 py-2 text-label-m text-primary">View PDF <IconSymbol name="open_in_new" size={14} /></a><a href={cert.document} download aria-label={`Download ${cert.title} PDF`} className="inline-flex items-center rounded-full border border-outline-variant px-4 py-2 text-label-m text-primary">Download PDF ↓</a></div> : null}
             </StaggerItem>
           );
         })}
