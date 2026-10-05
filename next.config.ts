@@ -22,6 +22,9 @@ const nextConfig: NextConfig = {
   async headers() {
     return [{ source: "/:path*", headers: securityHeaders }];
   },
+  async redirects() {
+    return [{ source: "/work/freelance-brand-identities", destination: "/work#freelance", permanent: true }];
+  },
 };
 
 export default nextConfig;

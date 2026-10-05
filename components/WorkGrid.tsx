@@ -15,6 +15,7 @@ const FILTERS = [
   { id: "marketing", label: "Marketing" },
   { id: "web", label: "Web" },
   { id: "brand", label: "Brand" },
+  { id: "freelance", label: "Freelance" },
 ] as const;
 
 function ProjectCard({ project, large }: { project: Project; large?: boolean }) {
@@ -92,13 +93,20 @@ export function WorkGrid({ projects }: { projects: Project[] }) {
         })}
       </div>
 
-      <motion.div layout className="portfolio-work-columns">
-        {filtered.map((project) => (
+      {[
+        { id: "freelance", title: "Freelance graphic & web design", description: "Independent client work across visual identities, publications and websites.", projects: filtered.filter(project => project.categories.includes("freelance")) },
+        { id: "client-work", title: "Agency, in-house & venture work", description: "Campaigns, production and digital systems delivered across teams and businesses.", projects: filtered.filter(project => !project.categories.includes("freelance")) },
+      ].filter(collection => collection.projects.length).map(collection => <section key={collection.id} id={collection.id} className="mb-16 scroll-mt-28">
+        <h2 className="text-headline-m text-on-surface mb-3">{collection.title}</h2>
+        <p className="text-body-l text-on-surface-variant mb-7">{collection.description}</p>
+        <motion.div layout className="portfolio-work-columns">
+        {collection.projects.map((project) => (
           <div key={project.slug} className="portfolio-work-item">
             <ProjectCard project={project}  />
           </div>
         ))}
-      </motion.div>
+        </motion.div>
+      </section>)}
 
       {filtered.length === 0 && <p className="text-body-l text-on-surface-variant">No projects in this category yet.</p>}
     </div>

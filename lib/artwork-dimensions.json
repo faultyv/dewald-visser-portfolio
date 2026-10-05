@@ -259,6 +259,30 @@
     "width": 1131,
     "height": 1600
   },
+  "/images/documents/mut-boundless.webp": {
+    "width": 990,
+    "height": 1400
+  },
+  "/images/documents/mut-brand-presentation.webp": {
+    "width": 1400,
+    "height": 990
+  },
+  "/images/documents/mut-email-signature.webp": {
+    "width": 1400,
+    "height": 467
+  },
+  "/images/documents/mut-international-week.webp": {
+    "width": 1050,
+    "height": 1400
+  },
+  "/images/documents/mut-spirit.webp": {
+    "width": 990,
+    "height": 1400
+  },
+  "/images/documents/pmm-company-profile.webp": {
+    "width": 986,
+    "height": 1400
+  },
   "/images/documents/pnp-exclusive-packaging.png": {
     "width": 1600,
     "height": 776
@@ -610,6 +634,26 @@
   "/images/work/clicklocal-brand/expanded-54.jpg": {
     "width": 1610,
     "height": 2048
+  },
+  "/images/work/clicklocal-brand/new-campaign-1.webp": {
+    "width": 1800,
+    "height": 1200
+  },
+  "/images/work/clicklocal-brand/new-campaign-2.webp": {
+    "width": 1800,
+    "height": 1200
+  },
+  "/images/work/clicklocal-brand/new-campaign-3.webp": {
+    "width": 1800,
+    "height": 1013
+  },
+  "/images/work/clicklocal-brand/new-campaign-4.webp": {
+    "width": 1800,
+    "height": 1013
+  },
+  "/images/work/clicklocal-brand/new-campaign-5.webp": {
+    "width": 1800,
+    "height": 1800
   },
   "/images/work/dreambook-cpm/camp-orchards-aerial.jpg": {
     "width": 2048,
@@ -1120,29 +1164,9 @@
     "width": 1080,
     "height": 1080
   },
-  "/images/work/freelance-brand-identities/collection-7a098a023732.webp": {
-    "width": 2400,
-    "height": 2148
-  },
-  "/images/work/freelance-brand-identities/collection-dfae7ad8e3f1.webp": {
-    "width": 2400,
-    "height": 1973
-  },
-  "/images/work/freelance-brand-identities/october-14.webp": {
-    "width": 500,
-    "height": 500
-  },
-  "/images/work/freelance-brand-identities/october-2.webp": {
-    "width": 2560,
-    "height": 1920
-  },
   "/images/work/freelance-brand-identities/october-37.webp": {
     "width": 2560,
     "height": 2291
-  },
-  "/images/work/freelance-brand-identities/october-38.webp": {
-    "width": 800,
-    "height": 650
   },
   "/images/work/joseph-business-school/ai-programme-launch.jpg": {
     "width": 2048,
@@ -1608,6 +1632,38 @@
     "width": 2560,
     "height": 2560
   },
+  "/images/work/mut-freelance/identity.webp": {
+    "width": 675,
+    "height": 277
+  },
+  "/images/work/mut-freelance/mut-brand-presentation-1.webp": {
+    "width": 2600,
+    "height": 1839
+  },
+  "/images/work/mut-freelance/mut-brand-presentation-2.webp": {
+    "width": 2600,
+    "height": 1839
+  },
+  "/images/work/mut-freelance/mut-brand-presentation-3.webp": {
+    "width": 2600,
+    "height": 1839
+  },
+  "/images/work/mut-freelance/mut-brand-presentation-4.webp": {
+    "width": 2600,
+    "height": 1839
+  },
+  "/images/work/mut-freelance/mut-brand-presentation-5.webp": {
+    "width": 2600,
+    "height": 1839
+  },
+  "/images/work/mut-freelance/mut-brand-presentation-6.webp": {
+    "width": 2600,
+    "height": 1839
+  },
+  "/images/work/mut-freelance/mut-email-signature-1.webp": {
+    "width": 2600,
+    "height": 867
+  },
   "/images/work/olive-tree-creative/collection-03bdb835f672.webp": {
     "width": 2048,
     "height": 2048
@@ -1675,6 +1731,18 @@
   "/images/work/olive-tree-creative/portfolio-06.jpg": {
     "width": 1080,
     "height": 1080
+  },
+  "/images/work/pmm-agri/about.webp": {
+    "width": 1169,
+    "height": 8058
+  },
+  "/images/work/pmm-agri/home.webp": {
+    "width": 1169,
+    "height": 3788
+  },
+  "/images/work/pmm-agri/logo.webp": {
+    "width": 1600,
+    "height": 1432
   },
   "/images/work/retail-production-dtp/botanical-cracker-mockup.webp": {
     "width": 2400,
@@ -2031,5 +2099,81 @@
   "/images/work/sustainability-identity/october-98.webp": {
     "width": 1920,
     "height": 1079
+  },
+  "/images/work/webmeta-client-campaigns/art-11.webp": {
+    "width": 1080,
+    "height": 1080
+  },
+  "/images/work/webmeta-client-campaigns/art-12.webp": {
+    "width": 1080,
+    "height": 1080
+  },
+  "/images/work/webmeta-client-campaigns/art-13.webp": {
+    "width": 1080,
+    "height": 1080
+  },
+  "/images/work/webmeta-client-campaigns/art-14.webp": {
+    "width": 1080,
+    "height": 1080
+  },
+  "/images/work/webmeta-client-campaigns/art-16.webp": {
+    "width": 1080,
+    "height": 1080
+  },
+  "/images/work/webmeta-client-campaigns/art-2.webp": {
+    "width": 1800,
+    "height": 2705
+  },
+  "/images/work/webmeta-client-campaigns/art-20.webp": {
+    "width": 1080,
+    "height": 1080
+  },
+  "/images/work/webmeta-client-campaigns/art-21.webp": {
+    "width": 1080,
+    "height": 1080
+  },
+  "/images/work/webmeta-client-campaigns/art-23.webp": {
+    "width": 1080,
+    "height": 1080
+  },
+  "/images/work/webmeta-client-campaigns/art-24.webp": {
+    "width": 1080,
+    "height": 1080
+  },
+  "/images/work/webmeta-client-campaigns/art-25.webp": {
+    "width": 1080,
+    "height": 1080
+  },
+  "/images/work/webmeta-client-campaigns/art-26.webp": {
+    "width": 1080,
+    "height": 1080
+  },
+  "/images/work/webmeta-client-campaigns/art-27.webp": {
+    "width": 1576,
+    "height": 448
+  },
+  "/images/work/webmeta-client-campaigns/art-3.webp": {
+    "width": 1080,
+    "height": 1080
+  },
+  "/images/work/webmeta-client-campaigns/art-5.webp": {
+    "width": 1080,
+    "height": 1080
+  },
+  "/images/work/webmeta-client-campaigns/art-6.webp": {
+    "width": 1080,
+    "height": 1080
+  },
+  "/images/work/webmeta-client-campaigns/art-7.webp": {
+    "width": 1080,
+    "height": 1080
+  },
+  "/images/work/webmeta-client-campaigns/art-8.webp": {
+    "width": 1080,
+    "height": 1080
+  },
+  "/images/work/webmeta-client-campaigns/art-9.webp": {
+    "width": 1080,
+    "height": 1080
   }
 }

@@ -2,7 +2,8 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "git": {
     "deploymentEnabled": {
-      "codex/artwork-upload-cache": false
+      "codex/artwork-upload-cache": false,
+      "codex/freelance-upload-cache": false
     }
   }
 }
