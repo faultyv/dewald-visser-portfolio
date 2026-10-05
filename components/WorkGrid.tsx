@@ -1,114 +1,99 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
-import { motion } from "motion/react";
-import { TiltCard } from "./TiltCard";
 import { IconSymbol } from "./IconSymbol";
 import { ProjectCoverVisual } from "./ProjectCoverVisual";
-
-import { fmTransition } from "@/lib/motion-tokens";
 import type { Project } from "@/lib/content";
 
+export type WorkCardProject = Pick<Project, "slug" | "title" | "org" | "categories" | "label" | "outcome" | "cover" | "coverBg" | "thumbnail" | "thumbnailAlt" | "thumbnailStyle"> & { artworkCount: number; documentCount: number };
+
 const FILTERS = [
-  { id: "all", label: "All" },
-  { id: "marketing", label: "Marketing" },
-  { id: "web", label: "Web" },
-  { id: "brand", label: "Brand" },
+  { id: "all", label: "All work" },
+  { id: "brand", label: "Graphic & brand" },
+  { id: "web", label: "Web & digital" },
+  { id: "marketing", label: "SEO & marketing" },
   { id: "freelance", label: "Freelance" },
 ] as const;
 
-function ProjectCard({ project, large }: { project: Project; large?: boolean }) {
-  return (
-    <motion.div layout transition={fmTransition.standard}>
-      <TiltCard>
-        <Link href={`/work/${project.slug}`} className="block no-underline group">
-          <div className="hig-card overflow-hidden rounded-[24px]">
-            <div className="relative">
-              <ProjectCoverVisual
-                project={project}
-                priority={large}
-                sizes={large ? "(max-width:768px) 95vw, 800px" : "(max-width:768px) 90vw, 420px"}
-              />
-
-            </div>
-            <div className="p-5 md:p-6">
-              <p className="mb-2 text-label-s text-primary">{project.label}</p>
-              <div className={large ? "text-headline-s text-on-surface" : "text-title-l text-on-surface"}>{project.title}</div>
-              <div className="text-label-m text-on-surface-variant mt-1.5 mb-2.5">
-                {project.org} · {project.tools}
-              </div>
-              <p className="m-0 text-body-m text-on-surface-variant max-w-[520px]">{project.outcome}</p>
-              <div className="mt-4 inline-flex items-center gap-1.5 text-label-l text-primary">
-                Dive in
-                <IconSymbol name="arrow_forward" size={16} className="transition-transform group-hover:translate-x-1" />
-              </div>
-            </div>
-          </div>
-        </Link>
-      </TiltCard>
-    </motion.div>
-  );
+function ProjectCard({ project }: { project: WorkCardProject }) {
+  return <article className="work-card hig-card">
+    <Link href={`/work/${project.slug}`} prefetch={false} className="work-card-link group">
+      <ProjectCoverVisual project={project} variant="card" sizes="(max-width:640px) 92vw, (max-width:1100px) 44vw, 380px" />
+      <div className="work-card-copy">
+        <p className="text-label-s text-primary mb-2">{project.label}</p>
+        <h3 className="text-title-l text-on-surface">{project.title}</h3>
+        {!project.title.toLocaleLowerCase().includes(project.org.toLocaleLowerCase()) && <p className="text-body-s text-on-surface-variant mt-2">{project.org}</p>}
+        <p className="text-body-m text-on-surface-variant mt-3">{project.outcome}</p>
+        <div className="work-card-footer">
+          <span className="text-label-m text-primary inline-flex items-center gap-2">View project <IconSymbol name="arrow_forward" size={16} className="transition-transform group-hover:translate-x-1" /></span>
+          <span className="text-body-s text-on-surface-variant">{[
+            project.artworkCount > 0 ? `${project.artworkCount} artwork${project.artworkCount === 1 ? "" : "s"}` : null,
+            project.documentCount > 0 ? `${project.documentCount} PDF${project.documentCount === 1 ? "" : "s"}` : null,
+          ].filter(Boolean).join(" · ")}</span>
+        </div>
+      </div>
+    </Link>
+  </article>;
 }
 
-export function WorkGrid({ projects }: { projects: Project[] }) {
-  const [filter, setFilter] = useState<string>("all");
-  const counts = useMemo<Record<string, number>>(() => {
-    const next: Record<string, number> = { all: projects.length };
-    FILTERS.slice(1).forEach((f) => {
-      next[f.id] = projects.filter((p) => p.categories.includes(f.id)).length;
-    });
-    return next;
-  }, [projects]);
+export function WorkGrid({ projects }: { projects: WorkCardProject[] }) {
+  const [filter, setFilter] = useState("all");
+  const [query, setQuery] = useState("");
+  const search = query.trim().toLocaleLowerCase();
+  const filtered = projects.filter(project => (filter === "all" || project.categories.includes(filter)) &&
+    (!search || `${project.title} ${project.org} ${project.label} ${project.outcome}`.toLocaleLowerCase().includes(search)));
+  const active = filter !== "all" || Boolean(query);
+  const reset = () => { setFilter("all"); setQuery(""); };
+  const collections = [
+    { id: "freelance", title: "Freelance graphic & web design", description: "Independent client work across identities, publications and websites.", projects: filtered.filter(project => project.categories.includes("freelance")) },
+    { id: "client-work", title: "Agency, in-house & venture work", description: "Brand campaigns, publications and digital systems delivered with teams and businesses.", projects: filtered.filter(project => !project.categories.includes("freelance")) },
+  ];
 
-  const filtered = useMemo(() => {
-    if (filter === "all") return projects;
-    return projects.filter((p) => p.categories.includes(filter));
-  }, [projects, filter]);
-
-  return (
-    <div>
-      <div className="flex gap-2.5 flex-wrap mb-10">
-        {FILTERS.map((f) => {
-          const active = f.id === filter;
-          return (
-            <motion.button
-              key={f.id}
-              type="button"
-              onClick={() => setFilter(f.id)}
-              aria-pressed={active}
-              whileHover={{ scale: 1.04 }}
-              whileTap={{ scale: 0.93 }}
-              transition={{ type: "spring", stiffness: 440, damping: 18 }}
-              className={`hig-control state-layer cursor-pointer rounded-full px-4.5 py-2.5 text-label-l transition-colors ${
-                active ? "border-primary bg-primary text-on-primary" : "border-outline text-on-surface-variant"
-              }`}
-            >
-              <span className="inline-flex items-center gap-2">
-                {f.label}
-                <span className="rounded-full border border-current/25 px-1.5 py-0.5 text-label-s leading-none opacity-80">{counts[f.id]}</span>
-              </span>
-            </motion.button>
-          );
-        })}
+  return <div id="projects" className="scroll-mt-28">
+    <nav aria-label="Work collections" className="work-quick-links">
+      {[["freelance", "Freelance work"], ["client-work", "Agency & in-house"]].map(([id, label]) => <a key={id} href={`#${id}`} onClick={event => {
+        event.preventDefault();
+        reset();
+        requestAnimationFrame(() => {
+          window.history.replaceState(null, "", `#${id}`);
+          const target = document.getElementById(id);
+          target?.scrollIntoView({ behavior: "instant", block: "start" });
+          target?.focus({ preventScroll: true });
+        });
+      }}>{label} ↓</a>)}
+      <a href="#publications">PDF library <span>{projects.reduce((count, project) => count + project.documentCount, 0)}</span> ↗</a>
+    </nav>
+    <div className="work-browser" aria-label="Browse projects">
+      <div className="work-search">
+        <IconSymbol name="search" size={20} />
+        <label htmlFor="project-search" className="sr-only">Search projects or clients</label>
+        <input id="project-search" type="search" placeholder="Search projects or clients" value={query} onChange={event => setQuery(event.target.value)} />
       </div>
-
-      {[
-        { id: "freelance", title: "Freelance graphic & web design", description: "Independent client work across visual identities, publications and websites.", projects: filtered.filter(project => project.categories.includes("freelance")) },
-        { id: "client-work", title: "Agency, in-house & venture work", description: "Campaigns, production and digital systems delivered across teams and businesses.", projects: filtered.filter(project => !project.categories.includes("freelance")) },
-      ].filter(collection => collection.projects.length).map(collection => <section key={collection.id} id={collection.id} className="mb-16 scroll-mt-28">
-        <h2 className="text-headline-m text-on-surface mb-3">{collection.title}</h2>
-        <p className="text-body-l text-on-surface-variant mb-7">{collection.description}</p>
-        <motion.div layout className="portfolio-work-columns">
-        {collection.projects.map((project) => (
-          <div key={project.slug} className="portfolio-work-item">
-            <ProjectCard project={project}  />
-          </div>
-        ))}
-        </motion.div>
-      </section>)}
-
-      {filtered.length === 0 && <p className="text-body-l text-on-surface-variant">No projects in this category yet.</p>}
+      <div className="work-filters" role="group" aria-label="Filter projects by discipline">
+        {FILTERS.map(item => <button key={item.id} type="button" onClick={() => setFilter(item.id)} aria-pressed={filter === item.id} className="work-filter">
+          {item.label}<span>{item.id === "all" ? projects.length : projects.filter(project => project.categories.includes(item.id)).length}</span>
+        </button>)}
+      </div>
     </div>
-  );
+    <div className="work-results">
+      <p className="text-body-s text-on-surface-variant" role="status">{active ? `${filtered.length} of ${projects.length} projects` : `${projects.length} projects · complete artwork inside each project`}</p>
+      {active && <button type="button" className="text-label-m text-primary" onClick={reset}>Clear filters</button>}
+    </div>
+    {collections.filter(collection => collection.projects.length).map(collection => <section key={collection.id} id={collection.id} className="work-collection scroll-mt-28" tabIndex={-1} aria-labelledby={`${collection.id}-heading`}>
+      <div className="work-collection-heading">
+        <div>
+          <h2 id={`${collection.id}-heading`} className="text-headline-s text-on-surface">{collection.title}</h2>
+          <p className="text-body-m text-on-surface-variant mt-2">{collection.description}</p>
+        </div>
+        <span className="work-collection-count text-label-m text-on-surface-variant">{collection.projects.length} project{collection.projects.length === 1 ? "" : "s"}</span>
+      </div>
+      <div className="portfolio-work-grid">{collection.projects.map(project => <ProjectCard key={project.slug} project={project} />)}</div>
+    </section>)}
+    {filtered.length === 0 && <div className="work-empty">
+      <h2 className="text-title-l text-on-surface">No matching projects</h2>
+      <p className="text-body-m text-on-surface-variant mt-2">Try a client name or choose another discipline.</p>
+      <button type="button" onClick={reset} className="hig-control mt-5 rounded-full px-5 py-3 text-primary">Show all work</button>
+    </div>}
+  </div>;
 }

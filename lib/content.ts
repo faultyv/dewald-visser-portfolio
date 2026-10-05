@@ -123,6 +123,9 @@ export type ProjectFrontmatter = {
   outcome: string;
   seed: SeedName;
   cover: string | null;
+  thumbnail?: string;
+  thumbnailAlt?: string;
+  thumbnailStyle?: "artwork" | "logo";
   coverFit?: "cover" | "contain";
   coverPosition?: string;
   coverBg?: "light" | "dark";
