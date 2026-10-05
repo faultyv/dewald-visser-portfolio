@@ -2,7 +2,6 @@ backend:
   name: github
   repo: faultyv/dewald-visser-portfolio
   branch: main
-  use_graphql: true
   squash_merges: true
   commit_messages:
     create: "cms: create {{collection}} {{slug}}"
@@ -20,7 +19,9 @@ backend:
 
 site_url: https://dewald-visser-portfolio.vercel.app
 display_url: https://dewald-visser-portfolio.vercel.app
-logo_url: /icon
+app_title: Dewald Visser · Portfolio Studio
+logo:
+  src: /icon
 
 media_folder: public/images/uploads
 public_folder: /images/uploads
@@ -125,7 +126,7 @@ collections:
               - { label: Issuer, name: issuer, widget: string }
 
   - name: projects
-    label: Projects
+    label: Portfolio projects
     label_singular: Project
     folder: content/projects
     create: true
@@ -134,50 +135,74 @@ collections:
     extension: mdx
     format: frontmatter
     summary: "{{title}} · {{org}}"
-    sortable_fields: [order, title, org, period]
+    preview_path: work/{{slug}}
+    sortable_fields:
+      fields: [order, title, org, period]
+      default: { field: order, direction: ascending }
+    view_groups:
+      - { label: Client / organisation, field: org }
+      - { label: Discipline, field: categories }
     view_filters:
-      - label: Marketing
+      - label: SEO & marketing
         field: categories
         pattern: marketing
-      - label: Web
+      - label: Web & digital
         field: categories
         pattern: web
-      - label: Brand
+      - label: Graphic & brand
         field: categories
         pattern: brand
+      - { label: Freelance projects, field: categories, pattern: freelance }
     fields:
-      - { label: Title, name: title, widget: string }
+      - { label: Project title, name: title, widget: string, hint: "A clear client or project name. Keep this short for the work cards." }
       - { label: Organisation, name: org, widget: string }
       - { label: Period, name: period, widget: string }
-      - label: Categories
+      - label: Disciplines & collection
         name: categories
         widget: select
         multiple: true
-        options: [marketing, web, brand]
-      - { label: Label Chip, name: label, widget: string }
-      - { label: Tools Summary, name: tools, widget: string }
-      - { label: Outcome, name: outcome, widget: text }
+        hint: "Choose every relevant discipline. Add Freelance for independent client projects; this does not add an employment role."
+        options:
+          - { label: Graphic & brand design, value: brand }
+          - { label: Web & digital, value: web }
+          - { label: SEO & marketing, value: marketing }
+          - { label: Freelance project, value: freelance }
+      - { label: Main contribution, name: label, widget: string, hint: "A short description such as SEO · Graphic & Web Design. This appears above the project title." }
+      - { label: Tools / skills summary, name: tools, widget: string }
+      - { label: Project summary, name: outcome, widget: text, hint: "One or two sentences describing your actual contribution. Credit collaborators and avoid unverified results." }
       - label: Colour
         name: seed
         widget: select
         options: [primary, secondary, tertiary, success, warning, info, accent, highlight]
-      - { label: Cover Image, name: cover, widget: image, required: false, hint: "Use logo covers with coverFit = contain." }
-      - label: Cover Fit
-        name: coverFit
+      - { label: Project hero artwork, name: cover, widget: image, required: false, hint: "The complete artwork shown inside the project. Choose an existing asset to avoid uploading it twice." }
+      - { label: Work-page thumbnail, name: thumbnail, widget: image, required: false, hint: "Optional separate card image. Leave empty to use the hero artwork. Every thumbnail is shown uncropped." }
+      - { label: Thumbnail description, name: thumbnailAlt, widget: string, required: false, hint: "Describe what the image shows for screen readers, e.g. Webmeta agency logo." }
+      - label: Thumbnail presentation
+        name: thumbnailStyle
         widget: select
         required: false
-        options: [cover, contain]
-      - { label: Cover Position, name: coverPosition, widget: string, required: false, hint: "Optional CSS object-position for photo crops, for example center 30%." }
-      - label: Cover Background
+        default: artwork
+        options:
+          - { label: Full artwork — no cropping, value: artwork }
+          - { label: Logo — framed with breathing room, value: logo }
+      - label: Thumbnail canvas
         name: coverBg
         widget: select
         required: false
-        options: [light, dark]
-      - { label: Order, name: order, widget: number, value_type: int }
+        hint: "Choose a canvas that suits transparent artwork. Leave empty for the site background."
+        options:
+          - { label: White, value: light }
+          - { label: Dark blue, value: dark }
+      # Preserve legacy metadata without presenting cropping controls.
+      - { name: coverFit, widget: hidden }
+      - { name: coverPosition, widget: hidden }
+      - { label: Display order, name: order, widget: number, value_type: float, default: 50, hint: "Lower numbers appear first. Decimals let you insert a project between existing entries." }
       - label: Metrics
         name: metrics
         widget: list
-        collapsed: false
+        collapsed: true
+        default: []
+        summary: "{{fields.value}} · {{fields.label}}"
         fields:
           - { label: Value, name: value, widget: string }
           - { label: Label, name: label, widget: string }
@@ -190,15 +215,59 @@ collections:
         widget: list
         required: false
         field: { label: Brand, name: brand, widget: string }
-      - label: Gallery
+      - label: Complete artwork gallery
         name: gallery
         widget: list
         required: false
+        default: []
+        collapsed: true
+        summary: "{{fields.label}}"
+        hint: "Keep all distinct artwork. Reuse existing images, give each a useful caption, and drag to arrange the gallery. Groups become visitor filters."
         fields:
           - { label: ID, name: id, widget: string, hint: "Example: g1, g2, g3" }
           - { label: Caption, name: label, widget: string }
+          - { label: Gallery group, name: group, widget: string, required: false, hint: "For example Brand identity, Website context, or Campaign artwork." }
           - { label: Image, name: src, widget: image, required: false }
-      - { label: Video URL, name: video, widget: string, required: false }
+      - label: Publications & PDFs
+        name: documents
+        widget: list
+        required: false
+        collapsed: true
+        summary: "{{fields.title}} · {{fields.pages}} pages"
+        hint: "Listed automatically in the PDF library and inside the project. Keep one entry per publication; use download parts for large PDFs on slow connections."
+        fields:
+          - { label: Publication title, name: title, widget: string }
+          - { label: PDF file or URL, name: url, widget: file }
+          - { label: Cover preview, name: preview, widget: image }
+          - { label: Page count, name: pages, widget: number, value_type: int, min: 1 }
+          - { label: File size, name: size, widget: string, hint: "For example 2.2 MB" }
+          - label: Smaller download parts
+            name: parts
+            widget: list
+            required: false
+            collapsed: true
+            summary: "{{fields.label}}"
+            fields:
+              - { label: Part & page range, name: label, widget: string }
+              - { label: PDF file or URL, name: url, widget: file }
+              - { label: File size, name: size, widget: string }
+      - { label: Featured video URL, name: video, widget: string, required: false, hint: "YouTube URL or an existing /videos/... file. Videos load only when a visitor plays them." }
+      - label: Video collection
+        name: videos
+        widget: list
+        required: false
+        collapsed: true
+        summary: "{{fields.title}}"
+        fields:
+          - { label: Video title, name: title, widget: string }
+          - { label: Video URL, name: url, widget: string }
+          - { label: Your contribution, name: role, widget: text, required: false }
+      - label: Your responsibilities
+        name: responsibilities
+        widget: list
+        required: false
+        collapsed: true
+        field: { label: Contribution, name: contribution, widget: string }
       - label: Proof Media Links
         name: proofLinks
         widget: list

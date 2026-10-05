@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Reveal } from "@/components/Reveal";
 import { WorkGrid } from "@/components/WorkGrid";
+import { WorkDocumentLibrary } from "@/components/WorkDocumentLibrary";
 import { Footer } from "@/components/Footer";
 import { getAllProjects, getSiteConfig } from "@/lib/content";
 
@@ -18,10 +19,12 @@ export const metadata: Metadata = {
 export default function WorkPage() {
   const projects = getAllProjects();
   const site = getSiteConfig();
+  const cards = projects.map(({ slug, title, org, categories, label, outcome, cover, coverBg, thumbnail, thumbnailAlt, thumbnailStyle, gallery, documents }) => ({ slug, title, org, categories, label, outcome, cover, coverBg, thumbnail, thumbnailAlt, thumbnailStyle, artworkCount: gallery?.filter(item => item.src).length ?? 0, documentCount: documents?.length ?? 0 }));
+  const publications = projects.filter(project => project.documents?.length).map(project => ({ slug: project.slug, title: project.title, documents: project.documents!.map(({ title, pages, size }) => ({ title, pages, size })) }));
 
   return (
     <>
-      <section className="relative px-5 md:px-14 max-w-[1300px] mx-auto pt-36 pb-12">
+      <section className="relative px-5 md:px-14 max-w-[1300px] mx-auto pt-32 pb-8">
         <Reveal>
           <div className="text-label-l text-success mb-4">Selected Work</div>
         </Reveal>
@@ -30,22 +33,15 @@ export default function WorkPage() {
         </Reveal>
         <Reveal delay={0.1}>
           <p className="text-body-l text-on-surface-variant max-w-[620px] mt-5">
-            {projects.length} projects across marketing, web, brand and systems. Filter by discipline, then dive into the <span className="text-mark">evidence behind each result.</span>
+            Graphic design, websites and marketing — from the first idea to the final artwork. Explore a project to see the <span className="text-mark">complete collection.</span>
           </p>
         </Reveal>
-        <a href="#freelance" className="inline-flex mt-6 rounded-full border border-outline-variant px-5 py-3 text-label-l text-primary">Explore freelance graphic & web design ↓</a>
-        <div className="mt-7 rounded-2xl border border-outline-variant bg-surface-container-low p-5">
-          <p className="text-label-l text-on-surface">Browse the full PDFs</p>
-          <div className="mt-3 flex flex-wrap gap-3">
-            {projects.filter((project) => project.documents?.length).map((project) => (
-              <a key={project.slug} href={`/work/${project.slug}#documents`} className="rounded-full border border-outline-variant px-4 py-2 text-label-m text-primary">{project.title} · {project.documents!.length} publication{project.documents!.length > 1 ? "s" : ""} ↗</a>
-            ))}
-          </div>
-        </div>
+
       </section>
 
       <section className="relative px-5 md:px-14 max-w-[1300px] mx-auto pb-24">
-        <WorkGrid projects={projects} />
+        <WorkGrid projects={cards} />
+        <WorkDocumentLibrary groups={publications} />
       </section>
 
       <Footer site={site} />
