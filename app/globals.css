@@ -4381,3 +4381,15 @@ a:hover .company-row-card,
   .work-filter { flex-shrink:0; white-space:nowrap; }
   .work-results { padding:12px 0 20px; }
 }
+
+/* Navigation shares measured spacing, so sticky project tabs clear the main header. */
+:root { --site-header-bottom:84px; --navigation-gap:12px; }
+html { scroll-padding-top:calc(var(--site-header-bottom) + var(--navigation-gap)); }
+.site-header { background:color-mix(in srgb, var(--color-surface) 96%, transparent); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); }
+.site-header[data-scrolled="true"] { background:var(--color-surface); }
+.project-content { --project-nav-height:66px; }
+.project-content :is(#overview, #documents, #proof-media, #video-portfolio, #gallery, #stack) { scroll-margin-top:calc(var(--project-nav-height) + 16px); }
+.project-mini-nav { position:sticky; top:calc(var(--site-header-bottom) + var(--navigation-gap)); z-index:40; margin-bottom:36px; border:1px solid var(--color-outline-variant); border-radius:16px; background:var(--color-surface); box-shadow:0 10px 24px -20px rgb(0 0 0 / .3); overscroll-behavior-x:contain; scrollbar-width:thin; }
+.project-mini-nav button:focus-visible { outline:2px solid var(--color-primary); outline-offset:2px; }
+#projects, .work-collection[id], .work-library[id] { scroll-margin-top:16px; }
+@media(max-width:1279px) { html[data-site-menu-open="true"] .project-mini-nav { visibility:hidden; pointer-events:none; } }

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { MouseEvent } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -10,6 +10,7 @@ import { WhatsAppIcon } from "./WhatsAppIcon";
 import { useTheme } from "./ThemeContext";
 import { whatsappLink } from "@/lib/whatsapp";
 import { fmTransition } from "@/lib/motion-tokens";
+import { scrollToSection } from "@/lib/section-navigation";
 
 const LINKS = [
   { href: "/#cv", label: "Experience" },
@@ -27,6 +28,8 @@ const THEME_ITEMS = [
 export function NavBar({ name = "Dewald Visser" }: { name?: string }) {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("hero");
+  const [scrolled, setScrolled] = useState(false);
+  const navRef = useRef<HTMLElement>(null);
   const pathname = usePathname();
   const { theme, setTheme, label } = useTheme();
 
@@ -41,14 +44,45 @@ export function NavBar({ name = "Dewald Visser" }: { name?: string }) {
     setOpen(false);
     window.history.pushState(null, "", href);
 
-    const offset = window.innerWidth < 768 ? -92 : -118;
-    const top = target.getBoundingClientRect().top + window.scrollY + offset;
-    if (window.__lenis) {
-      window.__lenis.scrollTo(top);
-    } else {
-      window.scrollTo({ top, behavior: "smooth" });
-    }
+    scrollToSection(target);
   };
+
+  useEffect(() => {
+    const nav = navRef.current;
+    if (!nav) return;
+    const root = document.documentElement;
+    const measure = () => root.style.setProperty("--site-header-bottom", `${Math.ceil(nav.getBoundingClientRect().bottom)}px`);
+    measure();
+    const observer = new ResizeObserver(measure);
+    observer.observe(nav);
+    window.addEventListener("resize", measure);
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("resize", measure);
+      root.style.removeProperty("--site-header-bottom");
+    };
+  }, []);
+
+  useEffect(() => {
+    const root = document.documentElement;
+    root.dataset.siteMenuOpen = String(open);
+    const closeOnEscape = (event: KeyboardEvent) => { if (event.key === "Escape") setOpen(false); };
+    const closeOutside = (event: PointerEvent) => {
+      if (event.target instanceof Node && !navRef.current?.contains(event.target)) setOpen(false);
+    };
+    const closeOnDesktop = () => { if (window.innerWidth >= 1280) setOpen(false); };
+    if (open) {
+      window.addEventListener("keydown", closeOnEscape);
+      document.addEventListener("pointerdown", closeOutside);
+      window.addEventListener("resize", closeOnDesktop);
+    }
+    return () => {
+      delete root.dataset.siteMenuOpen;
+      window.removeEventListener("keydown", closeOnEscape);
+      document.removeEventListener("pointerdown", closeOutside);
+      window.removeEventListener("resize", closeOnDesktop);
+    };
+  }, [open]);
 
   useEffect(() => {
     const bridgeIds = ["about"];
@@ -61,6 +95,7 @@ export function NavBar({ name = "Dewald Visser" }: { name?: string }) {
 
     const updateActive = () => {
       frame = 0;
+      setScrolled(window.scrollY > 16);
       const viewportHeight = window.innerHeight;
       const focusLine = Math.min(360, viewportHeight * 0.42);
       const visibleTop = Math.min(124, viewportHeight * 0.18);
@@ -103,7 +138,7 @@ export function NavBar({ name = "Dewald Visser" }: { name?: string }) {
   }, [pathname]);
 
   return (
-    <nav className="hig-glass !overflow-visible fixed left-3 right-3 top-3 z-[80] flex items-center justify-between rounded-[24px] px-3.5 py-2.5 sm:left-5 sm:right-5 sm:px-4 xl:left-8 xl:right-8 xl:py-3">
+    <nav ref={navRef} aria-label="Main navigation" data-scrolled={scrolled} className="site-header hig-glass !overflow-visible fixed left-3 right-3 top-3 z-[80] flex items-center justify-between rounded-[24px] px-3.5 py-2.5 sm:left-5 sm:right-5 sm:px-4 xl:left-8 xl:right-8 xl:py-3">
       <Link href="/#hero" onClick={navigateHash("/#hero")} className="state-layer flex min-w-0 items-center gap-2.5 rounded-full px-2 py-1.5 no-underline text-title-m text-on-surface sm:text-title-l">
         <span className="relative inline-block h-2.5 w-2.5 rounded-full bg-primary shadow-[0_0_18px_var(--color-primary)]" />
         <span className="whitespace-nowrap">{name}</span>
@@ -181,6 +216,7 @@ export function NavBar({ name = "Dewald Visser" }: { name?: string }) {
         type="button"
         aria-label="Toggle menu"
         aria-expanded={open}
+        aria-controls="site-menu"
         onClick={() => setOpen((v) => !v)}
         className="hig-control state-layer grid h-11 w-11 place-items-center rounded-full text-on-surface xl:hidden"
       >
@@ -190,9 +226,10 @@ export function NavBar({ name = "Dewald Visser" }: { name?: string }) {
       <AnimatePresence>
         {open && (
           <motion.div
+            id="site-menu"
             initial={{ opacity: 0, y: -12 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -12 }}
+            exit={{ opacity: 0, y: -12, pointerEvents: "none" }}
             transition={fmTransition.standard}
             className="absolute left-0 right-0 top-[calc(100%+10px)] flex flex-col gap-1 rounded-[24px] border border-outline-variant bg-surface-container p-3 elevation-4 xl:hidden"
           >

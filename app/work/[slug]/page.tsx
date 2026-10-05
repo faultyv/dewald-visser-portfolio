@@ -155,7 +155,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         )}
       </article>
 
-      <article className="relative mx-auto max-w-[1140px] px-5 md:px-14">
+      <article className="project-content relative mx-auto max-w-[1140px] px-5 md:px-14">
         <ProjectMiniNav hasGallery={gallery.length > 0} hasProof={proofLinks.length > 0} hasDocuments={!!project.documents?.length} hasVideos={!!project.videos?.length} />
         <Reveal>
           <div id="overview" className="mb-12 scroll-mt-28">{content}</div>
