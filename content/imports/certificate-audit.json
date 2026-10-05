@@ -1,0 +1,109 @@
+[
+  {
+    "source": "Downloads/Certificates/1625562293352.pdf",
+    "status": "alternate-source",
+    "reason": "Alternate scan or export of a credential already displayed."
+  },
+  {
+    "source": "Downloads/Certificates/201711071050.pdf",
+    "status": "private-reference",
+    "reason": "HR promotion letter, not a certificate."
+  },
+  {
+    "source": "Downloads/Certificates/6d6a1f123143649.60e8284be446f.png",
+    "status": "included",
+    "document": "/certificates/hubspot-digital-marketing.pdf"
+  },
+  {
+    "source": "Downloads/Certificates/AI Essentials Certificate.pdf",
+    "status": "included",
+    "document": "/certificates/canva-ai-essentials-2026.pdf"
+  },
+  {
+    "source": "Downloads/Certificates/Basic Computer Skills.pdf",
+    "status": "included",
+    "document": "/certificates/basic-computer-skills.pdf"
+  },
+  {
+    "source": "Downloads/Certificates/Basic Tutorial in PowerPoint 2016.pdf",
+    "status": "included",
+    "document": "/certificates/powerpoint-2016.pdf"
+  },
+  {
+    "source": "Downloads/Certificates/Business Analysis & Process Management Certificate.pdf",
+    "status": "included",
+    "document": "/certificates/coursera-business-analysis.pdf"
+  },
+  {
+    "source": "Downloads/Certificates/Business Analysis Certificate.pdf",
+    "status": "alternate-source",
+    "reason": "Alternate scan or export of a credential already displayed."
+  },
+  {
+    "source": "Downloads/Certificates/CS302 Software Engineering Certificate.pdf",
+    "status": "included",
+    "document": "/certificates/saylor-software-engineering.pdf"
+  },
+  {
+    "source": "Downloads/Certificates/CS401 Operating Systems Certificate.pdf",
+    "status": "included",
+    "document": "/certificates/saylor-operating-systems.pdf"
+  },
+  {
+    "source": "Downloads/Certificates/Content Marketing Certificate.pdf",
+    "status": "included",
+    "document": "/certificates/hubspot-content-marketing.pdf"
+  },
+  {
+    "source": "Downloads/Certificates/DamelinOnline_Project management cerificate.pdf",
+    "status": "included",
+    "document": "/certificates/damelin-project-management.pdf",
+    "note": "Public copy removes the government ID field; all other certificate text is preserved."
+  },
+  {
+    "source": "Downloads/Certificates/Dewald Visser Operations Management Certificate.pdf",
+    "status": "included",
+    "document": "/certificates/damelin-operations-management.pdf",
+    "note": "Public copy removes the government ID field; all other certificate text is preserved."
+  },
+  {
+    "source": "Downloads/Certificates/Email and Telephone Etiquette_Certificate of Completion.pdf",
+    "status": "included",
+    "document": "/certificates/email-telephone-etiquette.pdf"
+  },
+  {
+    "source": "Downloads/Certificates/Google Digital Marketing Certificate.pdf",
+    "status": "included",
+    "document": "/certificates/google-digital-marketing.pdf"
+  },
+  {
+    "source": "Downloads/Certificates/Graphic Design Certificate.jpeg",
+    "status": "included",
+    "document": "/certificates/cursa-design-training.pdf"
+  },
+  {
+    "source": "Downloads/Certificates/Graphic Design Essentials Certificate.pdf",
+    "status": "included",
+    "document": "/certificates/canva-graphic-design-essentials.pdf"
+  },
+  {
+    "source": "Downloads/Certificates/Lead Generation Certificate.pdf",
+    "status": "included",
+    "document": "/certificates/coursera-chatfuel.pdf"
+  },
+  {
+    "source": "Downloads/Certificates/Microsoft Office Word 2016.pdf",
+    "status": "included",
+    "document": "/certificates/microsoft-word-2016.pdf"
+  },
+  {
+    "source": "Downloads/Certificates/Strategic Planning AI Certificate.pdf",
+    "status": "included",
+    "document": "/certificates/hp-strategic-planning-ai.pdf"
+  },
+  {
+    "source": "Downloads/Certificates/Wordpress Web Design Certificate.pdf",
+    "status": "included",
+    "document": "/certificates/coursera-wordpress.pdf"
+  }
+]

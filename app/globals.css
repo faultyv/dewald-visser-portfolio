@@ -156,9 +156,9 @@ section[id],
   content: "";
   position: absolute;
   top: 0;
-  left: max(20px, calc((100vw - 1340px) / 2 + 20px));
+  left: max(20px, calc((100% - 1340px) / 2 + 20px));
   z-index: 0;
-  width: min(calc(100vw - 40px), 1300px);
+  width: min(calc(100% - 40px), 1300px);
   height: 1px;
   border-radius: 999px;
   background: linear-gradient(90deg, var(--color-primary), var(--color-secondary), var(--color-highlight), transparent);
@@ -4310,3 +4310,14 @@ a:hover .company-row-card,
 @media (max-width:640px) { .artwork-gallery, .portfolio-work-columns { columns: 1; } }
 
 .hero-project-image { height: auto; aspect-ratio: 3500 / 2300; }
+
+/* Gallery browsing stays light even as each project grows. */
+.gallery-toolbar { display:flex; justify-content:space-between; align-items:center; gap:20px; margin-top:32px; }
+.gallery-filters { display:flex; flex-wrap:wrap; gap:8px; margin-top:20px; }
+.gallery-filter { padding:10px 16px; border:1px solid var(--color-outline-variant); border-radius:999px; font-size:13px; cursor:pointer; color:var(--color-on-surface-variant); background:var(--color-surface-container-low); }
+.gallery-filter[aria-pressed="true"] { color:var(--color-on-primary); background:var(--color-primary); border-color:var(--color-primary); }
+.gallery-filter:focus-visible { outline:3px solid var(--color-primary); outline-offset:3px; }
+.artwork-gallery { margin-bottom:24px; }
+.gallery-more { text-align:center; margin:8px 0 56px; }
+.artwork-tile { box-shadow:0 4px 20px rgb(0 0 0 / .04); }
+@media (prefers-reduced-motion:no-preference) { .artwork-tile { transition:box-shadow .2s,border-color .2s; } .artwork-tile:hover { border-color:var(--color-primary); box-shadow:0 12px 32px rgb(0 0 0 / .1); } }

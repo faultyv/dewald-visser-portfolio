@@ -15,7 +15,7 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
-  images: { qualities: [75, 90] },
+  images: { qualities: [75, 90], remotePatterns: [{ protocol: "https", hostname: "i.ytimg.com", pathname: "/vi/**" }] },
   turbopack: {
     root: path.resolve(__dirname),
   },

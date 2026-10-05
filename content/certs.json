@@ -3,7 +3,7 @@
     {
       "id": "hp-strategic-planning-ai",
       "title": "Strategic Planning in the AI Age",
-      "issuer": "HP LIFE · 29 September 2026",
+      "issuer": "HP LIFE \u00b7 29 September 2026",
       "image": "/images/certs/hp-strategic-planning-ai.png",
       "document": "/certificates/hp-strategic-planning-ai.pdf",
       "seed": "primary"
@@ -11,7 +11,7 @@
     {
       "id": "saylor-software-engineering",
       "title": "CS302: Software Engineering",
-      "issuer": "Saylor University · 30 September 2026",
+      "issuer": "Saylor University \u00b7 30 September 2026",
       "image": "/images/certs/saylor-software-engineering.png",
       "document": "/certificates/saylor-software-engineering.pdf",
       "seed": "primary",
@@ -20,7 +20,7 @@
     {
       "id": "canva-ai-essentials-2026",
       "title": "AI Essentials 2026",
-      "issuer": "Canva Design School · 29 September 2026",
+      "issuer": "Canva Design School \u00b7 29 September 2026",
       "image": "/images/certs/canva-ai-essentials-2026.png",
       "document": "/certificates/canva-ai-essentials-2026.pdf",
       "seed": "primary"
@@ -28,7 +28,7 @@
     {
       "id": "canva-graphic-design-essentials",
       "title": "Graphic Design Essentials",
-      "issuer": "Canva Design School · 29 September 2026",
+      "issuer": "Canva Design School \u00b7 29 September 2026",
       "image": "/images/certs/canva-graphic-design-essentials.png",
       "document": "/certificates/canva-graphic-design-essentials.pdf",
       "seed": "secondary"
@@ -36,7 +36,7 @@
     {
       "id": "saylor-operating-systems",
       "title": "CS401: Operating Systems",
-      "issuer": "Saylor University · 29 September 2026",
+      "issuer": "Saylor University \u00b7 29 September 2026",
       "image": "/images/certs/saylor-operating-systems.png",
       "document": "/certificates/saylor-operating-systems.pdf",
       "seed": "success",
@@ -45,21 +45,23 @@
     {
       "id": "google-digital-marketing",
       "title": "Fundamentals of Digital Marketing",
-      "issuer": "Google Digital Garage · 2021",
+      "issuer": "Google Digital Garage \u00b7 2021",
       "image": "/images/certs/google-digital-marketing.png",
-      "seed": "primary"
+      "seed": "primary",
+      "document": "/certificates/google-digital-marketing.pdf"
     },
     {
       "id": "hubspot-content-marketing",
       "title": "Content Marketing Certified",
-      "issuer": "HubSpot Academy · Issued 2024 · Expired June 2026",
+      "issuer": "HubSpot Academy \u00b7 Issued 2024 \u00b7 Expired June 2026",
       "image": "/images/certs/hubspot-content-marketing.jpg",
-      "seed": "success"
+      "seed": "success",
+      "document": "/certificates/hubspot-content-marketing.pdf"
     },
     {
       "id": "coursera-chatfuel",
       "title": "Lead Generation Messenger Chatbot with Chatfuel",
-      "issuer": "Coursera · 2024",
+      "issuer": "Coursera \u00b7 2024",
       "image": "/images/certs/coursera-chatfuel.png",
       "seed": "secondary",
       "verify": "https://coursera.org/verify/89YNLT53BWLL",
@@ -68,7 +70,7 @@
     {
       "id": "coursera-wordpress",
       "title": "Build a Website with WordPress",
-      "issuer": "Coursera · 2024",
+      "issuer": "Coursera \u00b7 2024",
       "image": "/images/certs/coursera-wordpress.png",
       "seed": "tertiary",
       "verify": "https://coursera.org/verify/ET7C7XXSK3VJ",
@@ -77,40 +79,62 @@
     {
       "id": "coursera-business-analysis",
       "title": "Business Analysis & Process Management",
-      "issuer": "Coursera · 2024",
+      "issuer": "Coursera \u00b7 2024",
       "image": "/images/certs/coursera-business-analysis.png",
       "seed": "warning",
       "verify": "https://coursera.org/verify/4BQ7T29S3VFB",
       "document": "/certificates/coursera-business-analysis.pdf"
+    },
+    {
+      "id": "cursa-design-training",
+      "title": "Canva & Adobe Illustrator course attendance",
+      "issuer": "Cursa \u00b7 2024",
+      "image": "/images/certs/cursa-design-training.jpg",
+      "document": "/certificates/cursa-design-training.pdf",
+      "seed": "tertiary"
+    },
+    {
+      "id": "hubspot-digital-marketing",
+      "title": "Digital Marketing Certified",
+      "issuer": "HubSpot Academy \u00b7 Issued 2024 \u00b7 Expired June 2025",
+      "image": "/images/certs/hubspot-digital-marketing.png",
+      "document": "/certificates/hubspot-digital-marketing.pdf",
+      "seed": "warning"
     }
   ],
   "additional": [
     {
       "title": "Operations Management Certificate",
-      "issuer": "Damelin College"
+      "issuer": "Damelin College",
+      "document": "/certificates/damelin-operations-management.pdf"
+    },
+    {
+      "title": "Mitigating Failure in Project Management",
+      "issuer": "Damelin Online \u00b7 2018",
+      "document": "/certificates/damelin-project-management.pdf"
     },
     {
       "title": "Email and Telephone Etiquette",
-      "issuer": "Education Group Staff Development · 2018",
+      "issuer": "Education Group Staff Development \u00b7 2018",
       "document": "/certificates/email-telephone-etiquette.pdf"
     },
     {
       "title": "Meeting Procedure and Protocol",
-      "issuer": "Education Group Staff Development · 2018"
+      "issuer": "Education Group Staff Development \u00b7 2018"
     },
     {
       "title": "Microsoft Office Word 2016",
-      "issuer": "Education Group Staff Development · 2018",
+      "issuer": "Education Group Staff Development \u00b7 2018",
       "document": "/certificates/microsoft-word-2016.pdf"
     },
     {
       "title": "Basic Computer Skills",
-      "issuer": "Education Group Staff Development · 2018",
+      "issuer": "Education Group Staff Development \u00b7 2018",
       "document": "/certificates/basic-computer-skills.pdf"
     },
     {
       "title": "Basic Tutorial in PowerPoint 2016",
-      "issuer": "Education Group Staff Development · 2018",
+      "issuer": "Education Group Staff Development \u00b7 2018",
       "document": "/certificates/powerpoint-2016.pdf"
     }
   ]

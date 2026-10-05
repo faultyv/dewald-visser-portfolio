@@ -100,10 +100,12 @@ export type CertsData = {
   additional: AdditionalCert[];
 };
 
+export type ProjectVideoItem = { title: string; url: string; role?: string };
+
 export type ProjectMetric = { value: string; label: string };
-export type GalleryItem = { id: string; label: string; src?: string };
+export type GalleryItem = { id: string; label: string; group?: string; src?: string };
 export type ProjectLink = { label: string; url: string };
-export type ProjectDocument = { title: string; url: string; preview: string; pages: number; size: string };
+export type ProjectDocument = { title: string; url: string; preview: string; pages: number; size: string; parts?: { label: string; url: string; size: string }[] };
 export type ProjectProofLink = {
   label: string;
   url: string;
@@ -129,6 +131,7 @@ export type ProjectFrontmatter = {
   stack: string[];
   gallery: GalleryItem[];
   video: string | null;
+  videos?: ProjectVideoItem[];
   links?: ProjectLink[];
   proofLinks?: ProjectProofLink[];
   documents?: ProjectDocument[];

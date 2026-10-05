@@ -31,6 +31,10 @@
     "width": 1800,
     "height": 1391
   },
+  "/images/certs/cursa-design-training.jpg": {
+    "width": 1280,
+    "height": 905
+  },
   "/images/certs/google-digital-marketing.png": {
     "width": 1286,
     "height": 909
@@ -40,6 +44,10 @@
     "height": 1273
   },
   "/images/certs/hubspot-content-marketing.jpg": {
+    "width": 1140,
+    "height": 880
+  },
+  "/images/certs/hubspot-digital-marketing.png": {
     "width": 1140,
     "height": 880
   },
@@ -127,21 +135,149 @@
     "width": 1448,
     "height": 1086
   },
+  "/images/documents/alif-2021-print.png": {
+    "width": 1147,
+    "height": 1600
+  },
+  "/images/documents/alif-2024-print.png": {
+    "width": 694,
+    "height": 1600
+  },
+  "/images/documents/body-transport-brochure-2026.png": {
+    "width": 990,
+    "height": 1400
+  },
+  "/images/documents/boschendal-accommodation-guide.png": {
+    "width": 983,
+    "height": 1600
+  },
+  "/images/documents/byron-cracker-presentation.png": {
+    "width": 1600,
+    "height": 1132
+  },
+  "/images/documents/car-hire-roadside.png": {
+    "width": 1132,
+    "height": 1600
+  },
+  "/images/documents/centillion-2025-catalogue.png": {
+    "width": 1600,
+    "height": 1132
+  },
+  "/images/documents/centillion-presentation.png": {
+    "width": 1600,
+    "height": 1132
+  },
+  "/images/documents/christmas-2023-collection.png": {
+    "width": 1600,
+    "height": 1132
+  },
   "/images/documents/corporate-presentation.png": {
     "width": 1800,
     "height": 1013
+  },
+  "/images/documents/croxley-print-sheet.png": {
+    "width": 1116,
+    "height": 1600
   },
   "/images/documents/dominion-magazine.png": {
     "width": 1272,
     "height": 1800
   },
+  "/images/documents/dominion-working-layout.png": {
+    "width": 1131,
+    "height": 1600
+  },
+  "/images/documents/dreambook-complete.png": {
+    "width": 1600,
+    "height": 852
+  },
+  "/images/documents/dreambook-cover-artwork.png": {
+    "width": 1600,
+    "height": 852
+  },
   "/images/documents/fourth-dimension.png": {
     "width": 1273,
     "height": 1800
   },
+  "/images/documents/jbs-annual-report-cover.png": {
+    "width": 1131,
+    "height": 1600
+  },
+  "/images/documents/jbs-graduation-banners.png": {
+    "width": 1600,
+    "height": 1136
+  },
+  "/images/documents/jbs-press-release.png": {
+    "width": 1132,
+    "height": 1600
+  },
+  "/images/documents/jbs-prospectus-2025.png": {
+    "width": 1132,
+    "height": 1600
+  },
+  "/images/documents/lio-vertical-banners.png": {
+    "width": 1600,
+    "height": 1145
+  },
+  "/images/documents/lio-website-layout.png": {
+    "width": 683,
+    "height": 1600
+  },
+  "/images/documents/mediatrade-brochure.png": {
+    "width": 1461,
+    "height": 1600
+  },
+  "/images/documents/mediatrade-print-proof-annotated.png": {
+    "width": 1497,
+    "height": 1600
+  },
+  "/images/documents/mediatrade-print-proof.png": {
+    "width": 1497,
+    "height": 1600
+  },
+  "/images/documents/mentor-business-card.png": {
+    "width": 1600,
+    "height": 943
+  },
+  "/images/documents/mentor-identity-system.png": {
+    "width": 1600,
+    "height": 1600
+  },
+  "/images/documents/mentor-letterhead.png": {
+    "width": 1132,
+    "height": 1600
+  },
+  "/images/documents/mentor-property-brochure.png": {
+    "width": 1132,
+    "height": 1600
+  },
+  "/images/documents/mentor-property-investment.png": {
+    "width": 1132,
+    "height": 1600
+  },
+  "/images/documents/ministry-website-layout.png": {
+    "width": 1131,
+    "height": 1600
+  },
+  "/images/documents/pnp-exclusive-packaging.png": {
+    "width": 1600,
+    "height": 776
+  },
+  "/images/documents/pnp-six-pack.png": {
+    "width": 1374,
+    "height": 1600
+  },
+  "/images/documents/printing-brochure.png": {
+    "width": 1600,
+    "height": 900
+  },
   "/images/documents/quarterly-january-2025.png": {
     "width": 1272,
     "height": 1800
+  },
+  "/images/documents/rhino-shield-campaign.png": {
+    "width": 1601,
+    "height": 1600
   },
   "/images/documents/sitara-menu.png": {
     "width": 1273,
@@ -154,6 +290,18 @@
   "/images/documents/sun-paper-brochure.png": {
     "width": 1273,
     "height": 1800
+  },
+  "/images/documents/unlimited-recruitment-print.png": {
+    "width": 1112,
+    "height": 1600
+  },
+  "/images/documents/who-am-i-presentation.png": {
+    "width": 1600,
+    "height": 900
+  },
+  "/images/documents/who-am-i-workbook.png": {
+    "width": 1127,
+    "height": 1600
   },
   "/images/education-ai/lcibs-ai-robot-launch.jpg": {
     "width": 2048,
@@ -239,6 +387,46 @@
     "width": 1080,
     "height": 1920
   },
+  "/images/work/alif-doors/collection-4772069f4a84.webp": {
+    "width": 779,
+    "height": 184
+  },
+  "/images/work/alif-doors/collection-64a214bfa97a.webp": {
+    "width": 2001,
+    "height": 761
+  },
+  "/images/work/alif-doors/collection-b0a74b9b3937.webp": {
+    "width": 1080,
+    "height": 1402
+  },
+  "/images/work/alif-doors/collection-dabaaabab161.webp": {
+    "width": 1640,
+    "height": 624
+  },
+  "/images/work/alif-doors/october-220.webp": {
+    "width": 2048,
+    "height": 2048
+  },
+  "/images/work/alif-doors/october-221.webp": {
+    "width": 2048,
+    "height": 2048
+  },
+  "/images/work/alif-doors/october-222.webp": {
+    "width": 2048,
+    "height": 2048
+  },
+  "/images/work/alif-doors/october-223.webp": {
+    "width": 2048,
+    "height": 2048
+  },
+  "/images/work/alif-doors/october-225.webp": {
+    "width": 1080,
+    "height": 1350
+  },
+  "/images/work/alif-doors/october-226.webp": {
+    "width": 1350,
+    "height": 1688
+  },
   "/images/work/alif-doors/portfolio-01.jpg": {
     "width": 1640,
     "height": 624
@@ -271,9 +459,57 @@
     "width": 1400,
     "height": 932
   },
+  "/images/work/autodoc-online-store/october-78.webp": {
+    "width": 2560,
+    "height": 1704
+  },
+  "/images/work/autodoc-online-store/october-79.webp": {
+    "width": 2560,
+    "height": 1792
+  },
+  "/images/work/beapo-office-branding/collection-2d9eafffb1c0.webp": {
+    "width": 1448,
+    "height": 1086
+  },
   "/images/work/beapo-office-branding/portfolio-01.jpg": {
     "width": 1440,
     "height": 1080
+  },
+  "/images/work/body-transport-solutions/collection-20f909fc8640.webp": {
+    "width": 1672,
+    "height": 941
+  },
+  "/images/work/body-transport-solutions/collection-2d230bbe987e.webp": {
+    "width": 1254,
+    "height": 1254
+  },
+  "/images/work/body-transport-solutions/collection-4e901c577fc4.webp": {
+    "width": 1672,
+    "height": 941
+  },
+  "/images/work/body-transport-solutions/collection-60261ec9a6aa.webp": {
+    "width": 515,
+    "height": 290
+  },
+  "/images/work/body-transport-solutions/collection-8de3c9e486a1.webp": {
+    "width": 515,
+    "height": 290
+  },
+  "/images/work/body-transport-solutions/collection-91c926ab51fa.webp": {
+    "width": 1672,
+    "height": 941
+  },
+  "/images/work/body-transport-solutions/collection-a2cd98b302c8.webp": {
+    "width": 529,
+    "height": 298
+  },
+  "/images/work/body-transport-solutions/collection-c4fe4719f3b1.webp": {
+    "width": 515,
+    "height": 290
+  },
+  "/images/work/body-transport-solutions/collection-d3d43106373b.webp": {
+    "width": 941,
+    "height": 941
   },
   "/images/work/body-transport-solutions/expanded-17.jpg": {
     "width": 1672,
@@ -379,6 +615,110 @@
     "width": 2048,
     "height": 2048
   },
+  "/images/work/dreambook-cpm/collection-082f7719e7f2.webp": {
+    "width": 1024,
+    "height": 933
+  },
+  "/images/work/dreambook-cpm/collection-112053b36158.webp": {
+    "width": 2048,
+    "height": 1365
+  },
+  "/images/work/dreambook-cpm/collection-147dbb462ead.webp": {
+    "width": 2048,
+    "height": 2048
+  },
+  "/images/work/dreambook-cpm/collection-17a3fc514298.webp": {
+    "width": 2048,
+    "height": 2048
+  },
+  "/images/work/dreambook-cpm/collection-187e5315c9d8.webp": {
+    "width": 2048,
+    "height": 1843
+  },
+  "/images/work/dreambook-cpm/collection-32ddba3a83c2.webp": {
+    "width": 2048,
+    "height": 1346
+  },
+  "/images/work/dreambook-cpm/collection-5212cd4696ec.webp": {
+    "width": 1365,
+    "height": 1365
+  },
+  "/images/work/dreambook-cpm/collection-53cfa961fc65.webp": {
+    "width": 2048,
+    "height": 1856
+  },
+  "/images/work/dreambook-cpm/collection-54eb54020a6e.webp": {
+    "width": 2048,
+    "height": 2048
+  },
+  "/images/work/dreambook-cpm/collection-5f6f55119a96.webp": {
+    "width": 2048,
+    "height": 2048
+  },
+  "/images/work/dreambook-cpm/collection-67f10d92824c.webp": {
+    "width": 2048,
+    "height": 2048
+  },
+  "/images/work/dreambook-cpm/collection-6f896e25f46e.webp": {
+    "width": 2400,
+    "height": 1601
+  },
+  "/images/work/dreambook-cpm/collection-735cc165f4d2.webp": {
+    "width": 2048,
+    "height": 1536
+  },
+  "/images/work/dreambook-cpm/collection-756cc6d5cd4f.webp": {
+    "width": 2400,
+    "height": 1600
+  },
+  "/images/work/dreambook-cpm/collection-7687fe7b28bb.webp": {
+    "width": 2048,
+    "height": 1365
+  },
+  "/images/work/dreambook-cpm/collection-7908f2fa6aa4.webp": {
+    "width": 2048,
+    "height": 1575
+  },
+  "/images/work/dreambook-cpm/collection-7acb6cf79c8e.webp": {
+    "width": 1365,
+    "height": 1365
+  },
+  "/images/work/dreambook-cpm/collection-932077d29c81.webp": {
+    "width": 2048,
+    "height": 1843
+  },
+  "/images/work/dreambook-cpm/collection-98b856793d94.webp": {
+    "width": 2048,
+    "height": 2048
+  },
+  "/images/work/dreambook-cpm/collection-9e80d676049b.webp": {
+    "width": 1073,
+    "height": 1073
+  },
+  "/images/work/dreambook-cpm/collection-a52447a4fdfa.webp": {
+    "width": 2048,
+    "height": 1856
+  },
+  "/images/work/dreambook-cpm/collection-b42a5eb95cfc.webp": {
+    "width": 2048,
+    "height": 2048
+  },
+  "/images/work/dreambook-cpm/collection-bd4625a66c81.webp": {
+    "width": 2048,
+    "height": 2048
+  },
+  "/images/work/dreambook-cpm/collection-c242e1dd9a37.webp": {
+    "width": 2048,
+    "height": 1865
+  },
+  "/images/work/dreambook-cpm/collection-d633bef26251.webp": {
+    "width": 2048,
+    "height": 2048
+  },
+  "/images/work/dreambook-cpm/collection-f499ccab6338.webp": {
+    "width": 2400,
+    "height": 1600
+  },
   "/images/work/dreambook-cpm/cover.png": {
     "width": 1400,
     "height": 4316
@@ -425,7 +765,8 @@
   },
   "/images/work/dreambook-cpm/mockup-cover-stand.png": {
     "width": 1024,
-    "height": 683
+    "height": 683,
+    "background": "dark"
   },
   "/images/work/dreambook-cpm/mockup-laptop.png": {
     "width": 1957,
@@ -434,6 +775,34 @@
   "/images/work/dreambook-cpm/moodboard.webp": {
     "width": 2560,
     "height": 2560
+  },
+  "/images/work/dreambook-cpm/october-168.webp": {
+    "width": 2560,
+    "height": 1920
+  },
+  "/images/work/dreambook-cpm/october-188.webp": {
+    "width": 2560,
+    "height": 1707
+  },
+  "/images/work/dreambook-cpm/october-191.webp": {
+    "width": 2048,
+    "height": 1536
+  },
+  "/images/work/dreambook-cpm/october-193.webp": {
+    "width": 2048,
+    "height": 1536
+  },
+  "/images/work/dreambook-cpm/october-194.webp": {
+    "width": 2048,
+    "height": 1434
+  },
+  "/images/work/dreambook-cpm/october-197.webp": {
+    "width": 2048,
+    "height": 1365
+  },
+  "/images/work/dreambook-cpm/october-205.webp": {
+    "width": 2048,
+    "height": 1365
   },
   "/images/work/dreambook-cpm/ooh-billboard.jpg": {
     "width": 1365,
@@ -459,6 +828,10 @@
     "width": 1080,
     "height": 1080
   },
+  "/images/work/dreambook-cpm/production-5325.webp": {
+    "width": 2400,
+    "height": 1600
+  },
   "/images/work/dreambook-cpm/square-book-mockup-full.jpg": {
     "width": 4000,
     "height": 2668
@@ -470,6 +843,202 @@
   "/images/work/dynamic-automation/home.png": {
     "width": 1440,
     "height": 900
+  },
+  "/images/work/faux-flora-shopify/collection-06a8e93e0433.webp": {
+    "width": 2400,
+    "height": 1680
+  },
+  "/images/work/faux-flora-shopify/collection-089f2142c92c.webp": {
+    "width": 2400,
+    "height": 1800
+  },
+  "/images/work/faux-flora-shopify/collection-0a2f2db85f83.webp": {
+    "width": 1200,
+    "height": 1200
+  },
+  "/images/work/faux-flora-shopify/collection-16769d7172bb.webp": {
+    "width": 2400,
+    "height": 1680
+  },
+  "/images/work/faux-flora-shopify/collection-174e7e757fea.webp": {
+    "width": 722,
+    "height": 1284
+  },
+  "/images/work/faux-flora-shopify/collection-27a76002e6fb.webp": {
+    "width": 724,
+    "height": 1288
+  },
+  "/images/work/faux-flora-shopify/collection-27edf11d5f21.webp": {
+    "width": 513,
+    "height": 768
+  },
+  "/images/work/faux-flora-shopify/collection-28791e2363b5.webp": {
+    "width": 1920,
+    "height": 1080
+  },
+  "/images/work/faux-flora-shopify/collection-2e695234ba99.webp": {
+    "width": 1242,
+    "height": 2688
+  },
+  "/images/work/faux-flora-shopify/collection-32a9e9c6a81c.webp": {
+    "width": 2400,
+    "height": 1680
+  },
+  "/images/work/faux-flora-shopify/collection-33f72b86b813.webp": {
+    "width": 1125,
+    "height": 2436
+  },
+  "/images/work/faux-flora-shopify/collection-3e582c24b967.webp": {
+    "width": 1080,
+    "height": 1080
+  },
+  "/images/work/faux-flora-shopify/collection-415e0170b5ea.webp": {
+    "width": 1024,
+    "height": 1024
+  },
+  "/images/work/faux-flora-shopify/collection-46da1a12b3c9.webp": {
+    "width": 2400,
+    "height": 1800
+  },
+  "/images/work/faux-flora-shopify/collection-491d61ed02bf.webp": {
+    "width": 1080,
+    "height": 1080
+  },
+  "/images/work/faux-flora-shopify/collection-49f404183caf.webp": {
+    "width": 1701,
+    "height": 1701
+  },
+  "/images/work/faux-flora-shopify/collection-57e041b68180.webp": {
+    "width": 1754,
+    "height": 1690
+  },
+  "/images/work/faux-flora-shopify/collection-5aa6ef9040cc.webp": {
+    "width": 1008,
+    "height": 1004
+  },
+  "/images/work/faux-flora-shopify/collection-5d8cafe15362.webp": {
+    "width": 2400,
+    "height": 1800
+  },
+  "/images/work/faux-flora-shopify/collection-63a00a7b8ae7.webp": {
+    "width": 500,
+    "height": 500
+  },
+  "/images/work/faux-flora-shopify/collection-641d83db4e36.webp": {
+    "width": 1440,
+    "height": 1440
+  },
+  "/images/work/faux-flora-shopify/collection-67028b0bbdcd.webp": {
+    "width": 1004,
+    "height": 590
+  },
+  "/images/work/faux-flora-shopify/collection-6b41f18928cb.webp": {
+    "width": 1004,
+    "height": 590
+  },
+  "/images/work/faux-flora-shopify/collection-748a86efcfac.webp": {
+    "width": 2400,
+    "height": 1600
+  },
+  "/images/work/faux-flora-shopify/collection-7b2a71a98eb5.webp": {
+    "width": 2400,
+    "height": 1680
+  },
+  "/images/work/faux-flora-shopify/collection-809dc609ede6.webp": {
+    "width": 2400,
+    "height": 1800
+  },
+  "/images/work/faux-flora-shopify/collection-8679d0b1e81e.webp": {
+    "width": 724,
+    "height": 1286
+  },
+  "/images/work/faux-flora-shopify/collection-8eba755fd4cd.webp": {
+    "width": 1080,
+    "height": 1080
+  },
+  "/images/work/faux-flora-shopify/collection-9056f3bcc178.webp": {
+    "width": 732,
+    "height": 1290
+  },
+  "/images/work/faux-flora-shopify/collection-955bd3ab5ef0.webp": {
+    "width": 800,
+    "height": 800
+  },
+  "/images/work/faux-flora-shopify/collection-97fce3b7eb2d.webp": {
+    "width": 2400,
+    "height": 1600
+  },
+  "/images/work/faux-flora-shopify/collection-a19226b74d94.webp": {
+    "width": 1536,
+    "height": 2048
+  },
+  "/images/work/faux-flora-shopify/collection-a2bb09463be0.webp": {
+    "width": 1920,
+    "height": 1080
+  },
+  "/images/work/faux-flora-shopify/collection-a7d8138e795b.webp": {
+    "width": 726,
+    "height": 1288
+  },
+  "/images/work/faux-flora-shopify/collection-a8a216cf30cd.webp": {
+    "width": 2400,
+    "height": 1800
+  },
+  "/images/work/faux-flora-shopify/collection-af4b6e0ceb6d.webp": {
+    "width": 1200,
+    "height": 1200
+  },
+  "/images/work/faux-flora-shopify/collection-b21eeac8e30e.webp": {
+    "width": 2400,
+    "height": 1800
+  },
+  "/images/work/faux-flora-shopify/collection-b6324fb59b70.webp": {
+    "width": 2400,
+    "height": 1800
+  },
+  "/images/work/faux-flora-shopify/collection-b89949248d4a.webp": {
+    "width": 2400,
+    "height": 1800
+  },
+  "/images/work/faux-flora-shopify/collection-beee3a39597e.webp": {
+    "width": 1024,
+    "height": 1024
+  },
+  "/images/work/faux-flora-shopify/collection-d038427e9e9a.webp": {
+    "width": 2400,
+    "height": 4948
+  },
+  "/images/work/faux-flora-shopify/collection-dae0f0b947b9.webp": {
+    "width": 2048,
+    "height": 2732
+  },
+  "/images/work/faux-flora-shopify/collection-e1f4136a7e1e.webp": {
+    "width": 2400,
+    "height": 1800
+  },
+  "/images/work/faux-flora-shopify/collection-e70583b0bfe5.webp": {
+    "width": 1052,
+    "height": 1380
+  },
+  "/images/work/faux-flora-shopify/collection-ec14251287f5.webp": {
+    "width": 1024,
+    "height": 2467
+  },
+  "/images/work/faux-flora-shopify/collection-ec236fd2a886.webp": {
+    "width": 2400,
+    "height": 1602
+  },
+  "/images/work/faux-flora-shopify/collection-f9188c49c950.webp": {
+    "width": 1024,
+    "height": 5265
+  },
+  "/images/work/faux-flora-shopify/collection-fbbdea6a0c6e.webp": {
+    "width": 726,
+    "height": 1238
+  },
+  "/images/work/faux-flora-shopify/collection-fef923749d51.webp": {
+    "width": 1026,
+    "height": 1374
   },
   "/images/work/faux-flora-shopify/cover.jpg": {
     "width": 1400,
@@ -486,6 +1055,50 @@
   "/images/work/faux-flora-shopify/gallery-3.jpg": {
     "width": 1400,
     "height": 1050
+  },
+  "/images/work/faux-flora-shopify/october-109.webp": {
+    "width": 1280,
+    "height": 1280
+  },
+  "/images/work/faux-flora-shopify/october-111.webp": {
+    "width": 1024,
+    "height": 1623
+  },
+  "/images/work/faux-flora-shopify/october-60.webp": {
+    "width": 2560,
+    "height": 1920
+  },
+  "/images/work/faux-flora-shopify/october-61.webp": {
+    "width": 2560,
+    "height": 1792
+  },
+  "/images/work/faux-flora-shopify/october-66.webp": {
+    "width": 2560,
+    "height": 1707
+  },
+  "/images/work/faux-flora-shopify/october-67.webp": {
+    "width": 2560,
+    "height": 1707
+  },
+  "/images/work/faux-flora-shopify/october-68.webp": {
+    "width": 800,
+    "height": 534
+  },
+  "/images/work/faux-flora-shopify/october-69.webp": {
+    "width": 2560,
+    "height": 1709
+  },
+  "/images/work/faux-flora-shopify/october-71.webp": {
+    "width": 2560,
+    "height": 1792
+  },
+  "/images/work/faux-flora-shopify/october-72.webp": {
+    "width": 2560,
+    "height": 1792
+  },
+  "/images/work/faux-flora-shopify/october-76.webp": {
+    "width": 2560,
+    "height": 1707
   },
   "/images/work/faux-flora-shopify/portfolio-01.jpg": {
     "width": 1080,
@@ -507,13 +1120,101 @@
     "width": 1080,
     "height": 1080
   },
+  "/images/work/freelance-brand-identities/collection-7a098a023732.webp": {
+    "width": 2400,
+    "height": 2148
+  },
+  "/images/work/freelance-brand-identities/collection-dfae7ad8e3f1.webp": {
+    "width": 2400,
+    "height": 1973
+  },
+  "/images/work/freelance-brand-identities/october-14.webp": {
+    "width": 500,
+    "height": 500
+  },
+  "/images/work/freelance-brand-identities/october-2.webp": {
+    "width": 2560,
+    "height": 1920
+  },
+  "/images/work/freelance-brand-identities/october-37.webp": {
+    "width": 2560,
+    "height": 2291
+  },
+  "/images/work/freelance-brand-identities/october-38.webp": {
+    "width": 800,
+    "height": 650
+  },
   "/images/work/joseph-business-school/ai-programme-launch.jpg": {
+    "width": 2048,
+    "height": 1365
+  },
+  "/images/work/joseph-business-school/collection-0d696cde9f2f.webp": {
+    "width": 1920,
+    "height": 1080
+  },
+  "/images/work/joseph-business-school/collection-1952e30f51bb.webp": {
+    "width": 2400,
+    "height": 571
+  },
+  "/images/work/joseph-business-school/collection-1d980ae6ad8b.webp": {
+    "width": 2400,
+    "height": 1600
+  },
+  "/images/work/joseph-business-school/collection-2c6d83d48590.webp": {
+    "width": 1440,
+    "height": 1440
+  },
+  "/images/work/joseph-business-school/collection-3a631e6f0a58.webp": {
+    "width": 1600,
+    "height": 1067
+  },
+  "/images/work/joseph-business-school/collection-4c22413c36bb.webp": {
+    "width": 1600,
+    "height": 1067
+  },
+  "/images/work/joseph-business-school/collection-7a9f416811c4.webp": {
+    "width": 1280,
+    "height": 1600
+  },
+  "/images/work/joseph-business-school/collection-978ba999e192.webp": {
+    "width": 1440,
+    "height": 1440
+  },
+  "/images/work/joseph-business-school/collection-ad04839fb021.webp": {
+    "width": 2048,
+    "height": 1365
+  },
+  "/images/work/joseph-business-school/collection-aee0cd7d35c3.webp": {
+    "width": 500,
+    "height": 100
+  },
+  "/images/work/joseph-business-school/collection-bb8f2b1a51e7.webp": {
+    "width": 2048,
+    "height": 1365
+  },
+  "/images/work/joseph-business-school/collection-c05572f0ddb4.webp": {
+    "width": 1065,
+    "height": 710
+  },
+  "/images/work/joseph-business-school/collection-ca0d560817b2.webp": {
+    "width": 2048,
+    "height": 2048
+  },
+  "/images/work/joseph-business-school/collection-d53555c77350.webp": {
+    "width": 2400,
+    "height": 1600
+  },
+  "/images/work/joseph-business-school/collection-f383edb89f38.webp": {
     "width": 2048,
     "height": 1365
   },
   "/images/work/joseph-business-school/conference-room.jpg": {
     "width": 2048,
     "height": 1365
+  },
+  "/images/work/joseph-business-school/conference-schedule.webp": {
+    "width": 1500,
+    "height": 2100
   },
   "/images/work/joseph-business-school/corporate-presentation.jpg": {
     "width": 1800,
@@ -526,6 +1227,10 @@
   "/images/work/joseph-business-school/dominion-magazine.jpg": {
     "width": 1272,
     "height": 1800
+  },
+  "/images/work/joseph-business-school/editorial-spread-mockup.webp": {
+    "width": 2400,
+    "height": 1600
   },
   "/images/work/joseph-business-school/expanded-01.jpeg": {
     "width": 1920,
@@ -563,6 +1268,10 @@
     "width": 1638,
     "height": 2048
   },
+  "/images/work/joseph-business-school/fourth-dimension-graphic.webp": {
+    "width": 1920,
+    "height": 1080
+  },
   "/images/work/joseph-business-school/gallery-home.jpg": {
     "width": 1440,
     "height": 900
@@ -575,6 +1284,66 @@
     "width": 2048,
     "height": 1365
   },
+  "/images/work/joseph-business-school/october-143.webp": {
+    "width": 2560,
+    "height": 1708
+  },
+  "/images/work/joseph-business-school/october-144.webp": {
+    "width": 2134,
+    "height": 3200
+  },
+  "/images/work/joseph-business-school/october-145.webp": {
+    "width": 2560,
+    "height": 1708
+  },
+  "/images/work/joseph-business-school/october-146.webp": {
+    "width": 2560,
+    "height": 1707
+  },
+  "/images/work/joseph-business-school/october-147.webp": {
+    "width": 2560,
+    "height": 1707
+  },
+  "/images/work/joseph-business-school/october-148.webp": {
+    "width": 2560,
+    "height": 1440
+  },
+  "/images/work/joseph-business-school/october-151.webp": {
+    "width": 1440,
+    "height": 1440
+  },
+  "/images/work/joseph-business-school/october-153.webp": {
+    "width": 2560,
+    "height": 2560
+  },
+  "/images/work/joseph-business-school/october-154.webp": {
+    "width": 2560,
+    "height": 2560
+  },
+  "/images/work/joseph-business-school/october-155.webp": {
+    "width": 2560,
+    "height": 2560
+  },
+  "/images/work/joseph-business-school/october-156.webp": {
+    "width": 2560,
+    "height": 1707
+  },
+  "/images/work/joseph-business-school/october-159.webp": {
+    "width": 1080,
+    "height": 1080
+  },
+  "/images/work/joseph-business-school/october-160.webp": {
+    "width": 2025,
+    "height": 2025
+  },
+  "/images/work/joseph-business-school/october-161.webp": {
+    "width": 1080,
+    "height": 1080
+  },
+  "/images/work/joseph-business-school/production-4111.webp": {
+    "width": 2400,
+    "height": 1600
+  },
   "/images/work/joseph-business-school/quarterly-january-2025.jpg": {
     "width": 1272,
     "height": 1800
@@ -586,6 +1355,66 @@
   "/images/work/joseph-business-school/training-room.jpg": {
     "width": 2048,
     "height": 1365
+  },
+  "/images/work/living-from-the-inside-out/collection-10b6fff823cf.webp": {
+    "width": 1025,
+    "height": 1025
+  },
+  "/images/work/living-from-the-inside-out/collection-29e28022a071.webp": {
+    "width": 2400,
+    "height": 3938
+  },
+  "/images/work/living-from-the-inside-out/collection-33f3a274bdfc.webp": {
+    "width": 1456,
+    "height": 816
+  },
+  "/images/work/living-from-the-inside-out/collection-36d69328a3e3.webp": {
+    "width": 2400,
+    "height": 5947
+  },
+  "/images/work/living-from-the-inside-out/collection-4df0657c99a0.webp": {
+    "width": 600,
+    "height": 171
+  },
+  "/images/work/living-from-the-inside-out/collection-654dde07a3a0.webp": {
+    "width": 1921,
+    "height": 692
+  },
+  "/images/work/living-from-the-inside-out/collection-767af137ec63.webp": {
+    "width": 2400,
+    "height": 5978
+  },
+  "/images/work/living-from-the-inside-out/collection-833f7290d67c.webp": {
+    "width": 2400,
+    "height": 6938
+  },
+  "/images/work/living-from-the-inside-out/collection-9021e4666fa8.webp": {
+    "width": 552,
+    "height": 1024
+  },
+  "/images/work/living-from-the-inside-out/collection-966d6f35b22e.webp": {
+    "width": 1280,
+    "height": 4319
+  },
+  "/images/work/living-from-the-inside-out/collection-d1feb056c497.webp": {
+    "width": 2400,
+    "height": 7398
+  },
+  "/images/work/living-from-the-inside-out/october-173.webp": {
+    "width": 2048,
+    "height": 2048
+  },
+  "/images/work/living-from-the-inside-out/october-174.webp": {
+    "width": 2048,
+    "height": 2048
+  },
+  "/images/work/living-from-the-inside-out/october-175.webp": {
+    "width": 2048,
+    "height": 2048
+  },
+  "/images/work/living-from-the-inside-out/october-176.webp": {
+    "width": 2048,
+    "height": 2048
   },
   "/images/work/living-from-the-inside-out/portfolio-01.png": {
     "width": 2659,
@@ -611,6 +1440,218 @@
     "width": 1080,
     "height": 1080
   },
+  "/images/work/mentor-genesis/collection-002fa59e949b.webp": {
+    "width": 1004,
+    "height": 590
+  },
+  "/images/work/mentor-genesis/collection-0437ac8f288e.webp": {
+    "width": 2400,
+    "height": 2400
+  },
+  "/images/work/mentor-genesis/collection-0e37b01f5ab3.gif": {
+    "width": 800,
+    "height": 400
+  },
+  "/images/work/mentor-genesis/collection-0f5227ed30fa.webp": {
+    "width": 600,
+    "height": 300
+  },
+  "/images/work/mentor-genesis/collection-15b69314ac11.webp": {
+    "width": 2400,
+    "height": 2400
+  },
+  "/images/work/mentor-genesis/collection-16a7a17a181d.webp": {
+    "width": 2400,
+    "height": 2400
+  },
+  "/images/work/mentor-genesis/collection-1ef041c92075.webp": {
+    "width": 1667,
+    "height": 834
+  },
+  "/images/work/mentor-genesis/collection-22dae3a45a6c.gif": {
+    "width": 1000,
+    "height": 500
+  },
+  "/images/work/mentor-genesis/collection-2a4ac558b83a.webp": {
+    "width": 2400,
+    "height": 2400
+  },
+  "/images/work/mentor-genesis/collection-3048a620a36f.webp": {
+    "width": 600,
+    "height": 300
+  },
+  "/images/work/mentor-genesis/collection-3088e5a23cd0.webp": {
+    "width": 1112,
+    "height": 556
+  },
+  "/images/work/mentor-genesis/collection-30d11d8f83eb.webp": {
+    "width": 556,
+    "height": 278
+  },
+  "/images/work/mentor-genesis/collection-4fd3934977eb.webp": {
+    "width": 2400,
+    "height": 2400
+  },
+  "/images/work/mentor-genesis/collection-573f50fbbf81.webp": {
+    "width": 2400,
+    "height": 2400
+  },
+  "/images/work/mentor-genesis/collection-5b747b35ef8c.webp": {
+    "width": 2400,
+    "height": 1200
+  },
+  "/images/work/mentor-genesis/collection-5f0475d6c9d3.webp": {
+    "width": 1667,
+    "height": 834
+  },
+  "/images/work/mentor-genesis/collection-66b5df1abd28.webp": {
+    "width": 2400,
+    "height": 2400
+  },
+  "/images/work/mentor-genesis/collection-66b91cf448da.webp": {
+    "width": 450,
+    "height": 225
+  },
+  "/images/work/mentor-genesis/collection-66c25f951ab7.webp": {
+    "width": 600,
+    "height": 300
+  },
+  "/images/work/mentor-genesis/collection-68b7a042f064.webp": {
+    "width": 1667,
+    "height": 834
+  },
+  "/images/work/mentor-genesis/collection-69b3bc09817a.webp": {
+    "width": 450,
+    "height": 225
+  },
+  "/images/work/mentor-genesis/collection-8d7d81508b57.webp": {
+    "width": 2400,
+    "height": 2400
+  },
+  "/images/work/mentor-genesis/collection-9c6f67f47add.webp": {
+    "width": 600,
+    "height": 300
+  },
+  "/images/work/mentor-genesis/collection-9e321ab17386.webp": {
+    "width": 2400,
+    "height": 2400
+  },
+  "/images/work/mentor-genesis/collection-f8c9b6b74047.webp": {
+    "width": 2400,
+    "height": 2400
+  },
+  "/images/work/mentor-genesis/identity-vector-1.svg": {
+    "width": 842,
+    "height": 195
+  },
+  "/images/work/mentor-genesis/identity-vector-2.svg": {
+    "width": 968,
+    "height": 560
+  },
+  "/images/work/mentor-genesis/identity-vector-3.svg": {
+    "width": 689,
+    "height": 539
+  },
+  "/images/work/mentor-genesis/identity-vector-4.svg": {
+    "width": 842,
+    "height": 195
+  },
+  "/images/work/mentor-genesis/identity-vector-5.svg": {
+    "width": 842,
+    "height": 256,
+    "background": "dark"
+  },
+  "/images/work/mentor-genesis/identity-vector-6.svg": {
+    "width": 968,
+    "height": 560,
+    "background": "dark"
+  },
+  "/images/work/mentor-genesis/identity-vector-7.svg": {
+    "width": 689,
+    "height": 539,
+    "background": "dark"
+  },
+  "/images/work/mentor-genesis/identity-vector-8.svg": {
+    "width": 842,
+    "height": 195,
+    "background": "dark"
+  },
+  "/images/work/mentor-genesis/identity-vector-9.svg": {
+    "width": 400,
+    "height": 200
+  },
+  "/images/work/mentor-genesis/october-1.webp": {
+    "width": 1004,
+    "height": 590
+  },
+  "/images/work/mentor-genesis/october-15.webp": {
+    "width": 2560,
+    "height": 2560
+  },
+  "/images/work/mentor-genesis/october-17.webp": {
+    "width": 2560,
+    "height": 2560
+  },
+  "/images/work/mentor-genesis/october-31.webp": {
+    "width": 2560,
+    "height": 2560
+  },
+  "/images/work/mentor-genesis/october-32.webp": {
+    "width": 2560,
+    "height": 2560
+  },
+  "/images/work/mentor-genesis/october-33.webp": {
+    "width": 2560,
+    "height": 2560
+  },
+  "/images/work/mentor-genesis/october-34.webp": {
+    "width": 2560,
+    "height": 2560
+  },
+  "/images/work/olive-tree-creative/collection-03bdb835f672.webp": {
+    "width": 2048,
+    "height": 2048
+  },
+  "/images/work/olive-tree-creative/collection-0d544f07d33d.webp": {
+    "width": 2048,
+    "height": 2048
+  },
+  "/images/work/olive-tree-creative/collection-1f80073dd301.webp": {
+    "width": 1638,
+    "height": 2048
+  },
+  "/images/work/olive-tree-creative/collection-3183cf2fa1ec.webp": {
+    "width": 1080,
+    "height": 1080
+  },
+  "/images/work/olive-tree-creative/collection-383a6c60b02a.webp": {
+    "width": 2048,
+    "height": 2048
+  },
+  "/images/work/olive-tree-creative/collection-6e46fd9f1911.webp": {
+    "width": 1080,
+    "height": 1080
+  },
+  "/images/work/olive-tree-creative/collection-731fc0a42f6d.webp": {
+    "width": 2048,
+    "height": 2048
+  },
+  "/images/work/olive-tree-creative/collection-854257db4840.webp": {
+    "width": 1080,
+    "height": 1080
+  },
+  "/images/work/olive-tree-creative/collection-b4e798a66d84.webp": {
+    "width": 1638,
+    "height": 2048
+  },
+  "/images/work/olive-tree-creative/collection-d4987f420b7b.webp": {
+    "width": 2048,
+    "height": 2048
+  },
+  "/images/work/olive-tree-creative/collection-f34becab624f.webp": {
+    "width": 1080,
+    "height": 1350
+  },
   "/images/work/olive-tree-creative/portfolio-01.jpg": {
     "width": 1638,
     "height": 2048
@@ -634,6 +1675,26 @@
   "/images/work/olive-tree-creative/portfolio-06.jpg": {
     "width": 1080,
     "height": 1080
+  },
+  "/images/work/retail-production-dtp/botanical-cracker-mockup.webp": {
+    "width": 2400,
+    "height": 1600
+  },
+  "/images/work/retail-production-dtp/botanical-pack-mockup.webp": {
+    "width": 2400,
+    "height": 1600
+  },
+  "/images/work/retail-production-dtp/collection-3d05c03ae4fa.webp": {
+    "width": 2400,
+    "height": 2983
+  },
+  "/images/work/retail-production-dtp/collection-9fbecea30b92.webp": {
+    "width": 515,
+    "height": 515
+  },
+  "/images/work/retail-production-dtp/collection-fad6b279b41d.webp": {
+    "width": 2400,
+    "height": 1600
   },
   "/images/work/retail-production-dtp/cover.png": {
     "width": 1829,
@@ -703,9 +1764,61 @@
     "width": 1280,
     "height": 1280
   },
+  "/images/work/solid-doors/collection-1fe9159a2905.webp": {
+    "width": 1983,
+    "height": 793
+  },
+  "/images/work/solid-doors/collection-481efed82b3c.webp": {
+    "width": 739,
+    "height": 327
+  },
+  "/images/work/solid-doors/collection-5d02ba6dbc3e.webp": {
+    "width": 1727,
+    "height": 911
+  },
+  "/images/work/solid-doors/collection-80e837bd6446.webp": {
+    "width": 2055,
+    "height": 762
+  },
+  "/images/work/solid-doors/collection-c0dd42c7570c.webp": {
+    "width": 2048,
+    "height": 2048
+  },
   "/images/work/solid-doors/expanded-55.png": {
     "width": 1536,
     "height": 1024
+  },
+  "/images/work/solid-doors/october-228.webp": {
+    "width": 2560,
+    "height": 579
+  },
+  "/images/work/solid-doors/october-230.webp": {
+    "width": 2048,
+    "height": 2048
+  },
+  "/images/work/solid-doors/october-231.webp": {
+    "width": 2048,
+    "height": 2048
+  },
+  "/images/work/solid-doors/october-232.webp": {
+    "width": 2048,
+    "height": 2048
+  },
+  "/images/work/solid-doors/october-233.webp": {
+    "width": 2048,
+    "height": 2048
+  },
+  "/images/work/solid-doors/october-235.webp": {
+    "width": 2048,
+    "height": 1974
+  },
+  "/images/work/solid-doors/october-236.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/images/work/solid-doors/october-237.webp": {
+    "width": 1080,
+    "height": 1350
   },
   "/images/work/solid-doors/portfolio-01.jpg": {
     "width": 2048,
@@ -730,6 +1843,22 @@
   "/images/work/solid-doors/portfolio-06.jpg": {
     "width": 2048,
     "height": 2048
+  },
+  "/images/work/sun-paper-and-coatings/collection-00a835a20050.webp": {
+    "width": 1000,
+    "height": 1000
+  },
+  "/images/work/sun-paper-and-coatings/collection-18a6c0bc2c41.webp": {
+    "width": 2400,
+    "height": 1309
+  },
+  "/images/work/sun-paper-and-coatings/collection-bc5720d63865.webp": {
+    "width": 400,
+    "height": 200
+  },
+  "/images/work/sun-paper-and-coatings/collection-d8f8c86422eb.webp": {
+    "width": 2400,
+    "height": 1309
   },
   "/images/work/sun-paper/container.jpg": {
     "width": 1536,
@@ -763,6 +1892,102 @@
     "width": 1360,
     "height": 1024
   },
+  "/images/work/sustainability-identity/collection-0231cad75cd8.webp": {
+    "width": 2400,
+    "height": 1440
+  },
+  "/images/work/sustainability-identity/collection-0cb30a65e308.webp": {
+    "width": 2400,
+    "height": 1553
+  },
+  "/images/work/sustainability-identity/collection-5e4fff5a9a0a.webp": {
+    "width": 1920,
+    "height": 1079
+  },
+  "/images/work/sustainability-identity/collection-6b5b4238e8d9.webp": {
+    "width": 2400,
+    "height": 1589
+  },
+  "/images/work/sustainability-identity/collection-798444355c26.webp": {
+    "width": 1500,
+    "height": 2532
+  },
+  "/images/work/sustainability-identity/collection-7ec915fe9ecb.webp": {
+    "width": 1920,
+    "height": 1242
+  },
+  "/images/work/sustainability-identity/collection-7f423046e009.webp": {
+    "width": 2400,
+    "height": 1680
+  },
+  "/images/work/sustainability-identity/collection-90757d6b3b62.webp": {
+    "width": 1920,
+    "height": 1079
+  },
+  "/images/work/sustainability-identity/collection-92505c03273c.webp": {
+    "width": 2400,
+    "height": 2400
+  },
+  "/images/work/sustainability-identity/collection-9719caf7aa12.webp": {
+    "width": 1920,
+    "height": 1080
+  },
+  "/images/work/sustainability-identity/collection-a8153ea47695.webp": {
+    "width": 2400,
+    "height": 1680
+  },
+  "/images/work/sustainability-identity/collection-b0089135aa9e.webp": {
+    "width": 1770,
+    "height": 2532
+  },
+  "/images/work/sustainability-identity/collection-c74fced0ae05.webp": {
+    "width": 2400,
+    "height": 1589
+  },
+  "/images/work/sustainability-identity/collection-c9491727a91e.webp": {
+    "width": 1920,
+    "height": 1152
+  },
+  "/images/work/sustainability-identity/collection-cb59d3b47b1c.webp": {
+    "width": 2400,
+    "height": 1440
+  },
+  "/images/work/sustainability-identity/collection-cbe50c32cd34.webp": {
+    "width": 2400,
+    "height": 1440
+  },
+  "/images/work/sustainability-identity/collection-ccccd76687a9.webp": {
+    "width": 1920,
+    "height": 1152
+  },
+  "/images/work/sustainability-identity/collection-cdad731ea2eb.webp": {
+    "width": 1920,
+    "height": 1079
+  },
+  "/images/work/sustainability-identity/collection-d12e1ec9a469.webp": {
+    "width": 1920,
+    "height": 1281
+  },
+  "/images/work/sustainability-identity/collection-d8dd3cc0d6d9.webp": {
+    "width": 1920,
+    "height": 1309
+  },
+  "/images/work/sustainability-identity/collection-dc5d8a1ba277.webp": {
+    "width": 1920,
+    "height": 1079
+  },
+  "/images/work/sustainability-identity/collection-e87acd5938ce.webp": {
+    "width": 2400,
+    "height": 1600
+  },
+  "/images/work/sustainability-identity/collection-efa2c7d01ef1.webp": {
+    "width": 2400,
+    "height": 2400
+  },
+  "/images/work/sustainability-identity/collection-fbd448e0f915.webp": {
+    "width": 1920,
+    "height": 1080
+  },
   "/images/work/sustainability-identity/cover.jpg": {
     "width": 1400,
     "height": 787
@@ -770,5 +1995,41 @@
   "/images/work/sustainability-identity/gallery-1.jpg": {
     "width": 1400,
     "height": 787
+  },
+  "/images/work/sustainability-identity/october-40.webp": {
+    "width": 2500,
+    "height": 1705
+  },
+  "/images/work/sustainability-identity/october-43.webp": {
+    "width": 2560,
+    "height": 1656
+  },
+  "/images/work/sustainability-identity/october-44.webp": {
+    "width": 2560,
+    "height": 1709
+  },
+  "/images/work/sustainability-identity/october-47.webp": {
+    "width": 2560,
+    "height": 1707
+  },
+  "/images/work/sustainability-identity/october-49.webp": {
+    "width": 2560,
+    "height": 1440
+  },
+  "/images/work/sustainability-identity/october-51.webp": {
+    "width": 2560,
+    "height": 1792
+  },
+  "/images/work/sustainability-identity/october-54.webp": {
+    "width": 2560,
+    "height": 1709
+  },
+  "/images/work/sustainability-identity/october-81.webp": {
+    "width": 1920,
+    "height": 1079
+  },
+  "/images/work/sustainability-identity/october-98.webp": {
+    "width": 1920,
+    "height": 1079
   }
 }
