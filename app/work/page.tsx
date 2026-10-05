@@ -33,6 +33,7 @@ export default function WorkPage() {
             {projects.length} projects across marketing, web, brand and systems. Filter by discipline, then dive into the <span className="text-mark">evidence behind each result.</span>
           </p>
         </Reveal>
+        <a href="#freelance" className="inline-flex mt-6 rounded-full border border-outline-variant px-5 py-3 text-label-l text-primary">Explore freelance graphic & web design ↓</a>
         <div className="mt-7 rounded-2xl border border-outline-variant bg-surface-container-low p-5">
           <p className="text-label-l text-on-surface">Browse the full PDFs</p>
           <div className="mt-3 flex flex-wrap gap-3">
