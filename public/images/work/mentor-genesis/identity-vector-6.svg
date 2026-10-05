@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 967.61 560.16">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3 {
+        font-family: ACaslonPro-Italic, 'Adobe Caslon Pro';
+        font-style: italic;
+      }
+
+      .cls-4, .cls-5 {
+        font-family: Montserrat-Black, Montserrat;
+        font-weight: 800;
+      }
+
+      .cls-6 {
+        letter-spacing: .15em;
+      }
+
+      .cls-7 {
+        letter-spacing: .16em;
+      }
+
+      .cls-8 {
+        font-family: Montserrat-Regular, Montserrat;
+        font-size: 36.82px;
+      }
+
+      .cls-8, .cls-9, .cls-10 {
+        fill: #fff;
+      }
+
+      .cls-9 {
+        font-size: 77.97px;
+      }
+
+      .cls-5, .cls-2 {
+        letter-spacing: 0em;
+      }
+
+      .cls-10 {
+        stroke-width: 0px;
+      }
+
+      .cls-3 {
+        letter-spacing: 0em;
+      }
+
+      .cls-11 {
+        letter-spacing: .15em;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g>
+      <g>
+        <path class="cls-10" d="M218.79,359.27h0c-32.63-16.31-45.85-55.99-29.54-88.62l117.06-234.12c16.31-32.63,55.99-45.85,88.61-29.54h0c32.63,16.31,45.85,55.99,29.54,88.62l-117.06,234.12c-16.31,32.63-55.99,45.85-88.61,29.54Z"/>
+        <path class="cls-10" d="M427.95,359.27h0c-32.63-16.31-45.85-55.99-29.54-88.62l117.06-234.12c16.31-32.63,55.99-45.85,88.61-29.54h0c32.63,16.31,45.85,55.99,29.54,88.62l-117.06,234.12c-16.31,32.63-55.99,45.85-88.61,29.54Z"/>
+        <circle class="cls-10" cx="703.17" cy="271.2" r="88.07"/>
+      </g>
+      <text class="cls-9" transform="translate(143.36 484.18)"><tspan class="cls-4" x="0" y="0">MEN</tspan><tspan class="cls-5" x="189.55" y="0">T</tspan><tspan class="cls-4" x="239.77" y="0">OR</tspan><tspan class="cls-1" x="363.98" y="0">G</tspan><tspan class="cls-3" x="419.26" y="0">E</tspan><tspan class="cls-1" x="470.64" y="0">N</tspan><tspan class="cls-2" x="528.81" y="0">E</tspan><tspan class="cls-1" x="580.19" y="0">SIS</tspan></text>
+      <text class="cls-8" transform="translate(0 550.51)"><tspan class="cls-7" x="0" y="0">MEN</tspan><tspan class="cls-11" x="107.41" y="0">T</tspan><tspan class="cls-7" x="134.06" y="0">ORSHIP </tspan><tspan class="cls-6" x="332.6" y="0">F</tspan><tspan class="cls-7" x="361.47" y="0">OR THE MODERN LEADER</tspan></text>
+    </g>
+  </g>
+</svg>

@@ -4,18 +4,19 @@ import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import { fmTransition } from "@/lib/motion-tokens";
 
-export function ProjectMiniNav({ hasGallery, hasProof, hasDocuments }: { hasGallery: boolean; hasProof?: boolean; hasDocuments?: boolean }) {
+export function ProjectMiniNav({ hasGallery, hasProof, hasDocuments, hasVideos }: { hasGallery: boolean; hasProof?: boolean; hasDocuments?: boolean; hasVideos?: boolean }) {
   const items = [
     { id: "overview", label: "Overview" },
     ...(hasDocuments ? [{ id: "documents", label: "PDFs" }] : []),
     ...(hasProof ? [{ id: "proof-media", label: "Media proof" }] : []),
+    ...(hasVideos ? [{ id: "video-portfolio", label: "Videos" }] : []),
     ...(hasGallery ? [{ id: "gallery", label: "Gallery" }] : []),
     { id: "stack", label: "Stack" },
   ];
   const [active, setActive] = useState(items[0].id);
 
   useEffect(() => {
-    const ids = ["overview", ...(hasDocuments ? ["documents"] : []), ...(hasProof ? ["proof-media"] : []), ...(hasGallery ? ["gallery"] : []), "stack"];
+    const ids = ["overview", ...(hasDocuments ? ["documents"] : []), ...(hasProof ? ["proof-media"] : []), ...(hasVideos ? ["video-portfolio"] : []), ...(hasGallery ? ["gallery"] : []), "stack"];
     let frame = 0;
     const update = () => {
       frame = 0;
@@ -37,7 +38,7 @@ export function ProjectMiniNav({ hasGallery, hasProof, hasDocuments }: { hasGall
       if (frame) window.cancelAnimationFrame(frame);
       window.removeEventListener("scroll", onScroll);
     };
-  }, [hasGallery, hasProof, hasDocuments]);
+  }, [hasGallery, hasProof, hasDocuments, hasVideos]);
 
   const go = (id: string) => {
     const el = document.getElementById(id);

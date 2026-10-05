@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 689.14 538.76">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 77.97px;
+      }
+
+      .cls-1, .cls-2 {
+        fill: #000;
+      }
+
+      .cls-3, .cls-4, .cls-5 {
+        font-family: ACaslonPro-Italic, 'Adobe Caslon Pro';
+        font-style: italic;
+      }
+
+      .cls-2 {
+        stroke-width: 0px;
+      }
+
+      .cls-6, .cls-7 {
+        font-family: Montserrat-Black, Montserrat;
+        font-weight: 800;
+      }
+
+      .cls-7, .cls-4 {
+        letter-spacing: 0em;
+      }
+
+      .cls-5 {
+        letter-spacing: 0em;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g>
+      <g>
+        <path class="cls-2" d="M75.43,359.27h0c-32.63-16.31-45.85-55.99-29.54-88.62L162.95,36.53C179.27,3.9,218.94-9.33,251.57,6.99h0c32.63,16.31,45.85,55.99,29.54,88.62l-117.06,234.12c-16.31,32.63-55.99,45.85-88.61,29.54Z"/>
+        <path class="cls-2" d="M284.6,359.27h0c-32.63-16.31-45.85-55.99-29.54-88.62l117.06-234.12c16.31-32.63,55.99-45.85,88.61-29.54h0c32.63,16.31,45.85,55.99,29.54,88.62l-117.06,234.12c-16.31,32.63-55.99,45.85-88.61,29.54Z"/>
+        <circle class="cls-2" cx="559.81" cy="271.2" r="88.07"/>
+      </g>
+      <text class="cls-1" transform="translate(0 484.18)"><tspan class="cls-6" x="0" y="0">MEN</tspan><tspan class="cls-7" x="189.55" y="0">T</tspan><tspan class="cls-6" x="239.77" y="0">OR</tspan><tspan class="cls-3" x="363.98" y="0">G</tspan><tspan class="cls-5" x="419.26" y="0">E</tspan><tspan class="cls-3" x="470.64" y="0">N</tspan><tspan class="cls-4" x="528.81" y="0">E</tspan><tspan class="cls-3" x="580.19" y="0">SIS</tspan></text>
+    </g>
+  </g>
+</svg>

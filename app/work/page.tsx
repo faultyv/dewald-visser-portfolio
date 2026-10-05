@@ -37,7 +37,7 @@ export default function WorkPage() {
           <p className="text-label-l text-on-surface">Browse the full PDFs</p>
           <div className="mt-3 flex flex-wrap gap-3">
             {projects.filter((project) => project.documents?.length).map((project) => (
-              <a key={project.slug} href={`/work/${project.slug}#documents`} className="rounded-full border border-outline-variant px-4 py-2 text-label-m text-primary">{project.title} · {project.documents!.length} PDF{project.documents!.length > 1 ? "s" : ""} ↗</a>
+              <a key={project.slug} href={`/work/${project.slug}#documents`} className="rounded-full border border-outline-variant px-4 py-2 text-label-m text-primary">{project.title} · {project.documents!.length} publication{project.documents!.length > 1 ? "s" : ""} ↗</a>
             ))}
           </div>
         </div>

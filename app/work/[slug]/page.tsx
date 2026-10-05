@@ -6,6 +6,7 @@ import { ProjectHeroMedia } from "@/components/ProjectHeroMedia";
 import { ProjectMiniNav } from "@/components/ProjectMiniNav";
 import { ProjectGallery } from "@/components/ProjectGallery";
 import { ProjectDocuments } from "@/components/ProjectDocuments";
+import { ProjectVideoCollection } from "@/components/ProjectVideoCollection";
 import { ProjectVideo } from "@/components/ProjectVideo";
 import { ProjectProofLinks } from "@/components/ProjectProofLinks";
 import { ProjectPager } from "@/components/ProjectPager";
@@ -113,8 +114,12 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             {project.outcome}
           </p>
 
+          <div className="mb-6 flex flex-wrap gap-3">
+            {!!gallery.length && <a href="#gallery" className="inline-flex rounded-full bg-primary px-5 py-3 text-label-l text-on-primary">Explore {gallery.length} artworks ↓</a>}
+            {!!project.documents?.length && <a href="#documents" className="inline-flex rounded-full border border-outline-variant px-5 py-3 text-label-l text-primary">View {project.documents.length} publication{project.documents.length > 1 ? "s" : ""} ↓</a>}
+            {!!project.videos?.length && <a href="#video-portfolio" className="inline-flex rounded-full border border-outline-variant px-5 py-3 text-label-l text-primary">Watch {project.videos.length} videos ↓</a>}
+          </div>
           {project.links && <ExternalLinks links={project.links} seed={project.seed} />}
-          {!!project.documents?.length && <a href="#documents" className="mt-4 inline-flex rounded-full border border-outline-variant px-5 py-3 text-label-l text-primary">View {project.documents.length} portfolio PDFs ↓</a>}
         </Reveal>
 
         {project.metrics.length > 0 && (
@@ -150,13 +155,10 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         )}
       </article>
 
-      <div id="overview" className="mx-auto max-w-[1140px] px-5 md:px-14">
-        <ProjectMiniNav hasGallery={gallery.length > 0} hasProof={proofLinks.length > 0} hasDocuments={!!project.documents?.length} />
-      </div>
-
       <article className="relative mx-auto max-w-[1140px] px-5 md:px-14">
+        <ProjectMiniNav hasGallery={gallery.length > 0} hasProof={proofLinks.length > 0} hasDocuments={!!project.documents?.length} hasVideos={!!project.videos?.length} />
         <Reveal>
-          <div className="mb-12">{content}</div>
+          <div id="overview" className="mb-12 scroll-mt-28">{content}</div>
         </Reveal>
         {!!project.documents?.length && <ProjectDocuments documents={project.documents} />}
 
@@ -170,6 +172,8 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           </div>
         )}
 
+        {!!project.videos?.length && <ProjectVideoCollection videos={project.videos} />}
+
         {gallery.length > 0 && (
           <div id="gallery" className="scroll-mt-24">
             <div className="mb-4 text-label-l text-on-surface-variant">Gallery</div>
@@ -180,7 +184,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         {project.video && (
           <Reveal>
             <div className="text-label-l text-on-surface-variant mb-4">Video</div>
-            <ProjectVideo url={project.video} title={project.title} />
+            <ProjectVideo url={project.video} title={project.title} poster={project.cover ?? undefined} />
           </Reveal>
         )}
 

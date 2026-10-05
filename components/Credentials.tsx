@@ -9,7 +9,7 @@ export function Credentials({ certs, site }: { certs: CertsData; site: SiteConfi
   const verifiedCount = certs.featured.filter((cert) => cert.verify).length;
   const trustSignals = [
     { label: "Verified links", value: `${verifiedCount}/${certs.featured.length}` },
-    { label: "Issued record", value: "Canva · Saylor · HP LIFE · Coursera · Google · HubSpot" },
+    { label: "Issued record", value: "Canva · Saylor · HP LIFE · Coursera · Google · HubSpot · Cursa" },
     { label: "Extra proof", value: `${certs.additional.length} additional certificates` },
   ];
 

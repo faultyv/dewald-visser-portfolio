@@ -1,0 +1,5 @@
+# Portfolio media are binary assets, including ASCII-encoded PDF exports.
+*.pdf binary
+*.ai binary
+*.mp4 binary
+*.webp binary
