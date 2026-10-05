@@ -24,7 +24,7 @@ export default function WorkPage() {
 
   return (
     <>
-      <section className="relative px-5 md:px-14 max-w-[1300px] mx-auto pt-32 pb-8">
+      <section className="work-index-header relative px-5 md:px-14 max-w-[1300px] mx-auto pt-32 pb-8">
         <Reveal>
           <div className="text-label-l text-success mb-4">Selected Work</div>
         </Reveal>
@@ -33,7 +33,7 @@ export default function WorkPage() {
         </Reveal>
         <Reveal delay={0.1}>
           <p className="text-body-l text-on-surface-variant max-w-[620px] mt-5">
-            Graphic design, websites and marketing — from the first idea to the final artwork. Explore a project to see the <span className="text-mark">complete collection.</span>
+            Graphic design, web and marketing. Explore each project’s <span className="text-mark">complete artwork.</span>
           </p>
         </Reveal>
 
